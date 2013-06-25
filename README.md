@@ -289,5 +289,5 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 ```
 git clone git@github.com:avos/avoscloud-sdk.git
-cd paas.product/iOS/samples
+cd avoscloud-sdk.git/iOS/samples
 ```
