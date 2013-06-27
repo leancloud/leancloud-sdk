@@ -26,7 +26,7 @@ app keys将会在您的代码中使用到，同时请注意保管好您的app ke
 # 下载SDK
 
 ```
-git clone git@github.com:avos/paas.product.git
+git clone git@github.com:avos/avoscloud-sdk.git
 ```
 
 # 创建iOS工程
@@ -288,6 +288,6 @@ git clone git@github.com:avos/paas.product.git
 # 下载完整示例
 
 ```
-git clone git@github.com:avos/paas.product.git
-cd paas.product/iOS/samples
+git clone git@github.com:avos/avoscloud-sdk.git
+cd avoscloud-sdk.git/iOS/samples
 ```
