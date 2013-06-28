@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_pushdemo" default="compile.module.pushdemo">
+  <dirname property="module.pushdemo.basedir" file="${ant.file.module_pushdemo}"/>
+  
+  <property name="module.jdk.home.pushdemo" value="${jdk.home.android_2.3.3_platform}"/>
+  <property name="module.jdk.bin.pushdemo" value="${jdk.bin.android_2.3.3_platform}"/>
+  <property name="module.jdk.classpath.pushdemo" value="jdk.classpath.android_2.3.3_platform"/>
+  
+  <property name="compiler.args.pushdemo" value="${compiler.args}"/>
+  
+  <property name="pushdemo.output.dir" value="${module.pushdemo.basedir}/../out/production/PushDemo"/>
+  <property name="pushdemo.testoutput.dir" value="${module.pushdemo.basedir}/../out/test/PushDemo"/>
+  
+  <path id="pushdemo.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="pushdemo.module.production.classpath">
+    <path refid="${module.jdk.classpath.pushdemo}"/>
+    <pathelement location="${avoscloud.output.dir}"/>
+  </path>
+  
+  <path id="pushdemo.runtime.production.module.classpath">
+    <pathelement location="${pushdemo.output.dir}"/>
+    <path refid="avoscloud.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="pushdemo.module.classpath">
+    <path refid="${module.jdk.classpath.pushdemo}"/>
+    <pathelement location="${pushdemo.output.dir}"/>
+    <pathelement location="${avoscloud.testoutput.dir}"/>
+    <pathelement location="${avoscloud.output.dir}"/>
+  </path>
+  
+  <path id="pushdemo.runtime.module.classpath">
+    <pathelement location="${pushdemo.testoutput.dir}"/>
+    <pathelement location="${pushdemo.output.dir}"/>
+    <path refid="avoscloud.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.pushdemo">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.pushdemo">
+    <patternset refid="excluded.from.module.pushdemo"/>
+  </patternset>
+  
+  <path id="pushdemo.module.sourcepath">
+    <dirset dir="${module.pushdemo.basedir}">
+      <include name="gen"/>
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.pushdemo" depends="compile.module.pushdemo.production,compile.module.pushdemo.tests" description="Compile module PushDemo"/>
+  
+  <target name="compile.module.pushdemo.production" depends="register.custom.compilers,compile.module.avoscloud" description="Compile module PushDemo; production classes">
+    <mkdir dir="${pushdemo.output.dir}"/>
+    <javac2 destdir="${pushdemo.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pushdemo}/javac">
+      <compilerarg line="${compiler.args.pushdemo}"/>
+      <bootclasspath refid="pushdemo.module.bootclasspath"/>
+      <classpath refid="pushdemo.module.production.classpath"/>
+      <src refid="pushdemo.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.pushdemo"/>
+    </javac2>
+    
+    <copy todir="${pushdemo.output.dir}">
+      <fileset dir="${module.pushdemo.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.pushdemo.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.pushdemo.tests" depends="register.custom.compilers,compile.module.pushdemo.production" description="compile module PushDemo; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.pushdemo" description="cleanup module">
+    <delete dir="${pushdemo.output.dir}"/>
+    <delete dir="${pushdemo.testoutput.dir}"/>
+  </target>
+</project>
