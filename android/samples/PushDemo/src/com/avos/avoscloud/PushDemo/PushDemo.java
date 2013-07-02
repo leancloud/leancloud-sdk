@@ -19,7 +19,7 @@ public class PushDemo extends Activity {
         PushService.subscribe(this, "Boy", Callback1.class);
         PushService.subscribe(this, "Girl", Callback2.class);
         final TextView t = (TextView)this.findViewById(R.id.mylabel);
-        t.setText(ParseInstallation.getCurrentInstallation().getInstallationId());
+        t.setText("id: q" + ParseInstallation.getCurrentInstallation().getInstallationId());
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
     }
