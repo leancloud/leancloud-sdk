@@ -23,7 +23,7 @@ public class PushDemo extends Activity {
         final Context context = this;
 
         final TextView t = (TextView)this.findViewById(R.id.mylabel);
-        t.setText("id: q" + ParseInstallation.getCurrentInstallation().getInstallationId());
+        t.setText("id: " + ParseInstallation.getCurrentInstallation().getInstallationId());
         ParseInstallation.getCurrentInstallation().saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
