@@ -48,14 +48,14 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 ## 引用头文件
 
-```
+```objc
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
 ```
 
 ## 初始化Keys
 
-```
+```objc
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -77,7 +77,7 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 # 增加LoginViewController
 
-```
+```objc
 -(IBAction)logInPressed:(id)sender
 {
     [AVUser logInWithUsernameInBackground:self.userTextField.text password:self.passwordTextField.text block:^(AVUser *user, NSError *error) {
@@ -96,7 +96,7 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 # 增加RegisterViewController
 
-```
+```objc
 
 ////Sign Up Button pressed
 -(IBAction)signUpUserPressed:(id)sender
@@ -122,7 +122,7 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 # 创建UploadImageViewController
 
-```
+```objc
 
 -(IBAction)sendPressed:(id)sender
 {
@@ -185,7 +185,7 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 ## 获取所有的图片列表
 
-```
+```objc
 //Get the list of images
 -(void)getWallImages
 {
@@ -217,7 +217,7 @@ git clone git@github.com:avos/avoscloud-sdk.git
 
 ## 加载图片
 
-```
+```objc
 -(void)loadWallViews
 {
     //Clean the scroll view
