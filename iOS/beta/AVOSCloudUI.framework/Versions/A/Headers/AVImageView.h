@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AVFile.h"
+#import "AVOSCloud/AVFile.h"
 
 /*!
  An image view that downloads and displays remote image stored on Parse's server.

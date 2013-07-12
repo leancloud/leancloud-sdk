@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 AVOS. All rights reserved.
 //
 
-#import "AVOSCloud.h"
+#import "AVOSCloud/AVOSCloud.h"
 
 #import "AVTableViewCell.h"
 #import "AVQueryTableViewController.h"

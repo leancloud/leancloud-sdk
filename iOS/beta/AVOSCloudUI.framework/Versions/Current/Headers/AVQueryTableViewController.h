@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AVOSCloud.h"
+#import "AVOSCloud/AVOSCloud.h"
 //#import "AV_EGORefreshTableHeaderView.h"
 #import "AVTableViewCell.h"
 

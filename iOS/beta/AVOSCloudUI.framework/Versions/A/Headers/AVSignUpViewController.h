@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AVSignUpView.h"
-#import "AVUser.h"
+#import "AVOSCloud/AVUser.h"
 
 @protocol AVSignUpViewControllerDelegate;
 
