@@ -1,0 +1,2 @@
+1. send notification only once.
+2. add parse action too, so caller does not need to change existing code.
