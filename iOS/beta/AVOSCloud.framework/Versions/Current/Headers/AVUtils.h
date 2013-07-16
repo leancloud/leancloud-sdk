@@ -19,6 +19,8 @@
 
 +(void)warnMainThreadIfNecessary;
 
++(BOOL)containsProperty:(Class)objectClass property:(NSString *)name;
+
 +(AVObject *)avObjectFromDictionary:(NSDictionary *)src
                           className:(NSString *)className;
 +(void)copyPropertiesFrom:(NSObject *)src
