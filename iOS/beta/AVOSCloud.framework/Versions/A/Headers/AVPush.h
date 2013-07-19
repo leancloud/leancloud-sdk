@@ -1,9 +1,6 @@
 //
-//  PFPush.h
-//  Parse
-//
-//  Created by Ilya Sukhar on 7/4/11.
-//  Copyright 2011 Parse, Inc. All rights reserved.
+//  AVPush.h
+//  AVOS Cloud
 //
 
 #import <Foundation/Foundation.h>
@@ -18,8 +15,8 @@
  The preferred way of modifying or retrieving channel subscriptions is to use
  the PFInstallation class, instead of the class methods in PFPush.
 
- This class is currently for iOS only. Parse does not handle Push Notifications
- to Parse applications running on OS X. Push Notifications can be sent from OS X
+ This class is currently for iOS only. AVOS Cloud does not handle Push Notifications
+ to AVOS Cloud applications running on OS X. Push Notifications can be sent from OS X
  applications via Cloud Code or the REST API to push-enabled devices (e.g. iOS
  or Android).
  */
@@ -92,7 +89,7 @@
  Sets the time interval after which this notification should expire.
  This notification will be sent to devices which are either online at
  the time the notification is sent, or which come online within the given
- time interval of the notification being received by Parse's server.
+ time interval of the notification being received by AVOS Cloud server.
  An interval which is less than or equal to zero indicates that the
  message should only be sent to devices which are currently online.
  @param interval The interval after which the notification should expire.
@@ -154,8 +151,8 @@
 
 /*!
  Send a push message to a query.
- @param query The query to send to. The query must be a PFInstallation query
- created with [PFInstallation query].
+ @param query The query to send to. The query must be a AVInstallation query
+ created with [AVInstallation query].
  @param message The message to send.
  @param error Pointer to an NSError that will be set if necessary.
  @result Returns whether the send succeeded.

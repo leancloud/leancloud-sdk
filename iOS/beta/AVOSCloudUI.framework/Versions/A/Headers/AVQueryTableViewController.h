@@ -82,14 +82,14 @@
 /*! @name Responding to Events */
 
 /*!
- Called when objects have loaded from Parse. If you override this method, you must
+ Called when objects have loaded from AVOS Cloud. If you override this method, you must
  call [super objectsDidLoad] in your implementation.
- @param error The Parse error from running the AVQuery, if there was any.
+ @param error The AVOS Cloud error from running the AVQuery, if there was any.
  */
 - (void)objectsDidLoad:(NSError *)error;
 
 /*!
- Called when objects will loaded from Parse. If you override this method, you must
+ Called when objects will loaded from AVOS Cloud. If you override this method, you must
  call [super objectsWillLoad] in your implementation.
  */
 - (void)objectsWillLoad;

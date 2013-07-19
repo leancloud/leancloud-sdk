@@ -1,5 +1,5 @@
 // AVObject.h
-// Copyright 2011 Parse, Inc. All rights reserved.
+// Copyright 2013 AVOS Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
@@ -8,7 +8,7 @@
 @class AVACL;
 
 /*!
- A Parse Framework Object that is a local representation of data persisted to the Parse cloud. This is the
+ A Parse Framework Object that is a local representation of data persisted to the AVOS Cloud. This is the
  main class that is used to interact with objects in your app.
 */
 
@@ -200,7 +200,7 @@
 #pragma mark -
 #pragma mark Save
 
-/*! @name Saving an Object to Parse */
+/*! @name Saving an Object to AVOS Cloud */
 
 /*!
  Saves the AVObject.
@@ -239,12 +239,12 @@
 - (void)saveEventually;
 
 /*!
- Saves this object to the server at some unspecified time in the future, even if Parse is currently inaccessible.
+ Saves this object to the server at some unspecified time in the future, even if AVOS Cloud is currently inaccessible.
  Use this when you may not have a solid network connection, and don't need to know when the save completes.
  If there is some problem with the object such that it can't be saved, it will be silently discarded.  If the save
  completes successfully while the object is still in memory, then callback will be called.
  
- Objects saved with this method will be stored locally in an on-disk cache until they can be delivered to Parse.
+ Objects saved with this method will be stored locally in an on-disk cache until they can be delivered to AVOS Cloud.
  They will be sent immediately if possible.  Otherwise, they will be sent the next time a network connection is
  available.  Objects saved this way will persist even after the app is closed, in which case they will be sent the
  next time the app is opened.  If more than 10MB of data is waiting to be sent, subsequent calls to saveEventually
@@ -256,7 +256,7 @@
 #pragma mark -
 #pragma mark Save All
 
-/*! @name Saving Many Objects to Parse */
+/*! @name Saving Many Objects to AVOS Cloud */
 
 /*!
  Saves a collection of objects all at once.
@@ -300,7 +300,7 @@
 #pragma mark -
 #pragma mark Refresh
 
-/*! @name Getting an Object from Parse */
+/*! @name Getting an Object from AVOS Cloud */
 
 /*!
  Gets whether the AVObject has been fetched.
@@ -384,7 +384,7 @@
 - (void)fetchIfNeededInBackgroundWithTarget:(id)target
                                    selector:(SEL)selector;
 
-/*! @name Getting Many Objects from Parse */
+/*! @name Getting Many Objects from AVOS Cloud */
 
 /*!
  Fetches all of the AVObjects with the current data from the server
@@ -452,7 +452,7 @@
 #pragma mark -
 #pragma mark Delete
 
-/*! @name Removing an Object from Parse */
+/*! @name Removing an Object from AVOS Cloud */
 
 /*!
  Deletes the AVObject.
@@ -487,12 +487,12 @@
                             selector:(SEL)selector;
 
 /*!
- Deletes this object from the server at some unspecified time in the future, even if Parse is currently inaccessible.
+ Deletes this object from the server at some unspecified time in the future, even if AVOS Cloud is currently inaccessible.
  Use this when you may not have a solid network connection, and don't need to know when the delete completes.
  If there is some problem with the object such that it can't be deleted, the request will be silently discarded.
  
  Delete instructions made with this method will be stored locally in an on-disk cache until they can be transmitted
- to Parse. They will be sent immediately if possible.  Otherwise, they will be sent the next time a network connection
+ to AVOS Cloud. They will be sent immediately if possible.  Otherwise, they will be sent the next time a network connection
  is available. Delete requests will persist even after the app is closed, in which case they will be sent the
  next time the app is opened.  If more than 10MB of saveEventually or deleteEventually commands are waiting to be sent,
  subsequent calls to saveEventually or deleteEventually will cause old requests to be silently discarded until the

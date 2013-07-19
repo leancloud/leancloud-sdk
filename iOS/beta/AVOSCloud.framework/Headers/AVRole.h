@@ -1,9 +1,6 @@
 //
 //  AVRole.h
-//  Parse
-//
-//  Created by David Poll on 5/17/12.
-//  Copyright (c) 2012 Parse Inc. All rights reserved.
+//  AVOS Cloud
 //
 
 #import <Foundation/Foundation.h>
@@ -12,9 +9,9 @@
 @class AVQuery;
 
 /*!
- Represents a Role on the Parse server. AVRoles represent groupings
- of PFUsers for the purposes of granting permissions (e.g. specifying a
- PFACL for a PFObject). Roles are specified by their sets of child users
+ Represents a Role on the AVOS Cloud server. AVRoles represent groupings
+ of AVUsers for the purposes of granting permissions (e.g. specifying a
+ AVACL for a AVObject). Roles are specified by their sets of child users
  and child roles, all of which are granted any permissions that the
  parent role has.<br />
  <br />
@@ -74,7 +71,7 @@
 @property (nonatomic, copy) NSString *name;
 
 /*!
- Gets the PFRelation for the PFUsers that are direct children of this role.
+ Gets the AVRelation for the AVUsers that are direct children of this role.
  These users are granted any privileges that this role has been granted
  (e.g. read or write access through ACLs). You can add or remove users from
  the role through this relation.
@@ -84,7 +81,7 @@
 - (AVRelation *)users;
 
 /*!
- Gets the PFRelation for the AVRoles that are direct children of this role.
+ Gets the AVRelation for the AVRoles that are direct children of this role.
  These roles' users are granted any privileges that this role has been granted
  (e.g. read or write access through ACLs). You can add or remove child roles
  from this role through this relation.

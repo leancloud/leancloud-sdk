@@ -1,6 +1,6 @@
 //
 //  AVImageView.h
-//  paas
+//  AVOS Cloud
 //
 //  Created by Summer on 13-3-26.
 //  Copyright (c) 2013年 AVOS. All rights reserved.
@@ -10,11 +10,11 @@
 #import "AVOSCloud/AVFile.h"
 
 /*!
- An image view that downloads and displays remote image stored on Parse's server.
+ An image view that downloads and displays remote image stored on AVOS Cloud server.
  */
 @interface AVImageView : UIImageView
 
-/// The remote file on Parse's server that stores the image.
+/// The remote file on AVOS Cloud server that stores the image.
 /// Note that the download does not start until loadInBackground: is called.
 @property (nonatomic, retain) AVFile *file;
 

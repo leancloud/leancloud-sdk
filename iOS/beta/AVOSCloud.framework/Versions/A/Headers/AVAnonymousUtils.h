@@ -1,9 +1,9 @@
 //
-//  PFAnonymousUtils.h
+//  AVAnonymousUtils.h
 //  Parse
 //
-//  Created by David Poll on 3/20/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Created by Zhu Zeng on 6/20/13.
+//  Copyright (c) 2013 AVOS. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -34,18 +34,18 @@
 /*!
  Creates an anonymous user.
  @param block The block to execute when anonymous user creation is complete. The block should have the following argument signature:
- (PFUser *user, NSError *error) 
+ (AVUser *user, NSError *error) 
  */
-+ (void)logInWithBlock:(PFUserResultBlock)block;
++ (void)logInWithBlock:(AVUserResultBlock)block;
 
 /*!
- Creates an anonymous user.  The selector for the callback should look like: (PFUser *)user error:(NSError *)error
+ Creates an anonymous user.  The selector for the callback should look like: (AVUser *)user error:(NSError *)error
  @param target Target object for the selector.
  @param selector The selector that will be called when the asynchronous request is complete.
  */
 + (void)logInWithTarget:(id)target selector:(SEL)selector;
 
-/*! @name Determining Whether a PFUser is Anonymous */
+/*! @name Determining Whether a AVUser is Anonymous */
 
 /*!
  Whether the user is logged in anonymously.

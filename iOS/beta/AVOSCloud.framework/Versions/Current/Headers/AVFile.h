@@ -1,16 +1,14 @@
 //
-//  PFFile.h
-//  Parse
+//  AVFile.h
+//  AVOS Cloud
 //
-//  Created by Ilya Sukhar on 10/11/11.
-//  Copyright 2011 Ping Labs, Inc. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
 
 /*!
- A file of binary data stored on the Parse servers. This can be a image, video, or anything else
+ A file of binary data stored on the AVOS Cloud servers. This can be a image, video, or anything else
  that an application needs to reference in a non-relational way.
  */
 @interface AVFile : NSObject
@@ -35,7 +33,7 @@
 /*!
  Creates a file with the contents of another file.
  @param name The name of the new PFFile
- @param path The path to the file that will be uploaded to Parse
+ @param path The path to the file that will be uploaded to AVOS Cloud
  */
 + (id)fileWithName:(NSString *)name 
     contentsAtPath:(NSString *)path;
@@ -50,7 +48,7 @@ The name of the file.
  */
 @property (readonly) NSString *url;
 
-/** @name Storing Data with Parse */
+/** @name Storing Data with AVOS Cloud */
 
 /*!
  Whether the file has been uploaded for the first time.
@@ -98,7 +96,7 @@ The name of the file.
  */
 - (void)saveInBackgroundWithTarget:(id)target selector:(SEL)selector;
 
-/** @name Getting Data from Parse */
+/** @name Getting Data from AVOS Cloud */
 
 /*!
  Whether the data is available in memory or needs to be downloaded.
@@ -106,7 +104,7 @@ The name of the file.
 @property (readonly) BOOL isDataAvailable;
 
 /*!
- Gets the data from cache if available or fetches its contents from the Parse
+ Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers.
  @result The data. Returns nil if there was an error in fetching.
  */
@@ -122,7 +120,7 @@ The name of the file.
 - (NSInputStream *)getDataStream;
 
 /*!
- Gets the data from cache if available or fetches its contents from the Parse
+ Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers. Sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
  @result The data. Returns nil if there was an error in fetching.
@@ -141,7 +139,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the Parse servers. Executes the given block.
+ from the AVOS Cloud servers. Executes the given block.
  @param block The block should have the following argument signature: (NSData *result, NSError *error)
  */
 - (void)getDataInBackgroundWithBlock:(PFDataResultBlock)block;
@@ -156,7 +154,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the Parse servers. Executes the resultBlock upon
+ from the AVOS Cloud servers. Executes the resultBlock upon
  completion or error. Executes the progressBlock periodically with the percent progress. progressBlock will get called with 100 before resultBlock is called.
  @param block The block should have the following argument signature: (NSData *result, NSError *error)
  @param progressBlock The block should have the following argument signature: (int percentDone)
@@ -176,7 +174,7 @@ The name of the file.
 
 /*!
  Asynchronously gets the data from cache if available or fetches its contents 
- from the Parse servers.
+ from the AVOS Cloud servers.
  @param target The object to call selector on.
  @param selector The selector to call. It should have the following signature: (void)callbackWithResult:(NSData *)result error:(NSError *)error. error will be nil on success and set if there was an error.
  */

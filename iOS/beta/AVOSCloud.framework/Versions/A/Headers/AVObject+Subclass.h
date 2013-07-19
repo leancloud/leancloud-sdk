@@ -67,8 +67,8 @@
 + (id)objectWithoutDataWithObjectId:(NSString *)objectId;
 
 /*!
- Registers an Objective-C class for Parse to use for representing a given Parse class.
- Once this is called on a AVObject subclass, any AVObject Parse creates with a class
+ Registers an Objective-C class for AVOS Cloud to use for representing a given AVOS Cloud class.
+ Once this is called on a AVObject subclass, any AVObject AVOS Cloud creates with a class
  name matching [self parseClassName] will be an instance of subclass.
  This method can only be called on subclasses which conform to AVSubclassing.
  A default implementation is provided by AVObject which should always be sufficient.

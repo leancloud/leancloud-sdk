@@ -1,5 +1,5 @@
-// PFConstants.h
-// Copyright 2011 Parse, Inc. All rights reserved.
+// AVConstants.h
+// Copyright 2013 AVOS, Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
 @class AVObject;
@@ -7,9 +7,9 @@
 @class AVUser;
 
 // Version
-#define PARSE_VERSION @"1.1.30"
+#define AVOSCLOUD_VERSION @"1.0.0"
 
-extern NSInteger const PARSE_API_VERSION;
+extern NSInteger const AVOSCLOUD_API_VERSION;
 
 // Platform
 #define PARSE_IOS_ONLY (TARGET_OS_IPHONE)
@@ -26,8 +26,6 @@ extern NSString *const kPFDeviceType;
 @compatibility_alias UIView NSView;
 #endif
 
-// Server
-extern NSString *const kPFParseServer;
 
 // Cache policies
 typedef enum {
@@ -45,7 +43,7 @@ typedef enum {
 /*! @abstract 1: Internal server error. No information available. */
 extern NSInteger const kPFErrorInternalServer;
 
-/*! @abstract 100: The connection to the Parse servers failed. */
+/*! @abstract 100: The connection to the AVOS servers failed. */
 extern NSInteger const kPFErrorConnectionFailed;
 /*! @abstract 101: Object doesn't exist, or has an incorrect password. */
 extern NSInteger const kPFErrorObjectNotFound;
@@ -160,3 +158,18 @@ typedef void (^PFDataStreamResultBlock)(NSInputStream *stream, NSError *error);
 typedef void (^PFStringResultBlock)(NSString *string, NSError *error);
 typedef void (^PFIdResultBlock)(id object, NSError *error);
 typedef void (^PFProgressBlock)(int percentDone);
+
+
+
+typedef PFBooleanResultBlock AVBooleanResultBlock;
+typedef PFIntegerResultBlock AVIntegerResultBlock;
+typedef PFArrayResultBlock AVArrayResultBlock;
+typedef PFObjectResultBlock AVObjectResultBlock;
+typedef PFSetResultBlock AVSetResultBlock;
+typedef PFUserResultBlock AVUserResultBlock;
+typedef PFDataResultBlock AVDataResultBlock;
+typedef PFDataStreamResultBlock AVDataStreamResultBlock;
+typedef PFStringResultBlock AVStringResultBlock;
+typedef PFIdResultBlock AVIdResultBlock;
+typedef PFProgressBlock AVProgressBlock;
+

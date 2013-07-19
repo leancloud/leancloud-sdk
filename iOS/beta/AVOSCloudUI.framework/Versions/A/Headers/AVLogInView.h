@@ -36,7 +36,7 @@ typedef enum {
 
 /*! @name Customizing the Logo */
 
-/// The logo. By default, it is the Parse logo.
+/// The logo. By default, it is the AVOS Cloud logo.
 @property (nonatomic, retain) UIView *logo;
 
 /*! @name Accessing Log In Elements */

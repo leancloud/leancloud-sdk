@@ -10,7 +10,7 @@
 #import "AVImageView.h"
 
 /*!
- The AVTableViewCell is a table view cell which can download and display remote images stored on Parse's server. When used in a AVQueryTableViewController, the downloading and displaying of the remote images are automatically managed by the AVQueryTableViewController.
+ The AVTableViewCell is a table view cell which can download and display remote images stored on AVOS Cloud server. When used in a AVQueryTableViewController, the downloading and displaying of the remote images are automatically managed by the AVQueryTableViewController.
  */
 @interface AVTableViewCell : UITableViewCell
 

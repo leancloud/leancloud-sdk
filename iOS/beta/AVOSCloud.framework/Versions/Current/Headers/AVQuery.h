@@ -1,14 +1,14 @@
 // AVQuery.m
-// Copyright 2011 Parse, Inc. All rights reserved.
+// Copyright 2013 AVOS Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
 #import "AVGeoPoint.h"
 #import "AVObject.h"
 
 /*!
-  A class that defines a query that is used to query for PFObjects.
+  A class that defines a query that is used to query for AVObjects.
  */
-@class PFOperation;
+@class AVOperation;
 @interface AVQuery : NSObject
 
 #pragma mark Query options
@@ -56,10 +56,10 @@
 /** @name Adding Basic Constraints */
 
 /*!
- Make the query include PFObjects that have a reference stored at the provided key.
+ Make the query include AVObjects that have a reference stored at the provided key.
  This has an effect similar to a join.  You can use dot notation to specify which fields in
  the included object are also fetch.
- @param key The key to load child PFObjects for.
+ @param key The key to load child AVObjects for.
  */
 - (void)includeKey:(NSString *)key;
 
@@ -141,46 +141,46 @@
 /** @name Adding Location Constraints */
 
 /*!
- Add a constraint to the query that requires a particular key's coordinates (specified via PFGeoPoint) be near
+ Add a constraint to the query that requires a particular key's coordinates (specified via AVGeoPoint) be near
  a reference point.  Distance is calculated based on angular distance on a sphere.  Results will be sorted by distance
  from reference point.
  @param key The key to be constrained.
- @param geopoint The reference point.  A PFGeoPoint.
+ @param geopoint The reference point.  A AVGeoPoint.
  */
 - (void)whereKey:(NSString *)key nearGeoPoint:(AVGeoPoint *)geopoint;
 
 /*!
- Add a constraint to the query that requires a particular key's coordinates (specified via PFGeoPoint) be near
+ Add a constraint to the query that requires a particular key's coordinates (specified via AVGeoPoint) be near
  a reference point and within the maximum distance specified (in miles).  Distance is calculated based on
  a spherical coordinate system.  Results will be sorted by distance (nearest to farthest) from the reference point.
  @param key The key to be constrained.
- @param geopoint The reference point.  A PFGeoPoint.
+ @param geopoint The reference point.  A AVGeoPoint.
  @param maxDistance Maximum distance in miles.
  */
 - (void)whereKey:(NSString *)key nearGeoPoint:(AVGeoPoint *)geopoint withinMiles:(double)maxDistance;
 
 /*!
- Add a constraint to the query that requires a particular key's coordinates (specified via PFGeoPoint) be near
+ Add a constraint to the query that requires a particular key's coordinates (specified via AVGeoPoint) be near
  a reference point and within the maximum distance specified (in kilometers).  Distance is calculated based on
  a spherical coordinate system.  Results will be sorted by distance (nearest to farthest) from the reference point.
  @param key The key to be constrained.
- @param geopoint The reference point.  A PFGeoPoint.
+ @param geopoint The reference point.  A AVGeoPoint.
  @param maxDistance Maximum distance in kilometers.
  */
 - (void)whereKey:(NSString *)key nearGeoPoint:(AVGeoPoint *)geopoint withinKilometers:(double)maxDistance;
 
 /*!
- Add a constraint to the query that requires a particular key's coordinates (specified via PFGeoPoint) be near
+ Add a constraint to the query that requires a particular key's coordinates (specified via AVGeoPoint) be near
  a reference point and within the maximum distance specified (in radians).  Distance is calculated based on
  angular distance on a sphere.  Results will be sorted by distance (nearest to farthest) from the reference point.
  @param key The key to be constrained.
- @param geopoint The reference point.  A PFGeoPoint.
+ @param geopoint The reference point.  A AVGeoPoint.
  @param maxDistance Maximum distance in radians.
  */
 - (void)whereKey:(NSString *)key nearGeoPoint:(AVGeoPoint *)geopoint withinRadians:(double)maxDistance;
 
 /*!
- Add a constraint to the query that requires a particular key's coordinates (specified via PFGeoPoint) be
+ Add a constraint to the query that requires a particular key's coordinates (specified via AVGeoPoint) be
  contained within a given rectangular geographic bounding box.
  @param key The key to be constrained.
  @param southwest The lower-left inclusive corner of the box.
@@ -260,7 +260,7 @@
 
 /*!
  Add a constraint that requires that a key's value matches a AVQuery constraint.
- This only works where the key's values are PFObjects or arrays of PFObjects.
+ This only works where the key's values are AVObjects or arrays of AVObjects.
  @param key The key that the value is stored in
  @param query The query the value should match
  */
@@ -268,7 +268,7 @@
 
 /*!
  Add a constraint that requires that a key's value to not match a AVQuery constraint.
- This only works where the key's values are PFObjects or arrays of PFObjects.
+ This only works where the key's values are AVObjects or arrays of AVObjects.
  @param key The key that the value is stored in
  @param query The query the value should not match
  */
@@ -322,61 +322,61 @@
 /** @name Getting Objects by ID */
 
 /*!
- Returns a PFObject with a given class and id.
+ Returns a AVObject with a given class and id.
  @param objectClass The class name for the object that is being requested.
  @param objectId The id of the object that is being requested.
- @result The PFObject if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVObject *)getObjectOfClass:(NSString *)objectClass
                       objectId:(NSString *)objectId;
 
 /*!
- Returns a PFObject with a given class and id and sets an error if necessary.
+ Returns a AVObject with a given class and id and sets an error if necessary.
  @param error Pointer to an NSError that will be set if necessary.
- @result The PFObject if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVObject *)getObjectOfClass:(NSString *)objectClass
                       objectId:(NSString *)objectId
                          error:(NSError **)error;
 
 /*!
- Returns a PFObject with the given id.
+ Returns a AVObject with the given id.
  
  This mutates the AVQuery.
  
  @param objectId The id of the object that is being requested.
- @result The PFObject if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 - (AVObject *)getObjectWithId:(NSString *)objectId;
 
 /*!
- Returns a PFObject with the given id and sets an error if necessary.
+ Returns a AVObject with the given id and sets an error if necessary.
  
  This mutates the AVQuery
  
  @param error Pointer to an NSError that will be set if necessary.
- @result The PFObject if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 - (AVObject *)getObjectWithId:(NSString *)objectId error:(NSError **)error;
 
 /*!
- Gets a PFObject asynchronously and calls the given block with the result. 
+ Gets a AVObject asynchronously and calls the given block with the result. 
  
  This mutates the AVQuery
  
  @param block The block to execute. The block should have the following argument signature: (NSArray *object, NSError *error)
  */
 - (void)getObjectInBackgroundWithId:(NSString *)objectId
-                              block:(PFObjectResultBlock)block;
+                              block:(AVObjectResultBlock)block;
 
 /*!
- Gets a PFObject asynchronously.
+ Gets a AVObject asynchronously.
  
  This mutates the AVQuery
  
  @param objectId The id of the object being requested.
  @param target The target for the callback selector.
- @param selector The selector for the callback. It should have the following signature: (void)callbackWithResult:(PFObject *)result error:(NSError *)error. result will be nil if error is set and vice versa.
+ @param selector The selector for the callback. It should have the following signature: (void)callbackWithResult:(AVObject *)result error:(NSError *)error. result will be nil if error is set and vice versa.
  */
 - (void)getObjectInBackgroundWithId:(NSString *)objectId
                              target:(id)target
@@ -388,22 +388,22 @@
 /*! @name Getting User Objects */
 
 /*!
- Returns a PFUser with a given id.
+ Returns a AVUser with a given id.
  @param objectId The id of the object that is being requested.
- @result The PFUser if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVUser if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVUser *)getUserObjectWithId:(NSString *)objectId;
 
 /*!
- Returns a PFUser with a given class and id and sets an error if necessary.
+ Returns a AVUser with a given class and id and sets an error if necessary.
  @param error Pointer to an NSError that will be set if necessary.
- @result The PFUser if found. Returns nil if the object isn't found, or if there was an error.
+ @result The AVUser if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVUser *)getUserObjectWithId:(NSString *)objectId
                           error:(NSError **)error;
 
 /*!
- Deprecated.  Please use [PFUser query] instead.
+ Deprecated.  Please use [AVUser query] instead.
  */
 + (AVQuery *)queryForUser __attribute__ ((deprecated));
 
@@ -414,14 +414,14 @@
 
 /*!
  Finds objects based on the constructed query.
- @result Returns an array of PFObjects that were found.
+ @result Returns an array of AVObjects that were found.
  */
 - (NSArray *)findObjects;
 
 /*!
  Finds objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns an array of PFObjects that were found.
+ @result Returns an array of AVObjects that were found.
  */
 - (NSArray *)findObjects:(NSError **)error;
 
@@ -429,7 +429,7 @@
  Finds objects asynchronously and calls the given block with the results.
  @param block The block to execute. The block should have the following argument signature:(NSArray *objects, NSError *error) 
  */
-- (void)findObjectsInBackgroundWithBlock:(PFArrayResultBlock)block;
+- (void)findObjectsInBackgroundWithBlock:(AVArrayResultBlock)block;
 
 /*!
  Finds objects asynchronously and calls the given callback with the results.
@@ -445,7 +445,7 @@
  
  This mutates the AVQuery.
  
- @result Returns a PFObject, or nil if none was found.
+ @result Returns a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject;
 
@@ -455,7 +455,7 @@
  This mutates the AVQuery.
  
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns a PFObject, or nil if none was found.
+ @result Returns a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject:(NSError **)error;
 
@@ -464,9 +464,9 @@
  
  This mutates the AVQuery.
  
- @param block The block to execute. The block should have the following argument signature:(PFObject *object, NSError *error) result will be nil if error is set OR no object was found matching the query. error will be nil if result is set OR if the query succeeded, but found no results.
+ @param block The block to execute. The block should have the following argument signature:(AVObject *object, NSError *error) result will be nil if error is set OR no object was found matching the query. error will be nil if result is set OR if the query succeeded, but found no results.
  */
-- (void)getFirstObjectInBackgroundWithBlock:(PFObjectResultBlock)block;
+- (void)getFirstObjectInBackgroundWithBlock:(AVObjectResultBlock)block;
 
 /*!
  Gets an object asynchronously and calls the given callback with the results.
@@ -474,7 +474,7 @@
  This mutates the AVQuery.
  
  @param target The object to call the selector on.
- @param selector The selector to call. It should have the following signature: (void)callbackWithResult:(PFObject *)result error:(NSError *)error. result will be nil if error is set OR no object was found matching the query. error will be nil if result is set OR if the query succeeded, but found no results.
+ @param selector The selector to call. It should have the following signature: (void)callbackWithResult:(AVObject *)result error:(NSError *)error. result will be nil if error is set OR no object was found matching the query. error will be nil if result is set OR if the query succeeded, but found no results.
  */
 - (void)getFirstObjectInBackgroundWithTarget:(id)target selector:(SEL)selector;
 
@@ -485,14 +485,14 @@
 
 /*!
   Counts objects based on the constructed query.
- @result Returns the number of PFObjects that match the query, or -1 if there is an error.
+ @result Returns the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects;
 
 /*!
   Counts objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns the number of PFObjects that match the query, or -1 if there is an error.
+ @result Returns the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects:(NSError **)error;
 
@@ -501,7 +501,7 @@
  @param block The block to execute. The block should have the following argument signature:
  (int count, NSError *error) 
  */
-- (void)countObjectsInBackgroundWithBlock:(PFIntegerResultBlock)block;
+- (void)countObjectsInBackgroundWithBlock:(AVIntegerResultBlock)block;
 
 /*!
   Counts objects asynchronously and calls the given callback with the count.

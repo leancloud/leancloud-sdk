@@ -41,12 +41,12 @@ typedef enum AVLogLevel : NSUInteger {
 
 @interface AVOSCloud : NSObject
 
-/** @name Connecting to Parse */
+/** @name Connecting to AVOS Cloud */
 
 /*!
  Sets the applicationId and clientKey of your application.
- @param applicationId The applicaiton id for your Parse application.
- @param applicationId The client key for your Parse application.
+ @param applicationId The applicaiton id for your AVOS Cloud application.
+ @param applicationId The client key for your AVOS Cloud application.
  */
 + (void)setApplicationId:(NSString *)applicationId clientKey:(NSString *)clientKey;
 + (NSString *)getApplicationId;
@@ -70,9 +70,9 @@ typedef enum AVLogLevel : NSUInteger {
 /** @name Configuring Facebook Settings */
 
 /*!
- Sets the Facebook application id that you are using with your Parse application. You must set this in
- order to use the Facebook functionality in Parse.
- @param applicationId The Facebook application id that you are using with your Parse application.
+ Sets the Facebook application id that you are using with your AVOS Cloud application. You must set this in
+ order to use the Facebook functionality in AVOS Cloud.
+ @param applicationId The Facebook application id that you are using with your AVOS Cloud application.
  */
 + (void)setFacebookApplicationId:(NSString *)applicationId __attribute__ ((deprecated));
 
@@ -84,16 +84,16 @@ typedef enum AVLogLevel : NSUInteger {
 /** @name Configuring UI Settings */
 
 /*!
- Set whether to show offline messages when using a Parse view or view controller related classes.
+ Set whether to show offline messages when using a AVOS Cloud view or view controller related classes.
  @param enabled Whether a UIAlert should be shown when the device is offline and network access is required
  from a view or view controller.
  */
 + (void)offlineMessagesEnabled:(BOOL)enabled;
 
 /*!
- Set whether to show an error message when using a Parse view or view controller related classes
- and a Parse error was generated via a query.
- @param enabled Whether a UIAlert should be shown when a Parse error occurs.
+ Set whether to show an error message when using a AVOS Cloud view or view controller related classes
+ and a AVOS Cloud error was generated via a query.
+ @param enabled Whether a UIAlert should be shown when a AVOS Cloud error occurs.
  */
 + (void)errorMessagesEnabled:(BOOL)enabled;
 + (NSString *)getFacebookApplicationId __attribute__ ((deprecated));

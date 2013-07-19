@@ -1,17 +1,15 @@
 //
 //  AVGeoPoint.h
-//  Parse
+//  AVOS Cloud
 //
-//  Created by Henele Adams on 12/1/11.
-//  Copyright (c) 2011 Parse, Inc. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
 /*!
- Object which may be used to embed a latitude / longitude point as the value for a key in a PFObject.
- PFObjects with a AVGeoPoint field may be queried in a geospatial manner using PFQuery's whereKey:nearGeoPoint:.
+ Object which may be used to embed a latitude / longitude point as the value for a key in a AVObject.
+ AVObjects with a AVGeoPoint field may be queried in a geospatial manner using PFQuery's whereKey:nearGeoPoint:.
  
  This is also used as a point specifier for whereKey:nearGeoPoint: queries.
  

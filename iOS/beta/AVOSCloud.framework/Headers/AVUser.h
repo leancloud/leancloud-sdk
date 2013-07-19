@@ -1,5 +1,5 @@
 // AVUser.h
-// Copyright 2011 Parse, Inc. All rights reserved.
+// Copyright 2013 AVOS, Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
@@ -9,12 +9,12 @@
 @class AVQuery;
 
 /*!
-A Parse Framework User Object that is a local representation of a user persisted to the Parse cloud. This class
- is a subclass of a PFObject, and retains the same functionality of a PFObject, but also extends it with various
+A AVOS Cloud Framework User Object that is a local representation of a user persisted to the AVOS Cloud. This class
+ is a subclass of a AVObject, and retains the same functionality of a AVObject, but also extends it with various
  user specific methods, like authentication, signing up, and validation uniqueness.
  
  Many APIs responsible for linking a AVUser with Facebook or Twitter have been deprecated in favor of dedicated
- utilities for each social network. See PFFacebookUtils and PFTwitterUtils for more information.
+ utilities for each social network. See AVFacebookUtils and AVTwitterUtils for more information.
  */
 
 
@@ -92,7 +92,7 @@ A Parse Framework User Object that is a local representation of a user persisted
  Signs up the user asynchronously. Make sure that password and username are set. This will also enforce that the username isn't already taken.
  @param block The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error) 
  */
-- (void)signUpInBackgroundWithBlock:(PFBooleanResultBlock)block;
+- (void)signUpInBackgroundWithBlock:(AVBooleanResultBlock)block;
 
 /*!
  Signs up the user asynchronously. Make sure that password and username are set. This will also enforce that the username isn't already taken.
@@ -162,7 +162,7 @@ A Parse Framework User Object that is a local representation of a user persisted
  */
 + (void)logInWithUsernameInBackground:(NSString *)username
                              password:(NSString *)password
-                                block:(PFUserResultBlock)block;
+                                block:(AVUserResultBlock)block;
 
 /** @name Logging Out */
 
@@ -220,7 +220,7 @@ A Parse Framework User Object that is a local representation of a user persisted
  @param block The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error) 
  */
 + (void)requestPasswordResetForEmailInBackground:(NSString *)email
-                                           block:(PFBooleanResultBlock)block;
+                                           block:(AVBooleanResultBlock)block;
 
 /** @name Querying for Users */
 

@@ -1,9 +1,7 @@
 //
-//  PFRelation.h
-//  Parse
+//  AVRelation.h
+//  AVOS Cloud
 //
-//  Created by Shyam Jayaraman on 5/11/12.
-//  Copyright (c) 2012 Parse Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -25,7 +23,7 @@
 
 #pragma mark Accessing objects
 /*!
- @return A ParseQuery that can be used to get objects in this relation.
+ @return A AVQuery that can be used to get objects in this relation.
  */
 - (AVQuery *)query;
 
@@ -34,13 +32,13 @@
 
 /*!
  Adds a relation to the passed in object.
- @param object ParseObject to add relation to.
+ @param object AVObject to add relation to.
  */
 - (void)addObject:(AVObject *)object;
 
 /*!
  Removes a relation to the passed in object.
- @param object ParseObject to add relation to.
+ @param object AVObject to add relation to.
  */
 - (void)removeObject:(AVObject *)object;
 @end
