@@ -16,9 +16,8 @@ public class ToDoListApplication extends Application {
         Parse.useAVCloudCN();
 		ParseUser.enableAutomaticUser();
 		ParseACL defaultACL = new ParseACL();
-		// Optionally enable public read access.
-		defaultACL.setPublicReadAccess(true);
         defaultACL.setPublicWriteAccess(true);
+        defaultACL.setPublicReadAccess(true);
 		ParseACL.setDefaultACL(defaultACL, true);
 	}
 
