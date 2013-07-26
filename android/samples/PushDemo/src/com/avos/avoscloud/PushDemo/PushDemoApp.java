@@ -1,8 +1,6 @@
 package com.avos.avoscloud.PushDemo;
 
 import android.app.Application;
-import com.avos.avoscloud.LogUtil;
-import com.avos.avoscloud.PaasClient;
 import com.avos.avoscloud.Parse;
 
 /**
@@ -16,9 +14,9 @@ public class PushDemoApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtil.log.d(LOGTAG, "OnCreate");
 
-        PaasClient.sharedInstance().useAVCloudCN();
+
+        Parse.useAVCloudCN();
         Parse.initialize(this, YOUR_APP_ID, YOUR_APP_KEY);
     }
 }
