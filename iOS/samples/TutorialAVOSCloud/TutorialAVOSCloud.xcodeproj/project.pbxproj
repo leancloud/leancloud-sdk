@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423DA4AD609C49D59839140E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C15CAAC42A54C47AF374310 /* libPods.a */; };
 		B810355B15B494D200F1B581 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B810355A15B494D200F1B581 /* QuartzCore.framework */; };
 		B810355D15B494D700F1B581 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B810355C15B494D700F1B581 /* Security.framework */; };
 		B810355F15B494E500F1B581 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B810355E15B494E500F1B581 /* AudioToolbox.framework */; };
@@ -27,12 +28,11 @@
 		B8811DFD15B0501100F6F58A /* UploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8811DFB15B0501100F6F58A /* UploadImageViewController.m */; };
 		FE402D0A1760BEBD00230DB1 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE402D091760BEBD00230DB1 /* AVOSCloud.framework */; };
 		FE6B4891175D9D5D007DE0D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6B4890175D9D5D007DE0D9 /* CoreLocation.framework */; };
-		FEC916221769A546000200ED /* AVOSCloudUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEC9161F1769A546000200ED /* AVOSCloudUI.bundle */; };
-		FEC916231769A546000200ED /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEC916201769A546000200ED /* SinaWeibo.bundle */; };
-		FEC916241769A546000200ED /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEC916211769A546000200ED /* SVProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C15CAAC42A54C47AF374310 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFEF016D30D47DE847883F2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B810355A15B494D200F1B581 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B810355C15B494D700F1B581 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B810355E15B494E500F1B581 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -62,9 +62,6 @@
 		B8811DFB15B0501100F6F58A /* UploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageViewController.m; sourceTree = "<group>"; };
 		FE402D091760BEBD00230DB1 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = "../../release-v1.0/AVOSCloud.framework"; sourceTree = "<group>"; };
 		FE6B4890175D9D5D007DE0D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FEC9161F1769A546000200ED /* AVOSCloudUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AVOSCloudUI.bundle; path = "../../release-v1.0/AVOSCloud.framework/Resources/AVOSCloudUI.bundle"; sourceTree = "<group>"; };
-		FEC916201769A546000200ED /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SinaWeibo.bundle; path = "../../release-v1.0/AVOSCloud.framework/Resources/SinaWeibo.bundle"; sourceTree = "<group>"; };
-		FEC916211769A546000200ED /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = "../../release-v1.0/AVOSCloud.framework/Resources/SVProgressHUD.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +81,7 @@
 				B8811D9515B049AE00F6F58A /* Foundation.framework in Frameworks */,
 				B8811D9715B049AE00F6F58A /* CoreGraphics.framework in Frameworks */,
 				FE402D0A1760BEBD00230DB1 /* AVOSCloud.framework in Frameworks */,
+				423DA4AD609C49D59839140E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +91,10 @@
 		B8811D8315B049AD00F6F58A = {
 			isa = PBXGroup;
 			children = (
-				FEC9161F1769A546000200ED /* AVOSCloudUI.bundle */,
-				FEC916201769A546000200ED /* SinaWeibo.bundle */,
-				FEC916211769A546000200ED /* SVProgressHUD.bundle */,
 				B8811D9815B049AE00F6F58A /* TutorialBase */,
 				B8811D9115B049AE00F6F58A /* Frameworks */,
 				B8811D8F15B049AE00F6F58A /* Products */,
+				ADFEF016D30D47DE847883F2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +121,7 @@
 				B8811D9215B049AE00F6F58A /* UIKit.framework */,
 				B8811D9415B049AE00F6F58A /* Foundation.framework */,
 				B8811D9615B049AE00F6F58A /* CoreGraphics.framework */,
+				3C15CAAC42A54C47AF374310 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8811DAF15B049AE00F6F58A /* Build configuration list for PBXNativeTarget "TutorialAVOSCloud" */;
 			buildPhases = (
+				6B43EBB68A0D4BBAAD4D61BD /* Check Pods Manifest.lock */,
 				B8811D8A15B049AD00F6F58A /* Sources */,
 				B8811D8B15B049AD00F6F58A /* Frameworks */,
 				B8811D8C15B049AD00F6F58A /* Resources */,
+				E57788D90DB14C908390545C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,15 +233,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC916221769A546000200ED /* AVOSCloudUI.bundle in Resources */,
-				FEC916231769A546000200ED /* SinaWeibo.bundle in Resources */,
-				FEC916241769A546000200ED /* SVProgressHUD.bundle in Resources */,
 				B8811D9D15B049AE00F6F58A /* InfoPlist.strings in Resources */,
 				B8811DA615B049AE00F6F58A /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B43EBB68A0D4BBAAD4D61BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		E57788D90DB14C908390545C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B8811D8A15B049AD00F6F58A /* Sources */ = {
@@ -327,6 +354,7 @@
 		};
 		B8811DB015B049AE00F6F58A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADFEF016D30D47DE847883F2 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: zeng zhu (Y444FE6H35)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zeng zhu (Y444FE6H35)";
@@ -352,14 +380,15 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = TutorialAVOSCloud;
-				PROVISIONING_PROFILE = "60D84CE7-57E5-4E4A-A554-63DA9EAB021E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "60D84CE7-57E5-4E4A-A554-63DA9EAB021E";
+				PROVISIONING_PROFILE = "397B8044-0481-4779-B733-1EA474833A97";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "397B8044-0481-4779-B733-1EA474833A97";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		B8811DB115B049AE00F6F58A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADFEF016D30D47DE847883F2 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: zeng zhu (Y444FE6H35)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zeng zhu (Y444FE6H35)";
@@ -385,8 +414,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = TutorialAVOSCloud;
-				PROVISIONING_PROFILE = "60D84CE7-57E5-4E4A-A554-63DA9EAB021E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "60D84CE7-57E5-4E4A-A554-63DA9EAB021E";
+				PROVISIONING_PROFILE = "397B8044-0481-4779-B733-1EA474833A97";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "397B8044-0481-4779-B733-1EA474833A97";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
