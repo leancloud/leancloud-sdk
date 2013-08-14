@@ -29,6 +29,16 @@ app keys将会在您的代码中使用到，同时请注意保管好您的app ke
 git clone git@github.com:avos/avoscloud-sdk.git
 ```
 
+# 使用CocoaPods
+
+您也可以使用CocoaPods添加项目的依赖
+
+````
+platform :ios, '5.0'
+pod 'AVOSCloud'
+pod 'AVOSCloudUI
+````
+
 # 创建iOS工程
 
 ![create app](images/create-app.png)
