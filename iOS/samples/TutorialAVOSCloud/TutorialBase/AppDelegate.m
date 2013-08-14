@@ -3,10 +3,10 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import <AVOSCloud/AVOSCloudUI.h>
+#import <AVOSCloudUI/AVOSCloudUI.h>
 
-#define appID @"pzqxg8l1rpaf8yybfjwy68079fpdsjvf1mtqaezlqqbv4wbc"
-#define appKey @"fv7lmu3t4zd5e95tmllur7gtf488aericp85tjy0n80fzbfn"
+#define appID @"gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks"
+#define appKey @"7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1"
 
 
 @implementation AppDelegate
@@ -19,7 +19,7 @@
     // Init AVOS Cloud with app id and app key.
     [AVOSCloud setApplicationId:appID
                    clientKey:appKey];
-    [AVOSCloud useAVCloudUS];
+    [AVOSCloud useAVCloudCN];
     
     
     // Override point for customization after application launch.
