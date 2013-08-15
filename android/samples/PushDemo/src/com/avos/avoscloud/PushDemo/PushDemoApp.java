@@ -17,6 +17,7 @@ public class PushDemoApp extends Application {
 
 
         Parse.useAVCloudCN();
-        Parse.initialize(this, YOUR_APP_ID, YOUR_APP_KEY);
+        Parse.initialize(this, "gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks", "7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1");
+        
     }
 }

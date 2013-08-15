@@ -22,6 +22,8 @@
     [AVOSCloud useAVCloudCN];
     
     
+    
+    
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     return YES;
