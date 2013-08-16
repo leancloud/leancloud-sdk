@@ -1,10 +1,10 @@
-# 欢迎使用AVOS Cloud
+# 欢迎使用 AVOS Cloud
 
-本教程将会向您展示如何使用AVOS Cloud SDK开发一个简单的图片应用。
+本教程将会向您展示如何使用 AVOS Cloud SDK 开发一个简单的图片应用。
 
-# 申请AVOS Cloud帐号
+# 申请 AVOS Cloud 帐号
 
-如果您还未拥有AVOS Cloud的帐号，请访问cn.avoscloud.com （中国区）或者us.avoscloud.com（美国区）申请开发人员帐号。
+如果您还未拥有 AVOS Cloud 的帐号，请访问 cn.avoscloud.com （中国区）或者 us.avoscloud.com（美国区）申请开发人员帐号。
 
 请注意，目前中国区和美国区的数据并不能互通。 
 
@@ -12,26 +12,26 @@
 ![apply account](images/apply-account.png)
 
 
-# 创建基于AVOS Cloud的移动App
+# 创建基于 AVOS Cloud 的移动 app
 
 ![create app](images/create-app.png)
 
 
-# 查看app keys
+# 查看 App Keys
 
 ![app keys](images/app-keys.png)
 
-app keys将会在您的代码中使用到，同时请注意保管好您的app keys，以免给您的应用带来损失。
+App Keys 将会在您的代码中使用到，同时请注意保管好您的 App Keys，以免给您的应用带来损失。
 
-# 下载SDK
+# 下载 SDK
 
-```
+```shell
 git clone git@github.com:avos/avoscloud-sdk.git
 ```
 
-# 使用CocoaPods
+# 使用 CocoaPods
 
-您也可以使用CocoaPods添加项目的依赖
+您也可以使用 CocoaPods 添加项目的依赖
 
 ````
 platform :ios, '5.0'
@@ -39,22 +39,22 @@ pod 'AVOSCloud'
 pod 'AVOSCloudUI
 ````
 
-# 创建iOS工程
+# 创建 iOS 工程
 
 ![create app](images/create-app.png)
 
-# 将AVOS Cloud SDK加入到工程中
+# 将 AVOS Cloud SDK 加入到工程中
 
-### 使用Finder打开sdk所在的位置，如下图所示
+### 使用 Finder 打开 SDK 所在的位置，如下图所示
 
 ![add sdk](images/add-avoscloud-sdk.png)
 
 
-### 将SDK加入到project中，如下图所示
+### 将 SDK 加入到 project中，如下图所示
 
 ![avos cloud framework](images/avoscloud-framework.png)
 
-# 初始化AVOS Cloud SDK
+# 初始化 AVOS Cloud SDK
 
 ## 引用头文件
 
@@ -63,7 +63,7 @@ pod 'AVOSCloudUI
 #import <AVOSCloud/AVOSCloud.h>
 ```
 
-## 初始化Keys
+## 初始化 Keys
 
 ```objc
 @implementation AppDelegate
@@ -85,7 +85,7 @@ pod 'AVOSCloudUI
 ![init avos cloud](images/init-avos-cloud.png)
 
 
-# 增加LoginViewController
+# 增加 LoginViewController
 
 ```objc
 -(IBAction)logInPressed:(id)sender
@@ -104,7 +104,7 @@ pod 'AVOSCloudUI
 }
 ```
 
-# 增加RegisterViewController
+# 增加 RegisterViewController
 
 ```objc
 
@@ -130,7 +130,7 @@ pod 'AVOSCloudUI
 }
 ```
 
-# 创建UploadImageViewController
+# 创建 UploadImageViewController
 
 ```objc
 
@@ -191,7 +191,7 @@ pod 'AVOSCloudUI
 }
 ```
 
-# 创建ImagesViewController
+# 创建 ImagesViewController
 
 ## 获取所有的图片列表
 
@@ -289,9 +289,9 @@ pod 'AVOSCloudUI
 }
 ```
 
-# 手工添加bundle
+# 手工添加 bundle
 
-为了可以在设备上正常运行app，您需要手工copy bundle
+为了可以在设备上正常运行 app，您需要手工 copy bundle
 
 ![copy resource bundle](images/avoscloudui-bundle.png)
 
