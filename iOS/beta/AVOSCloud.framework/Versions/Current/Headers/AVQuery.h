@@ -64,6 +64,13 @@
 - (void)includeKey:(NSString *)key;
 
 /*!
+ Make the query restrict the fields of the returned AVObjects to include only the provided keys.
+ If this is called multiple times, then all of the keys specified in each of the calls will be included.
+ @param keys The keys to include in the result.
+ */
+- (void)selectKeys:(NSArray *)keys;
+
+/*!
  Add a constraint that requires a particular key exists.
  @param key The key that should exist.
  */
