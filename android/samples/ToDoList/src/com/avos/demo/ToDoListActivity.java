@@ -40,7 +40,7 @@ public class ToDoListActivity extends ListActivity {
 			// Gets the current list of todos in sorted order
 			ParseQuery query = new ParseQuery(className);
 
-			query.orderByDescending("_created_at");
+			query.orderByDescending("createdAt");
             try {
 			    todos = query.find();
             } catch (ParseException exception) {
