@@ -1,5 +1,6 @@
 package com.avos.demo;
 
+
 import java.util.List;
 
 import android.app.Dialog;
@@ -19,7 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.avos.avoscloud.*;
-import com.avos.avoscloud.ParseException;
+
 
 
 public class ToDoListActivity extends ListActivity {
@@ -40,7 +41,11 @@ public class ToDoListActivity extends ListActivity {
 			ParseQuery query = new ParseQuery(className);
 
 			query.orderByDescending("_created_at");
-			todos = query.find();
+            try {
+			    todos = query.find();
+            } catch (ParseException exception) {
+                exception.printStackTrace();
+            }
 			return null;
 		}
 
