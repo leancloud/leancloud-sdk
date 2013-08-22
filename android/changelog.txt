@@ -1,3 +1,10 @@
+# 1.3.2.beta  发布日期: 2013-08-19
+
+* 减少avospush库的大小 
+* 调整query接口， 抛出异常，兼容parse
+* 解决subscribe和unsubscribe引起脏数据问题
+* 增加fetch SDK的判断，当objectId为空时，返回missing objectId错误
+
 # 1.3.1 发布日期 2013-08-15
 
 * 解决installation channel空指针bug

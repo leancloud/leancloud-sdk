@@ -1,13 +1,13 @@
 # 1.3.2.beta  发布日期: 2013-08-19
 
-* 解决subscribe和unsubscribe引起脏数据问题
+
 * 增加fetch SDK的判断，当objectId为空时，返回missing objectId错误
 * 解决再次登录后[AVUser currentUser]为空的问题
 * 解决subclassing的问题，当返回对象为自定义的子类化对象时，返回正确的objective-c对象，而非AVObject
 * 解决AVUser的 objectForKey 当key不存在时抛出的异常问题
 * 解决include 对象没有正确展开的问题
 * 解决AVUser关联object对象的保存问题
-
+* 解决文件缓存存在的问题功能
 
 # 1.3.1  发布日期: 2013-08-15
 
