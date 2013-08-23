@@ -15,11 +15,12 @@
         <activity android:name=".Callback1"/>
         <activity android:name=".Callback2"/>
         <service android:name="com.avos.avoscloud.PushService"/>
-        <receiver android:name="com.avos.avoscloud.ParseBroadcastReceiver">
+        <receiver android:name="com.avos.avoscloud.PushDemo.MyCustomReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.avos.UPDATE_STATUS" />
             </intent-filter>
         </receiver>
     </application>
