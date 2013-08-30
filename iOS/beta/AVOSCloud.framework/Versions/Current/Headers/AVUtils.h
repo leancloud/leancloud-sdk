@@ -121,6 +121,11 @@
 + (NSString *)MIMETypeFromPath:(NSString *)fullPath;
 + (NSString *)contentTypeForImageData:(NSData *)data;
 
+#pragma mark - Network Util
++ (BOOL)networkIsReachableOrBetter;
++ (BOOL)networkIs3GOrBetter;
++ (BOOL)networkIsWifiOrBetter;
+
 #pragma mark - Something about log
 
 + (void)setBonjourForLog;
