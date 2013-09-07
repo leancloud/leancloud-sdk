@@ -5,6 +5,7 @@
 @class AVObject;
 @class AVObject;
 @class AVUser;
+@class AVFile;
 
 // Version
 #define AVOSCLOUD_VERSION @"1.0.0"
@@ -154,11 +155,12 @@ typedef void (^PFObjectResultBlock)(AVObject *object, NSError *error);
 typedef void (^PFSetResultBlock)(NSSet *channels, NSError *error);
 typedef void (^PFUserResultBlock)(AVUser *user, NSError *error);
 typedef void (^PFDataResultBlock)(NSData *data, NSError *error);
+typedef void (^PFImageResultBlock)(UIImage * image, NSError *error);
 typedef void (^PFDataStreamResultBlock)(NSInputStream *stream, NSError *error);
 typedef void (^PFStringResultBlock)(NSString *string, NSError *error);
 typedef void (^PFIdResultBlock)(id object, NSError *error);
 typedef void (^PFProgressBlock)(int percentDone);
-
+typedef void (^PFFileResultBlock)(AVFile * file, NSError *error);
 
 
 typedef PFBooleanResultBlock AVBooleanResultBlock;

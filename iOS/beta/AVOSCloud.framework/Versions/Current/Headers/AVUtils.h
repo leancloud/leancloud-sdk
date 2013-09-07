@@ -52,6 +52,7 @@
 
 +(NSString *)jsonString:(NSDictionary *)dictionary;
 
+
 +(void)performSelectorIfCould:(id)target
                      selector:(SEL)selector
                        object:(id)arg1
@@ -99,6 +100,14 @@
 + (void)callProgressBlock:(PFProgressBlock)block
                   percent:(int)percentDone;
 
+
++ (void)callImageResultBlock:(PFImageResultBlock)block
+                       image:(UIImage *)image
+                       error:(NSError *)error;
+
++ (void)callFileResultBlock:(PFFileResultBlock)block
+                     AVFile:(AVFile *)file
+                      error:(NSError *)error;
 
 +(void)callSetResultBlock:(PFSetResultBlock)block
                       set:(NSSet *)set

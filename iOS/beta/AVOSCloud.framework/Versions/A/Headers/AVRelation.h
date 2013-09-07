@@ -41,6 +41,16 @@
  @param object AVObject to add relation to.
  */
 - (void)removeObject:(AVObject *)object;
+
+/*!
+ @return A AVQuery that can be used to get parent objects in this relation.
+ */
++(AVQuery *)revreseQuery:(NSString *)parentClassName
+             relationKey:(NSString *)relationKey
+             childObject:(AVObject *)child;
+
 @end
+
+
 
 

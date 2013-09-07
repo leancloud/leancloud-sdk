@@ -20,6 +20,7 @@
 #import "AVOSCloud.h"
 #import "AVCloud.h"
 #import "AVAnalytics.h"
+#import "AVRelation.h"
 
 typedef enum AVStorageType : NSInteger {
     AVStorageTypeQiniu = 0,
@@ -112,5 +113,6 @@ typedef AVPush PFPush;
 typedef AVOSCloud Parse;
 typedef AVCloud PFCloud;
 typedef AVAnalytics PFAnalytics;
+typedef AVRelation PFRelation;
 
 @end

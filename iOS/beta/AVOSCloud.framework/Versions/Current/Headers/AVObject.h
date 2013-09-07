@@ -500,6 +500,8 @@
  */
 - (void)deleteEventually;
 
-#pragma mark -
+#pragma mark - extension
+@property (nonatomic, readwrite) BOOL fetchWhenSave;
+
 
 @end

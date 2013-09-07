@@ -13,26 +13,34 @@
  */
 @interface AVFile : NSObject
 
-/** @name Creating a PFFile */
+/** @name Creating a AVFile */
 
 /*!
  Creates a file with given data. A name will be assigned to it by the server.
- @param data The contents of the new PFFile.
- @result A PFFile.
+ @param data The contents of the new AVFile.
+ @result A AVFile.
  */
 + (id)fileWithData:(NSData *)data;
 
 /*!
  Creates a file with given data and name.
- @param name The name of the new PFFile.
- @param data The contents of hte new PFFile.
- @result A PFFile.
+ @param name The name of the new AVFile.
+ @param data The contents of the new AVFile.
+ @result A AVFile.
  */
 + (id)fileWithName:(NSString *)name data:(NSData *)data;
 
+
+/*!
+ Creates a file with given url.
+ @param url The url of file.
+ @result A AVFile.
+ */
++ (id)fileWithURL:(NSString *)url;
+
 /*!
  Creates a file with the contents of another file.
- @param name The name of the new PFFile
+ @param name The name of the new AVFile
  @param path The path to the file that will be uploaded to AVOS Cloud
  */
 + (id)fileWithName:(NSString *)name 
@@ -54,6 +62,11 @@ The name of the file.
  Whether the file has been uploaded for the first time.
  */
 @property (readonly) BOOL isDirty;
+
+/*!
+ File metadata, caller is able to store additional values here.
+ */
+@property (readwrite, strong) NSMutableDictionary * metadata;
 
 /*!
  Saves the file.
@@ -111,8 +124,8 @@ The name of the file.
 - (NSData *)getData;
 
 /*!
- This method is like getData but avoids ever holding the entire PFFile's
- contents in memory at once. This can help applications with many large PFFiles
+ This method is like getData but avoids ever holding the entire AVFile's
+ contents in memory at once. This can help applications with many large AVFiles
  avoid memory warnings.
  @result A stream containing the data. Returns nil if there was an error in 
  fetching.
@@ -128,8 +141,8 @@ The name of the file.
 - (NSData *)getData:(NSError **)error;
 
 /*!
- This method is like getData: but avoids ever holding the entire PFFile's
- contents in memory at once. This can help applications with many large PFFiles
+ This method is like getData: but avoids ever holding the entire AVFile's
+ contents in memory at once. This can help applications with many large AVFiles
  avoid memory warnings. Sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
  @result A stream containing the data. Returns nil if there was an error in 
@@ -146,8 +159,8 @@ The name of the file.
 
 /*!
  This method is like getDataInBackgroundWithBlock: but avoids ever holding the 
- entire PFFile's contents in memory at once. This can help applications with
- many large PFFiles avoid memory warnings.
+ entire AVFile's contents in memory at once. This can help applications with
+ many large AVFiles avoid memory warnings.
  @param block The block should have the following argument signature: (NSInputStream *result, NSError *error)
  */
 - (void)getDataStreamInBackgroundWithBlock:(PFDataStreamResultBlock)block;
@@ -164,8 +177,8 @@ The name of the file.
 
 /*!
  This method is like getDataInBackgroundWithBlock:progressBlock: but avoids ever
- holding the entire PFFile's contents in memory at once. This can help 
- applications with many large PFFiles avoid memory warnings.
+ holding the entire AVFile's contents in memory at once. This can help 
+ applications with many large AVFiles avoid memory warnings.
  @param resultBlock The block should have the following argument signature: (NSInputStream *result, NSError *error)
  @param progressBlock The block should have the following argument signature: (int percentDone)
  */
@@ -186,5 +199,48 @@ The name of the file.
  Cancels the current request (whether upload or download of file data).
  */
 - (void)cancel;
+
+
+/*!
+ Gets a AVFile asynchronously and calls the given block with the result.
+ 
+ @param objectId The objectId associated with file object. 
+ @param block The block to execute. The block should have the following argument signature: (AVFile *file, NSError *error)
+ */
++ (void)getFileWithObjectId:(NSString *)objectId
+                  withBlock:(PFFileResultBlock)block;
+
+/*!
+ Gets a thumbnail asynchronously and calls the given block with the result.
+ 
+ @param scaleToFit Scale the thumbnail and keep aspect ratio.
+ @param width The desired width.
+ @param height The desired height.
+ @param block The block to execute. The block should have the following argument signature: (UIImage *image, NSError *error)
+ */
+- (void)getThumbnail:(BOOL)scaleToFit
+               width:(int)width
+              height:(int)height
+           withBlock:(PFImageResultBlock)block;
+
+/*!
+ Sets a owner id to metadata.
+ 
+ @param ownerId The owner objectId.
+ */
+-(void)setOwnerId:(NSString *)ownerId;
+
+/*!
+ Gets owner id from metadata.
+
+ */
+-(NSString *)ownerId;
+
+@property (readwrite, copy) NSString * objectId;
+
+-(NSUInteger)size;
+
+- (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block;
+
 
 @end
