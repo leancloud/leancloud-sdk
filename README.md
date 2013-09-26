@@ -9,17 +9,17 @@
 请注意，目前中国区和美国区的数据并不能互通。
 
 
-![apply account](https://github.com/avos/avoscloud-sdk/blob/master/images/apply-account.png)
+![apply account](https://raw.github.com/avos/avoscloud-sdk/master/images/apply-account.png)
 
 
 # 创建基于AVOS Cloud的移动App
 
-![create app](https://github.com/avos/avoscloud-sdk/blob/master/images/app-keys.png)
+![create app](https://raw.github.com/avos/avoscloud-sdk/master/images/app-keys.png)
 
 
 # 查看app keys
 
-![app keys](https://github.com/avos/avoscloud-sdk/raw/master/images/add-avoscloud-sdk.png)
+![app keys](https://raw.github.com/avos/avoscloud-sdk/master/images/add-avoscloud-sdk.png)
 
 app keys将会在您的代码中使用到，同时请注意保管好您的app keys，以免给您的应用带来损失。
 
