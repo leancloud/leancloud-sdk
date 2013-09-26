@@ -1,3 +1,16 @@
+# 1.3.5 发布日期: 2013-09-26
+
+* 实现增量更新，避免更新相互覆盖，减少网络流量。
+* 修复部分API操作，错误异常没有返回的bug。
+* 修复ParseRole运行错误的bug。
+* 实现ParseQuery的查询缓存相关功能，目前已完整实现。
+* 为部分callback接口(例如FindCallback)和类(例如ParseQuery)添加泛型支持，升级老版本SDK可能需要稍微修改代码。
+* 网络层做连接服用，提升性能。
+* 替换json实现，提升性能，修复数字没有正确转换的bug。
+* 为很多API增加参数校验。
+* 修复ParseQuery.get方法无法同时include的bug。
+* 其他一些bug修复和内部代码改进。
+
 # 1.3.4 发布日期: 2013-09-07
 
 * file的功能增强，增加thumbnail, 由url创建，查询和删除等功能
@@ -17,7 +30,7 @@
 
 # 1.3.2.beta  发布日期: 2013-08-19
 
-* 减少avospush库的大小 
+* 减少avospush库的大小
 * 调整query接口， 抛出异常，兼容parse
 * 解决subscribe和unsubscribe引起脏数据问题
 * 增加fetch SDK的判断，当objectId为空时，返回missing objectId错误
@@ -26,7 +39,7 @@
 
 * 解决installation channel空指针bug
 
-# 1.3.0 
+# 1.3.0
 
 * 增加selectKeys，仅返回指定key对应的数据，减少流量和资源开销
 
