@@ -41,18 +41,18 @@ pod 'AVOSCloudUI
 
 # 创建iOS工程
 
-![create app](images/create-app.png)
+![create app](https://raw.github.com/avos/avoscloud-sdk/master/images/create-app.png)
 
 # 将AVOS Cloud SDK加入到工程中
 
 ### 使用Finder打开sdk所在的位置，如下图所示
 
-![add sdk](images/add-avoscloud-sdk.png)
+![add sdk](https://raw.github.com/avos/avoscloud-sdk/master/images/add-avoscloud-sdk.png)
 
 
 ### 将SDK加入到project中，如下图所示
 
-![avos cloud framework](images/avoscloud-framework.png)
+![avos cloud framework](https://raw.github.com/avos/avoscloud-sdk/master/images/avoscloud-framework.png)
 
 # 初始化AVOS Cloud SDK
 
@@ -82,7 +82,7 @@ pod 'AVOSCloudUI
 ```
 
 
-![init avos cloud](images/init-avos-cloud.png)
+![init avos cloud](https://raw.github.com/avos/avoscloud-sdk/master/images/init-avos-cloud.png)
 
 
 # 增加LoginViewController
@@ -293,7 +293,7 @@ pod 'AVOSCloudUI
 
 为了可以在设备上正常运行app，您需要手工copy bundle
 
-![copy resource bundle](images/avoscloudui-bundle.png)
+![copy resource bundle](https://raw.github.com/avos/avoscloud-sdk/master/images/avoscloudui-bundle.png)
 
 # 下载完整示例
 
