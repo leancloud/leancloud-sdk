@@ -21,6 +21,7 @@
 #import "AVCloud.h"
 #import "AVAnalytics.h"
 #import "AVRelation.h"
+#import "AVSubclassing.h"
 
 typedef enum AVStorageType : NSInteger {
     AVStorageTypeQiniu = 0,
@@ -53,7 +54,6 @@ typedef enum AVLogLevel : NSUInteger {
 + (NSString *)getApplicationId;
 + (NSString *)getClientKey;
 
-+ (void)useParseServer;
 + (void)useAVCloud;
 + (void)setStorageType:(AVStorageType)type;
 
@@ -66,6 +66,14 @@ typedef enum AVLogLevel : NSUInteger {
 // log
 + (void)setLogLevel:(AVLogLevel)level;
 + (AVLogLevel)logLevel;
+
+#pragma mark Schedule work
+// default 30 days
++ (NSInteger)queryCacheExpiredDays;
++ (void)setQueryCacheExpiredDays:(NSInteger)days;
+// default 30 days
++ (NSInteger)fileCacheExpiredDays;
++ (void)setFileCacheExpiredDays:(NSInteger)days;
 
 #if PAAS_IOS_ONLY
 /** @name Configuring Facebook Settings */
@@ -114,5 +122,6 @@ typedef AVOSCloud Parse;
 typedef AVCloud PFCloud;
 typedef AVAnalytics PFAnalytics;
 typedef AVRelation PFRelation;
+
 
 @end
