@@ -503,5 +503,15 @@
 #pragma mark - extension
 @property (nonatomic, readwrite) BOOL fetchWhenSave;
 
+/*!
+ Generate JSON dictionary from AVObject or its subclass object.
+ */
+-(NSMutableDictionary *)dictionaryForObject;
+
+/*!
+ Load object properties from JSON dictionary.
+ */
+-(void)objectFromDictionary:(NSDictionary *)dict;
+
 
 @end
