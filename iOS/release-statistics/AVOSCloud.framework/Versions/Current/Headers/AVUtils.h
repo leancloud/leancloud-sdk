@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AVGlobal.h"
 #import "AVConstants.h"
 #import "AVOSCloud.h"
 #import "LoggerClient.h"
 
-#define classNameTag @"className"
+
 
 @class AVObject;
 
@@ -20,6 +21,7 @@
 +(void)warnMainThreadIfNecessary;
 
 +(BOOL)containsProperty:(Class)objectClass property:(NSString *)name;
++ (BOOL)containsProperty:(NSString *)name inClass:(Class)objectClass containSuper:(BOOL)containSuper filterDynamic:(BOOL)filterDynamic;
 
 +(AVObject *)avObjectFromDictionary:(NSDictionary *)src
                           className:(NSString *)className;

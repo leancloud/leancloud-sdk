@@ -242,5 +242,7 @@ The name of the file.
 
 - (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block;
 
+- (void)deleteInBackground;
+
 
 @end
