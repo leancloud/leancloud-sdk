@@ -2,3 +2,5 @@
 .idea
 *.java
 *.rb
+
+.DS_Store
