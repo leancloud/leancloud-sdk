@@ -6,6 +6,7 @@
 * 解决user session token 引起的对象保存问题
 * 增加json string dictionary功能，允许AVObject导出dictionary或者从dictionary构造
 * 解决query中出现 role 的问题
+* 解决query中getFirstObject和getObjectWithId的include问题
 * 增加 deleteInBackground for AVFile
 * 批量删除query结果中的对象
 * 优化编译方法，大幅减小SDK的体积
