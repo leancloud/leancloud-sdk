@@ -3,6 +3,7 @@
 2.添加静态方法AV.Object.destroyAll(objects)用于批量删除对象，AV.Query也添加方法destroyAll用于删除查询出来的所有对象。
 3.增加方法AV.Cloud.afterUpdate用于注册after update处理器，更新对象后回调处理函数。
 4.增强云代码API文档。
+5.添加创建已有对象的新方法AV.Object.createWithoutData(name, id)
 
 2013年9月5号 0.2.2版本发布
 1.修复AV.Query的include方法无法正常查询的bug。
