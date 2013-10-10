@@ -1,3 +1,10 @@
+# 1.4.0 发布日期: 2013-10-10
+
+* 实现ParseObject和ParseUser的子类化，具体请参考android开发指南。
+* 增加ParseObject.destroyAll和ParseQuery.destroyAll方法用于批量删除。
+* 修复1.3.5版本推送丢失title的bug。
+* 修复推送无法回调不同package的Activity的bug。
+
 # 1.3.5 发布日期: 2013-09-26
 
 * 实现增量更新，避免更新相互覆盖，减少网络流量。
