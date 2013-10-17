@@ -1,3 +1,9 @@
+# 1.4.1 发布日期: 2013-10-17
+
+* 优化push服务器的获取方式，减少网络交互
+* 子类化ParseUser.getCurrentUser，返回正确的子类化对象
+* 增加android的统计SDK，具体使用方式请参阅统计开发指南
+
 # 1.4.0 发布日期: 2013-10-10
 
 * 实现ParseObject和ParseUser的子类化，具体请参考android开发指南。
