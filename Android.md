@@ -4,7 +4,7 @@
 
 # 申请AVOS Cloud帐号
 
-如果您还未拥有AVOS Cloud的帐号，请访问cn.avoscloud.com （中国区）或者us.avoscloud.com（美国区）申请开发人员帐号。
+如果您还未拥有AVOS Cloud的帐号，请访问 [http://avoscloud.com](http://avoscloud.com) 申请开发人员帐号。
 
 请注意，目前中国区和美国区的数据并不能互通。 
 

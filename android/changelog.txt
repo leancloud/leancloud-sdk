@@ -4,6 +4,7 @@
 * 增加ParseObject.destroyAll和ParseQuery.destroyAll方法用于批量删除。
 * 修复1.3.5版本推送丢失title的bug。
 * 修复推送无法回调不同package的Activity的bug。
+* 修复网络异常没有返回给用户的bug。
 
 # 1.3.5 发布日期: 2013-09-26
 
