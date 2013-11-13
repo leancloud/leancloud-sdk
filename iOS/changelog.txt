@@ -1,6 +1,11 @@
 # 1.4.4 发布日期: 2013-11-13
-* 修复多处Bug, 加强稳定性
-* 不再需要-ObjC编译标签
+* 解决子类化relation存在的问题
+* 完善增量更新的初始化保存，避免beforeSave收到空对象
+* 当setObject:forKey:传入的对象为nil时，会调用removeObejctForKey
+* 解决子类化setter中存在的无限递归问题
+* 解决子类化中refresh和fetch返回错误对象的问题
+* 增加统计模块的首次汇报功能
+* 不再需要-ObjC编译选项
 * SNS SDK支持QQ SSO
 
 # 1.4.3 发布日期: 2013-10-31
