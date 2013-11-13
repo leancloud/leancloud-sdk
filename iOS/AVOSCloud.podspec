@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.version        = "1.4.3"
+  s.version        = "1.4.4"
   s.source         = { :http => "https://cn.avoscloud.com/downloads/iOS/release-v#{s.version}/AVOSCloud.framework.zip"}
 
 
@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
   s.public_header_files = "iOS/release-v#{s.version}/**/*.h"
   
   s.frameworks = 'CFNetwork', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation',  'CoreGraphics', 'Security', 'QuartzCore'
-  s.xcconfig = {'OTHER_LDFLAGS' => '-ObjC -all_load' }
   
+  s.xcconfig = {
+    'DEBUG_INFORMATION_FORMAT' => 'DWARF'
+  }
 end
