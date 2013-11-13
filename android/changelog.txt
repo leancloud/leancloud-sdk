@@ -1,6 +1,14 @@
-# 1.4.3-hotfix 发布日期: 2013-11-01
+# 1.4.4 发布日期：2013-11-13
 
+* 升级fastjson，请一定要使用我们提供的fastjson版本，否则SDK无法正常运行。
+* 发布简易SNS SDK
 * 解决cloud code没有传入user session token的问题
+* 允许自定义推送声音
+* 允许自定义推送icon
+* 修复同步save方法没有保存user和installation到本地的bug。
+* 为上传文件添加后缀。
+* 为ParseUser添加getQuery(Class<? extend ParseUser>)方法用于子类化查询。
+* 其他一些内部改进等。
 
 # 1.4.3 发布日期: 2013-11-01
 
@@ -73,5 +81,3 @@
 # 1.3.0
 
 * 增加selectKeys，仅返回指定key对应的数据，减少流量和资源开销
-
-
