@@ -30,7 +30,7 @@ public class ToDoListActivity extends ListActivity {
 	public static final int INSERT_ID = Menu.FIRST;
 	private static final int DELETE_ID = Menu.FIRST + 1;
 
-	private List<ParseObject> todos;
+	private List<AVObject> todos;
 	private Dialog progressDialog;
     private static final String className = "TODO";
 
@@ -38,12 +38,12 @@ public class ToDoListActivity extends ListActivity {
 		// Override this method to do custom remote calls
 		protected Void doInBackground(Void... params) {
 			// Gets the current list of todos in sorted order
-			ParseQuery query = new ParseQuery(className);
+			AVQuery query = new AVQuery(className);
 
 			query.orderByDescending("_created_at");
             try {
 			    todos = query.find();
-            } catch (ParseException exception) {
+            } catch (AVException exception) {
                 exception.printStackTrace();
             }
 			return null;
@@ -67,7 +67,7 @@ public class ToDoListActivity extends ListActivity {
 			// Put the list of todos into the list view
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(ToDoListActivity.this,
 					com.avos.demo.R.layout.todo_row);
-			for (ParseObject todo : todos) {
+			for (AVObject todo : todos) {
 				adapter.add((String) todo.get("name"));
 			}
 			setListAdapter(adapter);
@@ -108,12 +108,12 @@ public class ToDoListActivity extends ListActivity {
 			new RemoteDataTask() {
 				protected Void doInBackground(Void... params) {
 					String name = extras.getString("name");
-					ParseObject todo = new ParseObject(className);
+					AVObject todo = new AVObject(className);
 					todo.put("name", name);
-                    ParseACL acl = todo.getACL();
+                    AVACL acl = todo.getACL();
 					try {
 						todo.save();
-					} catch (ParseException e) {
+					} catch (AVException e) {
                         e.printStackTrace();
 					}
 
@@ -124,7 +124,7 @@ public class ToDoListActivity extends ListActivity {
 			break;
 		case ACTIVITY_EDIT:
 			// Edit the remote object
-			final ParseObject todo;
+			final AVObject todo;
 			todo = todos.get(extras.getInt("position"));
 			todo.put("name", extras.getString("name"));
 
@@ -132,7 +132,7 @@ public class ToDoListActivity extends ListActivity {
 				protected Void doInBackground(Void... params) {
 					try {
 						todo.save();
-					} catch (ParseException e) {
+					} catch (AVException e) {
 					}
 					super.doInBackground();
 					return null;
@@ -162,13 +162,13 @@ public class ToDoListActivity extends ListActivity {
 			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 
 			// Delete the remote object
-			final ParseObject todo = todos.get(info.position);
+			final AVObject todo = todos.get(info.position);
 
 			new RemoteDataTask() {
 				protected Void doInBackground(Void... params) {
 					try {
 						todo.delete();
-					} catch (ParseException e) {
+					} catch (AVException e) {
 					}
 					super.doInBackground();
 					return null;
