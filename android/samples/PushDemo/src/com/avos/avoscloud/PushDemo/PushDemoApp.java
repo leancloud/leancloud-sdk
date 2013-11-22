@@ -1,7 +1,7 @@
 package com.avos.avoscloud.PushDemo;
 
 import android.app.Application;
-import com.avos.avoscloud.Parse;
+import com.avos.avoscloud.AVOSCloud;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,8 +16,8 @@ public class PushDemoApp extends Application {
         super.onCreate();
 
 
-        Parse.useAVCloudCN();
-        Parse.initialize(this, "gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks", "7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1");
+        AVOSCloud.useAVCloudCN();
+        AVOSCloud.initialize(this, "gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks", "7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1");
         
     }
 }
