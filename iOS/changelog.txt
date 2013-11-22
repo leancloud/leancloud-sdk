@@ -1,3 +1,16 @@
+# 2.0.0 发布日期: 2013-11-22
+* 增加缺失的常量定义，解决引用常量引起的链接问题
+* 在AVOSCloud.h中增加AVRole声明
+* 解决将文件存在数组中保存后，再次获取，返回对象不正确的问题
+* 增加default ACL支持
+* 解决orderBySortDescriptors 传入参数为数组时存在的问题
+* 默认禁止crash report 
+* parseClassName 变为optional
+* 解决objectForKey当传入参数为nil存在的问题
+* 修改统计发送策略，确保首次启动发送
+* 修复属性的内存泄露
+* 将SVProgressHUD.bundle打包进AVOSCloud UI
+
 # 1.4.4 发布日期: 2013-11-13
 * 解决子类化relation存在的问题
 * 完善增量更新的初始化保存，避免beforeSave收到空对象
