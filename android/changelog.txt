@@ -1,3 +1,10 @@
+# 2.0.0 发布日期：2013年-11-22
+
+* 将所有以Parse开头的类名修改为以AV开头，请使用我们的提供的Ruby脚本升级您的源码：https://github.com/avos/avoscloud-sdk/blob/master/android/migrate.rb，在项目根目录下运行即可。
+* 确保所有callback的done方法运行在UI线程。
+* 修复部分边界情况下callback没有调用的问题，例如网络超时导致文件保存失败的时候，AVUser登陆失败没有回调等。
+* 统一网络调用超时时间，默认为15秒，API，文件上传下载等。
+
 # 1.4.4 发布日期：2013-11-13
 
 * 升级fastjson，请一定要使用我们提供的fastjson版本，否则SDK无法正常运行。
