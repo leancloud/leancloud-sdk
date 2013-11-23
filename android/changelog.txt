@@ -1,3 +1,7 @@
+# 2.0.1 发布日期： 2013年-11-23
+
+* 紧急修复callback没有运行在UI线程的Bug。
+
 # 2.0.0 发布日期：2013年-11-22
 
 * 将所有以Parse开头的类名修改为以AV开头，请使用我们的提供的Ruby脚本升级您的源码：https://github.com/avos/avoscloud-sdk/blob/master/android/migrate.rb，在项目根目录下运行即可。
