@@ -1,3 +1,11 @@
+# 2.0.2 发布日期: 2013-11-29
+* 为AVQuery增加whereSizeEqual
+* 纠正AVRelation的函数名拼写错误
+* 为AVQuery增加sizeEqualTo
+* 增加AVFile的扩展名支持，在key后会附加扩展名，以便下载时可以使用正确的程序打开
+* 解决subclass返回的类型警告
+* 解决defaultACL中隐式创建user的问题
+
 # 2.0.0 发布日期: 2013-11-22
 * 增加缺失的常量定义，解决引用常量引起的链接问题
 * 在AVOSCloud.h中增加AVRole声明
