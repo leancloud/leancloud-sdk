@@ -1,3 +1,10 @@
+# 2.0.2 发布日期：2013-11-29
+
+* 废弃AVFile以parseFile开头的方法，并添加对应的替代新方法。
+* 为AVObject的refresh和fetch方法添加includeKeys支持。
+* 其他一些内部改进。
+* 更新了API文档
+
 # 2.0.1 发布日期： 2013年-11-23
 
 * 紧急修复callback没有运行在UI线程的Bug。
