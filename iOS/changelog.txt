@@ -1,4 +1,4 @@
-# 2.0.2 发布日期: 2013-12-06
+# 2.1.0 发布日期: 2013-12-06
 * 解决子类化访问AVRelation时不会调用relationforKey的问题
 * 清理错误常量，增加kAVErrorUsernamePasswordMismatch
 * 解决第三方库冲突问题。对第三方库进行改名处理，统一使用AV前缀。改名后，开发人员可以使用AVOSCloud自带的第三方库，也可以使用标准的第三方库。

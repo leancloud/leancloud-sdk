@@ -1,3 +1,6 @@
+# 2.1.0 发布日期: 2013-12-06
+* 增加 USERNAME_PASSWORD_MISMATCH 错误常量
+
 # 2.0.2 发布日期：2013-11-29
 
 * 废弃AVFile以parseFile开头的方法，并添加对应的替代新方法。
