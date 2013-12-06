@@ -1,5 +1,6 @@
 Pod::Spec.new do |s|
-  s.version        = "2.0.3-beta"
+
+  s.version        = "2.1.0"
   s.source         = { :http => "https://download.avoscloud.com/sdk/iOS/release-v#{s.version}/AVOSCloud.framework.zip"}
 
 
@@ -11,13 +12,13 @@ Pod::Spec.new do |s|
   s.author         = { "Zeng Zhu" => "zzhu@avos.com" }
   s.requires_arc   = true
 
-
+  
   s.preserve_paths      = "iOS/release-v#{s.version}/*"
   s.vendored_frameworks = "iOS/release-v#{s.version}/AVOSCloud.framework"
   s.public_header_files = "iOS/release-v#{s.version}/**/*.h"
-
+  
   s.frameworks = 'CFNetwork', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation',  'CoreGraphics', 'Security', 'QuartzCore'
-
+  
   s.xcconfig = {
     'DEBUG_INFORMATION_FORMAT' => 'DWARF'
   }
