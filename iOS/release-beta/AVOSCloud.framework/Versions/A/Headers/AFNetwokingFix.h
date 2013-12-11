@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 AVOS. All rights reserved.
 //
 
+#import "AVNetworking.h"
 
 #ifndef _AFNETWORKING_
     #define _AFNETWORKING_
