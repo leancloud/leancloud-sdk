@@ -120,15 +120,31 @@ typedef void (^AVSNSProgressBlock)(float percent);
 
 /**
  *  分享文字到指定社交平台
+ *  @warning 目前只支持新浪微博
  *
  *  @param  text        文字内容
  *  @param  link        链接地址(可选)
  *  @param  type        指定平台类型
  *  @param  callback    结果回调
- *  @param  progressBlock    进度回调
+ *  @param  progressBlock    进度回调(可选)
  *
  */
 +(void)shareText:(NSString*)text andLink:(NSString*)linkUrl toPlatform:(AVOSCloudSNSType)type withCallback:(AVSNSResultBlock)callback andProgress:(AVSNSProgressBlock)progressBlock;
+
+
+/**
+ *  分享文字和图片到指定社交平台
+ *  @warning 目前只支持新浪微博
+ *
+ *  @param  text        文字内容
+ *  @param  link        链接地址(可选)
+ *  @param  image       图片 (将会被JPEG压缩0.8)
+ *  @param  type        指定平台类型
+ *  @param  callback    结果回调
+ *  @param  progressBlock    进度回调(可选)
+ *
+ */
++(void)shareText:(NSString*)text andLink:(NSString*)linkUrl andImage:(UIImage*)image toPlatform:(AVOSCloudSNSType)type withCallback:(AVSNSResultBlock)callback andProgress:(AVSNSProgressBlock)progressBlock;
 
 
 /**
