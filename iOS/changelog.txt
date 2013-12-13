@@ -1,3 +1,9 @@
+# 2.1.1 发布日期: 2013-12-13
+* fetch和refresh成功后，需要清除本地数据，使用服务端的数据
+* SNS模块增加文字和图片分享
+* 自动更新SNS token
+* 增加SNS pod依赖
+
 # 2.1.0 发布日期: 2013-12-06
 * 解决子类化访问AVRelation时不会调用relationforKey的问题
 * 清理错误常量，增加kAVErrorUsernamePasswordMismatch
