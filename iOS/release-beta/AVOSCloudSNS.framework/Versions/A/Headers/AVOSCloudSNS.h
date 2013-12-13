@@ -63,7 +63,7 @@ typedef void (^AVSNSProgressBlock)(float percent);
 /**
  *  设置平台所需要的参数
  *
- *  @warning 如果不进行设置, 则用`AVOSCloud`进行登录认证. 目前此设置只用来进行SSO登录, Web方式认证统一为`AVOSCloud`
+ *  @warning 如果不进行设置, 则用`AVOSCloud`进行登录认证.
  *
  *  @param type         平台类型
  *  @param appkey       该平台分配的AppKey
