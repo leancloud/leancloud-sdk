@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  AVOSDemo
+
+  Created by Travis on 13-12-12.
+  Copyright (c) 2013年 AVOS. All rights reserved.
+*/
+
+"Object"    ="对象";
+"File"      ="文件";
+"Query"     ="查询";
+"Class"     ="类";
+"Subclass"  ="子类";
+
+"Create"    ="创建";
+"Update"    ="更新";
+"Delete"    ="删除";
+"Get"       ="获取";
+
+"By"        ="按";
+
+"Name"      ="名称";
+"Geo"       ="地理位置";
