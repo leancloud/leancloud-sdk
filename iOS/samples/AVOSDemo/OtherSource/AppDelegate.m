@@ -134,7 +134,7 @@
 
     
     UINavigationController *nc=[[UINavigationController alloc] initWithRootViewController:tabC];
-    //nc.navigationBar.barStyle=UIBarStyleBlack;
+
     return nc;
 }
 

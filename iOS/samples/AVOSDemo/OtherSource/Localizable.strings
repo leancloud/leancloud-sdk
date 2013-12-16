@@ -6,18 +6,26 @@
   Copyright (c) 2013年 AVOS. All rights reserved.
 */
 
+
 "Object"    ="对象";
 "File"      ="文件";
 "Query"     ="查询";
 "Class"     ="类";
 "Subclass"  ="子类";
 
+
 "Create"    ="创建";
 "Update"    ="更新";
 "Delete"    ="删除";
 "Get"       ="获取";
 
+
 "By"        ="按";
+"From"      ="从";
+"With"      ="用";
+
 
 "Name"      ="名称";
+"Path"      ="路径";
 "Geo"       ="地理位置";
+"Thumbnail" ="缩略图";
