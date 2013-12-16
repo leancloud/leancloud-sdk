@@ -6,7 +6,7 @@ Demo采用`cocoapods`安装AVOSCloud的相关Frameworks, 方法非常简单, 用
 
 	pod install
 	
-不出问的话 1分钟即可完成所有设置, 并在文件夹中生成文件名为`AVOSDemo.xcworkspace` 打开这个文件,就可以运行Demo了
+不出问题的话 1分钟即可完成所有设置, 并在文件夹中生成文件名为`AVOSDemo.xcworkspace` 打开这个文件,就可以运行Demo了
 
 
 ### 手动安装
