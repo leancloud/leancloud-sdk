@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.version        = "131213.1139"
+  s.version        = "131216.0238"
   s.source         = { :http => "https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloud.framework.zip"}
 
 
@@ -8,8 +8,9 @@ Pod::Spec.new do |s|
   s.name           = "AVOSCloud"
   s.summary        = "AVOS Cloud iOS SDK for mobile backend."
   s.homepage       = "http://avoscloud.com"
-  s.license        = { :type => 'Commercial', :text => '© Copyright 2013 AVOS Systems, Inc. See http://avoscloud.com' }
-  s.author         = { "Zeng Zhu" => "zzhu@avos.com" }
+  s.license        = { :type => 'Commercial', :text => '© Copyright 2013 AVOS Systems, Inc. See https://cn.avoscloud.com/terms.html' }
+  s.author         = { "AVOS Cloud" => "support@avoscloud.com" }
+  s.documentation_url = 'https://cn.avoscloud.com/docs/api/iOS/index.html'
   s.requires_arc   = true
 
   

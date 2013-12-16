@@ -68,7 +68,7 @@ typedef void (^AVSNSProgressBlock)(float percent);
  *  @param type         平台类型
  *  @param appkey       该平台分配的AppKey
  *  @param appsec       该平台分配的AppSecret
- *  @param redirect_uri 该平台上设置的回调地址
+ *  @param redirect_uri 该平台上设置的回调地址 (QQ可以nil, 因为QQ没有这个设置选项. 新浪微博必填!)
  */
 +(void)setupPlatform:(AVOSCloudSNSType)type
           withAppKey:(NSString*)appkey andAppSecret:(NSString*)appsec andRedirectURI:(NSString*)redirect_uri;
