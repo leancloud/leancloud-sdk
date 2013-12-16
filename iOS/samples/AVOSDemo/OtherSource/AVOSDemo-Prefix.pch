@@ -1,0 +1,22 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+
+    #define SourcePath [[NSBundle mainBundle] pathForResource:[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent] ofType:nil inDirectory:@"SourceCode"]
+
+    #define MakeSourcePath -(NSString*)sourcePath{return SourcePath;}
+
+    #import <AVOSCloud/AVOSCloud.h>
+#endif
+
