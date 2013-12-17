@@ -53,6 +53,12 @@ The name of the file.
 @property (readonly) NSString *name;
 
 /*!
+ The id of the file.
+ */
+@property (readwrite, copy) NSString * objectId;
+
+
+/*!
  The url of the file.
  */
 @property (readonly) NSString *url;
@@ -236,8 +242,6 @@ The name of the file.
 
  */
 -(NSString *)ownerId;
-
-@property (readwrite, copy) NSString * objectId;
 
 
 /*!
