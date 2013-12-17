@@ -12,12 +12,14 @@
 "Query"     ="查询";
 "Class"     ="类";
 "Subclass"  ="子类";
-
+"User"      ="用户";
 
 "Create"    ="创建";
 "Update"    ="更新";
 "Delete"    ="删除";
 "Get"       ="获取";
+"Register"  ="注册";
+"Login"     ="登陆";
 
 
 "By"        ="按";

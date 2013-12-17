@@ -12,6 +12,14 @@
 			<key>detail</key>
 			<string>基本AVObject用法, 增删改查</string>
 		</dict>
+        <dict>
+			<key>class</key>
+			<string>AVUserBasic</string>
+			<key>name</key>
+			<string>用户</string>
+			<key>detail</key>
+			<string>用户的基本操作</string>
+		</dict>
 		<dict>
 			<key>class</key>
 			<string>AVQueryBasic</string>

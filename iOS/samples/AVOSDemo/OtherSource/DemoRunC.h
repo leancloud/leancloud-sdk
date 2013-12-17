@@ -15,4 +15,6 @@
 
 @property(nonatomic, copy) NSString *methodName;
 
+@property(nonatomic, retain) NSString *sourceCode;
+
 @end

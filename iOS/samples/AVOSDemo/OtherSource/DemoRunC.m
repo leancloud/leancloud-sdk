@@ -7,7 +7,7 @@
 //
 
 #import "DemoRunC.h"
-
+#import "SourceViewController.h"
 @interface DemoRunC ()
 
 @end
@@ -23,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+
 	UITextView *textView=[[UITextView alloc] initWithFrame:self.view.bounds];
     
     textView.editable=NO;
@@ -34,8 +37,65 @@
     self.demo.outputView=textView;
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"运行" style:UIBarButtonItemStyleBordered target:self action:@selector(run)];
+    
+    [self getMethodSourceCode];
 }
 
+-(void)getMethodSourceCode{
+    if (self.demo.sourcePath) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *code=[NSString stringWithContentsOfFile:self.demo.sourcePath encoding:NSUTF8StringEncoding error:nil];
+            
+            if (code) {
+                //找到这个方法的代码段, 并捕获方法内容
+                NSString *ptn=[NSString stringWithFormat:@"-\\s{0,}\\(void\\)\\s{0,}%@\\s{0,}\\{([^-]+)\\}",self.methodName];
+                
+                NSError *err=nil;
+                NSRegularExpression *re=[NSRegularExpression
+                                         regularExpressionWithPattern:ptn
+                                         options:NSRegularExpressionDotMatchesLineSeparators
+                                         error:&err];
+                
+                if (err) {
+                    
+                }else{
+                    NSTextCheckingResult *result =[re firstMatchInString:code options:NSMatchingReportCompletion range:NSMakeRange(0, code.length)];
+                    if (result) {
+                        NSString *methodCode=[code substringWithRange:[result rangeAtIndex:1]];
+                        
+                        //向前缩进一次
+                        methodCode=[methodCode stringByReplacingOccurrencesOfString:@"\n    " withString:@"\n"];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            SourceViewController *sc=[[SourceViewController alloc] init];
+                            [self addChildViewController:sc];
+                            
+                            [sc loadCode:methodCode];
+                            
+                            CGRect f=self.demo.outputView.frame;
+                            float height=f.size.height*0.5;
+                            
+                            sc.webView.frame=CGRectMake(0, f.origin.y+2, f.size.width, height);
+                            sc.webView.autoresizingMask=UIViewAutoresizingFlexibleWidth;
+                            [self.view addSubview:sc.webView];
+                            
+                            f.origin.y+=height;
+                            f.size.height-=height;
+                            self.demo.outputView.frame=f;
+                        });
+                    }
+                    
+                }
+            }
+            
+        });
+        
+        
+        
+    }
+
+}
 
 
 @end
