@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import com.avos.avoscloud.AVException;
 
+import java.io.Closeable;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -109,6 +110,17 @@ public class DemoBaseActivity  extends ListActivity {
             showMessage(null, exception, false);
         }
     }
+
+    public void closeQuietly(Closeable closeable) {
+        try {
+            if (closeable != null) {
+                closeable.close();
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
 
     public boolean isBlankString(final String string) {
         if (string == null || string.trim().isEmpty()) {

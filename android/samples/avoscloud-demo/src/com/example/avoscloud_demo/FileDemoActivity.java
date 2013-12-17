@@ -36,15 +36,6 @@ public class FileDemoActivity extends DemoBaseActivity {
         setupAdapter();
     }
 
-    private void closeQuietly(Closeable closeable) {
-        try {
-            if (closeable != null) {
-                closeable.close();
-            }
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-    }
 
     private byte[] readFile(File file) {
         RandomAccessFile rf = null;
