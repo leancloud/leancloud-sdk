@@ -91,6 +91,8 @@ public class DemoGroupActivity extends ListActivity {
             demoMap.put("ObjectDemoActivity", "com.example.avoscloud_demo.ObjectDemoActivity");
             demoMap.put("UserDemoActivity", "com.example.avoscloud_demo.UserDemoActivity");
             demoMap.put("FileDemoActivity", "com.example.avoscloud_demo.FileDemoActivity");
+            demoMap.put("SubclassDemoActivity", "com.example.avoscloud_demo.SubclassDemoActivity");
+
         }
         return demoMap;
     }
