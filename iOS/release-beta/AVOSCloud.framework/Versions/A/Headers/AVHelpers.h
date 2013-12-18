@@ -42,3 +42,10 @@
 
 @end
 
+
+@interface NSURLRequest (curl)
+/* 获得当前请求的curl命令行代码, 方便命令行调试 对比结果
+ * @return 当前请求的curl命令行代码
+ */
+- (NSString *)cURLCommand;
+@end
