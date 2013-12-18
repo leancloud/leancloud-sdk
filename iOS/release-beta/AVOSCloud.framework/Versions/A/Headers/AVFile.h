@@ -33,8 +33,9 @@
 
 /*!
  Creates a file with given url.
+ @warning only for getting image thumbnail with a known QiNiu file url
  @param url The url of file.
- @result A AVFile.
+ @result an AVFile.
  */
 + (id)fileWithURL:(NSString *)url;
 
@@ -50,6 +51,12 @@
 The name of the file.
  */
 @property (readonly) NSString *name;
+
+/*!
+ The id of the file.
+ */
+@property (readwrite, copy) NSString * objectId;
+
 
 /*!
  The url of the file.
@@ -235,8 +242,6 @@ The name of the file.
 
  */
 -(NSString *)ownerId;
-
-@property (readwrite, copy) NSString * objectId;
 
 
 /*!
