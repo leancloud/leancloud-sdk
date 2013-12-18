@@ -104,8 +104,9 @@
 		1F3AF9A41828C6DE003277B5 = {
 			isa = PBXGroup;
 			children = (
-				1F1E0FB518585AD200E9097E /* OtherSource */,
+				1F66B209185EF7BA0034AA65 /* README.md */,
 				1F3AF9B61828C6DE003277B5 /* AVOSDemo */,
+				1F1E0FB518585AD200E9097E /* OtherSource */,
 				1F3AF9B71828C6DE003277B5 /* Supporting Files */,
 				1F3AF9AF1828C6DE003277B5 /* Frameworks */,
 				1F3AF9AE1828C6DE003277B5 /* Products */,
@@ -152,7 +153,6 @@
 		1F3AF9B71828C6DE003277B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F66B209185EF7BA0034AA65 /* README.md */,
 				1F66B1FF185EA8B40034AA65 /* AVOSDemo-Info.plist */,
 				1F66B200185EA8B40034AA65 /* cloud.png */,
 				1F66B201185EA8B40034AA65 /* cloud@2x.png */,

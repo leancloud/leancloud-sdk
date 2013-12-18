@@ -17,7 +17,7 @@
 -(void)log:(NSString*)msg{
     NSLog(@"%@",msg);
     NSString *text= self.outputView.text;
-    self.outputView.text=[text stringByAppendingFormat:@"\n%@",msg];
+    self.outputView.text=[text stringByAppendingFormat:@"\n-------- RUN --------\n%@",msg];
     [self.outputView scrollRectToVisible:CGRectMake(0, self.outputView.contentSize.height, 1, 1) animated:YES];
 }
 
