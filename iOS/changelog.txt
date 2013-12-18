@@ -1,3 +1,16 @@
+# 2.1.1 发布日期: 2013-12-13
+* AVOSCloudSNS可以分享文字和图片了(目前支持新浪微博)
+* AVOSCloudSNS可以自动刷新token过期
+* AVOSCloudSNS尊重新浪微博AppKey设置, 如果没有SSO设置, 也可以用AppKey来从web方式授权.
+* 原来用SDK内嵌的`AFNetworking`的会出现找不到AFNetworking的编译错误(从2.1.0开始) 可以 `#import <AVOSCloud/AFNetwokingFix.h>` 来解决
+
+CocoaPods官方源已经更新.
+也可以通过测试版的Podspec来使用我们几乎每天都会更新的开发中的SDK:
+pod 'AVOSCloud', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloud.podspec'
+pod 'AVOSCloudUI', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudUI.podspec'
+pod 'AVOSCloudSNS', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudSNS.podspec'
+
+
 # 2.1.0 发布日期: 2013-12-06
 * 解决子类化访问AVRelation时不会调用relationforKey的问题
 * 清理错误常量，增加kAVErrorUsernamePasswordMismatch
@@ -22,7 +35,7 @@
 * 解决将文件存在数组中保存后，再次获取，返回对象不正确的问题
 * 增加default ACL支持
 * 解决orderBySortDescriptors 传入参数为数组时存在的问题
-* 默认禁止crash report 
+* 默认禁止crash report
 * parseClassName 变为optional
 * 解决objectForKey当传入参数为nil存在的问题
 * 修改统计发送策略，确保首次启动发送
@@ -112,7 +125,3 @@
 主要修改
 
 * 修改CocoaPods 增加icu库的依赖
-
- 
-
-

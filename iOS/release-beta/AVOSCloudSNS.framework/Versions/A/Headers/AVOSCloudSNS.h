@@ -63,12 +63,12 @@ typedef void (^AVSNSProgressBlock)(float percent);
 /**
  *  设置平台所需要的参数
  *
- *  @warning 如果不进行设置, 则用`AVOSCloud`进行登录认证. 目前此设置只用来进行SSO登录, Web方式认证统一为`AVOSCloud`
+ *  @warning 如果不进行设置, 则用`AVOSCloud`进行登录认证.
  *
  *  @param type         平台类型
  *  @param appkey       该平台分配的AppKey
  *  @param appsec       该平台分配的AppSecret
- *  @param redirect_uri 该平台上设置的回调地址
+ *  @param redirect_uri 该平台上设置的回调地址 (QQ可以nil, 因为QQ没有这个设置选项. 新浪微博必填!)
  */
 +(void)setupPlatform:(AVOSCloudSNSType)type
           withAppKey:(NSString*)appkey andAppSecret:(NSString*)appsec andRedirectURI:(NSString*)redirect_uri;
