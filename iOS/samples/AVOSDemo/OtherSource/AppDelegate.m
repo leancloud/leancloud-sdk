@@ -13,8 +13,8 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import <AVOSCloudSNS/AVOSCloudSNS.h>
 
-#define AVOSCloudAppID  @"cw87ufwen91hgrcm9iol5engs9w9woooo3gi2p8jy5j1a2hl"
-#define AVOSCloudAppKey @"b163v82v1txfnrnylngkmr4elgliih7yk8t9t0w2h73c9ymp"
+#define AVOSCloudAppID  @"s0g5kxj7ajtf6n2wt8fqty18p25gmvgrh7b430iuugsde212"
+#define AVOSCloudAppKey @"hc7jpfubg5vaurjlezxhfr1t9pqb9w8tfw0puz1g83vl9nwz"
 
 @implementation AppDelegate
 
@@ -41,7 +41,6 @@
      *    andMessage:(NSString *) andQuitTitle:(NSString *) andContinueTitle:(NSString *)]
      */
     [AVAnalytics setCrashReportEnabled:YES];
-    
     
     //可选 打开推送功能 因为推送只支持真机上, 我们可以加个编译时判断
     //同样会防止在模拟器运行时得到`didFailToRegisterForRemoteNotificationsWithError`的错误提醒
