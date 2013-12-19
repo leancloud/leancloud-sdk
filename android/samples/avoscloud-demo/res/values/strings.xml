@@ -27,4 +27,5 @@
     <string name="password">Password</string>
     <string name="signup">Sign Up</string>
     <string name="login">Login</string>
+    <string name="source_code">Show Source Code</string>
 </resources>

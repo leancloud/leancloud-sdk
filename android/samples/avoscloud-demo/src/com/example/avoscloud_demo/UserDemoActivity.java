@@ -24,16 +24,6 @@ import java.io.RandomAccessFile;
  * To change this template use File | Settings | File Templates.
  */
 public class UserDemoActivity extends DemoBaseActivity {
-    private String fileUrl = null;
-    private String objectId = null;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setContentView(R.layout.demo_base);
-        setupAdapter();
-    }
 
     private void signUpImpl(final String message, final String username, final String password) {
         AVUser.logOut();
@@ -88,6 +78,8 @@ public class UserDemoActivity extends DemoBaseActivity {
         AlertDialog ad = builder.create();
         ad.show();
     }
+
+
 
 
 }

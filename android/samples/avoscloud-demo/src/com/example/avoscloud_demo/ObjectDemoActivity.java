@@ -19,14 +19,6 @@ import java.util.*;
 public class ObjectDemoActivity extends DemoBaseActivity {
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setContentView(R.layout.demo_base);
-        setupAdapter();
-    }
-
     public void testObjectCreate(final String string) throws AVException {
 
         final String objectTable = "ObjectDemoTableCreate";

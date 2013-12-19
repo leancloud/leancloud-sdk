@@ -31,16 +31,6 @@ public class SubclassDemoActivity  extends  DemoBaseActivity {
     static final private String SIGNUP_TAG = "signup";
     static final private String LOGIN_TAG = "login";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setContentView(R.layout.demo_base);
-
-        AVObject.registerSubclass(SubObject.class);
-        setupAdapter();
-    }
-
     private class SubuserTask extends AsyncTask<String, Void, Void> {
         volatile private String message = null;
         volatile private Exception exception = null;

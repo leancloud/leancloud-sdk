@@ -2,23 +2,23 @@ package com.example.avoscloud_demo;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Toast;
 import com.avos.avoscloud.AVException;
 
+import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/13/13
- * Time: 10:59 AM
- * To change this template use File | Settings | File Templates.
- */
 public class DemoBaseActivity  extends ListActivity {
 
     private List<String> codeSnippetList = new ArrayList<String>();
@@ -28,6 +28,52 @@ public class DemoBaseActivity  extends ListActivity {
             codeSnippetList.addAll(methodsWithPrefix("test"));
         }
         return codeSnippetList;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        setContentView(R.layout.demo_base);
+        setupAdapter();
+        setupButtonHandlers();
+    }
+
+
+    private void setupButtonHandlers() {
+        Button button = (Button) findViewById(R.id.btn_show_source);
+        if (button != null) {
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showSourceCode();
+                }
+            });
+        }
+    }
+
+    public String readTextFile(InputStream inputStream) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte buf[] = new byte[1024];
+        int len;
+        try {
+            while ((len = inputStream.read(buf)) != -1) {
+                outputStream.write(buf, 0, len);
+            }
+            outputStream.close();
+            inputStream.close();
+        } catch (IOException e) {
+
+        }
+        return outputStream.toString();
+    }
+
+    private void showSourceCode() {
+        String name = this.getClass().getSimpleName().toLowerCase();
+        InputStream inputStream = getResources().openRawResource( getResources().getIdentifier("raw/" + name,"raw", getPackageName()) );
+        String content = readTextFile(inputStream);
+
+
     }
 
     public void setupAdapter() {

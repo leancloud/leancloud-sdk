@@ -28,15 +28,6 @@ public class FileDemoActivity extends DemoBaseActivity {
     private String fileUrl = null;
     private String objectId = null;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setContentView(R.layout.demo_base);
-        setupAdapter();
-    }
-
-
     private byte[] readFile(File file) {
         RandomAccessFile rf = null;
         byte[] data = null;

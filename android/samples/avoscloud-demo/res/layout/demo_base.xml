@@ -4,7 +4,19 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" android:layout_gravity="top">
 
+        <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/source_code"
+                android:id="@+id/btn_show_source" android:layout_gravity="left|center_vertical"/>
+
+    </LinearLayout>
 
     <ListView
             android:layout_width="wrap_content"

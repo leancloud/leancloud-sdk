@@ -15,17 +15,6 @@
                 android:text="Config"
                 android:id="@+id/btn_config" android:layout_gravity="left|center_vertical"/>
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="Cancel"
-                android:id="@+id/btn_cancel" android:layout_gravity="left|center_vertical"/>
-
-        <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:id="@+id/servers"
-                />
     </LinearLayout>
 
     <ListView
