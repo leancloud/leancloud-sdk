@@ -41,7 +41,7 @@ public class SubclassDemoActivity  extends  DemoBaseActivity {
         setupAdapter();
     }
 
-    private class SubuserSignUpTask extends AsyncTask<String, Void, Void> {
+    private class SubuserTask extends AsyncTask<String, Void, Void> {
         volatile private String message = null;
         volatile private Exception exception = null;
         @Override
@@ -56,6 +56,47 @@ public class SubclassDemoActivity  extends  DemoBaseActivity {
             } catch (Exception e) {
                 exception = e;
                 exception.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            SubclassDemoActivity.this.showMessage(message, exception, false);
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
+
+    private class SubObjectTask extends AsyncTask<String, Void, Void> {
+        volatile private String message = null;
+        volatile private Exception exception = null;
+        @Override
+        protected Void doInBackground(String ... params) {
+            message = params[0];
+            try {
+                SubObject armor = new  SubObject();
+                String displayName = "avos cloud subclass object.";
+                armor.setDisplayName(displayName);
+                armor.setBroken(false);
+                armor.save();
+                Assert.assertFalse(armor.getObjectId().isEmpty());
+
+                AVQuery<SubObject> query = AVQuery.getQuery(SubObject.class);
+                SubObject result = query.get(armor.getObjectId());
+                Assert.assertTrue(result instanceof SubObject);
+                String value = result.getDisplayName();
+                Assert.assertEquals(value, displayName);
+            } catch (Exception e) {
+                exception = e;
+                e.printStackTrace();
             }
             return null;
         }
@@ -110,13 +151,18 @@ public class SubclassDemoActivity  extends  DemoBaseActivity {
     }
 
     private void runLoginTask(final String string, final String username, final String password) {
-        SubuserSignUpTask task = new SubuserSignUpTask();
+        SubuserTask task = new SubuserTask();
         task.execute(string, LOGIN_TAG, username, password);
     }
 
     private void runSignUpTask(final String string, final String username, final String password) {
-        SubuserSignUpTask task = new SubuserSignUpTask();
+        SubuserTask task = new SubuserTask();
         task.execute(string, SIGNUP_TAG, username, password);
+    }
+
+    private void runSubObjectTask(final String string) {
+        SubObjectTask task = new SubObjectTask();
+        task.execute(string);
     }
 
     public void testSubUserSignup(final String string) throws AVException {
@@ -149,6 +195,9 @@ public class SubclassDemoActivity  extends  DemoBaseActivity {
         builder.setView(layout);
         AlertDialog ad = builder.create();
         ad.show();
+    }
 
+    public void testSubObject(final String string) throws Exception {
+        runSubObjectTask(string);
     }
 }
