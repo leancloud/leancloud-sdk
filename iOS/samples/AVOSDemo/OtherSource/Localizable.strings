@@ -15,6 +15,8 @@
 "User"      ="用户";
 "Relation"  ="关联";
 "Member"    ="成员";
+"Result"    ="结果";
+"Count"     ="数量";
 
 "Create"    ="创建";
 "Add"       ="添加";
@@ -27,7 +29,7 @@
 "By"        ="按";
 "From"      ="从";
 "With"      ="用";
-
+"Only"      ="仅";
 
 "Name"      ="名称";
 "Path"      ="路径";

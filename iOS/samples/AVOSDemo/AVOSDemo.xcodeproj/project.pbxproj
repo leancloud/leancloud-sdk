@@ -142,20 +142,8 @@
 		1F3AF9B61828C6DE003277B5 /* AVOSDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1FAA7D631859661B00A2065B /* AVObjectBasic.h */,
-				1FAA7D641859661B00A2065B /* AVObjectBasic.m */,
-				1FAA7D7A1859B00300A2065B /* AVQueryBasic.h */,
-				1FAA7D7B1859B00300A2065B /* AVQueryBasic.m */,
-				1FAA7D7D1859BB5600A2065B /* AVFileBasic.h */,
-				1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */,
-				1FAA7D801859BC7500A2065B /* AVSubclassAdvanced.h */,
-				1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */,
-				1F71866A18603F3700D7B79D /* AVUserBasic.h */,
-				1F71866B18603F3700D7B79D /* AVUserBasic.m */,
-				1F53C8C118619B5000FFCBB9 /* Student.h */,
-				1F53C8C218619B5000FFCBB9 /* Student.m */,
-				1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */,
-				1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */,
+				1F53C8C71862E13500FFCBB9 /* Basic */,
+				1F53C8C81862E14600FFCBB9 /* Advanced */,
 			);
 			path = AVOSDemo;
 			sourceTree = "<group>";
@@ -173,6 +161,34 @@
 			);
 			name = "Supporting Files";
 			path = AVOSDemo;
+			sourceTree = "<group>";
+		};
+		1F53C8C71862E13500FFCBB9 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				1FAA7D631859661B00A2065B /* AVObjectBasic.h */,
+				1FAA7D641859661B00A2065B /* AVObjectBasic.m */,
+				1FAA7D7A1859B00300A2065B /* AVQueryBasic.h */,
+				1FAA7D7B1859B00300A2065B /* AVQueryBasic.m */,
+				1FAA7D7D1859BB5600A2065B /* AVFileBasic.h */,
+				1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */,
+				1F71866A18603F3700D7B79D /* AVUserBasic.h */,
+				1F71866B18603F3700D7B79D /* AVUserBasic.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		1F53C8C81862E14600FFCBB9 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				1F53C8C118619B5000FFCBB9 /* Student.h */,
+				1F53C8C218619B5000FFCBB9 /* Student.m */,
+				1FAA7D801859BC7500A2065B /* AVSubclassAdvanced.h */,
+				1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */,
+				1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */,
+				1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */,
+			);
+			name = Advanced;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

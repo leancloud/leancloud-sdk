@@ -65,5 +65,30 @@
     
 }
 
+-(void)demoDeleteRelationMember{
+    //这里默认有个一直的Student的id: 52b290bce4b0c95c1fa49ad7
+    Student *xiaoGang=[Student objectWithoutDataWithObjectId:@"52b290bce4b0c95c1fa49ad7"];
+    
+    //这是AVObject的另一个获取数据的用法, 只获取某些熟悉
+    [xiaoGang fetchIfNeededWithKeys:@[@"friends"]];
+    
+    
+    //假设我们要删掉xiaoGang的这个朋友: 52b290bce4b0c95c1fa49ad7
+    Student *xiaoHong=[Student objectWithoutDataWithObjectId:@"52b290b9e4b0c95c1fa49ad6"];
+    
+    
+    //获取Relation属性
+    AVRelation *friends= [xiaoGang relationforKey:@"friends"];
+    [friends removeObject:xiaoHong];
+    
+    [xiaoGang saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self log:[NSString stringWithFormat:@"关联删除成功 %@",[xiaoGang description]]];
+        }else{
+            [self log:[NSString stringWithFormat:@"关联删除失败 %@",[error description]]];
+        }
+    }];
+}
+
 MakeSourcePath
 @end
