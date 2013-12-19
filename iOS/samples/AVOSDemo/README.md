@@ -28,6 +28,9 @@ Demo采用`cocoapods`安装AVOSCloud的相关Frameworks, 方法非常简单, 用
 
 ![image](OtherSource/demorun.png)
 
+### * 编译警告
+代码中有一些人为添加的编译,是为了引起您足够的重视, 如果觉得没问题可以删除掉该行
+
 ### * 添加Demo
 
 1. 新建一个继承`Demo`的类, 文件位置在项目的`AVOSDemo`文件夹

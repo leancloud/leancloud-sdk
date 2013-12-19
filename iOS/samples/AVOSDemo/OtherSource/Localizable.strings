@@ -13,14 +13,16 @@
 "Class"     ="类";
 "Subclass"  ="子类";
 "User"      ="用户";
+"Relation"  ="关联";
+"Member"    ="成员";
 
 "Create"    ="创建";
+"Add"       ="添加";
 "Update"    ="更新";
 "Delete"    ="删除";
 "Get"       ="获取";
 "Register"  ="注册";
 "Login"     ="登陆";
-
 
 "By"        ="按";
 "From"      ="从";

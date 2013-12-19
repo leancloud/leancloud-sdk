@@ -14,6 +14,7 @@
 		1F3AF9B31828C6DE003277B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */; };
 		1F3AF9B51828C6DE003277B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B41828C6DE003277B5 /* UIKit.framework */; };
 		1F53C8C318619B5000FFCBB9 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C218619B5000FFCBB9 /* Student.m */; };
+		1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */; };
 		1F66B1FE185EA8870034AA65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F66B1FD185EA8870034AA65 /* AppDelegate.m */; };
 		1F66B205185EA8B40034AA65 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B200185EA8B40034AA65 /* cloud.png */; };
 		1F66B206185EA8B40034AA65 /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B201185EA8B40034AA65 /* cloud@2x.png */; };
@@ -42,6 +43,8 @@
 		1F3AF9B41828C6DE003277B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F53C8C118619B5000FFCBB9 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		1F53C8C218619B5000FFCBB9 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRelationAdvanced.h; sourceTree = "<group>"; };
+		1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRelationAdvanced.m; sourceTree = "<group>"; };
 		1F66B1FC185EA8870034AA65 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F66B1FD185EA8870034AA65 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F66B1FF185EA8B40034AA65 /* AVOSDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AVOSDemo-Info.plist"; path = "OtherSource/AVOSDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -151,6 +154,8 @@
 				1F71866B18603F3700D7B79D /* AVUserBasic.m */,
 				1F53C8C118619B5000FFCBB9 /* Student.h */,
 				1F53C8C218619B5000FFCBB9 /* Student.m */,
+				1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */,
+				1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */,
 			);
 			path = AVOSDemo;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				1FAA7D651859661B00A2065B /* AVObjectBasic.m in Sources */,
 				1F1E0FBA18585B1000E9097E /* SourceViewController.m in Sources */,
 				1FAA7D681859668D00A2065B /* Demo.m in Sources */,
+				1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */,
 				1F53C8C318619B5000FFCBB9 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

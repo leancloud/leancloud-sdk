@@ -13,16 +13,6 @@
 
 @implementation AVSubclassAdvanced
 
-+(void)initialize{
-    /* 重要! 注册子类
-     * App生命周期内 只需要执行一次即可
-     * 所以也可以放在App开启时, 比如didFinishLaunchingWithOptions
-     */
-#warning 为了引起你的注意! 如果明白了用法可以删除这行
-    [Student registerSubclass];
-}
-
-
 -(void)demoCreateSubclass{
     Student *aStudent=[Student object];
     aStudent.name=@"XiaoMing";
