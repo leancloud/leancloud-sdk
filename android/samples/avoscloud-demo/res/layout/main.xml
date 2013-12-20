@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" android:layout_gravity="top">
+
+        <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Config"
+                android:id="@+id/btn_config" android:layout_gravity="left|center_vertical"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@android:id/list"
+            android:layout_gravity="center"
+            android:listSelector="#00000000"/>
+</LinearLayout>
+
