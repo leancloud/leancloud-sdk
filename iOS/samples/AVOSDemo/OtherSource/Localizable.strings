@@ -14,9 +14,6 @@
 "Subclass"  ="子类";
 "User"      ="用户";
 "Relation"  ="关联";
-"Member"    ="成员";
-"Result"    ="结果";
-"Count"     ="数量";
 
 "Create"    ="创建";
 "Add"       ="添加";
@@ -25,6 +22,7 @@
 "Get"       ="获取";
 "Register"  ="注册";
 "Login"     ="登陆";
+"Reset"     ="重置";
 
 "By"        ="按";
 "From"      ="从";
@@ -35,3 +33,7 @@
 "Path"      ="路径";
 "Geo"       ="地理位置";
 "Thumbnail" ="缩略图";
+"Member"    ="成员";
+"Result"    ="结果";
+"Count"     ="数量";
+"Password"  ="密码";

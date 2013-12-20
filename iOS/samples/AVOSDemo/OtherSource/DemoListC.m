@@ -87,6 +87,7 @@
     if (method) {
         DemoRunC *rc=[[DemoRunC alloc] init];
         rc.demo=self.demo;
+        
         rc.methodName=method;
         vc=rc;
     }else{

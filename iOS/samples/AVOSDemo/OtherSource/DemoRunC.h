@@ -16,5 +16,7 @@
 @property(nonatomic, copy) NSString *methodName;
 
 @property(nonatomic, retain) NSString *sourceCode;
+@property(nonatomic,weak)UIView *sourceCodeView;
 
+-(void)onFinish;
 @end

@@ -8,6 +8,8 @@
 
 #import "Demo.h"
 #import <objc/runtime.h>
+#import "DemoRunC.h"
+
 @implementation Demo
 
 -(void)dealloc{
@@ -19,6 +21,7 @@
     NSString *text= self.outputView.text;
     self.outputView.text=[text stringByAppendingFormat:@"\n-------- RUN --------\n%@",msg];
     [self.outputView scrollRectToVisible:CGRectMake(0, self.outputView.contentSize.height, 1, 1) animated:YES];
+    [self.controller onFinish];
 }
 
 /* 把方法名本地化*/

@@ -10,15 +10,29 @@
 #import "SourceViewController.h"
 
 @interface DemoRunC ()
-@property(nonatomic,weak)UIView *sourceCodeView;
+@property(nonatomic,retain)UIBarButtonItem *runBtn;
 @end
 
 @implementation DemoRunC
 
+-(void)setDemo:(Demo *)demo{
+    _demo=demo;
+    demo.controller=self;
+}
 
 -(void)run{
+    UIActivityIndicatorView *av=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [av startAnimating];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:av];
+
+    
     SEL selector = NSSelectorFromString(self.methodName);
     ((void (*)(id, SEL))[self.demo methodForSelector:selector])(self.demo, selector);
+}
+
+-(void)onFinish{
+    self.runBtn.title=@"再次运行";
+    self.navigationItem.rightBarButtonItem=self.runBtn;
 }
 
 - (void)viewDidLoad
@@ -39,8 +53,8 @@
     
     self.demo.outputView=textView;
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"运行" style:UIBarButtonItemStyleBordered target:self action:@selector(run)];
-    
+    self.runBtn=[[UIBarButtonItem alloc] initWithTitle:@"运行" style:UIBarButtonItemStyleBordered target:self action:@selector(run)];
+    self.navigationItem.rightBarButtonItem=self.runBtn;
     [self getMethodSourceCode];
 }
 
