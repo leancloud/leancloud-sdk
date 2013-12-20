@@ -12,7 +12,7 @@
 			<key>detail</key>
 			<string>基本AVObject用法, 增删改查</string>
 		</dict>
-        <dict>
+		<dict>
 			<key>class</key>
 			<string>AVUserBasic</string>
 			<key>name</key>
@@ -46,6 +46,14 @@
 			<string>子类化</string>
 			<key>detail</key>
 			<string>子类化的相关例子</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVRelationAdvanced</string>
+			<key>name</key>
+			<string>关联操作(一对多, 多对多关系)</string>
+			<key>detail</key>
+			<string>AVRelation增删改查.</string>
 		</dict>
 	</array>
 	<key>SNS组件</key>

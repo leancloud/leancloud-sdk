@@ -30,6 +30,7 @@
 
 
 -(void)demoUserLogin{
+
     
     [AVUser logInWithUsernameInBackground:@"XiaoMing" password:@"123456" block:^(AVUser *user, NSError *error) {
         if (user) {
@@ -43,5 +44,20 @@
         }
     }];
 }
+
+-(void)demoResetPassword{
+    //假设用户的邮箱是这个 重置密码链接会发到这里 用户打开会重新填写新密码
+    NSString *email=@"test@somemail.com";
+    
+    //如果用户忘记了密码 可以通过这个方法来重置密码
+    [AVUser requestPasswordResetForEmailInBackground:@"test@somemail.com" block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self log:[NSString stringWithFormat:@"重置密码的连接已经发送到用户邮箱 %@",email]];
+        }else{
+            [self log:[NSString stringWithFormat:@"重置密码出错 %@",[error description]]];
+        }
+    }];
+}
+
 MakeSourcePath
 @end
