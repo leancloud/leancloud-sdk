@@ -1,1 +1,0 @@
-../../src/com/example/avoscloud_demo/FileDemoActivity.java

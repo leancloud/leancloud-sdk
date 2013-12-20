@@ -23,7 +23,7 @@ public class SourceCodeActivity extends Activity {
         InputStream inputStream = getResources().openRawResource( getResources().getIdentifier("raw/" + "index", "raw", getPackageName()));
         String content = DemoBaseActivity.readTextFile(inputStream);
         content = content.replace("__CODE__", code);
-        String baseUrl = "file:///android_asset/raw";
+        String baseUrl = "file:///android_res/raw/";
         webView.loadDataWithBaseURL(baseUrl, content, "", "", "");
     }
 
