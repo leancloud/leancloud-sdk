@@ -26,6 +26,21 @@
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    //统计页面打开
+    [AVAnalytics beginLogPageView:self.title];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    //统计页面关闭
+    [AVAnalytics endLogPageView:self.title];
+}
+
 -(void)showSource{
     SourceViewController *vc=[[SourceViewController alloc] init];
     vc.filePath=self.demo.sourcePath;
@@ -72,6 +87,7 @@
     if (method) {
         DemoRunC *rc=[[DemoRunC alloc] init];
         rc.demo=self.demo;
+        
         rc.methodName=method;
         vc=rc;
     }else{

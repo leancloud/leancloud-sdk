@@ -8,16 +8,27 @@
 
 #import "Demo.h"
 #import <objc/runtime.h>
+#import "DemoRunC.h"
+
 @implementation Demo
+
+-(void)dealloc{
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+}
 
 -(void)log:(NSString*)msg{
     NSLog(@"%@",msg);
     NSString *text= self.outputView.text;
-    self.outputView.text=[text stringByAppendingFormat:@"\n%@",msg];
+    self.outputView.text=[text stringByAppendingFormat:@"\n-------- RUN --------\n%@",msg];
     [self.outputView scrollRectToVisible:CGRectMake(0, self.outputView.contentSize.height, 1, 1) animated:YES];
+    [self.controller onFinish];
 }
 
+/* 把方法名本地化*/
 -(NSString*)localizedNameForMethod:(NSString*)mtd{
+    //方法名都是标准骆驼命名法
+    //简单的用正在分词
+    //每个词都在Localizable.strings做好翻译就组成了一个本地化的显示名称
     NSRegularExpression *re=[[NSRegularExpression alloc] initWithPattern:@"[A-Z]" options:NSRegularExpressionDotMatchesLineSeparators error:nil];
     NSArray *results= [re matchesInString:mtd options:NSMatchingReportCompletion range:NSMakeRange(0, mtd.length-1)];
     
@@ -64,7 +75,7 @@
         
         
         
-        
+        //只显示demo开头的方法
         if ([mtd hasPrefix:@"demo"]) {
             NSDictionary *info=@{
                                  @"name":[self localizedNameForMethod:name],

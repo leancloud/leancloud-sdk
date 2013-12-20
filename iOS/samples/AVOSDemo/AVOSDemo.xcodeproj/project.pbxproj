@@ -13,11 +13,14 @@
 		1F3AF9B11828C6DE003277B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B01828C6DE003277B5 /* Foundation.framework */; };
 		1F3AF9B31828C6DE003277B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */; };
 		1F3AF9B51828C6DE003277B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B41828C6DE003277B5 /* UIKit.framework */; };
+		1F53C8C318619B5000FFCBB9 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C218619B5000FFCBB9 /* Student.m */; };
+		1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */; };
 		1F66B1FE185EA8870034AA65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F66B1FD185EA8870034AA65 /* AppDelegate.m */; };
 		1F66B205185EA8B40034AA65 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B200185EA8B40034AA65 /* cloud.png */; };
 		1F66B206185EA8B40034AA65 /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B201185EA8B40034AA65 /* cloud@2x.png */; };
 		1F66B207185EA8B40034AA65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B202185EA8B40034AA65 /* Images.xcassets */; };
 		1F66B208185EA8B40034AA65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B203185EA8B40034AA65 /* Localizable.strings */; };
+		1F71866C18603F3700D7B79D /* AVUserBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71866B18603F3700D7B79D /* AVUserBasic.m */; };
 		1FAA7D5618586FE800A2065B /* DemoListC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D5518586FE800A2065B /* DemoListC.m */; };
 		1FAA7D581859551C00A2065B /* DemoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA7D571859551C00A2065B /* DemoConfig.plist */; };
 		1FAA7D651859661B00A2065B /* AVObjectBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D641859661B00A2065B /* AVObjectBasic.m */; };
@@ -38,6 +41,10 @@
 		1F3AF9B01828C6DE003277B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1F3AF9B41828C6DE003277B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F53C8C118619B5000FFCBB9 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		1F53C8C218619B5000FFCBB9 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRelationAdvanced.h; sourceTree = "<group>"; };
+		1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRelationAdvanced.m; sourceTree = "<group>"; };
 		1F66B1FC185EA8870034AA65 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F66B1FD185EA8870034AA65 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F66B1FF185EA8B40034AA65 /* AVOSDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AVOSDemo-Info.plist"; path = "OtherSource/AVOSDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -45,6 +52,9 @@
 		1F66B201185EA8B40034AA65 /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cloud@2x.png"; path = "OtherSource/cloud@2x.png"; sourceTree = SOURCE_ROOT; };
 		1F66B202185EA8B40034AA65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OtherSource/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		1F66B203185EA8B40034AA65 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = OtherSource/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		1F66B209185EF7BA0034AA65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		1F71866A18603F3700D7B79D /* AVUserBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVUserBasic.h; sourceTree = "<group>"; };
+		1F71866B18603F3700D7B79D /* AVUserBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVUserBasic.m; sourceTree = "<group>"; };
 		1FAA7D5418586FE800A2065B /* DemoListC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListC.h; sourceTree = "<group>"; };
 		1FAA7D5518586FE800A2065B /* DemoListC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListC.m; sourceTree = "<group>"; };
 		1FAA7D571859551C00A2065B /* DemoConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DemoConfig.plist; path = OtherSource/DemoConfig.plist; sourceTree = SOURCE_ROOT; };
@@ -100,8 +110,9 @@
 		1F3AF9A41828C6DE003277B5 = {
 			isa = PBXGroup;
 			children = (
-				1F1E0FB518585AD200E9097E /* OtherSource */,
+				1F66B209185EF7BA0034AA65 /* README.md */,
 				1F3AF9B61828C6DE003277B5 /* AVOSDemo */,
+				1F1E0FB518585AD200E9097E /* OtherSource */,
 				1F3AF9B71828C6DE003277B5 /* Supporting Files */,
 				1F3AF9AF1828C6DE003277B5 /* Frameworks */,
 				1F3AF9AE1828C6DE003277B5 /* Products */,
@@ -131,14 +142,8 @@
 		1F3AF9B61828C6DE003277B5 /* AVOSDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1FAA7D631859661B00A2065B /* AVObjectBasic.h */,
-				1FAA7D641859661B00A2065B /* AVObjectBasic.m */,
-				1FAA7D7A1859B00300A2065B /* AVQueryBasic.h */,
-				1FAA7D7B1859B00300A2065B /* AVQueryBasic.m */,
-				1FAA7D7D1859BB5600A2065B /* AVFileBasic.h */,
-				1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */,
-				1FAA7D801859BC7500A2065B /* AVSubclassAdvanced.h */,
-				1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */,
+				1F53C8C71862E13500FFCBB9 /* Basic */,
+				1F53C8C81862E14600FFCBB9 /* Advanced */,
 			);
 			path = AVOSDemo;
 			sourceTree = "<group>";
@@ -146,16 +151,44 @@
 		1F3AF9B71828C6DE003277B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FAA7D571859551C00A2065B /* DemoConfig.plist */,
 				1F66B1FF185EA8B40034AA65 /* AVOSDemo-Info.plist */,
 				1F66B200185EA8B40034AA65 /* cloud.png */,
 				1F66B201185EA8B40034AA65 /* cloud@2x.png */,
 				1F66B202185EA8B40034AA65 /* Images.xcassets */,
 				1F66B203185EA8B40034AA65 /* Localizable.strings */,
 				1F1E0FBB18585C0E00E9097E /* html */,
-				1FAA7D571859551C00A2065B /* DemoConfig.plist */,
 			);
 			name = "Supporting Files";
 			path = AVOSDemo;
+			sourceTree = "<group>";
+		};
+		1F53C8C71862E13500FFCBB9 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				1FAA7D631859661B00A2065B /* AVObjectBasic.h */,
+				1FAA7D641859661B00A2065B /* AVObjectBasic.m */,
+				1FAA7D7A1859B00300A2065B /* AVQueryBasic.h */,
+				1FAA7D7B1859B00300A2065B /* AVQueryBasic.m */,
+				1FAA7D7D1859BB5600A2065B /* AVFileBasic.h */,
+				1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */,
+				1F71866A18603F3700D7B79D /* AVUserBasic.h */,
+				1F71866B18603F3700D7B79D /* AVUserBasic.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		1F53C8C81862E14600FFCBB9 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				1F53C8C118619B5000FFCBB9 /* Student.h */,
+				1F53C8C218619B5000FFCBB9 /* Student.m */,
+				1FAA7D801859BC7500A2065B /* AVSubclassAdvanced.h */,
+				1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */,
+				1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */,
+				1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */,
+			);
+			name = Advanced;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +313,7 @@
 				1FAA7D821859BC7500A2065B /* AVSubclassAdvanced.m in Sources */,
 				1FAA7D7C1859B00300A2065B /* AVQueryBasic.m in Sources */,
 				1FAA7D7F1859BB5600A2065B /* AVFileBasic.m in Sources */,
+				1F71866C18603F3700D7B79D /* AVUserBasic.m in Sources */,
 				1FAA7D6B1859691F00A2065B /* DemoRunC.m in Sources */,
 				1F66B1FE185EA8870034AA65 /* AppDelegate.m in Sources */,
 				1F1E0FB718585AD200E9097E /* main.m in Sources */,
@@ -287,6 +321,8 @@
 				1FAA7D651859661B00A2065B /* AVObjectBasic.m in Sources */,
 				1F1E0FBA18585B1000E9097E /* SourceViewController.m in Sources */,
 				1FAA7D681859668D00A2065B /* Demo.m in Sources */,
+				1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */,
+				1F53C8C318619B5000FFCBB9 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +408,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSource/AVOSDemo-Prefix.pch";
@@ -379,6 +416,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,6 +428,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSource/AVOSDemo-Prefix.pch";
@@ -397,6 +436,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class DemoRunC;
 @interface Demo : NSObject
 @property(nonatomic,readonly) NSString *sourcePath;
 @property(nonatomic,weak) UITextView *outputView;
+@property(nonatomic,weak) DemoRunC *controller;
 -(NSArray*)allDemoMethod;
 
 -(void)log:(NSString*)msg;
