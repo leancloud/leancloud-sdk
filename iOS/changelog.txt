@@ -1,3 +1,11 @@
+# 2.1.2 发布日期：2013-12-20
+
+* 优化统计逻辑
+* 完善CrashReport数据, 以后可以在统计后台简单的定位错误原因
+* SNS模块 SSO没成功的情况, 尊重QQ AppKey设置
+* 发布全新demo项目，我们制作了一个Demo 帮助使用AVOSCloud的开发者, 尽快的熟悉和使用SDK而建立的, 包含了各种基础和高级用法. 以后会持续更新.
+详细说明在[这里](https://github.com/avos/avoscloud-sdk/tree/master/iOS/samples/AVOSDemo)
+
 # 2.1.1 发布日期: 2013-12-13
 * AVOSCloudSNS可以分享文字和图片了(目前支持新浪微博)
 * AVOSCloudSNS可以自动刷新token过期
