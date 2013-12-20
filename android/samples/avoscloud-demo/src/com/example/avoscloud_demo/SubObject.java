@@ -3,13 +3,6 @@ package com.example.avoscloud_demo;
 import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVObject;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/18/13
- * Time: 12:08 PM
- * To change this template use File | Settings | File Templates.
- */
 @AVClassName("Armor")
 public class SubObject extends AVObject {
     public String getDisplayName() {

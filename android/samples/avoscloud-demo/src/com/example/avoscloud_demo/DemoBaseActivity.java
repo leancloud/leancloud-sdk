@@ -2,6 +2,7 @@ package com.example.avoscloud_demo;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DemoBaseActivity  extends ListActivity {
+
+    static public final String CONTENT_TAG = "content";
 
     private List<String> codeSnippetList = new ArrayList<String>();
 
@@ -52,9 +55,9 @@ public class DemoBaseActivity  extends ListActivity {
         }
     }
 
-    public String readTextFile(InputStream inputStream) {
+    static public String readTextFile(InputStream inputStream) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        byte buf[] = new byte[1024];
+        byte buf[] = new byte[8 * 1024];
         int len;
         try {
             while ((len = inputStream.read(buf)) != -1) {
@@ -63,7 +66,7 @@ public class DemoBaseActivity  extends ListActivity {
             outputStream.close();
             inputStream.close();
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
         return outputStream.toString();
     }
@@ -72,8 +75,7 @@ public class DemoBaseActivity  extends ListActivity {
         String name = this.getClass().getSimpleName().toLowerCase();
         InputStream inputStream = getResources().openRawResource( getResources().getIdentifier("raw/" + name,"raw", getPackageName()) );
         String content = readTextFile(inputStream);
-
-
+        startSourceCodeActivity(content);
     }
 
     public void setupAdapter() {
@@ -82,6 +84,16 @@ public class DemoBaseActivity  extends ListActivity {
                 android.R.layout.simple_list_item_1,
                 array);
         setListAdapter(adapter);
+    }
+
+    private void startSourceCodeActivity(final String content) {
+        try {
+            Intent intent = new Intent(this, SourceCodeActivity.class);
+            intent.putExtra(CONTENT_TAG, content);
+            startActivity(intent);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
     public void showMessage(final String message) {

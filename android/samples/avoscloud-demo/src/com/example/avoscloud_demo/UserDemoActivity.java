@@ -16,13 +16,6 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.RandomAccessFile;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/17/13
- * Time: 5:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class UserDemoActivity extends DemoBaseActivity {
 
     private void signUpImpl(final String message, final String username, final String password) {

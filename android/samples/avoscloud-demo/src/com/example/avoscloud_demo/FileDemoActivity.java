@@ -16,13 +16,6 @@ import java.io.RandomAccessFile;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/16/13
- * Time: 4:22 PM
- * To change this template use File | Settings | File Templates.
- */
 public class FileDemoActivity extends DemoBaseActivity {
 
     private String fileUrl = null;

@@ -9,13 +9,6 @@ import junit.framework.Assert;
 import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/12/13
- * Time: 3:21 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ObjectDemoActivity extends DemoBaseActivity {
 
 

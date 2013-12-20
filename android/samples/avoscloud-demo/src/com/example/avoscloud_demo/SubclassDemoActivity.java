@@ -20,13 +20,6 @@ import java.io.RandomAccessFile;
 
 import static junit.framework.Assert.assertFalse;
 
-/**
- * Created with IntelliJ IDEA.
- * User: zhuzeng
- * Date: 12/18/13
- * Time: 11:45 AM
- * To change this template use File | Settings | File Templates.
- */
 public class SubclassDemoActivity  extends  DemoBaseActivity {
     static final private String SIGNUP_TAG = "signup";
     static final private String LOGIN_TAG = "login";
