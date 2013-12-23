@@ -72,10 +72,14 @@ public class DemoBaseActivity  extends ListActivity {
     }
 
     private void showSourceCode() {
-        String name = this.getClass().getSimpleName().toLowerCase();
-        InputStream inputStream = getResources().openRawResource( getResources().getIdentifier("raw/" + name,"raw", getPackageName()) );
-        String content = readTextFile(inputStream);
-        startSourceCodeActivity(content);
+        try {
+            String name = this.getClass().getSimpleName().toLowerCase();
+            InputStream inputStream = getAssets().open(name);
+            String content = readTextFile(inputStream);
+            startSourceCodeActivity(content);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
     public void setupAdapter() {
