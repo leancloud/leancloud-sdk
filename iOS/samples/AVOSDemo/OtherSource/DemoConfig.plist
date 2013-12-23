@@ -36,6 +36,15 @@
 			<key>detail</key>
 			<string>AVFile 基本文件操作</string>
 		</dict>
+        <dict>
+			<key>class</key>
+			<string>AVAnalyticsBasic</string>
+			<key>name</key>
+			<string>统计用法</string>
+			<key>detail</key>
+			<string>AVAnalytics 基本文件操作</string>
+		</dict>
+        
 	</array>
 	<key>高级用法</key>
 	<array>

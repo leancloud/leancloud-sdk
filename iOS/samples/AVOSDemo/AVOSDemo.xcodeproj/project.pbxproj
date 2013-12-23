@@ -21,6 +21,7 @@
 		1F66B207185EA8B40034AA65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B202185EA8B40034AA65 /* Images.xcassets */; };
 		1F66B208185EA8B40034AA65 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F66B203185EA8B40034AA65 /* Localizable.strings */; };
 		1F71866C18603F3700D7B79D /* AVUserBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71866B18603F3700D7B79D /* AVUserBasic.m */; };
+		1F88944718682291007A9A4B /* AVAnalyticsBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F88944618682291007A9A4B /* AVAnalyticsBasic.m */; };
 		1FAA7D5618586FE800A2065B /* DemoListC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D5518586FE800A2065B /* DemoListC.m */; };
 		1FAA7D581859551C00A2065B /* DemoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA7D571859551C00A2065B /* DemoConfig.plist */; };
 		1FAA7D651859661B00A2065B /* AVObjectBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D641859661B00A2065B /* AVObjectBasic.m */; };
@@ -55,6 +56,8 @@
 		1F66B209185EF7BA0034AA65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		1F71866A18603F3700D7B79D /* AVUserBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVUserBasic.h; sourceTree = "<group>"; };
 		1F71866B18603F3700D7B79D /* AVUserBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVUserBasic.m; sourceTree = "<group>"; };
+		1F88944518682291007A9A4B /* AVAnalyticsBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAnalyticsBasic.h; sourceTree = "<group>"; };
+		1F88944618682291007A9A4B /* AVAnalyticsBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAnalyticsBasic.m; sourceTree = "<group>"; };
 		1FAA7D5418586FE800A2065B /* DemoListC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListC.h; sourceTree = "<group>"; };
 		1FAA7D5518586FE800A2065B /* DemoListC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListC.m; sourceTree = "<group>"; };
 		1FAA7D571859551C00A2065B /* DemoConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DemoConfig.plist; path = OtherSource/DemoConfig.plist; sourceTree = SOURCE_ROOT; };
@@ -174,6 +177,8 @@
 				1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */,
 				1F71866A18603F3700D7B79D /* AVUserBasic.h */,
 				1F71866B18603F3700D7B79D /* AVUserBasic.m */,
+				1F88944518682291007A9A4B /* AVAnalyticsBasic.h */,
+				1F88944618682291007A9A4B /* AVAnalyticsBasic.m */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				1F1E0FBA18585B1000E9097E /* SourceViewController.m in Sources */,
 				1FAA7D681859668D00A2065B /* Demo.m in Sources */,
 				1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */,
+				1F88944718682291007A9A4B /* AVAnalyticsBasic.m in Sources */,
 				1F53C8C318619B5000FFCBB9 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
