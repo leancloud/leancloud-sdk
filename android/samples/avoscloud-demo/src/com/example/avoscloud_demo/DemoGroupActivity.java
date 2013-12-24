@@ -92,7 +92,7 @@ public class DemoGroupActivity extends ListActivity {
             demoMap.put("UserDemoActivity", "com.example.avoscloud_demo.UserDemoActivity");
             demoMap.put("FileDemoActivity", "com.example.avoscloud_demo.FileDemoActivity");
             demoMap.put("SubclassDemoActivity", "com.example.avoscloud_demo.SubclassDemoActivity");
-
+            demoMap.put("QueryDemoActivity", "com.example.avoscloud_demo.QueryDemoActivity");
         }
         return demoMap;
     }

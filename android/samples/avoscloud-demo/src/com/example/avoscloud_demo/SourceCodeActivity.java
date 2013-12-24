@@ -19,12 +19,16 @@ public class SourceCodeActivity extends Activity {
     }
 
     private void loadContent() {
-        String code = getIntent().getStringExtra(DemoBaseActivity.CONTENT_TAG);
-        InputStream inputStream = getResources().openRawResource( getResources().getIdentifier("raw/" + "index", "raw", getPackageName()));
-        String content = DemoBaseActivity.readTextFile(inputStream);
-        content = content.replace("__CODE__", code);
-        String baseUrl = "file:///android_res/raw/";
-        webView.loadDataWithBaseURL(baseUrl, content, "", "", "");
+        try {
+            String code = getIntent().getStringExtra(DemoBaseActivity.CONTENT_TAG);
+            InputStream inputStream = getAssets().open("index.html");
+            String template = DemoBaseActivity.readTextFile(inputStream);
+            template = template.replace("__CODE__", code);
+            String baseUrl = "file:///android_asset/";
+            webView.loadDataWithBaseURL(baseUrl, template, "text/html", "UTF-8", "");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
 }
