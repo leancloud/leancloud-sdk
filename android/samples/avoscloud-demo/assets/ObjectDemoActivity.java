@@ -12,30 +12,6 @@ import java.util.*;
 public class ObjectDemoActivity extends DemoBaseActivity {
 
 
-    public void testObjectCreate(final String string) throws AVException {
-
-        final String objectTable = "ObjectDemoTableCreate";
-        final String key = "score";
-        AVObject gameScore = new AVObject(objectTable);
-        final int targetValue = new Random().nextInt();
-        gameScore.put(key, targetValue);
-        int value = gameScore.getInt(key);
-        Assert.assertTrue(value == targetValue);
-
-        final String targetString = "Sean Plott";
-        gameScore.put("playerName", targetString);
-        String stringValue = gameScore.getString("playerName");
-        Assert.assertTrue(stringValue == targetString);
-
-        gameScore.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(AVException e) {
-                showMessage(string, e, false);
-
-            }
-        });
-    }
-
     // create an object and query it.
     public void testObjectRead(final String string) throws AVException {
         final String key = "array";
@@ -62,6 +38,30 @@ public class ObjectDemoActivity extends DemoBaseActivity {
                         }
                     });
             }});
+    }
+
+    public void testObjectCreate(final String string) throws AVException {
+
+        final String objectTable = "ObjectDemoTableCreate";
+        final String key = "score";
+        AVObject gameScore = new AVObject(objectTable);
+        final int targetValue = new Random().nextInt();
+        gameScore.put(key, targetValue);
+        int value = gameScore.getInt(key);
+        Assert.assertTrue(value == targetValue);
+
+        final String targetString = "Sean Plott";
+        gameScore.put("playerName", targetString);
+        String stringValue = gameScore.getString("playerName");
+        Assert.assertTrue(stringValue == targetString);
+
+        gameScore.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(AVException e) {
+                showMessage(string, e, false);
+
+            }
+        });
     }
 
     // update an object

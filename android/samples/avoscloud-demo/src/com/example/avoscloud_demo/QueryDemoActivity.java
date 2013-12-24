@@ -5,10 +5,12 @@ import com.avos.avoscloud.*;
 import junit.framework.Assert;
 
 import java.util.List;
+import java.util.Random;
 
 public class QueryDemoActivity extends DemoBaseActivity {
 
-    static private final String BASIC_QUERY = "basic";
+    static private final String BASIC_QUERY = "basic_query";
+    static private final String USER_QUERY = "user_query";
 
     private class QueryTask extends AsyncTask<String, Void, Void> {
         volatile private String message = null;
@@ -16,9 +18,12 @@ public class QueryDemoActivity extends DemoBaseActivity {
         @Override
         protected Void doInBackground(String ... params) {
             message = params[0];
+            String type = params[1];
             try {
-                if (BASIC_QUERY.equals(message)) {
+                if (BASIC_QUERY.equals(type)) {
                     QueryDemoActivity.this.objectQueryImpl();
+                } else if (USER_QUERY.equals(type)) {
+                    QueryDemoActivity.this.userQueryImpl();
                 }
             } catch (Exception e) {
                 exception = e;
@@ -42,6 +47,39 @@ public class QueryDemoActivity extends DemoBaseActivity {
         }
     }
 
+    public static String getRandomString(int length) {
+        String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder randomString = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            randomString.append(letters.charAt(new Random().nextInt(letters.length())));
+        }
+
+        return randomString.toString();
+    }
+
+    private void userQueryImpl() throws Exception {
+        String lastString = null;
+        // signup some test user
+        for(int i = 0; i < 10; ++i) {
+            AVUser  user = new AVUser();
+            user.setUsername(getRandomString(10));
+            user.setPassword(getRandomString(10));
+            user.signUp();
+            Assert.assertFalse(user.getObjectId().isEmpty());
+            lastString = user.getUsername();
+        }
+
+        AVQuery currentQuery = AVUser.getQuery();
+        AVQuery innerQuery = AVUser.getQuery();
+        innerQuery.whereContains("username", lastString);
+        currentQuery.whereMatchesKeyInQuery("username", "username", innerQuery);
+        List<AVUser> users = currentQuery.find();
+        Assert.assertTrue(users.size() == 1);
+        for(AVUser resultUser : users) {
+            Assert.assertTrue(resultUser.getUsername().equals(lastString));
+        }
+    }
 
     private void objectQueryImpl() throws Exception {
         AVObject person1 = AVObject.create("Person");
@@ -90,4 +128,8 @@ public class QueryDemoActivity extends DemoBaseActivity {
         task.execute(BASIC_QUERY, string);
     }
 
+    public void testUserQuery(final String string) throws AVException {
+        QueryTask task = new QueryTask();
+        task.execute(USER_QUERY, string);
+    }
 }

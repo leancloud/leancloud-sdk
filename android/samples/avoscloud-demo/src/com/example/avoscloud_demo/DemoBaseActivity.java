@@ -73,7 +73,7 @@ public class DemoBaseActivity  extends ListActivity {
 
     private void showSourceCode() {
         try {
-            String name = this.getClass().getSimpleName().toLowerCase();
+            String name = this.getClass().getSimpleName() + ".java";
             InputStream inputStream = getAssets().open(name);
             String content = readTextFile(inputStream);
             startSourceCodeActivity(content);
