@@ -23,12 +23,20 @@
 #import "AVRelation.h"
 #import "AVSubclassing.h"
 
-typedef enum AVStorageType : NSInteger {
+/**
+ *  Storage Type
+ */
+typedef NS_ENUM(int, AVStorageType){
+    /* QiNiu */
     AVStorageTypeQiniu = 0,
+    
+    /* Parse */
     AVStorageTypeParse,
+    
+    /* AWS S3 */
     AVStorageTypeS3,
-    AVStorageTypeNum
-} AVStorageType;
+    
+} ;
 
 typedef enum AVLogLevel : NSUInteger {
     AVLogLevelNone      = 0,
@@ -41,6 +49,10 @@ typedef enum AVLogLevel : NSUInteger {
 
 #define kAVDefaultNetworkTimeoutInterval 10.0
 
+
+/**
+ *  AVOSCloud is the main Class for AVOSCloud SDK
+ */
 @interface AVOSCloud : NSObject
 
 /** @name Connecting to AVOS Cloud */
@@ -48,19 +60,49 @@ typedef enum AVLogLevel : NSUInteger {
 /*!
  Sets the applicationId and clientKey of your application.
  @param applicationId The applicaiton id for your AVOS Cloud application.
- @param applicationId The client key for your AVOS Cloud application.
+ @param clientKey The client key for your AVOS Cloud application.
  */
 + (void)setApplicationId:(NSString *)applicationId clientKey:(NSString *)clientKey;
+
+/**
+ *  get Application Id
+ *
+ *  @return Application Id
+ */
 + (NSString *)getApplicationId;
+
+/**
+ *  get Client Key
+ *
+ *  @return Client Key
+ */
 + (NSString *)getClientKey;
 
 + (void)useAVCloud;
 + (void)setStorageType:(AVStorageType)type;
 
+/**
+ *  Use AVOS US data center
+ */
 + (void)useAVCloudUS;
+
+/**
+ *  Use AVOS China data center. the default option is China
+ */
 + (void)useAVCloudCN;
 
+/**
+ *  *  get the timeout interval for AVOS request
+ *
+ *  @return timeout interval
+ */
 + (NSTimeInterval)networkTimeoutInterval;
+
+/**
+ *  set the timeout interval for AVOS request
+ *
+ *  @param time  timeout interval
+ */
 + (void)setNetworkTimeoutInterval:(NSTimeInterval)time;
 
 // log
@@ -68,11 +110,34 @@ typedef enum AVLogLevel : NSUInteger {
 + (AVLogLevel)logLevel;
 
 #pragma mark Schedule work
-// default 30 days
+
+/**
+ *  get the query cache expired days
+ *
+ *  @return the query cache expired days
+ */
 + (NSInteger)queryCacheExpiredDays;
+
+/**
+ *  set Query Cache Expired Days, default is 30 days
+ *
+ *  @param days the days you want to set
+ */
 + (void)setQueryCacheExpiredDays:(NSInteger)days;
-// default 30 days
+
+/**
+ *  get the file cache expired days
+ *
+ *  @return the file cache expired days
+ */
 + (NSInteger)fileCacheExpiredDays;
+
+
+/**
+ *  set File Cache Expired Days, default is 30 days
+ *
+ *  @param days the days you want to set
+ */
 + (void)setFileCacheExpiredDays:(NSInteger)days;
 
 

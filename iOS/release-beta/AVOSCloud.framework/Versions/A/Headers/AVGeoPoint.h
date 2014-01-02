@@ -21,7 +21,7 @@
 /** @name Creating a AVGeoPoint */
 /*!
  Create a AVGeoPoint object.  Latitude and longitude are set to 0.0.
- @result Returns a new AVGeoPoint.
+ @return Returns a new AVGeoPoint.
  */
 + (AVGeoPoint *)geoPoint;
 
@@ -29,7 +29,7 @@
  Creates a new AVGeoPoint object for the given CLLocation, set to the location's
  coordinates.
  @param location CLLocation object, with set latitude and longitude.
- @result Returns a new AVGeoPoint at specified location.
+ @return Returns a new AVGeoPoint at specified location.
  */
 + (AVGeoPoint *)geoPointWithLocation:(CLLocation *)location;
 
@@ -37,7 +37,7 @@
  Creates a new AVGeoPoint object with the specified latitude and longitude.
  @param latitude Latitude of point in degrees.
  @param longitude Longitude of point in degrees.
- @result New point object with specified latitude and longitude.
+ @return New point object with specified latitude and longitude.
  */
 + (AVGeoPoint *)geoPointWithLatitude:(double)latitude longitude:(double)longitude;
 
@@ -61,21 +61,21 @@
 /*!
  Get distance in radians from this point to specified point.
  @param point AVGeoPoint location of other point.
- @result distance in radians
+ @return distance in radians
  */
 - (double)distanceInRadiansTo:(AVGeoPoint*)point;
 
 /*!
  Get distance in miles from this point to specified point.
  @param point AVGeoPoint location of other point.
- @result distance in miles
+ @return distance in miles
  */
 - (double)distanceInMilesTo:(AVGeoPoint*)point;
 
 /*!
  Get distance in kilometers from this point to specified point.
  @param point AVGeoPoint location of other point.
- @result distance in kilometers
+ @return distance in kilometers
  */
 - (double)distanceInKilometersTo:(AVGeoPoint*)point;
 

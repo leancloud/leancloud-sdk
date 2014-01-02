@@ -25,6 +25,7 @@
 
 /*!
  Creates an ACL where only the provided user has access.
+ @param user the AVUser
  */
 + (AVACL *)ACLWithUser:(AVUser *)user;
 
@@ -32,7 +33,9 @@
 
 /*!
  Set whether the public is allowed to read this object.
+ @param allowed allowed or not
  */
+
 - (void)setPublicReadAccess:(BOOL)allowed;
 
 /*!
@@ -42,6 +45,7 @@
 
 /*!
  Set whether the public is allowed to write this object.
+ @param allowed allowed or not
  */
 - (void)setPublicWriteAccess:(BOOL)allowed;
 
@@ -54,6 +58,8 @@
 
 /*!
  Set whether the given user id is allowed to read this object.
+ @param allowed allowed or not
+ @param userId the AVUser's objectId
  */
 - (void)setReadAccess:(BOOL)allowed forUserId:(NSString *)userId;
 
@@ -61,11 +67,14 @@
  Gets whether the given user id is *explicitly* allowed to read this object.
  Even if this returns NO, the user may still be able to access it if getPublicReadAccess returns YES
  or if the user belongs to a role that has access.
+ @param userId the AVUser's objectId
  */
 - (BOOL)getReadAccessForUserId:(NSString *)userId;
 
 /*!
  Set whether the given user id is allowed to write this object.
+ @param allowed allowed or not
+ @param userId the AVUser's objectId
  */
 - (void)setWriteAccess:(BOOL)allowed forUserId:(NSString *)userId;
 
@@ -73,11 +82,15 @@
  Gets whether the given user id is *explicitly* allowed to write this object.
  Even if this returns NO, the user may still be able to write it if getPublicWriteAccess returns YES
  or if the user belongs to a role that has access.
+ 
+ @param userId the AVUser's objectId
  */
 - (BOOL)getWriteAccessForUserId:(NSString *)userId;
 
 /*!
  Set whether the given user is allowed to read this object.
+ @param allowed allowed or not
+ @param user the AVUser
  */
 - (void)setReadAccess:(BOOL)allowed forUser:(AVUser *)user;
 
@@ -85,11 +98,14 @@
  Gets whether the given user is *explicitly* allowed to read this object.
  Even if this returns NO, the user may still be able to access it if getPublicReadAccess returns YES
  or if the user belongs to a role that has access.
+ @param user the AVUser
  */
 - (BOOL)getReadAccessForUser:(AVUser *)user;
 
 /*!
  Set whether the given user is allowed to write this object.
+ @param allowed allowed or not
+ @param user the AVUser
  */
 - (void)setWriteAccess:(BOOL)allowed forUser:(AVUser *)user;
 
@@ -97,6 +113,7 @@
  Gets whether the given user is *explicitly* allowed to write this object.
  Even if this returns NO, the user may still be able to write it if getPublicWriteAccess returns YES
  or if the user belongs to a role that has access.
+ @param user the AVUser
  */
 - (BOOL)getWriteAccessForUser:(AVUser *)user;
 

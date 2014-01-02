@@ -9,18 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
 
-typedef enum {
-    AV_REALTIME = 0,       // 实时发送, debug only
-    AV_BATCH = 1,          // 启动发送，当消息数量收集到30条时也会发送
-    AV_SENDDAILY = 4,      // 每日发送
-    AV_SENDWIFIONLY = 5,   // 仅在WIFI下启动时发送, debug only
-    AV_SEND_INTERVAL = 6,  // 按最小间隔发送
-    AV_SEND_ON_EXIT = 7    // 退出或进入后台时发送
-} AVReportPolicy;
+
+/**
+ *  Report Policy
+ */
+typedef NS_ENUM(int, AVReportPolicy){
+    /// 实时发送, debug only
+    AV_REALTIME = 0,
+    
+    /// 启动发送，当消息数量收集到30条时也会发送
+    AV_BATCH = 1,
+    
+    /// 每日发送
+    AV_SENDDAILY = 4,
+    
+    /// 仅在WIFI下启动时发送, debug only
+    AV_SENDWIFIONLY = 5,
+    
+    /// 按最小间隔发送
+    AV_SEND_INTERVAL = 6,
+    
+    /// 退出或进入后台时发送
+    AV_SEND_ON_EXIT = 7
+    
+} ;
 
 @protocol AVAnalyticsDelegate;
 @class CLLocation;
 
+
+/**
+ *  统计功能
+ *
+ *  稳定实时的数据统计分析服务，从用户量，用户行为，渠道效果，自定义事件等多个维度，帮助您更清楚的了解用户习惯，提高用户黏性和活跃度
+ */
 @interface AVAnalytics : NSObject
 
 + (void)trackAppOpenedWithLaunchOptions:(NSDictionary *)launchOptions;
@@ -83,7 +105,6 @@ typedef enum {
 /**
  当reportPolicy == AV_SEND_INTERVAL 时设定log发送间隔
  @param second 单位为秒,最小为10,最大为86400(一天).
- @return void.
  */
 
 + (void)setLogSendInterval:(double)second;
@@ -95,19 +116,17 @@ typedef enum {
 
 /** 开启统计,默认以AV_BATCH方式发送log. 1.4.3以后不再需要，请前往在线配置进行配置。
  https://cn.avoscloud.com/stat.html?appid=YOUR_APP_ID&os=ios#/statconfig/trans_strategoy
-  @return void
  */
 
-+ (void)start;
++ (void)start __attribute__((deprecated("1.4.3以后不再需要，请前往在线配置进行配置")));
 
 /** 开启统计,默认以AV_BATCH方式发送log. 1.4.3以后不再需要，请前往在线配置进行配置。
  https://cn.avoscloud.com/stat.html?appid=YOUR_APP_ID&os=ios#/statconfig/trans_strategoy
  
- @param reportPolicy 发送策略.
- @param channelId 渠道名称,为nil或@""时,默认会被被当作@"App Store"渠道
- @return void
+ @param rp 发送策略.
+ @param cid 渠道名称,为nil或@""时,默认会被被当作@"App Store"渠道
  */
-+ (void)startWithReportPolicy:(AVReportPolicy)rp channelId:(NSString *)cid;
++ (void)startWithReportPolicy:(AVReportPolicy)rp channelId:(NSString *)cid __attribute__((deprecated("1.4.3以后不再需要，请前往在线配置进行配置")));
 
 ///---------------------------------------------------------------------------------------
 /// @name  页面计时
@@ -161,7 +180,7 @@ typedef enum {
 
 /** 自定义事件,数量统计.
  @param  eventId 自定义的事件Id.
- @param  acc 事件的累计发生次数，可以将相同事件合并在一起发送节省网络流量.
+ @param  accumulation 事件的累计发生次数，可以将相同事件合并在一起发送节省网络流量.
  @return void.
  */
 + (void)event:(NSString *)eventId acc:(NSInteger)accumulation;
@@ -169,14 +188,14 @@ typedef enum {
 /** 自定义事件,数量统计.
  @param  eventId 自定义的事件Id.
  @param  label 分类标签。不同的标签会分别进行统计，方便同一事件的不同标签的对比,为nil或空字符串时后台会生成和eventId同名的标签.
- @param  acc 事件的累计发生次数，可以将相同事件合并在一起发送节省网络流量.
+ @param  accumulation 事件的累计发生次数，可以将相同事件合并在一起发送节省网络流量.
  */
 + (void)event:(NSString *)eventId label:(NSString *)label acc:(NSInteger)accumulation;
 
 
  /** 自定义事件,数量统计.
  @param  eventId 自定义的事件Id.
- @param  attributes的key最大为128个bytes(128个英文及数字或42个左右汉字)。attributes的value最大为256个bytes(256个英文及数字或84个左右汉字),
+ @param  attributes key最大为128个bytes(128个英文及数字或42个左右汉字)。attributes的value最大为256个bytes(256个英文及数字或84个左右汉字),
   超过后将被截短。
  */
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes;
@@ -208,14 +227,14 @@ typedef enum {
 
 /** 自定义事件,时长统计， 记录事件开始。
  @param eventId 自定义事件的Id.
- @param primarykey 自定义关键事件的标签. 关键事件标签用于区分同名事件，但不参与统计运算结果.
+ @param keyName 自定义关键事件的标签. 关键事件标签用于区分同名事件，但不参与统计运算结果.
  @param attributes 自定义事件的属性列表.
  */
 + (void)beginEvent:(NSString *)eventId primarykey :(NSString *)keyName attributes:(NSDictionary *)attributes;
 
 /** 自定义事件,时长统计， 记录事件结束。
  @param eventId 自定义事件的Id.
- @param primarykey 自定义关键事件的标签. 关键事件标签用于区分同名事件，但不参与统计运算结果.
+ @param keyName 自定义关键事件的标签. 关键事件标签用于区分同名事件，但不参与统计运算结果.
  */
 + (void)endEvent:(NSString *)eventId primarykey:(NSString *)keyName;
 
@@ -228,7 +247,7 @@ typedef enum {
 
 /** 自定义事件,时长统计.
  @param eventId 自定义事件的Id.
- @param  label 分类标签。不同的标签会分别进行统计，方便同一事件的不同标签的对比,为nil或空字符串时后台会生成和eventId同名的标签.
+ @param label 分类标签。不同的标签会分别进行统计，方便同一事件的不同标签的对比,为nil或空字符串时后台会生成和eventId同名的标签.
  @param millisecond 自定义事件的持续时间.
  */
 
@@ -249,7 +268,7 @@ typedef enum {
 
 
 /** 使用在线参数功能，可以让你动态修改应用中的参数值,
- 检查并更新服务器端配置的在线参数,缓存在[NSUserDefaults standardUserDefaults]里,
+ 检查并更新服务器端配置的在线参数,缓存在NSUserDefaults里,
  调用此方法您将自动拥有在线更改SDK端发送策略的功能,您需要先在服务器端设置好在线参数.
  请在[AVAnalytics start]方法之后调用;
  @param 无.
@@ -259,7 +278,7 @@ typedef enum {
 + (void)updateOnlineConfig;
 
 /** 使用在线参数功能，可以让你动态修改应用中的参数值,
- 检查并更新服务器端配置的在线参数,缓存在[NSUserDefaults standardUserDefaults]里,
+ 检查并更新服务器端配置的在线参数,缓存在NSUserDefaults里,
  调用此方法您将自动拥有在线更改SDK端发送策略的功能,您需要先在服务器端设置好在线参数.
  请在[AVAnalytics start]方法之后调用;
  @param block 自定义的接收block，您的配置参数会通过block传给您的应用.
@@ -272,8 +291,8 @@ typedef enum {
  带参数的方法获取某个key的值，不带参数的获取所有的在线参数.
  需要先调用updateOnlineConfig才能使用
  
- @param key
- @return (NSString *) .
+ @param key 键名
+ @return 返回键值
  */
 
 + (NSString *)getConfigParams:(NSString *)key;

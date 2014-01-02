@@ -17,6 +17,7 @@
  
  Subclasses support simpler initializers, query syntax, and dynamic synthesizers. The following shows an example subclass:
  
+ ```
  @interface MYGame : AVObject< AVSubclassing >
  // Accessing this property is the same as objectForKey:@"title"
  @property (retain) NSString *title;
@@ -33,6 +34,7 @@
  MYGame *game = [[MYGame alloc] init];
  game.title = @"Bughouse";
  [game saveInBackground];
+ ```
  
  */
 @interface AVObject(Subclass)
@@ -62,7 +64,7 @@
  This method can only be called on subclasses which conform to AVSubclassing.
  A default implementation is provided by AVObject which should always be sufficient.
  @param objectId The object id for the referenced object.
- @result A AVObject without data.
+ @return A AVObject without data.
  */
 + (instancetype)objectWithoutDataWithObjectId:(NSString *)objectId;
 

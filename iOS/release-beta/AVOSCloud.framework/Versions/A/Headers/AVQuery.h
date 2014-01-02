@@ -39,6 +39,8 @@
  * Predicates comparing one key to another.
  * Complex predicates with many ORed clauses.
  
+ @param className the class name
+ @param predicate the predicates
  */
 + (AVQuery *)queryWithClassName:(NSString *)className predicate:(NSPredicate *)predicate;
 
@@ -140,7 +142,7 @@
 
 /*!
  Add a constraint to the query that requires a particular key's array contains every element of the provided array.
- @param arrayKey The key to be constrained.
+ @param key The key to be constrained.
  @param array The array of values to search for.
  */
 - (void)whereKey:(NSString *)key containsAllObjectsInArray:(NSArray *)array;
@@ -243,9 +245,16 @@
 /*!
  Returns a AVQuery that is the or of the passed in AVQuerys.
  @param queries The list of queries to or together.
- @result a AVQuery that is the or of the passed in AVQuerys.
+ @return a AVQuery that is the or of the passed in AVQuerys.
  */
 + (AVQuery *)orQueryWithSubqueries:(NSArray *)queries;
+
+/*!
+ Returns a AVQuery that is the AND of the passed in AVQuerys.
+ @param queries The list of queries to AND together.
+ @return a AVQuery that is the AND of the passed in AVQuerys.
+ */
++ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries;
 
 /*!
  Adds a constraint that requires that a key's value matches a value in another key
@@ -340,15 +349,17 @@
  Returns a AVObject with a given class and id.
  @param objectClass The class name for the object that is being requested.
  @param objectId The id of the object that is being requested.
- @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVObject *)getObjectOfClass:(NSString *)objectClass
                       objectId:(NSString *)objectId;
 
 /*!
  Returns a AVObject with a given class and id and sets an error if necessary.
+ @param objectClass The class name for the object that is being requested.
+ @param objectId The id of the object that is being requested.
  @param error Pointer to an NSError that will be set if necessary.
- @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVObject *)getObjectOfClass:(NSString *)objectClass
                       objectId:(NSString *)objectId
@@ -360,7 +371,7 @@
  This mutates the AVQuery.
  
  @param objectId The id of the object that is being requested.
- @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 - (AVObject *)getObjectWithId:(NSString *)objectId;
 
@@ -370,7 +381,7 @@
  This mutates the AVQuery
  
  @param error Pointer to an NSError that will be set if necessary.
- @result The AVObject if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
 - (AVObject *)getObjectWithId:(NSString *)objectId error:(NSError **)error;
 
@@ -378,7 +389,7 @@
  Gets a AVObject asynchronously and calls the given block with the result. 
  
  This mutates the AVQuery
- 
+ @param objectId The id of the object being requested.
  @param block The block to execute. The block should have the following argument signature: (NSArray *object, NSError *error)
  */
 - (void)getObjectInBackgroundWithId:(NSString *)objectId
@@ -405,14 +416,14 @@
 /*!
  Returns a AVUser with a given id.
  @param objectId The id of the object that is being requested.
- @result The AVUser if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVUser if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVUser *)getUserObjectWithId:(NSString *)objectId;
 
 /*!
  Returns a AVUser with a given class and id and sets an error if necessary.
  @param error Pointer to an NSError that will be set if necessary.
- @result The AVUser if found. Returns nil if the object isn't found, or if there was an error.
+ @return The AVUser if found. Returns nil if the object isn't found, or if there was an error.
  */
 + (AVUser *)getUserObjectWithId:(NSString *)objectId
                           error:(NSError **)error;
@@ -429,14 +440,14 @@
 
 /*!
  Finds objects based on the constructed query.
- @result Returns an array of AVObjects that were found.
+ @return Returns an array of AVObjects that were found.
  */
 - (NSArray *)findObjects;
 
 /*!
  Finds objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns an array of AVObjects that were found.
+ @return Returns an array of AVObjects that were found.
  */
 - (NSArray *)findObjects:(NSError **)error;
 
@@ -468,7 +479,7 @@
  
  This mutates the AVQuery.
  
- @result Returns a AVObject, or nil if none was found.
+ @return Returns a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject;
 
@@ -478,7 +489,7 @@
  This mutates the AVQuery.
  
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns a AVObject, or nil if none was found.
+ @return Returns a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject:(NSError **)error;
 
@@ -508,14 +519,14 @@
 
 /*!
   Counts objects based on the constructed query.
- @result Returns the number of AVObjects that match the query, or -1 if there is an error.
+ @return Returns the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects;
 
 /*!
   Counts objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns the number of AVObjects that match the query, or -1 if there is an error.
+ @return Returns the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects:(NSError **)error;
 
@@ -574,7 +585,7 @@
 
 /*!
  Returns whether there is a cached result for this query.
- @result YES if there is a cached result for this query, and NO otherwise.
+ @return YES if there is a cached result for this query, and NO otherwise.
  */
 - (BOOL)hasCachedResult;
 

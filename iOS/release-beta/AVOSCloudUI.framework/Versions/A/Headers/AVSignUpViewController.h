@@ -65,7 +65,7 @@ extern NSString *const AVSignUpCancelNotification;
 /*!
  Sent to the delegate to determine whether the sign up request should be submitted to the server.
  @param info a dictionary which contains all sign up information that the user entered.
- @result a boolean indicating whether the sign up should proceed.
+ @return a boolean indicating whether the sign up should proceed.
  */
 - (BOOL)signUpViewController:(AVSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info;
 

@@ -18,7 +18,7 @@
 /*!
  Creates a file with given data. A name will be assigned to it by the server.
  @param data The contents of the new AVFile.
- @result A AVFile.
+ @return A AVFile.
  */
 + (id)fileWithData:(NSData *)data;
 
@@ -26,7 +26,7 @@
  Creates a file with given data and name.
  @param name The name of the new AVFile.
  @param data The contents of the new AVFile.
- @result A AVFile.
+ @return A AVFile.
  */
 + (id)fileWithName:(NSString *)name data:(NSData *)data;
 
@@ -35,7 +35,7 @@
  Creates a file with given url.
  @warning only for getting image thumbnail with a known QiNiu file url
  @param url The url of file.
- @result an AVFile.
+ @return an AVFile.
  */
 + (id)fileWithURL:(NSString *)url;
 
@@ -77,20 +77,20 @@ The name of the file.
 
 /*!
  Saves the file.
- @result Returns whether the save succeeded.
+ @return Returns whether the save succeeded.
  */
 - (BOOL)save;
 
 /*!
  Saves the file and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the save succeeded.
+ @return Returns whether the save succeeded.
  */
 - (BOOL)save:(NSError **)error;
 
 /*!
  Saves the file asynchronously.
- @result Returns whether the save succeeded.
+ @return Returns whether the save succeeded.
  */
 - (void)saveInBackground;
 
@@ -126,7 +126,7 @@ The name of the file.
 /*!
  Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers.
- @result The data. Returns nil if there was an error in fetching.
+ @return The data. Returns nil if there was an error in fetching.
  */
 - (NSData *)getData;
 
@@ -134,7 +134,7 @@ The name of the file.
  This method is like getData but avoids ever holding the entire AVFile's
  contents in memory at once. This can help applications with many large AVFiles
  avoid memory warnings.
- @result A stream containing the data. Returns nil if there was an error in 
+ @return A stream containing the data. Returns nil if there was an error in 
  fetching.
  */
 - (NSInputStream *)getDataStream;
@@ -143,7 +143,7 @@ The name of the file.
  Gets the data from cache if available or fetches its contents from the AVOS Cloud
  servers. Sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @result The data. Returns nil if there was an error in fetching.
+ @return The data. Returns nil if there was an error in fetching.
  */
 - (NSData *)getData:(NSError **)error;
 
@@ -152,7 +152,7 @@ The name of the file.
  contents in memory at once. This can help applications with many large AVFiles
  avoid memory warnings. Sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @result A stream containing the data. Returns nil if there was an error in 
+ @return A stream containing the data. Returns nil if there was an error in 
  fetching.
  */
 - (NSInputStream *)getDataStream:(NSError **)error;
@@ -176,7 +176,7 @@ The name of the file.
  Asynchronously gets the data from cache if available or fetches its contents 
  from the AVOS Cloud servers. Executes the resultBlock upon
  completion or error. Executes the progressBlock periodically with the percent progress. progressBlock will get called with 100 before resultBlock is called.
- @param block The block should have the following argument signature: (NSData *result, NSError *error)
+ @param resultBlock The block should have the following argument signature: (NSData *result, NSError *error)
  @param progressBlock The block should have the following argument signature: (int percentDone)
  */
 - (void)getDataInBackgroundWithBlock:(AVDataResultBlock)resultBlock

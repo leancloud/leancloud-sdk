@@ -28,7 +28,7 @@
  For example, [AVUser object] returns a AVUser by default but will return an
  object of a registered subclass instead if one is known.
  A default implementation is provided by AVObject which should always be sufficient.
- @result Returns the object that is instantiated.
+ @return Returns the object that is instantiated.
  */
 + (instancetype)object;
 
@@ -37,7 +37,7 @@
  object will return NO until fetchIfNeeded or refresh has been called.  No network request will be made.
  A default implementation is provided by AVObject which should always be sufficient.
  @param objectId The object id for the referenced object.
- @result A AVObject without data.
+ @return A AVObject without data.
  */
 + (instancetype)objectWithoutDataWithObjectId:(NSString *)objectId;
 

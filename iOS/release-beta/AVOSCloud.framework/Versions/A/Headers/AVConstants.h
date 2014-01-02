@@ -28,18 +28,6 @@ extern NSString *const kPFDeviceType;
 #endif
 
 
-// Cache policies
-typedef enum {
-    kPFCachePolicyIgnoreCache = 0,
-    kPFCachePolicyCacheOnly,
-    kPFCachePolicyNetworkOnly,
-    kPFCachePolicyCacheElseNetwork,
-    kPFCachePolicyNetworkElseCache,
-    kPFCachePolicyCacheThenNetwork,
-
-} PFCachePolicy;
-
-
 /// Cache policies
 typedef NS_ENUM(int, AVCachePolicy){
     ///Ignore Cache
@@ -60,6 +48,14 @@ typedef NS_ENUM(int, AVCachePolicy){
     ///CacheThenNetwork
     kAVCachePolicyCacheThenNetwork,
 } ;
+
+typedef AVCachePolicy PFCachePolicy;
+#define kPFCachePolicyIgnoreCache kAVCachePolicyIgnoreCache
+#define kPFCachePolicyCacheOnly kAVCachePolicyCacheOnly
+#define kPFCachePolicyNetworkOnly kAVCachePolicyNetworkOnly
+#define kPFCachePolicyCacheElseNetwork kAVCachePolicyCacheElseNetwork
+#define kPFCachePolicyNetworkElseCache kAVCachePolicyNetworkElseCache
+#define kPFCachePolicyCacheThenNetwork kAVCachePolicyCacheThenNetwork
 
 // Errors
 

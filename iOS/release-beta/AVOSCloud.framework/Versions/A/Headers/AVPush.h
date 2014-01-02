@@ -65,15 +65,30 @@
  */
 - (void)setData:(NSDictionary *)data;
 
-/*!
- Sets whether this push will go to Android devices. Defaults to true.
+/**
+ *  Sets whether this push will go to Android devices.
+ *
+ *  @param pushToAndroid Defaults to true.
  */
 - (void)setPushToAndroid:(BOOL)pushToAndroid;
 
 /*!
  Sets whether this push will go to iOS devices. Defaults to true.
  */
+/**
+ *  Sets whether this push will go to iOS devices
+ *
+ *  @param pushToIOS  Defaults to true
+ */
 - (void)setPushToIOS:(BOOL)pushToIOS;
+
+/**
+ *  Sets to push at sometime 
+ *
+ *  @param dateToPush   Defaults is now.
+ */
+- (void)setPushDate:(NSDate*)dateToPush;
+
 
 /*!
  Sets the expiration time for this notification. The notification will be
@@ -81,7 +96,7 @@
  is sent, or which come online before the expiration time is reached.
  Because device clocks are not guaranteed to be accurate, most applications
  should instead use expireAfterTimeInterval.
- @param time The time at which the notification should expire.
+ @param date The time at which the notification should expire.
  */
 - (void)expireAtDate:(NSDate *)date;
 
@@ -92,7 +107,7 @@
  time interval of the notification being received by AVOS Cloud server.
  An interval which is less than or equal to zero indicates that the
  message should only be sent to devices which are currently online.
- @param interval The interval after which the notification should expire.
+ @param timeInterval The interval after which the notification should expire.
  */
 - (void)expireAfterTimeInterval:(NSTimeInterval)timeInterval;
 
@@ -110,7 +125,7 @@
  a letter and contain only letters, numbers, dashes, and underscores.
  @param message The message to send.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the send succeeded.
+ @return Returns whether the send succeeded.
  */
 + (BOOL)sendPushMessageToChannel:(NSString *)channel
                      withMessage:(NSString *)message
@@ -155,7 +170,7 @@
  created with [AVInstallation query].
  @param message The message to send.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the send succeeded.
+ @return Returns whether the send succeeded.
  */
 + (BOOL)sendPushMessageToQuery:(AVQuery *)query
                    withMessage:(NSString *)message
@@ -184,7 +199,7 @@
 /*!
  Send this push message.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the send succeeded.
+ @return Returns whether the send succeeded.
  */
 - (BOOL)sendPush:(NSError **)error;
 
@@ -212,7 +227,7 @@
  a letter and contain only letters, numbers, dashes, and underscores.
  @param data The data to send.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the send succeeded.
+ @return Returns whether the send succeeded.
  */
 + (BOOL)sendPushDataToChannel:(NSString *)channel
                      withData:(NSDictionary *)data
@@ -257,7 +272,7 @@
  created with [AVInstallation query].
  @param data The data to send.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the send succeeded.
+ @return Returns whether the send succeeded.
  */
 + (BOOL)sendPushDataToQuery:(AVQuery *)query
                    withData:(NSDictionary *)data
@@ -302,7 +317,7 @@
 /*!
  Get all the channels that this device is subscribed to.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns an NSSet containing all the channel names this device is subscribed to.
+ @return Returns an NSSet containing all the channel names this device is subscribed to.
  */
 + (NSSet *)getSubscribedChannels:(NSError **)error;
 
@@ -316,7 +331,7 @@
  Asynchronously get all the channels that this device is subscribed to.
  @param target The object to call selector on.
  @param selector The selector to call. It should have the following signature: (void)callbackWithResult:(NSSet *)result error:(NSError *)error. error will be nil on success and set if there was an error.
- @result Returns an NSSet containing all the channel names this device is subscribed to.
+ @return Returns an NSSet containing all the channel names this device is subscribed to.
  */
 + (void)getSubscribedChannelsInBackgroundWithTarget:(id)target
                                            selector:(SEL)selector;
@@ -326,7 +341,7 @@
  @param channel The channel to subscribe to. The channel name must start with
  a letter and contain only letters, numbers, dashes, and underscores.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the subscribe succeeded.
+ @return Returns whether the subscribe succeeded.
  */
 + (BOOL)subscribeToChannel:(NSString *)channel error:(NSError **)error;
 
@@ -361,7 +376,7 @@
  Unsubscribes the device to a channel of push notifications.
  @param channel The channel to unsubscribe from.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the unsubscribe succeeded.
+ @return Returns whether the unsubscribe succeeded.
  */
 + (BOOL)unsubscribeFromChannel:(NSString *)channel error:(NSError **)error;
 
