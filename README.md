@@ -312,3 +312,7 @@ pod 'AVOSCloudUI
 git clone git@github.com:avos/avoscloud-sdk.git
 cd avoscloud-sdk.git/iOS/samples
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/avos/avoscloud-sdk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
