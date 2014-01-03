@@ -28,7 +28,7 @@
  For example, [AVUser object] returns a AVUser by default but will return an
  object of a registered subclass instead if one is known.
  A default implementation is provided by AVObject which should always be sufficient.
- @return Returns the object that is instantiated.
+ @return the object that is instantiated.
  */
 + (instancetype)object;
 

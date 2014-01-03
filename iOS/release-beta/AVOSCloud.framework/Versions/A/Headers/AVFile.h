@@ -77,20 +77,20 @@ The name of the file.
 
 /*!
  Saves the file.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save;
 
 /*!
  Saves the file and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save:(NSError **)error;
 
 /*!
  Saves the file asynchronously.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (void)saveInBackground;
 

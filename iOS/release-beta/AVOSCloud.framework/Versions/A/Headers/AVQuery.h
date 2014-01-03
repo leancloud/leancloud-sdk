@@ -440,14 +440,14 @@
 
 /*!
  Finds objects based on the constructed query.
- @return Returns an array of AVObjects that were found.
+ @return an array of AVObjects that were found.
  */
 - (NSArray *)findObjects;
 
 /*!
  Finds objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns an array of AVObjects that were found.
+ @return an array of AVObjects that were found.
  */
 - (NSArray *)findObjects:(NSError **)error;
 
@@ -479,7 +479,7 @@
  
  This mutates the AVQuery.
  
- @return Returns a AVObject, or nil if none was found.
+ @return a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject;
 
@@ -489,7 +489,7 @@
  This mutates the AVQuery.
  
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns a AVObject, or nil if none was found.
+ @return a AVObject, or nil if none was found.
  */
 - (AVObject *)getFirstObject:(NSError **)error;
 
@@ -519,14 +519,14 @@
 
 /*!
   Counts objects based on the constructed query.
- @return Returns the number of AVObjects that match the query, or -1 if there is an error.
+ @return the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects;
 
 /*!
   Counts objects based on the constructed query and sets an error if there was one.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns the number of AVObjects that match the query, or -1 if there is an error.
+ @return the number of AVObjects that match the query, or -1 if there is an error.
  */
 - (NSInteger)countObjects:(NSError **)error;
 

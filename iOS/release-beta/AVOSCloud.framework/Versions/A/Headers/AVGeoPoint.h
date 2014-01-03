@@ -21,7 +21,7 @@
 /** @name Creating a AVGeoPoint */
 /*!
  Create a AVGeoPoint object.  Latitude and longitude are set to 0.0.
- @return Returns a new AVGeoPoint.
+ @return a new AVGeoPoint.
  */
 + (AVGeoPoint *)geoPoint;
 
@@ -29,7 +29,7 @@
  Creates a new AVGeoPoint object for the given CLLocation, set to the location's
  coordinates.
  @param location CLLocation object, with set latitude and longitude.
- @return Returns a new AVGeoPoint at specified location.
+ @return a new AVGeoPoint at specified location.
  */
 + (AVGeoPoint *)geoPointWithLocation:(CLLocation *)location;
 

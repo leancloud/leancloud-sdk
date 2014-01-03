@@ -21,7 +21,7 @@
 /*!
  Creates a new AVObject with a class name.
  @param className A class name can be any alphanumeric string that begins with a letter. It represents an object in your app, like a User of a Document.
- @return Returns the object that is instantiated with the given class name.
+ @return the object that is instantiated with the given class name.
  */
 + (instancetype)objectWithClassName:(NSString *)className;
 
@@ -47,7 +47,7 @@
 /*!
  Initializes a new AVObject with a class name.
  @param newClassName A class name can be any alphanumeric string that begins with a letter. It represents an object in your app, like a User or a Document.
- @return Returns the object that is instantiated with the given class name.
+ @return the object that is instantiated with the given class name.
  */
 - (id)initWithClassName:(NSString *)newClassName;
 
@@ -204,14 +204,14 @@
 
 /*!
  Saves the AVObject.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save;
 
 /*!
  Saves the AVObject and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save:(NSError **)error;
 
@@ -261,7 +261,7 @@
 /*!
  Saves a collection of objects all at once.
  @param objects The array of objects to save.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 + (BOOL)saveAll:(NSArray *)objects;
 
@@ -269,7 +269,7 @@
  Saves a collection of objects all at once and sets an error if necessary.
  @param objects The array of objects to save.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 + (BOOL)saveAll:(NSArray *)objects error:(NSError **)error;
 
@@ -511,14 +511,14 @@
 
 /*!
  Deletes the AVObject.
- @return Returns whether the delete succeeded.
+ @return whether the delete succeeded.
  */
 - (BOOL)delete;
 
 /*!
  Deletes the AVObject and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @return Returns whether the delete succeeded.
+ @return whether the delete succeeded.
  */
 - (BOOL)delete:(NSError **)error;
 
