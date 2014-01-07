@@ -11,18 +11,28 @@
 #import "AVUser.h"
 #import "AVQuery.h"
 
+
+extern NSString * const kAVStatusTypeTimeline;
+extern NSString * const kAVStatusTypePrivateMessage;
+
+typedef NSString AVStatusType;
+
 @class AVStatus;
 typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 
 
 /**
  *  发送和获取状态更新和消息
- *  @warning AVStatus是类簇 不可继承
  */
 @interface AVStatus : NSObject
 
-/* 此状态在用户Inbox中的ID 
- * @warning 仅用于分片查询,不具有唯一性
+/**
+ *  此状态的ID 具有唯一性
+ */
+@property(nonatomic,readonly) NSString *objectId;
+
+/* 此状态在用户某个Type的收件箱中的ID
+ * @warning 仅用于分片查询,不具有唯一性,同一条状态在不同的inbox里的messageId也是不同的
  */
 @property(nonatomic,readonly) NSUInteger messageId;
 
@@ -32,19 +42,21 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 @property(nonatomic,readonly) NSDate *createdAt;
 
 /**
- *  到达收件箱类型, 默认是`default`,私信是`private`, 可以自定义任何类型
- */
-@property(nonatomic,readonly) NSString *inboxType;
-
-/**
  *  状态的内容
  */
 @property(nonatomic,strong) NSDictionary *data;
 
 /**
- *  状态的发出"人",可以是AVUser 也可以是任意的AVObject或者NSDictionary
+ *  状态的发出"人",可以是AVUser 也可以是任意的AVObject,也可能是nil
  */
-@property(nonatomic,readonly) id source;
+@property(nonatomic,strong) AVObject *source;
+
+/**
+ *  状态类型,默认是kAVStatusTypeTimeline, 可以是任意自定义字符串
+ */
+@property(nonatomic,strong) AVStatusType *type;
+
+/** @name 针对某条状态的操作 */
 
 /**
  *  获取某条状态
@@ -63,52 +75,52 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 +(void)deleteStatusWithID:(NSString*)objectId andCallback:(AVBooleanResultBlock)callback;
 
 /**
- *  获取当前用户发布的状态
+ *  设置受众群体
  *
- *  @param sid      从某个状态id开始向下返回. 默认是`0`返回最新的.
- *  @param count    需要返回的条数 默认`100`，最大`100`
+ *  @param query 限定条件
+ */
+-(void)setQuery:(AVQuery*)query;
+
+
+/** @name 获取状态 */
+
+/**
+ *  获取当前用户特定类型未读状态条数
+ *  @param type 收件箱类型
  *  @param callback 回调结果
  */
-+(void)getStatusesWithMaxID:(NSUInteger)sid count:(NSUInteger)count andCallback:(AVArrayResultBlock)callback;
++(void)getUnreadStatusesCountWithType:(AVStatusType*)type andCallback:(AVIntegerResultBlock)callback;
+
+/**
+ *  获取当前用户接收到的状态
+ *  @param type     状态类型,默认是kAVStatusTypeTimeline, 可以是任意自定义字符串
+ *  @param skip     跳过条数
+ *  @param limit    需要返回的条数 默认`100`，最大`100`
+ *  @param callback 回调结果
+ */
++(void)getStatusesWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
+
+/**
+ *  获取当前用户发布的状态
+ *
+ *  @param type     状态类型,默认是kAVStatusTypeTimeline, 可以是任意自定义字符串
+ *  @param skip     跳过条数
+ *  @param limit    需要返回的条数 默认`100`，最大`100`
+ *  @param callback 回调结果
+ */
++(void) getStatusesFromCurrentUserWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
 
 /**
  *  通过用户ID获取其发布的公开的状态列表
  *
  *  @param userId   用户的objectId
- *  @param sid      从某个状态id开始向下返回. 默认是`0`返回最新的.
- *  @param count    需要返回的条数 默认`100`，最大`100`
+ *  @param skip     跳过条数
+ *  @param limit    需要返回的条数 默认`100`，最大`100`
  *  @param callback 回调结果
  */
-+(void) getStatusesOfUser:(NSString*)userId maxID:(NSUInteger)sid count:(NSUInteger)count andCallback:(AVArrayResultBlock)callback;
++(void) getStatusesFromUser:(NSString*)userId skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
 
-/**
- *  获取当前用户收件箱中的状态列表
- *
- *  @param callback 回调结果
- */
-+(void)getInboxStatuses:(AVArrayResultBlock)callback;
-
-/**
- *  获取当前用户私信列表
- *
- *  @param callback 回调结果
- */
-+(void)getPrivteStatuses:(AVArrayResultBlock)callback;
-
-
-/**
- *  获取当前用户未读状态条数
- *
- *  @param callback 回调结果
- */
-+(void)getInboxUnreadStatusesCount:(AVIntegerResultBlock)callback;
-
-/**
- *  获取当前用户特定类型未读状态条数
- *  @param inboxType 收件箱类型
- *  @param callback 回调结果
- */
-+(void)getInboxUnreadStatusesCountWithInboxType:(NSString*)inboxType andCallback:(AVIntegerResultBlock)callback;
+/** @name 发送状态 */
 
 /**
  *  向用户的粉丝发送新状态
@@ -127,15 +139,23 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  */
 +(void)sendPrivateStatus:(AVStatus*)status toUserWithID:(NSString*)userId andCallback:(AVBooleanResultBlock)callback;
 
+/**
+ *  发送
+ *
+ *  @param block 回调结果
+ */
+-(void)sendInBackgroundWithBlock:(AVBooleanResultBlock)block;
 @end
 
-
+/**
+ *  用户好友关系
+ */
 @interface AVUser(Friendship)
 /* @name 好友关系 */
 
 /**
  *  通过ID来关注其他用户
- *
+ *  @warning 如果需要被关注者收到消息 需要手动给他发送一条AVStatus.
  *  @param userId 要关注的用户objectId
  *  @param callback 回调结果
  */
