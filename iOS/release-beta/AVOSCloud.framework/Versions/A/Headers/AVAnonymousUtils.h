@@ -50,7 +50,7 @@
 /*!
  Whether the user is logged in anonymously.
  @param user User to check for anonymity. The user must be logged in on this device.
- @result True if the user is anonymous.  False if the user is not the current user or is not anonymous.
+ @return True if the user is anonymous.  False if the user is not the current user or is not anonymous.
  */
 + (BOOL)isLinkedWithUser:(AVUser *)user;
 

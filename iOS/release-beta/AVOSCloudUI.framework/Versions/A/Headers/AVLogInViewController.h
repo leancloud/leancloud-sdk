@@ -78,7 +78,7 @@ extern NSString *const AVLogInCancelNotification;
  Sent to the delegate to determine whether the log in request should be submitted to the server.
  @param username the username the user tries to log in with.
  @param password the password the user tries to log in with.
- @result a boolean indicating whether the log in should proceed.
+ @return a boolean indicating whether the log in should proceed.
  */
 - (BOOL)logInViewController:(AVLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password;
 

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
 
+
+/**
+ *  Call the cloud code from client
+ */
 @interface AVCloud : NSObject
 
 
@@ -16,7 +20,7 @@
  Calls the given cloud function with the parameters passed in.
  @param function The function name to call.
  @param parameters The parameters to send to the function.
- @result The response from the cloud function.
+ @return The response from the cloud function.
  */
 + (id)callFunction:(NSString *)function withParameters:(NSDictionary *)parameters;
 
@@ -25,7 +29,7 @@
  @param function The function name to call.
  @param parameters The parameters to send to the function.
  @param error Pointer to an NSError that will be set if necessary.
- @result The response from the cloud function.  This result could be a NSDictionary, an NSArray, NSInteger or NSString.
+ @return The response from the cloud function.  This result could be a NSDictionary, an NSArray, NSInteger or NSString.
  */
 + (id)callFunction:(NSString *)function withParameters:(NSDictionary *)parameters error:(NSError **)error;
 
@@ -46,6 +50,11 @@
  */
 + (void)callFunctionInBackground:(NSString *)function withParameters:(NSDictionary *)parameters target:(id)target selector:(SEL)selector;
 
+/**
+ *  Set call what production mode's cloud code
+ *
+ *  @param isProduction the production mode or test mode
+ */
 + (void)setProductionMode:(BOOL)isProduction;
 
 @end

@@ -123,7 +123,7 @@ typedef void (^AVSNSProgressBlock)(float percent);
  *  @warning 目前只支持新浪微博
  *
  *  @param  text        文字内容
- *  @param  link        链接地址(可选)
+ *  @param  linkUrl     链接地址(可选)
  *  @param  type        指定平台类型
  *  @param  callback    结果回调
  *  @param  progressBlock    进度回调(可选)
@@ -137,7 +137,7 @@ typedef void (^AVSNSProgressBlock)(float percent);
  *  @warning 目前只支持新浪微博
  *
  *  @param  text        文字内容
- *  @param  link        链接地址(可选)
+ *  @param  linkUrl     链接地址(可选)
  *  @param  image       图片 (将会被JPEG压缩0.8)
  *  @param  type        指定平台类型
  *  @param  callback    结果回调

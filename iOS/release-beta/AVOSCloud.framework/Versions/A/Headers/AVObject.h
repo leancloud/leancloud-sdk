@@ -21,7 +21,7 @@
 /*!
  Creates a new AVObject with a class name.
  @param className A class name can be any alphanumeric string that begins with a letter. It represents an object in your app, like a User of a Document.
- @result Returns the object that is instantiated with the given class name.
+ @return the object that is instantiated with the given class name.
  */
 + (instancetype)objectWithClassName:(NSString *)className;
 
@@ -31,7 +31,7 @@
 
  @param className The object's class.
  @param objectId The object id for the referenced object.
- @result A AVObject without data.
+ @return A AVObject without data.
  */
 + (instancetype)objectWithoutDataWithClassName:(NSString *)className
                                     objectId:(NSString *)objectId;
@@ -40,14 +40,14 @@
  Creates a new AVObject with a class name, initialized with data constructed from the specified set of objects and keys.
  @param className The object's class.
  @param dictionary An NSDictionary of keys and objects to set on the new AVObject.
- @result A AVObject with the given class name and set with the given data.
+ @return A AVObject with the given class name and set with the given data.
  */
 + (instancetype)objectWithClassName:(NSString *)className dictionary:(NSDictionary *)dictionary;
 
 /*!
  Initializes a new AVObject with a class name.
  @param newClassName A class name can be any alphanumeric string that begins with a letter. It represents an object in your app, like a User or a Document.
- @result Returns the object that is instantiated with the given class name.
+ @return the object that is instantiated with the given class name.
  */
 - (id)initWithClassName:(NSString *)newClassName;
 
@@ -94,7 +94,7 @@
 /*!
  Returns the object associated with a given key.
  @param key The key that the object is associated with.
- @result The value associated with the given key, or nil if no value is associated with key.
+ @return The value associated with the given key, or nil if no value is associated with key.
  */
 - (id)objectForKey:(NSString *)key;
 
@@ -204,14 +204,14 @@
 
 /*!
  Saves the AVObject.
- @result Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save;
 
 /*!
  Saves the AVObject and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 - (BOOL)save:(NSError **)error;
 
@@ -261,7 +261,7 @@
 /*!
  Saves a collection of objects all at once.
  @param objects The array of objects to save.
- @result Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 + (BOOL)saveAll:(NSArray *)objects;
 
@@ -269,7 +269,7 @@
  Saves a collection of objects all at once and sets an error if necessary.
  @param objects The array of objects to save.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the save succeeded.
+ @return whether the save succeeded.
  */
 + (BOOL)saveAll:(NSArray *)objects error:(NSError **)error;
 
@@ -304,7 +304,7 @@
 
 /*!
  Gets whether the AVObject has been fetched.
- @result YES if the AVObject is new or has been fetched or refreshed.  NO otherwise.
+ @return YES if the AVObject is new or has been fetched or refreshed.  NO otherwise.
  */
 - (BOOL)isDataAvailable;
 
@@ -511,14 +511,14 @@
 
 /*!
  Deletes the AVObject.
- @result Returns whether the delete succeeded.
+ @return whether the delete succeeded.
  */
 - (BOOL)delete;
 
 /*!
  Deletes the AVObject and sets an error if it occurs.
  @param error Pointer to an NSError that will be set if necessary.
- @result Returns whether the delete succeeded.
+ @return whether the delete succeeded.
  */
 - (BOOL)delete:(NSError **)error;
 
@@ -555,8 +555,11 @@
  */
 - (void)deleteEventually;
 
-/*!
- Deletes all objects specified in object array. The element of objects array is AVObject or its subclass.
+/**
+ *  Deletes all objects specified in object array. The element of objects array is AVObject or its subclass.
+ *
+ *  @param objects object array
+ *  @param block   The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error)
  */
 + (void)deleteAllInBackground:(NSArray *)objects
                         block:(AVBooleanResultBlock)block;
@@ -569,8 +572,10 @@
  */
 -(NSMutableDictionary *)dictionaryForObject;
 
-/*!
- Load object properties from JSON dictionary.
+/**
+ *  Load object properties from JSON dictionary.
+ *
+ *  @param dict JSON dictionary
  */
 -(void)objectFromDictionary:(NSDictionary *)dict;
 

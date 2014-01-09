@@ -24,7 +24,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
 
 /*!
  Gets the currently logged in user from disk and returns an instance of it.
- @result Returns a AVUser that is the currently logged in user. If there is none, returns nil.
+ @return a AVUser that is the currently logged in user. If there is none, returns nil.
  */
 + (instancetype)currentUser;
 
@@ -37,7 +37,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
 /*!
  Whether the user is an authenticated object for the device. An authenticated AVUser is one that is obtained via
  a signUp or logIn method. An authenticated object is required in order to save (with altered values) or delete it.
- @result Returns whether the user is authenticated.
+ @return whether the user is authenticated.
  */
 - (BOOL)isAuthenticated;
 
@@ -45,7 +45,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
 
 /*!
  Creates a new AVUser object.
- @result Returns a new AVUser object.
+ @return a new AVUser object.
  */
 + (instancetype)user;
 
@@ -72,14 +72,14 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
 
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken. 
- @result Returns true if the sign up was successful.
+ @return true if the sign up was successful.
  */
 - (BOOL)signUp;
 
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken.
  @param error Error object to set on error. 
- @result Returns whether the sign up was successful.
+ @return whether the sign up was successful.
  */
 - (BOOL)signUp:(NSError **)error;
 
@@ -109,7 +109,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  that calls to userFromCurrentUser will use the latest logged in user.
  @param username The username of the user.
  @param password The password of the user.
- @result Returns an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
+ @return an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
  */
 + (AVUser *)logInWithUsername:(NSString *)username
                      password:(NSString *)password;
@@ -121,7 +121,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  @param username The username of the user.
  @param password The password of the user.
  @param error The error object to set on error.
- @result Returns an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
+ @return an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
  */
 + (AVUser *)logInWithUsername:(NSString *)username
                      password:(NSString *)password
@@ -177,7 +177,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  Send a password reset request for a specified email. If a user account exists with that email,
  an email will be sent to that address with instructions on how to reset their password.
  @param email Email of the account to send a reset password request.
- @result Returns true if the reset email request is successful. False if no account was found for the email address.
+ @return true if the reset email request is successful. False if no account was found for the email address.
  */
 + (BOOL)requestPasswordResetForEmail:(NSString *)email;
 
@@ -187,7 +187,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  on how to reset their password.
  @param email Email of the account to send a reset password request.
  @param error Error object to set on error.
- @result Returns true if the reset email request is successful. False if no account was found for the email address.
+ @return true if the reset email request is successful. False if no account was found for the email address.
  */
 + (BOOL)requestPasswordResetForEmail:(NSString *)email
                                error:(NSError **)error;

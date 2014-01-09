@@ -28,18 +28,6 @@ extern NSString *const kPFDeviceType;
 #endif
 
 
-// Cache policies
-typedef enum {
-    kPFCachePolicyIgnoreCache = 0,
-    kPFCachePolicyCacheOnly,
-    kPFCachePolicyNetworkOnly,
-    kPFCachePolicyCacheElseNetwork,
-    kPFCachePolicyNetworkElseCache,
-    kPFCachePolicyCacheThenNetwork,
-
-} PFCachePolicy;
-
-
 /// Cache policies
 typedef NS_ENUM(int, AVCachePolicy){
     ///Ignore Cache
@@ -60,6 +48,14 @@ typedef NS_ENUM(int, AVCachePolicy){
     ///CacheThenNetwork
     kAVCachePolicyCacheThenNetwork,
 } ;
+
+typedef AVCachePolicy PFCachePolicy;
+#define kPFCachePolicyIgnoreCache kAVCachePolicyIgnoreCache
+#define kPFCachePolicyCacheOnly kAVCachePolicyCacheOnly
+#define kPFCachePolicyNetworkOnly kAVCachePolicyNetworkOnly
+#define kPFCachePolicyCacheElseNetwork kAVCachePolicyCacheElseNetwork
+#define kPFCachePolicyNetworkElseCache kAVCachePolicyNetworkElseCache
+#define kPFCachePolicyCacheThenNetwork kAVCachePolicyCacheThenNetwork
 
 // Errors
 
@@ -231,7 +227,7 @@ extern NSInteger const kAVErrorInvalidLinkedSession;
 
 
 typedef void (^PFBooleanResultBlock)(BOOL succeeded, NSError *error);
-typedef void (^PFIntegerResultBlock)(int number, NSError *error);
+typedef void (^PFIntegerResultBlock)(NSInteger number, NSError *error);
 typedef void (^PFArrayResultBlock)(NSArray *objects, NSError *error);
 typedef void (^PFObjectResultBlock)(AVObject *object, NSError *error);
 typedef void (^PFSetResultBlock)(NSSet *channels, NSError *error);
@@ -241,7 +237,7 @@ typedef void (^PFImageResultBlock)(UIImage * image, NSError *error);
 typedef void (^PFDataStreamResultBlock)(NSInputStream *stream, NSError *error);
 typedef void (^PFStringResultBlock)(NSString *string, NSError *error);
 typedef void (^PFIdResultBlock)(id object, NSError *error);
-typedef void (^PFProgressBlock)(int percentDone);
+typedef void (^PFProgressBlock)(NSInteger percentDone);
 typedef void (^PFFileResultBlock)(AVFile * file, NSError *error);
 typedef void (^AVDictionaryResultBlock)(NSDictionary * dict, NSError *error);
 

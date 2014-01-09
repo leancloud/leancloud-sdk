@@ -18,7 +18,7 @@
 /*!
  Initializes a query table view controller with the given style.
  @param style The UITableViewStyle for the table
- @result The initialized AVQueryTableViewController
+ @return The initialized AVQueryTableViewController
  */
 - (id)initWithStyle:(UITableViewStyle)otherStyle;
 
@@ -27,14 +27,14 @@
  Initializes with a class name of the AVObjects that will be associated with this table.
  @param style The UITableViewStyle for the table
  @param aClassName The class name of the AVObjects that this table will display
- @result The initialized AVQueryTableViewController
+ @return The initialized AVQueryTableViewController
  */
 - (id)initWithStyle:(UITableViewStyle)style className:(NSString *)aClassName;
 
 /*!
  Initializes with a class name of the AVObjects that will be associated with this table.
  @param aClassName The class name of the AVObjects that this table will display
- @result The initialized AVQueryTableViewController
+ @return The initialized AVQueryTableViewController
  */
 - (id)initWithClassName:(NSString *)aClassName;
 
@@ -104,7 +104,7 @@
  the object at indexPath.row. If you want to return objects in a different
  indexPath order, like for sections, override this method.
  @param     indexPath   The indexPath
- @result    The object at the specified index
+ @return    The object at the specified index
  */
 - (AVObject *)objectAtIndex:(NSIndexPath *)indexPath;
 
@@ -112,7 +112,7 @@
 
 /*!
  Override to construct your own custom AVQuery to get the objects.
- @result AVQuery that loadObjects will use to the objects for this table.
+ @return AVQuery that loadObjects will use to the objects for this table.
  */
 - (AVQuery *)queryForTable;
 
@@ -152,7 +152,7 @@
  @param tableView   The table view object associated with this controller.
  @param indexPath   The indexPath of the cell.
  @param object      The AVObject that is associated with the cell.
- @result            The cell that represents this object.
+ @return            The cell that represents this object.
  */
 - (AVTableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -163,7 +163,7 @@
  next page when pagination is turned on.
  @param tableView   The table view object associated with this controller.
  @param indexPath   The indexPath of the cell.
- @result            The cell that allows the user to paginate.
+ @return            The cell that allows the user to paginate.
  */
 - (AVTableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath;
 
