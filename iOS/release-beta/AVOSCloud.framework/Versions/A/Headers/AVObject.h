@@ -250,6 +250,9 @@
  next time the app is opened.  If more than 10MB of data is waiting to be sent, subsequent calls to saveEventually
  will cause old saves to be silently discarded until the connection can be re-established, and the queued objects
  can be saved.
+ 
+ 
+ @param callback The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error)
  */
 - (void)saveEventually:(AVBooleanResultBlock)callback;
 

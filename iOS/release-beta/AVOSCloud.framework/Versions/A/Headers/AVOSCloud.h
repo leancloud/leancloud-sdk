@@ -22,12 +22,14 @@
 #import "AVAnalytics.h"
 #import "AVRelation.h"
 #import "AVSubclassing.h"
+#import "AVStatus.h"
+
 
 /**
  *  Storage Type
  */
 typedef NS_ENUM(int, AVStorageType){
-    /* QiNiu */
+    /// QiNiu
     AVStorageTypeQiniu = 0,
     
     /* Parse */

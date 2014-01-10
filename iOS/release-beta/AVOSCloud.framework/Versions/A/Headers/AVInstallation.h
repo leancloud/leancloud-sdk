@@ -54,6 +54,8 @@
 
 /*!
  Sets the device token string property from an NSData-encoded token.
+ 
+ @param deviceTokenData  NSData-encoded device token.
  */
 - (void)setDeviceTokenFromData:(NSData *)deviceTokenData;
 

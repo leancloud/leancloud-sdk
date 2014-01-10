@@ -380,6 +380,7 @@
  
  This mutates the AVQuery
  
+ @param objectId The id of the object that is being requested.
  @param error Pointer to an NSError that will be set if necessary.
  @return The AVObject if found. Returns nil if the object isn't found, or if there was an error.
  */
@@ -422,6 +423,8 @@
 
 /*!
  Returns a AVUser with a given class and id and sets an error if necessary.
+ 
+ @param objectId The id of the object that is being requested.
  @param error Pointer to an NSError that will be set if necessary.
  @return The AVUser if found. Returns nil if the object isn't found, or if there was an error.
  */

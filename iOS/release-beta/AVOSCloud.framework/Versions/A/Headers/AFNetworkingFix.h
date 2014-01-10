@@ -10,6 +10,7 @@
 
 #ifndef _AFNETWORKING_
     #define _AFNETWORKING_
+    #define AFMultipartFormData AVMultipartFormData
 
     typedef AVHTTPClient AFHTTPClient;
     typedef AVHTTPRequestOperation AFHTTPRequestOperation;
@@ -17,7 +18,6 @@
     typedef AVXMLRequestOperation AFXMLRequestOperation;
     typedef AVURLConnectionOperation AFURLConnectionOperation;
     typedef AVPropertyListRequestOperation AFPropertyListRequestOperation;
-    typedef AVMultipartFormData AFMultipartFormData;
     typedef AVHTTPClient AFHTTPClient;
     typedef AVImageRequestOperation AFImageRequestOperation;
     typedef AVNetworkActivityIndicatorManager AFNetworkActivityIndicatorManager;

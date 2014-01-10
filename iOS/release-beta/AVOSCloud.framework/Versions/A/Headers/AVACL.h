@@ -163,7 +163,7 @@
  read it if a parent role has read access. The role must already be saved on
  the server and its data must have been fetched in order to use this method.
  
- @param roleName    The name of the role.
+ @param role the given role
  @return YES if the role has read access. NO otherwise.
  */
 - (BOOL)getReadAccessForRole:(AVRole *)role;
@@ -184,7 +184,7 @@
  write it if a parent role has write access. The role must already be saved on
  the server and its data must have been fetched in order to use this method.
  
- @param roleName The name of the role.
+ @param role the given role
  @return YES if the role has write access. NO otherwise.
  */
 - (BOOL)getWriteAccessForRole:(AVRole *)role;

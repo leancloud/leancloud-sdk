@@ -266,4 +266,28 @@ The name of the file.
 - (void)deleteInBackground;
 
 
+/** @name Cache management */
+
+/*!
+ Clear file cache.
+ */
+- (void)clearCachedFile;
+
+/**
+ *  clear All Cached AVFiles
+ *
+ *  @return clear success or not
+ */
++ (BOOL)clearAllCachedFiles;
+
+/**
+ *  clear All Cached AVFiles by days ago
+ *
+ *  @param numberOfDays number Of Days
+ *
+ *  @return clear success or not
+ */
++ (BOOL)clearCacheMoreThanDays:(NSInteger)numberOfDays;
+
+
 @end
