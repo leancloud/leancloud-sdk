@@ -1,3 +1,14 @@
+# 2.2.0 发布日期: 2014-01-09
+
+- 支持arm64 CPU. (UI组件除外)
+- 添加AVFile的缓存清除接口，添加`clearCachedFile`,`clearAllCachedFiles`等方法。
+- AVFile文件没上传成功 不会创建`_File`记录
+- 修复子类化属性可能出现`NSNull`的问题
+- 推送消息可以直接设置具体推送时间（定时推送），AVPush添加`setPushDate`方法
+- 修复请求缓存设置`maxCacheAge`为`0`时的异常处理
+- 支持`AND`查询, 接口:`+ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries`
+- 修复绑定SNS的`AVUser`不认为是已经验证的用户的Bug。
+
 # 2.1.2 发布日期：2013-12-20
 
 * 优化统计逻辑
