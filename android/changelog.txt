@@ -2,7 +2,7 @@
 * 将javadoc集成到jar包中
 * 调整push连接的超时和ping时间间隔
 * 统计sdk汇报应用发布渠道
-* 对api调用增加签名
+* 对api调用增加签名，不再明文传递app key。
 * 增加push的notification对象
 
 # 2.2.0 发布日期: 2014-01-09
