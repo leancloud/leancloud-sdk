@@ -26,7 +26,7 @@
             android:layout_alignParentLeft="true"
             android:text="Client Key:" />
 
-    <EditText android:id="@+id/textViewClientKey"
+    <EditText android:id="@+id/editTextClientKey"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:layout_alignParentLeft="true"/>
@@ -41,14 +41,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="OK"
-            android:id="@+id/btn_ok" android:layout_gravity="left|center_vertical"
-            android:onClick="clickHandler"/>
+            android:id="@+id/btn_ok" android:layout_gravity="left|center_vertical"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/btn_cancel" android:layout_gravity="left|center_vertical"
-            android:onClick="clickHandler"/>
+            android:id="@+id/btn_cancel" android:layout_gravity="left|center_vertical"/>
 
         </LinearLayout>
 
