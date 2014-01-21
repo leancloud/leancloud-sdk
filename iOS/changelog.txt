@@ -1,3 +1,11 @@
+# 2.2.1 发布日期: 2014-01-16
+- 发布事件流系统
+- 更新API验证方法, 不需要明文在API调用中传递AppKey
+- AVCloud `callFunction`支持AVObject,NSDate等复杂参数
+- SNS组件修复bug:新浪微博无法通过logout来注销并切换到其他微博账号
+- 修复重复发送请求bug
+- 其他小问题修复
+
 # 2.2.0 发布日期: 2014-01-09
 
 - 支持arm64 CPU. (UI组件除外)
