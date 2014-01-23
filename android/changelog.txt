@@ -1,3 +1,9 @@
+# 2.2.2 发布日期: 2014-01-23
+* 增加AVUser的follow和unfollow 功能
+* 增加last modify功能，在数据没有变更的情况下，节省网络流量
+* 增加android的status功能，方便编写事件流应用
+* 解决非法的installation id问题
+
 # 2.2.1 发布日期: 2014-01-16
 * 将javadoc集成到jar包中
 * 调整push连接的超时和ping时间间隔
