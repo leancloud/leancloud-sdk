@@ -1,3 +1,8 @@
+# 2.2.2 发布日期：2014-01-23
+- 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
+- 修复一个小的内存泄漏 谢谢 @Dummyapps
+- 修复`AVStatus`没回调主线程问题
+
 # 2.2.1 发布日期: 2014-01-16
 - 发布事件流系统
 - 更新API验证方法, 不需要明文在API调用中传递AppKey
