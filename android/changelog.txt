@@ -1,3 +1,25 @@
+# 2.2.2 发布日期: 2014-01-23
+
+* 发布事件流系统AVStatus等。
+* 增加last modify功能，在数据没有变更的情况下，节省网络流量
+* 解决非法的installation id问题
+
+# 2.2.1 发布日期: 2014-01-16
+* 将javadoc集成到jar包中
+* 调整push连接的超时和ping时间间隔
+* 统计sdk汇报应用发布渠道
+* 对api调用增加签名，不再明文传递app key。
+* 增加push的notification对象
+
+# 2.2.0 发布日期: 2014-01-09
+* 解决统计模块中，session时长类型异常的问题
+* 解决统计模块中，新增用户数量不正确的问题
+* AVPush增加pushDate字段和相应设置方法，允许从SDK定时发送
+* 增加子查询and的边界检查
+* 当上传文件失败，避免创建AVFile对象。
+* AVCloud新增静态方法setProductionMode(boolean)设置云代码函数调用版本，默认为true，调用生产环境代码。
+
+
 # 2.1.2 发布日期: 2013-12-20
 * 解决统计模块中，session时长异常问题
 * 汇报统计中出现的crash事件

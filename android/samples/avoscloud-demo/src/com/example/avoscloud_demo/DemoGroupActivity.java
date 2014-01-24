@@ -6,10 +6,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.*;
 import com.avos.avoscloud.*;
 
 import java.util.ArrayList;
@@ -51,13 +48,26 @@ public class DemoGroupActivity extends ListActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                EditText appId = (EditText) dialog.findViewById(R.id.textViewAppId);
-                EditText clientKey = (EditText) dialog.findViewById(R.id.textViewClientKey);
+                EditText appId = (EditText) dialog.findViewById(R.id.editViewClientKey);
+                EditText clientKey = (EditText) dialog.findViewById(R.id.editTextClientKey);
+                if (appId.getText().length() <= 0 || clientKey.getText().length() <= 0) {
+                    Toast.makeText(DemoGroupActivity.this, "Empty key.",  Toast.LENGTH_LONG).show();
+                    return;
+                }
                 AVOSCloud.initialize(getApplication(),
                         appId.getText().toString(),
                         clientKey.getText().toString());
             }
         });
+
+        dialogButton = (Button) dialog.findViewById(R.id.btn_cancel);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
         dialog.show();
     }
 
@@ -92,7 +102,7 @@ public class DemoGroupActivity extends ListActivity {
             demoMap.put("UserDemoActivity", "com.example.avoscloud_demo.UserDemoActivity");
             demoMap.put("FileDemoActivity", "com.example.avoscloud_demo.FileDemoActivity");
             demoMap.put("SubclassDemoActivity", "com.example.avoscloud_demo.SubclassDemoActivity");
-
+            demoMap.put("QueryDemoActivity", "com.example.avoscloud_demo.QueryDemoActivity");
         }
         return demoMap;
     }
