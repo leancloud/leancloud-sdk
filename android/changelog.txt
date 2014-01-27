@@ -1,3 +1,8 @@
+# 2.3.0 发布日期: 2014-01-27
+* 增加AVUser的follower和followee query功能，具体请看事件流开发文档。
+* 解决last modify存在的bug，在本地缓存不可用时，再次从网络获取
+* 增加统计模块的custom info功能
+
 # 2.2.3 发布日期：2014-01-24
 * 暂时禁用HTTP last-modified缓存。
 

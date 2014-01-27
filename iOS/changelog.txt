@@ -1,3 +1,8 @@
+# 2.3.0 发布日期：2014-01-27
+- 支持用标准的Query方式查询用户粉丝和关注，具体看事件流开发文档。
+- 修复Last-Modify某些无法正常获取数据的bug
+- 统计支持添加默认自定义数据 `[AVAnalytics setCustomInfo:info]`
+
 # 2.2.2 发布日期：2014-01-23
 - 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
 - 修复一个小的内存泄漏 谢谢 @Dummyapps
