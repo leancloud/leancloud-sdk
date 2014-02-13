@@ -1,3 +1,8 @@
+2014年02月13日 0.3.0版本发布
+1.增加AV.Status类以及相关API，用于status发布和查询等。
+2.AV.User新增follow/unfollow方法等，用于建立用户关系和查询用户关系
+3.以上更新详情请查看事件流系统开发指南。
+
 2013年11月12号 0.2.7版本发布
 
 1.改进AV.Object.createWithoutData方法。
