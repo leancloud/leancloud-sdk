@@ -1,3 +1,8 @@
+2014年02月18日 0.3.1版本发布
+1.AV.File的构造函数可以接受node.js的Buffer类了。
+2.AV.File新增方法thumbnailURL，获取图片缩略图。
+3.增强AV.File的metaData方法，既是getter也是setter设置属性。
+
 2014年02月13日 0.3.0版本发布
 1.增加AV.Status类以及相关API，用于status发布和查询等。
 2.AV.User新增follow/unfollow方法等，用于建立用户关系和查询用户关系
