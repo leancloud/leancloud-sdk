@@ -19,11 +19,13 @@
 #import "AVPush.h"
 #import "AVOSCloud.h"
 #import "AVCloud.h"
-#import "AVAnalytics.h"
 #import "AVRelation.h"
 #import "AVSubclassing.h"
 #import "AVStatus.h"
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#import "AVAnalytics.h"
+#endif
 
 /**
  *  Storage Type
@@ -79,6 +81,24 @@ typedef enum AVLogLevel : NSUInteger {
  *  @return Client Key
  */
 + (NSString *)getClientKey;
+
+
+/**
+ *  开启LastModify支持, 减少流量消耗
+ *
+ *  @param enabled 开启
+ */
++ (void)setLastModifyEnabled:(BOOL)enabled;
+
+/**
+ *  获取是否开启LastModify支持
+ */
++ (BOOL)getLastModifyEnabled;
+
+/**
+ *  清空LastModify缓存
+ */
++(void)clearLastModifyCache;
 
 + (void)useAVCloud;
 + (void)setStorageType:(AVStorageType)type;
@@ -155,8 +175,11 @@ typedef AVInstallation PFInstallation;
 typedef AVPush PFPush;
 typedef AVOSCloud Parse;
 typedef AVCloud PFCloud;
-typedef AVAnalytics PFAnalytics;
+
 typedef AVRelation PFRelation;
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+typedef AVAnalytics PFAnalytics;
+#endif
 
 @end

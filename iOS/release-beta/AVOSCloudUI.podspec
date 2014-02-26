@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.version        = "140110.1531"
+  s.version        = "140226.1150"
 
   s.source         = { :http => "https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudUI.framework.zip"}
 

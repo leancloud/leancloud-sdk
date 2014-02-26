@@ -17,7 +17,7 @@ extern NSString * const kAVStatusTypePrivateMessage;
 
 typedef NSString AVStatusType;
 
-@class AVStatus;
+@class AVStatus,AVStatusQuery;
 typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 
 
@@ -56,6 +56,8 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  */
 @property(nonatomic,strong) AVStatusType *type;
 
+
+
 /** @name 针对某条状态的操作 */
 
 /**
@@ -85,6 +87,22 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 /** @name 获取状态 */
 
 /**
+ *  获取当前用户收件箱里的状态
+ *
+ *  @param inboxType 收件箱类型
+ *  @return 用于查询的AVStatusQuery
+ */
++(AVStatusQuery*)inboxQuery:(AVStatusType *)inboxType;
+
+/**
+ *  获取当前用户发出的状态
+ *
+ *  @return 用于查询的AVStatusQuery
+ */
++(AVStatusQuery*)statusQuery;
+
+
+/**
  *  获取当前用户特定类型未读状态条数
  *  @param type 收件箱类型
  *  @param callback 回调结果
@@ -98,7 +116,7 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  *  @param limit    需要返回的条数 默认`100`，最大`100`
  *  @param callback 回调结果
  */
-+(void)getStatusesWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
++(void)getStatusesWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback AVDeprecated("2.3.2以后不再需要，请使用inboxQuery类方法");
 
 /**
  *  获取当前用户发布的状态
@@ -108,7 +126,7 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  *  @param limit    需要返回的条数 默认`100`，最大`100`
  *  @param callback 回调结果
  */
-+(void) getStatusesFromCurrentUserWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
++(void) getStatusesFromCurrentUserWithType:(AVStatusType*)type skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback AVDeprecated("2.3.2以后不再需要，请使用statusQuery类方法");
 
 /**
  *  通过用户ID获取其发布的公开的状态列表
@@ -118,7 +136,7 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  *  @param limit    需要返回的条数 默认`100`，最大`100`
  *  @param callback 回调结果
  */
-+(void) getStatusesFromUser:(NSString*)userId skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback;
++(void) getStatusesFromUser:(NSString*)userId skip:(NSUInteger)skip limit:(NSUInteger)limit andCallback:(AVArrayResultBlock)callback AVDeprecated("2.3.2以后不再需要，请使用statusQuery");
 
 /** @name 发送状态 */
 
@@ -151,7 +169,40 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  *  用户好友关系
  */
 @interface AVUser(Friendship)
+
 /* @name 好友关系 */
+
+/**
+ *  获取用户粉丝AVQuery
+ *
+ *  @param userObjectId 用户ID
+ *
+ *  @return 用于查询的AVQuery
+ */
++(AVQuery*)followerQuery:(NSString*)userObjectId;
+
+/**
+ *  获取本用户粉丝AVQuery
+ *
+ *  @return 用于查询的AVQuery
+ */
+-(AVQuery*)followerQuery;
+
+/**
+ *  获取用户关注AVQuery
+ *
+ *  @param userObjectId 用户ID
+ *
+ *  @return 用于查询的AVQuery
+ */
++(AVQuery*)followeeQuery:(NSString*)userObjectId;
+
+/**
+ *  获取本用户关注AVQuery
+ *
+ *  @return 用于查询的AVQuery
+ */
+-(AVQuery*)followeeQuery;
 
 /**
  *  通过ID来关注其他用户
@@ -195,3 +246,27 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
 
 @end
 
+/**
+ *  查询AVStatus
+ */
+@interface AVStatusQuery : AVQuery
+/**
+ *  设置起始messageId, 仅用于Inbox中的查询
+ */
+@property(nonatomic, assign) NSUInteger sinceId;
+
+/**
+ *  设置最大messageId, 仅用于Inbox中的查询
+ */
+@property(nonatomic, assign) NSUInteger maxId;
+
+/**
+ *  设置查询的Inbox的所有者, 即查询这个"人"的收件箱
+ */
+@property(nonatomic, strong) AVObject *owner;
+
+/**
+ *  设置查询的Inbox的类型
+ */
+@property(nonatomic, copy) AVStatusType *inboxType;
+@end

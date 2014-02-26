@@ -13,9 +13,7 @@
  of AVRelation is associated with a particular parent object and key.
  */
 @interface AVRelation : NSObject {
-    AVObject *parent;
-    NSString *key;
-    NSString *targetClass;
+    
 }
 
 @property (nonatomic, retain) NSString *targetClass;

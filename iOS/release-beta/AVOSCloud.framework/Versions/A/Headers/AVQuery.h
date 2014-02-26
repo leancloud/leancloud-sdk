@@ -20,7 +20,7 @@
  @param className The class to query on.
  @return A AVQuery object.
  */
-+ (AVQuery *)queryWithClassName:(NSString *)className;
++ (instancetype)queryWithClassName:(NSString *)className;
 
 /*!
  Creates a AVQuery with the constraints given by predicate.
@@ -42,7 +42,7 @@
  @param className the class name
  @param predicate the predicates
  */
-+ (AVQuery *)queryWithClassName:(NSString *)className predicate:(NSPredicate *)predicate;
++ (instancetype)queryWithClassName:(NSString *)className predicate:(NSPredicate *)predicate;
 
 /*!
  Initializes the query with a class name.

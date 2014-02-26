@@ -255,4 +255,4 @@ typedef PFIdResultBlock AVIdResultBlock;
 typedef PFProgressBlock AVProgressBlock;
 typedef PFFileResultBlock AVFileResultBlock;
 
-
+#define AVDeprecated(explain) __attribute__((deprecated(explain)))

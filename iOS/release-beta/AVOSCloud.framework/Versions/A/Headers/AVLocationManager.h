@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 
-@class AVGeoPoint;
+@class AVGeoPoint,CLLocation,CLLocationManager;
 
 
 /**
  *  管理地理位置
  */
-@interface AVLocationManager : NSObject<CLLocationManagerDelegate>
+@interface AVLocationManager : NSObject
 
 /**
  *  系统的 CLLocationManager

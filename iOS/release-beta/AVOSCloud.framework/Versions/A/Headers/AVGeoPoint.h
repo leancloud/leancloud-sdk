@@ -5,7 +5,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+
+@class CLLocation;
 
 /*!
  Object which may be used to embed a latitude / longitude point as the value for a key in a AVObject.

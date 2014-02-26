@@ -558,6 +558,13 @@
  */
 - (void)deleteEventually;
 
+/*!
+ deleteEventually with callback block.
+ 
+ @param block The block to execute.
+ */
+- (void)deleteEventuallyWithBlock:(AVIdResultBlock)block;
+
 /**
  *  Deletes all objects specified in object array. The element of objects array is AVObject or its subclass.
  *

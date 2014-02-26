@@ -45,10 +45,12 @@ typedef NS_ENUM(int, AVReportPolicy){
  */
 @interface AVAnalytics : NSObject
 
-+ (void)trackAppOpenedWithLaunchOptions:(NSDictionary *)launchOptions;
-+ (void)trackAppOpenedWithRemoteNotificationPayload:(NSDictionary *)userInfo;
+/**
+ *  设置渠道名称, 如果不设置, 默认是 `App Store`
+ *
+ *  @param channel 渠道名称
+ */
 + (void)setChannel:(NSString *)channel;
-
 
 
 /** AVAnalytics 本身不需要实例化，所有方法以静态方法的形式提供.
@@ -111,14 +113,15 @@ typedef NS_ENUM(int, AVReportPolicy){
 
 
 ///---------------------------------------------------------------------------------------
-/// @name  开启统计
+/// @name  开启统计(已废止)
 ///---------------------------------------------------------------------------------------
+
 
 /** 开启统计,默认以AV_BATCH方式发送log. 1.4.3以后不再需要，请前往在线配置进行配置。
  https://cn.avoscloud.com/stat.html?appid=YOUR_APP_ID&os=ios#/statconfig/trans_strategoy
  */
 
-+ (void)start __attribute__((deprecated("1.4.3以后不再需要，请前往在线配置进行配置")));
++ (void)start AVDeprecated("1.4.3以后不再需要，请前往在线配置进行配置");
 
 /** 开启统计,默认以AV_BATCH方式发送log. 1.4.3以后不再需要，请前往在线配置进行配置。
  https://cn.avoscloud.com/stat.html?appid=YOUR_APP_ID&os=ios#/statconfig/trans_strategoy
@@ -126,7 +129,13 @@ typedef NS_ENUM(int, AVReportPolicy){
  @param rp 发送策略.
  @param cid 渠道名称,为nil或@""时,默认会被被当作@"App Store"渠道
  */
-+ (void)startWithReportPolicy:(AVReportPolicy)rp channelId:(NSString *)cid __attribute__((deprecated("1.4.3以后不再需要，请前往在线配置进行配置")));
++ (void)startWithReportPolicy:(AVReportPolicy)rp channelId:(NSString *)cid AVDeprecated("1.4.3以后不再需要，请前往在线配置进行配置");
+
+
++ (void)trackAppOpenedWithLaunchOptions:(NSDictionary *)launchOptions;
++ (void)trackAppOpenedWithRemoteNotificationPayload:(NSDictionary *)userInfo;
+
+
 
 ///---------------------------------------------------------------------------------------
 /// @name  页面计时
@@ -195,9 +204,7 @@ typedef NS_ENUM(int, AVReportPolicy){
 
  /** 自定义事件,数量统计.
  @param  eventId 自定义的事件Id.
- @param  attributes key最大为128个bytes(128个英文及数字或42个左右汉字)。attributes的value最大为256个bytes(256个英文及数字或84个左右汉字),
-  超过后将被截短。
- */
+ @param  attributes 支持字符串和数字的key-value */
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes;
 
 
@@ -325,5 +332,12 @@ typedef NS_ENUM(int, AVReportPolicy){
 + (void)setLocation:(CLLocation *)location;
 
 
-
+/**
+ *  设置自定义信息
+ *
+ *  @param info 自定义信息
+ *
+ *  @warning info的内容只支持数字和字符串
+ */
++ (void)setCustomInfo:(NSDictionary*)info;
 @end

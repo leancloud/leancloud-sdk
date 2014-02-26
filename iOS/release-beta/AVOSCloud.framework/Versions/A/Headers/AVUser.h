@@ -111,7 +111,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  @param password The password of the user.
  @return an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
  */
-+ (AVUser *)logInWithUsername:(NSString *)username
++ (instancetype)logInWithUsername:(NSString *)username
                      password:(NSString *)password;
 
 /*!
@@ -123,7 +123,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  @param error The error object to set on error.
  @return an instance of the AVUser on success. If login failed for either wrong password or wrong username, returns nil.
  */
-+ (AVUser *)logInWithUsername:(NSString *)username
++ (instancetype)logInWithUsername:(NSString *)username
                      password:(NSString *)password
                         error:(NSError **)error;
 
