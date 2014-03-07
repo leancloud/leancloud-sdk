@@ -1,3 +1,17 @@
+# 2.3.2 发布日期：2014-02-21
+* 重构了事件流API 改为标准的AVQuery方式来查询Status，详情参考事件流系统开发指南。
+* 修复session统计时长部分情况下不准确的问题。
+
+# 2.3.1 发布日期：2014-02-13
+* 添加AVFile文件完整性的MD5检查
+* 修复从第三方应用打开app时会100% crash的bug
+* 修复部分出错信息不返回具体错误bug
+
+# 2.3.0 发布日期：2014-01-27
+- 支持用标准的Query方式查询用户粉丝和关注，具体看事件流开发文档。
+- 修复Last-Modify某些无法正常获取数据的bug
+- 统计支持添加默认自定义数据 `[AVAnalytics setCustomInfo:info]`
+
 # 2.2.2 发布日期：2014-01-23
 - 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
 - 修复一个小的内存泄漏 谢谢 @Dummyapps
