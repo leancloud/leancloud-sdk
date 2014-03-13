@@ -1,3 +1,11 @@
+# 2.4.0 发布日期: 2014-03-13
+
+- 添加重发验证邮件接口 `[AVUser requestEmailVerify:withBlock:]`
+- AVObject如果关联一个AVFile，发现AVFIle没有保存，自动上传文件
+- 修复AVInstallation保存时可能出现Crash的问题
+- 修复匿名用户判断逻辑
+- 修复AVObject saveAll和fetchAll并发时可能出现Crash
+
 # 2.3.2 发布日期：2014-02-21
 * 重构了事件流API 改为标准的AVQuery方式来查询Status，详情参考事件流系统开发指南。
 * 修复session统计时长部分情况下不准确的问题。
