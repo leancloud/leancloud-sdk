@@ -1,5 +1,8 @@
-# 2.4.0 发布日期: 2014-03-13
+# 2.4.1 发布日期：2014-03021
+- 解决离线请求极端情况下的Crash
+- 优化网络请求队列, 防止大并发被卡住
 
+# 2.4.0 发布日期: 2014-03-13
 - 添加重发验证邮件接口 `[AVUser requestEmailVerify:withBlock:]`
 - AVObject如果关联一个AVFile，发现AVFIle没有保存，自动上传文件
 - 修复AVInstallation保存时可能出现Crash的问题
