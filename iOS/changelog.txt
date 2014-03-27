@@ -1,13 +1,13 @@
 # 2.4.1 发布日期：2014-03021
-- 解决离线请求极端情况下的Crash
-- 优化网络请求队列, 防止大并发被卡住
+* 解决离线请求极端情况下的Crash
+* 优化网络请求队列, 防止大并发被卡住
 
-# 2.4.0 发布日期: 2014-03-13
-- 添加重发验证邮件接口 `[AVUser requestEmailVerify:withBlock:]`
-- AVObject如果关联一个AVFile，发现AVFIle没有保存，自动上传文件
-- 修复AVInstallation保存时可能出现Crash的问题
-- 修复匿名用户判断逻辑
-- 修复AVObject saveAll和fetchAll并发时可能出现Crash
+# 2.4.0 发布日期: 2014*03-13
+* 添加重发验证邮件接口 `[AVUser requestEmailVerify:withBlock:]`
+* AVObject如果关联一个AVFile，发现AVFIle没有保存，自动上传文件
+* 修复AVInstallation保存时可能出现Crash的问题
+* 修复匿名用户判断逻辑
+* 修复AVObject saveAll和fetchAll并发时可能出现Crash
 
 # 2.3.2 发布日期：2014-02-21
 * 重构了事件流API 改为标准的AVQuery方式来查询Status，详情参考事件流系统开发指南。
@@ -19,33 +19,33 @@
 * 修复部分出错信息不返回具体错误bug
 
 # 2.3.0 发布日期：2014-01-27
-- 支持用标准的Query方式查询用户粉丝和关注，具体看事件流开发文档。
-- 修复Last-Modify某些无法正常获取数据的bug
-- 统计支持添加默认自定义数据 `[AVAnalytics setCustomInfo:info]`
+* 支持用标准的Query方式查询用户粉丝和关注，具体看事件流开发文档。
+* 修复Last-Modify某些无法正常获取数据的bug
+* 统计支持添加默认自定义数据 `[AVAnalytics setCustomInfo:info]`
 
 # 2.2.2 发布日期：2014-01-23
-- 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
-- 修复一个小的内存泄漏 谢谢 @Dummyapps
-- 修复`AVStatus`没回调主线程问题
+* 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
+* 修复一个小的内存泄漏 谢谢 @Dummyapps
+* 修复`AVStatus`没回调主线程问题
 
 # 2.2.1 发布日期: 2014-01-16
-- 发布事件流系统
-- 更新API验证方法, 不需要明文在API调用中传递AppKey
-- AVCloud `callFunction`支持AVObject,NSDate等复杂参数
-- SNS组件修复bug:新浪微博无法通过logout来注销并切换到其他微博账号
-- 修复重复发送请求bug
-- 其他小问题修复
+* 发布事件流系统
+* 更新API验证方法, 不需要明文在API调用中传递AppKey
+* AVCloud `callFunction`支持AVObject,NSDate等复杂参数
+* SNS组件修复bug:新浪微博无法通过logout来注销并切换到其他微博账号
+* 修复重复发送请求bug
+* 其他小问题修复
 
 # 2.2.0 发布日期: 2014-01-09
 
-- 支持arm64 CPU. (UI组件除外)
-- 添加AVFile的缓存清除接口，添加`clearCachedFile`,`clearAllCachedFiles`等方法。
-- AVFile文件没上传成功 不会创建`_File`记录
-- 修复子类化属性可能出现`NSNull`的问题
-- 推送消息可以直接设置具体推送时间（定时推送），AVPush添加`setPushDate`方法
-- 修复请求缓存设置`maxCacheAge`为`0`时的异常处理
-- 支持`AND`查询, 接口:`+ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries`
-- 修复绑定SNS的`AVUser`不认为是已经验证的用户的Bug。
+* 支持arm64 CPU. (UI组件除外)
+* 添加AVFile的缓存清除接口，添加`clearCachedFile`,`clearAllCachedFiles`等方法。
+* AVFile文件没上传成功 不会创建`_File`记录
+* 修复子类化属性可能出现`NSNull`的问题
+* 推送消息可以直接设置具体推送时间（定时推送），AVPush添加`setPushDate`方法
+* 修复请求缓存设置`maxCacheAge`为`0`时的异常处理
+* 支持`AND`查询, 接口:`+ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries`
+* 修复绑定SNS的`AVUser`不认为是已经验证的用户的Bug。
 
 # 2.1.2 发布日期：2013-12-20
 
