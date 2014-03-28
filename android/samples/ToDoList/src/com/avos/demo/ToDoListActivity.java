@@ -40,7 +40,7 @@ public class ToDoListActivity extends ListActivity {
 			// Gets the current list of todos in sorted order
 			AVQuery query = new AVQuery(className);
 
-			query.orderByDescending("_created_at");
+			query.orderByDescending("updatedAt");
             try {
 			    todos = query.find();
             } catch (AVException exception) {
@@ -65,11 +65,7 @@ public class ToDoListActivity extends ListActivity {
 		@Override
 		protected void onPostExecute(Void result) {
 			// Put the list of todos into the list view
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(ToDoListActivity.this,
-					com.avos.demo.R.layout.todo_row);
-			for (AVObject todo : todos) {
-				adapter.add((String) todo.get("name"));
-			}
+		    TodoAdapter adapter = new TodoAdapter(ToDoListActivity.this,todos);
 			setListAdapter(adapter);
 			ToDoListActivity.this.progressDialog.dismiss();
 			TextView empty = (TextView) findViewById(android.R.id.empty);
@@ -90,8 +86,9 @@ public class ToDoListActivity extends ListActivity {
 		registerForContextMenu(getListView());
 	}
 
-	private void createTodo() {
+	private void createTodo(int position) {
 		Intent i = new Intent(this, CreateTodo.class);
+		i.putExtra("name", (String)todos.get(position).get("name"));
 		startActivityForResult(i, ACTIVITY_CREATE);
 	}
 
@@ -183,7 +180,8 @@ public class ToDoListActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case INSERT_ID:
-			createTodo();
+		  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+			createTodo(info.position);
 			return true;
 		}
 
