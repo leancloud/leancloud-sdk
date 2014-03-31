@@ -9,13 +9,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -67,6 +67,7 @@ public class ToDoListActivity extends ListActivity {
 			// Put the list of todos into the list view
 		    TodoAdapter adapter = new TodoAdapter(ToDoListActivity.this,todos);
 			setListAdapter(adapter);
+		    registerForContextMenu(getListView());
 			ToDoListActivity.this.progressDialog.dismiss();
 			TextView empty = (TextView) findViewById(android.R.id.empty);
 			empty.setVisibility(View.VISIBLE);
@@ -78,17 +79,14 @@ public class ToDoListActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(com.avos.demo.R.layout.main);
-
 		TextView empty = (TextView) findViewById(android.R.id.empty);
 		empty.setVisibility(View.INVISIBLE);
 
 		new RemoteDataTask().execute();
-		registerForContextMenu(getListView());
 	}
 
-	private void createTodo(int position) {
+	private void createTodo() {
 		Intent i = new Intent(this, CreateTodo.class);
-		i.putExtra("name", (String)todos.get(position).get("name"));
 		startActivityForResult(i, ACTIVITY_CREATE);
 	}
 
@@ -143,6 +141,7 @@ public class ToDoListActivity extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		boolean result = super.onCreateOptionsMenu(menu);
 		menu.add(0, INSERT_ID, 0, com.avos.demo.R.string.menu_insert);
+		Log.d("shit","bull");
 		return result;
 	}
 
@@ -180,8 +179,7 @@ public class ToDoListActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case INSERT_ID:
-		  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-			createTodo(info.position);
+		    createTodo();
 			return true;
 		}
 
