@@ -1,3 +1,10 @@
+# 2.5.0 发布日期：2014-04-11
+* AVFile现在增加了AVFile(String name,String url,Map<String,Object> metaData)初始化接口，用以存储网络文件
+* 修复AVFile的metaData字段名称错误
+* AVQuery.whereEqualTo(key,value)当value为AVObject时的自动作为Pointer处理
+* 修正了AVObject.deleteAll中间可能存在className为空的异常问题
+* 修复AVObject.deleteAll某些情况下无法删除子类化对象的Bug。
+
 # 2.4.1.2 发布日期： 2014-04-02
 
 * 修复SDK到推送服务器连接可能的内存泄露隐患。
