@@ -5,5 +5,5 @@ platform :ios, "5.0"
 #pod 'AVOSCloudSNS'
 
 #测试版 可以随时更新最新版的SDK(但是不能保证稳定)
-pod 'AVOSCloud', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloud.podspec'
-pod 'AVOSCloudSNS', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudSNS.podspec'
+pod 'AVOSCloud', :podspec => 'https://download.avoscloud.com/sdk/iOS/current/AVOSCloud.podspec'
+pod 'AVOSCloudSNS', :podspec => 'https://download.avoscloud.com/sdk/iOS/current/AVOSCloudSNS.podspec'
