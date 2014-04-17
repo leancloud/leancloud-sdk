@@ -70,7 +70,8 @@ public class ToDoListActivity extends ListActivity {
 		    registerForContextMenu(getListView());
 			ToDoListActivity.this.progressDialog.dismiss();
 			TextView empty = (TextView) findViewById(android.R.id.empty);
-			empty.setVisibility(View.VISIBLE);
+			if(!todos.isEmpty())
+			empty.setVisibility(View.INVISIBLE);
 		}
 	}
 
@@ -80,8 +81,9 @@ public class ToDoListActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(com.avos.demo.R.layout.main);
 		TextView empty = (TextView) findViewById(android.R.id.empty);
-		empty.setVisibility(View.INVISIBLE);
-
+		if(todos.isEmpty()){
+	        empty.setVisibility(View.VISIBLE);		  
+		}
 		new RemoteDataTask().execute();
 	}
 
