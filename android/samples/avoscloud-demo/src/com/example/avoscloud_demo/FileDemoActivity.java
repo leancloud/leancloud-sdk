@@ -84,7 +84,7 @@ public class FileDemoActivity extends DemoBaseActivity {
             showMessage("Please upload file at first.", null, false);
             return;
         }
-        AVFile avFile = new AVFile("my_download_file", fileUrl);
+        AVFile avFile = new AVFile("my_download_file", fileUrl,null);
         avFile.getDataInBackground(new GetDataCallback() {
             @Override
             public void done(byte[] bytes, AVException e) {
