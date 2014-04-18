@@ -1,3 +1,8 @@
+# 2.5.1 发布日期：2014-04-18
+* AVQuery.getFirst()在查询不到对象时不再抛出Exception而是返回null
+* AVUser中增加cast和alwaysUseSubClass方法，以便于用户处理自定义的AVUser子类
+* 修正AVQuery的addAscendingOrder和addDescendingOrder可能存在的NPE issue
+
 # 2.5.0 发布日期：2014-04-11
 * AVFile现在增加了AVFile(String name,String url,Map<String,Object> metaData)初始化接口，用以存储网络文件
 * 修复AVFile的metaData字段名称错误

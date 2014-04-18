@@ -1,3 +1,6 @@
+# 2.5.1 发布日期：2014-04-18
+* 修复 AVOSCloudSNS 组件 QQ webview 登录 bug
+
 # 2.5.0 发布日期：2014-04-11
 * AVQuery 的 whereKey:EqualsTo: 能够自动处理 AVObject 对象
 * 修复AVObject的saveAll和同步save方法不能保存关联对象的Bug。
