@@ -2,6 +2,7 @@
 * 发布了Feedback SDK
 * 修正了AVPush Query 中间where条件冲突的问题
 * 解决AVObject和AVUser等无法通过get(key)获得内置属性的Bug。
+* 修复AV.File的delete方法某些情况下抛出File object is not found的Bug.
 
 # 2.5.1 发布日期：2014-04-18
 * AVQuery.getFirst()在查询不到对象时不再抛出Exception而是返回null
