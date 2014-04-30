@@ -1,3 +1,7 @@
+# 2.5.2.1 发布时间：2014-04-29
+* 修正了ThreadActivty无法正常访问资源文件的bug
+
+
 # 2.5.2 发布日期：2014-04-24
 * 发布了Feedback SDK
 * 修正了AVPush Query 中间where条件冲突的问题
