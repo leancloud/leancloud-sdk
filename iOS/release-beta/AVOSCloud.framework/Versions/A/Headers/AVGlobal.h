@@ -13,6 +13,7 @@
 #define channelsTag     @"channels"
 #define badgeTag        @"badge"
 #define deviceTokenTag  @"deviceToken"
+#define timeZoneTag     @"timezone"
 #define usernameTag     @"username"
 #define passwordTag     @"password"
 #define emailTag        @"email"

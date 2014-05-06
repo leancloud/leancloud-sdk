@@ -31,8 +31,9 @@ typedef void (^AVStatusResultBlock)(AVStatus *status, NSError *error);
  */
 @property(nonatomic,readonly) NSString *objectId;
 
-/* 此状态在用户某个Type的收件箱中的ID
- * @warning 仅用于分片查询,不具有唯一性,同一条状态在不同的inbox里的messageId也是不同的
+/**
+ *  此状态在用户某个Type的收件箱中的ID
+ *  @warning 仅用于分片查询,不具有唯一性,同一条状态在不同的inbox里的messageId也是不同的
  */
 @property(nonatomic,readonly) NSUInteger messageId;
 

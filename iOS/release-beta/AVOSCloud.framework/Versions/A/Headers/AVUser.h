@@ -70,6 +70,18 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
 /// The email for the AVUser.
 @property (nonatomic, retain) NSString *email;
 
+
+/**
+ *  请求重发验证邮件
+ *  如果用户邮箱没有得到验证或者用户修改了邮箱, 通过本方法重新发送验证邮件.
+ *  
+ *  @warning 为防止滥用,同一个邮件地址，1分钟内只能发1次!
+ *
+ *  @param email 邮件地址
+ *  @param block 回调结果
+ */
++(void)requestEmailVerify:(NSString*)email withBlock:(AVBooleanResultBlock)block;
+
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken. 
  @return true if the sign up was successful.

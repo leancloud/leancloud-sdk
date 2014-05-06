@@ -22,8 +22,10 @@
 #import "AVRelation.h"
 #import "AVSubclassing.h"
 #import "AVStatus.h"
+#import "AVUserFeedbackThread.h"
+#import "AVUserFeedbackAgent.h"
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import "AVAnalytics.h"
 #endif
 
@@ -100,18 +102,18 @@ typedef enum AVLogLevel : NSUInteger {
  */
 +(void)clearLastModifyCache;
 
-+ (void)useAVCloud;
++ (void)useAVCloud AVDeprecated("2.3.3以后废除");
 + (void)setStorageType:(AVStorageType)type;
 
 /**
  *  Use AVOS US data center
  */
-+ (void)useAVCloudUS;
++ (void)useAVCloudUS AVDeprecated("2.3.3以后废除");
 
 /**
  *  Use AVOS China data center. the default option is China
  */
-+ (void)useAVCloudCN;
++ (void)useAVCloudCN AVDeprecated("2.3.3以后废除");
 
 /**
  *  *  get the timeout interval for AVOS request
@@ -178,7 +180,7 @@ typedef AVCloud PFCloud;
 
 typedef AVRelation PFRelation;
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 typedef AVAnalytics PFAnalytics;
 #endif
 
