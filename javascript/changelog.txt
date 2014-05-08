@@ -1,3 +1,7 @@
+# 0.3.2 发布日期：2014年5月8日
+* 添加新API `AV.File.withURL`，用于保存已经有URL的文件对象。
+* 添加新API `AV.Relation.reverseQuery`，用于relation的反向查询。
+
 # 0.3.1 发布日期：2014年02月18日
 * AV.File的构造函数可以接受node.js的Buffer类了。
 * AV.File新增方法thumbnailURL，获取图片缩略图。
