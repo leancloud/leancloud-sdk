@@ -1,3 +1,9 @@
+# 2.5.3 发布日期：2014-05-09
+* 修复SNS组件已知bug：所有app通过webview登录qq或微博，均显示向AVOSCloud授权。
+* 修复未缓存currentInstallation的bug。
+* 对于AVObjet，setObject:forKey将会检查key是否合法。
+* 添加211错误代码，表示用户不存在。
+
 # 2.5.2 发布日期：2014-04-26
 * 增加用户反馈组件
 * 子查询支持 limit 与 skip
