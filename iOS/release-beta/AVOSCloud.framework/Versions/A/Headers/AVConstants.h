@@ -158,6 +158,8 @@ extern NSInteger const kAVErrorAccountAlreadyLinked;
 extern NSInteger const kAVErrorUserIdMismatch;
 /*! @abstract 210: The username and password mismatch. */
 extern NSInteger const kAVErrorUsernamePasswordMismatch;
+/*! @abstract 211: Could not find user. */
+extern NSInteger const kAVErrorUserNotFound;
 /*! @abstract 250: Facebook id missing from request */
 extern NSInteger const kAVErrorFacebookIdMissing;
 /*! @abstract 250: Linked id missing from request */
@@ -220,6 +222,7 @@ extern NSInteger const kAVErrorInvalidLinkedSession;
 #define kPFErrorAccountAlreadyLinked kAVErrorAccountAlreadyLinked
 #define kPFErrorUserIdMismatch kAVErrorUserIdMismatch
 #define kPFErrorUsernamePasswordMismatch kAVErrorUsernamePasswordMismatch
+#define kPFErrorUserNotFound kAVErrorUserNotFound
 #define kPFErrorFacebookIdMissing kAVErrorFacebookIdMissing
 #define kPFErrorLinkedIdMissing kAVErrorLinkedIdMissing
 #define kPFErrorFacebookInvalidSession kAVErrorFacebookInvalidSession
