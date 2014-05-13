@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AVOS Cloud Todo Demo</string>
+    <string name="app_name">AVOS Todo</string>
     <string name="empty">There are no todo items right now.</string>
     <string name="menu_insert">Create Todo</string>
     <string name="content">Enter your todo content</string>
