@@ -28,7 +28,7 @@
                 <!-- 处理以"com.avoscloud.todo://avoscloud/classes/Todo/"开头的 URI -->
                 <data android:scheme="com.avoscloud.todo" />
                 <data android:host="avoscloud" />
-                <data android:pathPrefix="/classes/TODO/" />
+                <data android:pathPrefix="/classes/Todo/" />
             </intent-filter>
         </activity>
 
