@@ -2,8 +2,6 @@ package com.avos.demo;
 
 import java.util.List;
 
-import com.avos.avoscloud.AVObject;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,22 +12,24 @@ import android.widget.TextView;
 public class TodoAdapter extends BaseAdapter {
 
   Context mContext;
-  List<AVObject> todos;
+  List<Todo> todos;
 
-  public TodoAdapter(Context context, List<AVObject> todos) {
+  public TodoAdapter(Context context, List<Todo> todos) {
     mContext = context;
     this.todos = todos;
   }
 
   @Override
   public int getCount() {
-    return todos.size();
+    return todos != null ? todos.size() : 0;
   }
 
   @Override
   public Object getItem(int position) {
-    todos.get(position);
-    return null;
+    if (todos != null)
+      return todos.get(position);
+    else
+      return null;
   }
 
   @Override
@@ -43,7 +43,9 @@ public class TodoAdapter extends BaseAdapter {
       convertView = LayoutInflater.from(mContext).inflate(R.layout.todo_row, null);
     }
     TextView text = (TextView) convertView.findViewById(R.id.text);
-    text.setText((String) todos.get(position).get("name"));
+    Todo todo = todos.get(position);
+    if (todo != null)
+      text.setText(todo.getContent());
     return convertView;
   }
 

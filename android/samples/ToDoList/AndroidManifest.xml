@@ -17,12 +17,21 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name="com.avos.demo.CreateTodo" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 处理以"com.avoscloud.todo://avoscloud/classes/TODO/"开头的 URI -->
+                <data android:scheme="com.avoscloud.todo" />
+                <data android:host="avoscloud" />
+                <data android:pathPrefix="/classes/TODO/" />
+            </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

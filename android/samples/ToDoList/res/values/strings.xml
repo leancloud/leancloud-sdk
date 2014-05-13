@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ToDoList</string>
-    <string name="empty">There are no todo items.</string>
-    <string name="menu_insert">Add Todo</string>
-    <string name="name">Enter your todo</string>
+    <string name="app_name">AVOS Cloud Todo Demo</string>
+    <string name="empty">There are no todo items right now.</string>
+    <string name="menu_insert">Create Todo</string>
+    <string name="content">Enter your todo content</string>
     <string name="confirm">Done</string>
     <string name="create_todo">Create Todo</string>
     <string name="menu_delete">Delete Todo</string>
