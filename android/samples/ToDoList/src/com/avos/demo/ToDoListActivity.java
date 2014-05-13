@@ -1,6 +1,7 @@
 package com.avos.demo;
 
 
+import java.util.Collections;
 import java.util.List;
 
 import android.app.Dialog;
@@ -24,180 +25,189 @@ import com.avos.avoscloud.*;
 
 
 public class ToDoListActivity extends ListActivity {
-	private static final int ACTIVITY_CREATE = 0;
-	private static final int ACTIVITY_EDIT = 1;
+  private static final int ACTIVITY_CREATE = 0;
+  private static final int ACTIVITY_EDIT = 1;
 
-	public static final int INSERT_ID = Menu.FIRST;
-	private static final int DELETE_ID = Menu.FIRST + 1;
+  public static final int INSERT_ID = Menu.FIRST;
+  private static final int DELETE_ID = Menu.FIRST + 1;
 
-	private List<AVObject> todos;
-	private Dialog progressDialog;
-    private static final String className = "TODO";
+  private volatile List<Todo> todos;
+  private Dialog progressDialog;
 
-	private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
-		// Override this method to do custom remote calls
-		protected Void doInBackground(Void... params) {
-			// Gets the current list of todos in sorted order
-			AVQuery query = new AVQuery(className);
+  private static final String TAG = ToDoListActivity.class.getName();
 
-			query.orderByDescending("updatedAt");
+  private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+    // Override this method to do custom remote calls
+    protected Void doInBackground(Void... params) {
+      // 查询当前Todo列表
+      AVQuery<Todo> query = AVQuery.getQuery(Todo.class);
+      // 按照更新时间降序排序
+      query.orderByDescending("updatedAt");
+      // 最大返回1000条
+      query.limit(1000);
+      try {
+        todos = query.find();
+      } catch (AVException exception) {
+        Log.e(TAG, "Query todos failed.", exception);
+        todos = Collections.emptyList();
+      }
+      return null;
+    }
+
+    @Override
+    protected void onPreExecute() {
+      ToDoListActivity.this.progressDialog =
+          ProgressDialog.show(ToDoListActivity.this, "", "Loading...", true);
+      super.onPreExecute();
+    }
+
+    @Override
+    protected void onProgressUpdate(Void... values) {
+
+      super.onProgressUpdate(values);
+    }
+
+    @Override
+    protected void onPostExecute(Void result) {
+      // 展现ListView
+      TodoAdapter adapter = new TodoAdapter(ToDoListActivity.this, todos);
+      setListAdapter(adapter);
+      registerForContextMenu(getListView());
+      ToDoListActivity.this.progressDialog.dismiss();
+      TextView empty = (TextView) findViewById(android.R.id.empty);
+      if (todos != null && !todos.isEmpty()) {
+        empty.setVisibility(View.INVISIBLE);
+      } else {
+        empty.setVisibility(View.VISIBLE);
+      }
+    }
+  }
+
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(com.avos.demo.R.layout.main);
+    TextView empty = (TextView) findViewById(android.R.id.empty);
+    empty.setVisibility(View.VISIBLE);
+    new RemoteDataTask().execute();
+  }
+
+  private void createTodo() {
+    Intent i = new Intent(this, CreateTodo.class);
+    startActivityForResult(i, ACTIVITY_CREATE);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    super.onActivityResult(requestCode, resultCode, intent);
+    if (intent == null) {
+      return;
+    }
+    final Bundle extras = intent.getExtras();
+
+    switch (requestCode) {
+      case ACTIVITY_CREATE:
+        new RemoteDataTask() {
+          protected Void doInBackground(Void... params) {
+            // 创建todo
+            String content = extras.getString("content");
+            Todo todo = new Todo();
+            todo.setContent(content);
             try {
-			    todos = query.find();
-            } catch (AVException exception) {
-                exception.printStackTrace();
+              todo.save();
+            } catch (AVException e) {
+              Log.e(TAG, "Create todo failed.", e);
             }
-			return null;
-		}
+            // 自定义事件统计
+            AVAnalytics.onEvent(getApplicationContext(), "create_todo");
+            super.doInBackground();
+            return null;
+          }
+        }.execute();
+        break;
+      case ACTIVITY_EDIT:
+        // 编辑Todo
+        final String id = extras.getString("objectId");
+        final String content = extras.getString("content");
 
-		@Override
-		protected void onPreExecute() {
-			ToDoListActivity.this.progressDialog = ProgressDialog.show(ToDoListActivity.this, "",
-					"Loading...", true);
-			super.onPreExecute();
-		}
+        new RemoteDataTask() {
+          protected Void doInBackground(Void... params) {
+            try {
+              final Todo todo = AVObject.createWithoutData(Todo.class, id);
+              todo.setContent(content);
+              todo.save();
+            } catch (AVException e) {
+              Log.e(TAG, "Update todo failed.", e);
+            }
+            // 自定义事件统计
+            AVAnalytics.onEvent(getApplicationContext(), "update_todo");
+            super.doInBackground();
+            return null;
+          }
+        }.execute();
+        break;
+    }
+  }
 
-		@Override
-		protected void onProgressUpdate(Void... values) {
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    boolean result = super.onCreateOptionsMenu(menu);
+    menu.add(0, INSERT_ID, 0, com.avos.demo.R.string.menu_insert);
+    return result;
+  }
 
-			super.onProgressUpdate(values);
-		}
+  @Override
+  public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+    super.onCreateContextMenu(menu, v, menuInfo);
+    menu.add(0, DELETE_ID, 0, com.avos.demo.R.string.menu_delete);
+  }
 
-		@Override
-		protected void onPostExecute(Void result) {
-			// Put the list of todos into the list view
-		    TodoAdapter adapter = new TodoAdapter(ToDoListActivity.this,todos);
-			setListAdapter(adapter);
-		    registerForContextMenu(getListView());
-			ToDoListActivity.this.progressDialog.dismiss();
-			TextView empty = (TextView) findViewById(android.R.id.empty);
-			if(todos!=null&&!todos.isEmpty()){
-			  empty.setVisibility(View.INVISIBLE);
-			}
-			else{
-			  empty.setVisibility(View.VISIBLE);
-			}
-		}
-	}
+  @Override
+  public boolean onContextItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case DELETE_ID:
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(com.avos.demo.R.layout.main);
-		TextView empty = (TextView) findViewById(android.R.id.empty);
-		empty.setVisibility(View.VISIBLE);		  
-		new RemoteDataTask().execute();
-	}
+        // Delete the remote object
+        final Todo todo = todos.get(info.position);
 
-	private void createTodo() {
-		Intent i = new Intent(this, CreateTodo.class);
-		startActivityForResult(i, ACTIVITY_CREATE);
-	}
+        new RemoteDataTask() {
+          protected Void doInBackground(Void... params) {
+            try {
+              todo.delete();
+            } catch (AVException e) {
+            }
+            // 自定义事件统计
+            AVAnalytics.onEvent(getApplicationContext(), "delete_todo");
+            super.doInBackground();
+            return null;
+          }
+        }.execute();
+        return true;
+    }
+    return super.onContextItemSelected(item);
+  }
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-		super.onActivityResult(requestCode, resultCode, intent);
-		if (intent == null) {
-			return;
-		}
-		final Bundle extras = intent.getExtras();
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case INSERT_ID:
+        createTodo();
+        return true;
+    }
 
-		switch (requestCode) {
-		case ACTIVITY_CREATE:
-			new RemoteDataTask() {
-				protected Void doInBackground(Void... params) {
-					String name = extras.getString("name");
-					AVObject todo = new AVObject(className);
-					todo.put("name", name);
-                    AVACL acl = todo.getACL();
-					try {
-						todo.save();
-					} catch (AVException e) {
-                        e.printStackTrace();
-					}
+    return super.onOptionsItemSelected(item);
+  }
 
-					super.doInBackground();
-					return null;
-				}
-			}.execute();
-			break;
-		case ACTIVITY_EDIT:
-			// Edit the remote object
-			final AVObject todo;
-			todo = todos.get(extras.getInt("position"));
-			todo.put("name", extras.getString("name"));
-
-			new RemoteDataTask() {
-				protected Void doInBackground(Void... params) {
-					try {
-						todo.save();
-					} catch (AVException e) {
-					}
-					super.doInBackground();
-					return null;
-				}
-			}.execute();
-			break;
-		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		boolean result = super.onCreateOptionsMenu(menu);
-		menu.add(0, INSERT_ID, 0, com.avos.demo.R.string.menu_insert);
-		Log.d("shit","bull");
-		return result;
-	}
-
-	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		super.onCreateContextMenu(menu, v, menuInfo);
-		menu.add(0, DELETE_ID, 0, com.avos.demo.R.string.menu_delete);
-	}
-
-	@Override
-	public boolean onContextItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case DELETE_ID:
-			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-
-			// Delete the remote object
-			final AVObject todo = todos.get(info.position);
-
-			new RemoteDataTask() {
-				protected Void doInBackground(Void... params) {
-					try {
-						todo.delete();
-					} catch (AVException e) {
-					}
-					super.doInBackground();
-					return null;
-				}
-			}.execute();
-			return true;
-		}
-		return super.onContextItemSelected(item);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case INSERT_ID:
-		    createTodo();
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
-		Intent i = new Intent(this, CreateTodo.class);
-
-		i.putExtra("name", todos.get(position).getString("name").toString());
-		i.putExtra("position", position);
-		startActivityForResult(i, ACTIVITY_EDIT);
-	}
+  @Override
+  protected void onListItemClick(ListView l, View v, int position, long id) {
+    super.onListItemClick(l, v, position, id);
+    // 打开编辑页面，传递content和objectId过去
+    Intent i = new Intent(this, CreateTodo.class);
+    i.putExtra("content", todos.get(position).getString("content"));
+    i.putExtra("objectId", todos.get(position).getObjectId());
+    startActivityForResult(i, ACTIVITY_EDIT);
+  }
 
 }

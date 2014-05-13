@@ -2,23 +2,18 @@ package com.avos.demo;
 
 import com.avos.avoscloud.*;
 
-
 import android.app.Application;
 
 public class ToDoListApplication extends Application {
 
-	@Override
-	public void onCreate() {
-		super.onCreate();
-
-        // Your application id and Application Key
-		AVOSCloud.initialize(this, "gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks", "7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1");
-        AVOSCloud.useAVCloudCN();
-		AVUser.enableAutomaticUser();
-		AVACL defaultACL = new AVACL();
-        defaultACL.setPublicWriteAccess(true);
-        defaultACL.setPublicReadAccess(true);
-		AVACL.setDefaultACL(defaultACL, true);
-	}
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    // 初始化应用 Id 和 应用 Key，您可以在应用设置菜单里找到这些信息
+    AVOSCloud.initialize(this, "70l90kzm53nplnu013ala0j8wipr594d36m5zuz94ukvmh5s",
+        "lamrsuheyiaqcx4o7m3jaz4awaeukerit1mucnjwk7ibokfv");
+    // 注册子类
+    AVObject.registerSubclass(Todo.class);
+  }
 
 }

@@ -2,49 +2,97 @@ package com.avos.demo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.avos.avoscloud.AVAnalytics;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.GetCallback;
 import com.avos.demo.R;
 
 public class CreateTodo extends Activity {
 
-	private EditText nameText;
-	private int position;
+  private EditText contentText;
+  private String objectId;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+  @Override
+  protected void onPause() {
+    super.onPause();
+    // 页面统计，结束
+    AVAnalytics.onPause(this);
+  }
 
-		setContentView(R.layout.create_todo);
-		setTitle(R.string.create_todo);
+  @Override
+  protected void onResume() {
+    super.onResume();
+    // 页面统计，开始
+    AVAnalytics.onResume(this);
+  }
 
-		nameText = (EditText) findViewById(R.id.name);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
-			String name = extras.getString("name");
-			position = extras.getInt("position");
+    setContentView(R.layout.create_todo);
+    setTitle(R.string.create_todo);
 
-			if (name != null) {
-				nameText.setText(name);
-			}
-		}
+    contentText = (EditText) findViewById(R.id.content);
 
-		Button confirmButton = (Button) findViewById(R.id.confirm);
-		confirmButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Bundle bundle = new Bundle();
-				bundle.putString("name", nameText.getText().toString());
-				bundle.putInt("position", position);
+    Intent intent = getIntent();
+    // 通过搜索结果打开
+    if (intent.getAction() == Intent.ACTION_VIEW) {
+      // 如果是VIEW action，我们通过getData获取URI
+      Uri uri = intent.getData();
+      String path = uri.getPath();
+      int index = path.lastIndexOf("/");
+      if (index > 0) {
+        // 获取objectId
+        objectId = path.substring(index + 1);
+        Todo todo = new Todo();
+        todo.setObjectId(objectId);
+        // 通过Fetch获取content内容
+        todo.fetchInBackground(new GetCallback<AVObject>() {
+          @Override
+          public void done(AVObject todo, AVException arg1) {
+            if (todo != null) {
+              String content = todo.getString("content");
+              if (content != null) {
+                contentText.setText(content);
+              }
+            }
+          }
+        });
+      }
+    } else {
+      // 通过ListView点击打开
+      Bundle extras = getIntent().getExtras();
+      if (extras != null) {
+        String content = extras.getString("content");
+        objectId = extras.getString("objectId");
 
-				Intent intent = new Intent();
-				intent.putExtras(bundle);
-				setResult(RESULT_OK, intent);
-				finish();
-			}
-		});
-	}
+        if (content != null) {
+          contentText.setText(content);
+        }
+      }
+    }
+
+    Button confirmButton = (Button) findViewById(R.id.confirm);
+    confirmButton.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString("content", contentText.getText().toString());
+        bundle.putString("objectId", objectId);
+
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
+        setResult(RESULT_OK, intent);
+        finish();
+      }
+    });
+  }
 
 }
