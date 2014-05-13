@@ -25,7 +25,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- 处理以"com.avoscloud.todo://avoscloud/classes/TODO/"开头的 URI -->
+                <!-- 处理以"com.avoscloud.todo://avoscloud/classes/Todo/"开头的 URI -->
                 <data android:scheme="com.avoscloud.todo" />
                 <data android:host="avoscloud" />
                 <data android:pathPrefix="/classes/TODO/" />
