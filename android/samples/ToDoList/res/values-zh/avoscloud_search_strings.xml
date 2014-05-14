@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="avoscloud_search_open_app_text">打开应用</string>
+	<string name="avoscloud_search_result_title">搜索结果</string>
+</resources>

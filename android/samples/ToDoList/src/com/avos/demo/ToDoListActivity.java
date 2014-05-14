@@ -4,9 +4,12 @@ package com.avos.demo;
 import java.util.Collections;
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,11 +20,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.avos.avoscloud.*;
+import com.avos.avoscloud.search.AVSearchQuery;
 
 
 
@@ -31,14 +36,17 @@ public class ToDoListActivity extends ListActivity {
 
   public static final int INSERT_ID = Menu.FIRST;
   private static final int DELETE_ID = Menu.FIRST + 1;
+  private static final int SEARCH_ID = Menu.FIRST + 2;
 
   private volatile List<Todo> todos;
   private Dialog progressDialog;
 
   private static final String TAG = ToDoListActivity.class.getName();
+  private EditText searchInput;
 
   private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
     // Override this method to do custom remote calls
+    @Override
     protected Void doInBackground(Void... params) {
       // 查询当前Todo列表
       AVQuery<Todo> query = AVQuery.getQuery(Todo.class);
@@ -91,6 +99,7 @@ public class ToDoListActivity extends ListActivity {
     setContentView(com.avos.demo.R.layout.main);
     TextView empty = (TextView) findViewById(android.R.id.empty);
     empty.setVisibility(View.VISIBLE);
+    searchInput = new EditText(this);
     new RemoteDataTask().execute();
   }
 
@@ -132,6 +141,7 @@ public class ToDoListActivity extends ListActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     boolean result = super.onCreateOptionsMenu(menu);
     menu.add(0, INSERT_ID, 0, com.avos.demo.R.string.menu_insert);
+    menu.add(0, SEARCH_ID, 1, com.avos.demo.R.string.menu_search);
     return result;
   }
 
@@ -151,11 +161,11 @@ public class ToDoListActivity extends ListActivity {
         final Todo todo = todos.get(info.position);
 
         new RemoteDataTask() {
+          @Override
           protected Void doInBackground(Void... params) {
             try {
               todo.delete();
-            } catch (AVException e) {
-            }
+            } catch (AVException e) {}
             // 自定义事件统计
             AVAnalytics.onEvent(getApplicationContext(), "delete_todo");
             super.doInBackground();
@@ -172,6 +182,21 @@ public class ToDoListActivity extends ListActivity {
     switch (item.getItemId()) {
       case INSERT_ID:
         createTodo();
+        return true;
+      case SEARCH_ID:
+        searchInput = new EditText(this);
+        new AlertDialog.Builder(this).setTitle("请输入").setIcon(android.R.drawable.ic_dialog_info)
+            .setView(searchInput).setPositiveButton("确定", new OnClickListener() {
+
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                String inputSearch = searchInput.getText().toString();
+                if (!AVUtils.isBlankString(inputSearch)) {
+                  AVSearchQuery searchQuery = new AVSearchQuery(inputSearch);
+                  searchQuery.search();
+                }
+              }
+            }).setNegativeButton("取消", null).show();
         return true;
     }
 
