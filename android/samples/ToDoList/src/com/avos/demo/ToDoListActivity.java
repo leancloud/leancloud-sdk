@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avos.avoscloud.*;
 
@@ -104,50 +105,27 @@ public class ToDoListActivity extends ListActivity {
     if (intent == null) {
       return;
     }
-    final Bundle extras = intent.getExtras();
-
     switch (requestCode) {
       case ACTIVITY_CREATE:
-        new RemoteDataTask() {
-          protected Void doInBackground(Void... params) {
-            // 创建todo
-            String content = extras.getString("content");
-            Todo todo = new Todo();
-            todo.setContent(content);
-            try {
-              todo.save();
-            } catch (AVException e) {
-              Log.e(TAG, "Create todo failed.", e);
-            }
-            // 自定义事件统计
-            AVAnalytics.onEvent(getApplicationContext(), "create_todo");
-            super.doInBackground();
-            return null;
-          }
-        }.execute();
+        // 自定义事件统计
+        AVAnalytics.onEvent(getApplicationContext(), "create_todo");
         break;
       case ACTIVITY_EDIT:
-        // 编辑Todo
-        final String id = extras.getString("objectId");
-        final String content = extras.getString("content");
-
-        new RemoteDataTask() {
-          protected Void doInBackground(Void... params) {
-            try {
-              final Todo todo = AVObject.createWithoutData(Todo.class, id);
-              todo.setContent(content);
-              todo.save();
-            } catch (AVException e) {
-              Log.e(TAG, "Update todo failed.", e);
-            }
-            // 自定义事件统计
-            AVAnalytics.onEvent(getApplicationContext(), "update_todo");
-            super.doInBackground();
-            return null;
-          }
-        }.execute();
+        // 自定义事件统计
+        AVAnalytics.onEvent(getApplicationContext(), "update_todo");
         break;
     }
+    // 暂时提示信息
+    boolean success = intent.getBooleanExtra("success", true);
+    Toast toast = null;
+    if (success) {
+      toast = Toast.makeText(getApplicationContext(), "Save successfully.", Toast.LENGTH_SHORT);
+      // 重新查询，刷新ListView
+      new RemoteDataTask().execute();
+    } else {
+      toast = Toast.makeText(getApplicationContext(), "Save failure.", Toast.LENGTH_SHORT);
+    }
+    toast.show();
   }
 
   @Override
