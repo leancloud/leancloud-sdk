@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
+import com.avos.avoscloud.SaveCallback;
 import com.avos.demo.R;
 
 public class CreateTodo extends Activity {
@@ -83,14 +86,28 @@ public class CreateTodo extends Activity {
     Button confirmButton = (Button) findViewById(R.id.confirm);
     confirmButton.setOnClickListener(new View.OnClickListener() {
       public void onClick(View view) {
-        Bundle bundle = new Bundle();
-        bundle.putString("content", contentText.getText().toString());
-        bundle.putString("objectId", objectId);
-
-        Intent intent = new Intent();
-        intent.putExtras(bundle);
-        setResult(RESULT_OK, intent);
-        finish();
+        final Todo todo = new Todo();
+        if (!TextUtils.isEmpty(objectId)) {
+          // 如果存在objectId，保存会变成更新操作。
+          todo.setObjectId(objectId);
+        }
+        todo.setContent(contentText.getText().toString());
+        // 异步保存
+        todo.saveInBackground(new SaveCallback() {
+          @Override
+          public void done(AVException e) {
+            // done方法一定在UI线程执行
+            if (e != null) {
+              Log.e("CreateTodo", "Update todo failed.", e);
+            }
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("success", e == null);
+            Intent intent = new Intent();
+            intent.putExtras(bundle);
+            setResult(RESULT_OK, intent);
+            finish();
+          }
+        });
       }
     });
   }
