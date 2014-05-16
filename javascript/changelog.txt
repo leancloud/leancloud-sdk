@@ -1,3 +1,6 @@
+# 0.3.3 发布日期：2014年5月16日
+* 添加新API `AV.Object`的`fetchWhenSave(boolean)`方法，用于设置fetchWhenSave选项，更新对象的时候同时返回最新值。
+
 # 0.3.2 发布日期：2014年5月8日
 * 添加新API `AV.File.withURL`，用于保存已经有URL的文件对象。
 * 添加新API `AV.Relation.reverseQuery`，用于relation的反向查询。
