@@ -1,0 +1,6 @@
+<resources>
+
+    <string name="avoscloud_search_open_app_text">Open App</string>
+	<string name="avoscloud_search_result_title">Search Result</string>
+	<string name="avoscloud_search_empty_result_text">No Match Data Found</string>
+</resources>

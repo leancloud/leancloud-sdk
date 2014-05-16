@@ -1,12 +1,12 @@
-package com.avoscloud.avoscloudfeedback;
+package com.avos.avoscloud.feedback;
 
 import java.util.List;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUtils;
 import com.avos.avoscloud.LogUtil;
-import com.avoscloud.avoscloudfeedback.Comment.CommentType;
-import com.avoscloud.avoscloudfeedback.FeedbackThread.SyncCallback;
+import com.avos.avoscloud.feedback.Comment.CommentType;
+import com.avos.avoscloud.feedback.FeedbackThread.SyncCallback;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -17,6 +17,7 @@ import android.text.TextWatcher;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
@@ -41,17 +42,17 @@ public class ThreadActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.avoscloud_feedback_activity_conversation);
+    setContentView(Resources.layout.avoscloud_feedback_activity_conversation(this));
 
     setupActionBar();
 
     agent = new FeedbackAgent(this);
     adapter = new FeedbackListAdapter(this);
     thread = agent.getDefaultThread();
-    feedbackListView = (ListView) findViewById(R.id.avoscloud_feedback_thread_list);
+    feedbackListView = (ListView) findViewById(Resources.id.avoscloud_feedback_thread_list(this));
     feedbackListView.setAdapter(adapter);
-    sendButton = (Button) findViewById(R.id.avoscloud_feedback_send);
-    feedbackInput = (EditText) findViewById(R.id.avoscloud_feedback_input);
+    sendButton = (Button) findViewById(Resources.id.avoscloud_feedback_send(this));
+    feedbackInput = (EditText) findViewById(Resources.id.avoscloud_feedback_input(this));
     syncCallback = new SyncCallback() {
 
       @Override
@@ -75,75 +76,73 @@ public class ThreadActivity extends Activity {
         if (!AVUtils.isBlankString(feedbackText)) {
           thread.add(new Comment(feedbackText));
           adapter.notifyDataSetChanged();
-          feedbackListView.setSelection(thread.getCommentsList().size() - 1);
+          feedbackListView.setSelection(feedbackListView.getAdapter().getCount());
+          feedbackListView.smoothScrollToPosition(feedbackListView.getAdapter().getCount());
           thread.sync(syncCallback);
           feedbackInput.setText("");
         }
       }
     });
 
-    contact = (EditText) findViewById(R.id.avoscloud_feedback_contact);
-    contact.setText(thread.getContact());
-    contact.addTextChangedListener(new TextWatcher() {
+    feedbackInput.setOnFocusChangeListener(new OnFocusChangeListener() {
 
       @Override
-      public void afterTextChanged(Editable s) {
-        if (!AVUtils.isBlankString(s.toString())) {
-          thread.setContact(s.toString());
+      public void onFocusChange(View v, boolean hasFocus) {
+        if (hasFocus) {
+          feedbackListView.setSelection(feedbackListView.getAdapter().getCount());
+          feedbackListView.smoothScrollToPosition(feedbackListView.getAdapter().getCount());
         }
       }
-
-      @Override
-      public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-      }
-
-      @Override
-      public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-      }
-
     });
+    contact = (EditText) findViewById(Resources.id.avoscloud_feedback_contact(this));
+    if (agent.isContactEnabled()) {
+      contact.setVisibility(View.VISIBLE);
+      contact.setText(thread.getContact());
+      contact.addTextChangedListener(new TextWatcher() {
 
-    feedbackListView.setOnScrollListener(new OnScrollListener() {
-
-      @Override
-      public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
-          int totalItemCount) {
-        if (firstVisibleItem > 0) {
-          contact.setVisibility(View.GONE);
-        } else {
-          contact.setVisibility(View.VISIBLE);
+        @Override
+        public void afterTextChanged(Editable s) {
+          if (!AVUtils.isBlankString(s.toString())) {
+            thread.setContact(s.toString());
+          }
         }
-      }
 
-      @Override
-      public void onScrollStateChanged(AbsListView view, int scrollState) {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-      }
+        }
 
-    });
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+      });
+    } else {
+      contact.setVisibility(View.GONE);
+    }
 
     thread.sync(syncCallback);
   }
 
   public void setupActionBar() {
     ActionBar actionBar = getActionBar();
-    actionBar.setCustomView(R.layout.avoscloud_feedback_thread_actionbar);
-    actionBar.setDisplayShowCustomEnabled(true);
-    actionBar.setDisplayShowHomeEnabled(false);
-    actionBar.setDisplayShowTitleEnabled(false);
-    actionBar.setBackgroundDrawable(getResources().getDrawable(
-        R.drawable.avoscloud_feedback_user_reply_background));
-    View backButton =
-        actionBar.getCustomView().findViewById(R.id.avoscloud_feedback_actionbar_back);
-    backButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        onBackPressed();
-        finish();
-      }
-    });
+    if (actionBar != null) {
+      actionBar.setCustomView(Resources.layout.avoscloud_feedback_thread_actionbar(this));
+      actionBar.setDisplayShowCustomEnabled(true);
+      actionBar.setDisplayShowHomeEnabled(false);
+      actionBar.setDisplayShowTitleEnabled(false);
+      View backButton =
+          actionBar.getCustomView().findViewById(
+              Resources.id.avoscloud_feedback_actionbar_back(this));
+      backButton.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          onBackPressed();
+          finish();
+        }
+      });
+    }
   }
 
   public class FeedbackListAdapter extends BaseAdapter {
@@ -176,22 +175,34 @@ public class ThreadActivity extends Activity {
       ViewHolder holder;
       if (convertView == null) {
         if (this.getItemViewType(position) == 0) {
-          convertView = inflater.inflate(R.layout.avoscloud_feedback_user_reply, null);
+          convertView =
+              inflater.inflate(Resources.layout.avoscloud_feedback_user_reply(ThreadActivity.this),
+                  null);
         } else {
-          convertView = inflater.inflate(R.layout.avoscloud_feedback_dev_reply, null);
+          convertView =
+              inflater.inflate(Resources.layout.avoscloud_feedback_dev_reply(ThreadActivity.this),
+                  null);
         }
         holder = new ViewHolder();
-        holder.content = (TextView) convertView.findViewById(R.id.avoscloud_feedback_content);
-        holder.timestamp = (TextView) convertView.findViewById(R.id.avoscloud_feedback_timestamp);
+        holder.content =
+            (TextView) convertView.findViewById(Resources.id
+                .avoscloud_feedback_content(ThreadActivity.this));
+        holder.timestamp =
+            (TextView) convertView.findViewById(Resources.id
+                .avoscloud_feedback_timestamp(ThreadActivity.this));
         convertView.setTag(holder);
       } else {
         holder = (ViewHolder) convertView.getTag();
       }
       final Comment comment = (Comment) getItem(position);
       holder.content.setText(comment.getContent());
-      holder.timestamp.setText(DateUtils.getRelativeTimeSpanString(
-          comment.getCreatedAt().getTime(), System.currentTimeMillis() - 1, 0l,
-          DateUtils.FORMAT_ABBREV_ALL));
+      if (Math.abs(comment.getCreatedAt().getTime() - System.currentTimeMillis()) < 10000) {
+        holder.timestamp.setText(getResources().getString(
+            Resources.string.avosclou_feedback_just_now(ThreadActivity.this)));
+      } else {
+        holder.timestamp.setText(DateUtils.getRelativeTimeSpanString(comment.getCreatedAt()
+            .getTime(), System.currentTimeMillis() - 1, 0l, DateUtils.FORMAT_ABBREV_ALL));
+      }
       return convertView;
     }
 
