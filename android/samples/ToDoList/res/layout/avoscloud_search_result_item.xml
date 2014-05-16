@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#fff"
     android:padding="5dp" >
 
     <TextView
         android:id="@+id/avoscloud_search_result_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#333"
         android:textSize="18sp" >
     </TextView>
 
@@ -17,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/avoscloud_search_result_title"
+        android:textColor="#666"
         android:textSize="12sp" >
     </TextView>
 
