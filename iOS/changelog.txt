@@ -1,3 +1,10 @@
+# 2.5.5 发布日期：2014-05-23
+* 修改currentUser缓存策略，使之满足子类化需求。
+* 重构AVQuery，可对同一个key设置多种查询条件。
+* 修复Feedback组件存在的bug。
+* 修复统计组件获取deviceInfo可能会crash的bug。
+* 提供开发者选项，控制是否启用统计。
+
 # 2.5.3 发布日期：2014-05-09
 * 修复SNS组件已知bug：所有app通过webview登录qq或微博，均显示向AVOSCloud授权。
 * 修复未缓存currentInstallation的bug。
