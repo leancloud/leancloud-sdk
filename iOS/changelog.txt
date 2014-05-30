@@ -1,5 +1,6 @@
 # 2.5.6 发布日期：2014-05-30
 * 新增应用内搜索组件 AVSearchQuery
+* 修复bug：因删除用户导致的follower或followee查询crash
 
 # 2.5.5 发布日期：2014-05-23
 * 修改currentUser缓存策略，使之满足子类化需求。
