@@ -1,3 +1,6 @@
+# 2.5.6.1 发布时间:2014-06-03
+* 修正了SNS.loginWithAuthData调用后无响应bug
+
 # 2.5.6 发布时间:2014-05-30
 * AVUser增加第三方账号绑定API，可以便捷地与第三方SNS组件结合使用
 * 增加AVFile.getBucket接口
