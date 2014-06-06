@@ -1,3 +1,6 @@
+# 0.3.4 发布日期：2014年6月6日
+* 在Node.js里执行文件上传，将使用七牛官方SDK上传，避免流量限制。
+
 # 0.3.3 发布日期：2014年5月16日
 * 添加新API `AV.Object`的`fetchWhenSave(boolean)`方法，用于设置fetchWhenSave选项，更新对象的时候同时返回最新值。
 
