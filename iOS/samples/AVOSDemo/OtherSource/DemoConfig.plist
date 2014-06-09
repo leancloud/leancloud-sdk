@@ -36,7 +36,7 @@
 			<key>detail</key>
 			<string>AVFile 基本文件操作</string>
 		</dict>
-        <dict>
+		<dict>
 			<key>class</key>
 			<string>AVAnalyticsBasic</string>
 			<key>name</key>
@@ -44,7 +44,14 @@
 			<key>detail</key>
 			<string>AVAnalytics 基本文件操作</string>
 		</dict>
-        
+		<dict>
+			<key>class</key>
+			<string>AVSearchQueryBasic</string>
+			<key>name</key>
+			<string>搜索</string>
+			<key>detail</key>
+			<string>AVSearchQuery基本用法</string>
+		</dict>
 	</array>
 	<key>高级用法</key>
 	<array>
