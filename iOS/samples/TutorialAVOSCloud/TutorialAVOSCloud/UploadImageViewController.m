@@ -22,31 +22,44 @@
 @synthesize username = _username;
 @synthesize commentTextField = _commentTextField;
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-
-    }
-    return self;
+- (void)loadView {
+    [super loadView];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:super.view.frame];
+    self.view = scrollView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    self.title = @"Upload";
+    self.view.backgroundColor = RGB(50, 50, 50);
     
-    self.imgToUpload = nil;
-    self.username = nil;
-    self.commentTextField = nil;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendPressed:)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 33, self.view.frame.size.width - 40, 31)];
+    textField.center = CGPointMake(self.view.frame.size.width/2, 35);
+    textField.font = [UIFont systemFontOfSize:14];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"Comment";
+    [self.view addSubview:textField];
+    self.commentTextField = textField;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 78, self.view.frame.size.width - 40, 170)];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
+    self.imgToUpload = imageView;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(20, 266, 124, 37);
+    [button setTitleColor:RGB(0, 145, 255) forState:UIControlStateNormal];
+    [button setTitle:@"Select Picture" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(selectPicturePressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -54,19 +67,21 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark IB Actions
+#pragma mark Actions
 
--(IBAction)selectPicturePressed:(id)sender
+-(void)selectPicturePressed:(id)sender
 {
     //Open a UIImagePickerController to select the picture
     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
     imgPicker.delegate = self;
     imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-    [self.navigationController presentModalViewController:imgPicker animated:YES];
+    [self.navigationController presentViewController:imgPicker animated:YES completion:^{
+        
+    }];
 }
 
--(IBAction)sendPressed:(id)sender
+-(void)sendPressed:(id)sender
 {
     [self.commentTextField resignFirstResponder];
     
@@ -142,5 +157,7 @@
     [errorAlertView show];
 }
 
-
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    [self.commentTextField resignFirstResponder];
+}
 @end

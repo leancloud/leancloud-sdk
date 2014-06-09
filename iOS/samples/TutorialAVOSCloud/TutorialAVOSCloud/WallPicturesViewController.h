@@ -9,8 +9,8 @@
 @interface WallPicturesViewController : UIViewController
 
 
-@property (nonatomic, strong) IBOutlet UIScrollView *wallScroll;
+@property (nonatomic, strong) UIScrollView *wallScroll;
 
--(IBAction)logoutPressed:(id)sender;
+-(void)logoutPressed:(id)sender;
 
 @end

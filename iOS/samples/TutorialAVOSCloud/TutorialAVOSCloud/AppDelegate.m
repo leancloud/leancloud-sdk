@@ -1,34 +1,39 @@
-
-
+//
+//  AppDelegate.m
+//  TutorialAVOSCloud
+//
+//  Created by Qihe Bian on 6/6/14.
+//  Copyright (c) 2014 AVOS. All rights reserved.
+//
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import <AVOSCloudUI/AVOSCloudUI.h>
+#import "Constants.h"
+#import "LoginViewController.h"
 
 #define appID @"gqd0m4ytyttvluk1tnn0unlvmdg8h4gxsa2ga159nwp85fks"
 #define appKey @"7gd2zom3ht3vx6jkcmaamm1p2pkrn8hdye2pn4qjcwux1hl1"
 
-
 @implementation AppDelegate
-
-@synthesize window = _window;
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Init AVOS Cloud with app id and app key.
     [AVOSCloud setApplicationId:appID
-                   clientKey:appKey];
-    [AVOSCloud useAVCloudCN];
+                      clientKey:appKey];
     
-    
-    
-    
-    // Override point for customization after application launch.
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    LoginViewController *vc = [[LoginViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    self.window.backgroundColor = RGB(50, 50, 50);
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -65,7 +70,7 @@
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
-	NSLog(@"Failed to get token, error: %@", error);
+    NSLog(@"Failed to get token, error: %@", error);
 }
 
 @end

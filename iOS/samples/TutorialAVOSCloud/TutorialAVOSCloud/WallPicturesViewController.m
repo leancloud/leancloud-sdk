@@ -31,37 +31,25 @@
 @synthesize wallScroll = _wallScroll;
 @synthesize activityIndicator = _loadingSpinner;
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
+- (void)loadView {
+    [super loadView];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:super.view.frame];
+    self.view = scrollView;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    self.wallScroll = nil;
+    self.title = @"Wall";
+    self.view.backgroundColor = RGB(50, 50, 50);
+    self.wallScroll = (UIScrollView *)self.view;
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Upload" style:UIBarButtonItemStylePlain target:self action:@selector(goUpload:)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    item = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutPressed:)];
+    self.navigationItem.leftBarButtonItem = item;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -85,6 +73,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 #pragma mark Wall Load
 //Load the images on the wall
@@ -112,6 +103,7 @@
         AVFile *image = (AVFile *)[wallObject objectForKey:KEY_IMAGE];
         UIImageView *userImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:image.getData]];
         userImage.frame = CGRectMake(0, 0, wallImageView.frame.size.width, 200);
+        userImage.contentMode = UIViewContentModeScaleAspectFit;
         [wallImageView addSubview:userImage];
         
         //Add the info label (User and creation date)
@@ -182,7 +174,7 @@
 }
 
 
-#pragma mark IB Actions
+#pragma mark Actions
 
 
 -(IBAction)logoutPressed:(id)sender
@@ -190,7 +182,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+-(void)goUpload:(id)sender
+{
+    UploadImageViewController *vc = [[UploadImageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark Error Alert
 
