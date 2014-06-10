@@ -177,7 +177,7 @@
 #pragma mark Actions
 
 
--(IBAction)logoutPressed:(id)sender
+-(void)logoutPressed:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
