@@ -85,7 +85,7 @@
 #pragma mark Actions
 
 ////Sign Up Button pressed
--(IBAction)signUpUserPressed:(id)sender
+-(void)signUpUserPressed:(id)sender
 {
     AVUser *user = [AVUser user];
     user.username = self.userRegisterTextField.text;
