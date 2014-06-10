@@ -1,3 +1,9 @@
+# 2.5.7 发布日期：2014-06-09
+* 新增更新用户密码的 API
+* SDK 对服务端 ip 列表做校验，防止 DNS 劫持
+* AVUser 改用 POST 方法 login
+* AVFile 新增 bucket 属性，可用于获取文件的七牛 bucket
+
 # 2.5.6 发布日期：2014-05-30
 * 新增应用内搜索组件 AVSearchQuery
 * 修复bug：因删除用户导致的follower或followee查询crash
