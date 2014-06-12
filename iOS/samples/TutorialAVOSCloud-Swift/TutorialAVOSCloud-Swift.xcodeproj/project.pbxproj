@@ -105,15 +105,15 @@
 		8C9B49E11945BCDE00FA66BE /* TutorialAVOSCloud-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				8C00F7B01945BDBA00E1F7BD /* AppDelegate.swift */,
-				8C9B49ED1945BCDE00FA66BE /* Images.xcassets */,
-				8C9B49E21945BCDE00FA66BE /* Supporting Files */,
 				8C00F7AF1945BDB900E1F7BD /* TutorialAVOSCloud-Swift-Bridging-Header.h */,
+				8C00F7B01945BDBA00E1F7BD /* AppDelegate.swift */,
+				8C8BCC411945CA300047D2D2 /* Constants.swift */,
 				8C8BCC391945C1A50047D2D2 /* LoginViewController.swift */,
 				8C8BCC3B1945C1D20047D2D2 /* RegisterViewController.swift */,
-				8C8BCC3D1945C1F00047D2D2 /* WallPicturesViewController.swift */,
 				8C8BCC3F1945C2060047D2D2 /* UploadImageViewController.swift */,
-				8C8BCC411945CA300047D2D2 /* Constants.swift */,
+				8C8BCC3D1945C1F00047D2D2 /* WallPicturesViewController.swift */,
+				8C9B49ED1945BCDE00FA66BE /* Images.xcassets */,
+				8C9B49E21945BCDE00FA66BE /* Supporting Files */,
 			);
 			path = "TutorialAVOSCloud-Swift";
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../release-v2.5.6";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../release-v2.5.7";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -272,7 +272,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../release-v2.5.6";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../release-v2.5.7";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
