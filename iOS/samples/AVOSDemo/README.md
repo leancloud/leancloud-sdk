@@ -14,7 +14,7 @@ Demo采用`cocoapods`安装AVOSCloud的相关Frameworks, 方法非常简单, 用
 
 ### * 手动安装
 
-请参考 https://cn.avoscloud.com/start.html
+请参考 [https://cn.avoscloud.com/start.html](https://cn.avoscloud.com/start.html)
 
 ----
 
