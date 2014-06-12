@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Area" representedClassName="Area" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="未命名标签" syncable="YES"/>
+    </entity>
+    <entity name="ShangHu" representedClassName="ShangHu" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="String" defaultValueString="未选择" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" defaultValueString="未知" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" defaultValueString="未选择" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" defaultValueString="未选择" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="未命名标签" syncable="YES"/>
+    </entity>
+    <entity name="Type" representedClassName="Type" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="未命名分类" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Area" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="ShangHu" positionX="0" positionY="0" width="128" height="178"/>
+        <element name="Tag" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="Type" positionX="0" positionY="0" width="128" height="60"/>
+    </elements>
+</model>
