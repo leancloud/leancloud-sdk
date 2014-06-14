@@ -3,3 +3,9 @@
 *.rb
 
 .DS_Store
+
+
+# Xcode
+xcuserdata
+xcshareddata
+*workspace
