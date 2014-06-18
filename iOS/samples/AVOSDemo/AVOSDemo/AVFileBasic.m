@@ -76,8 +76,8 @@
                     
                     [self log:[NSString stringWithFormat:@"成功得到图片: %@",[img description]]];
                 }
-            } progressBlock:^(int percentDone) {
-                [self log:[NSString stringWithFormat:@"加载进度: %d%%",percentDone]];
+            } progressBlock:^(NSInteger percentDone) {
+                [self log:[NSString stringWithFormat:@"加载进度: %ld%%", (long)percentDone]];
             }];
             
         }else{

@@ -10,9 +10,6 @@
 		1F1E0FB718585AD200E9097E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0FB618585AD200E9097E /* main.m */; };
 		1F1E0FBA18585B1000E9097E /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0FB918585B1000E9097E /* SourceViewController.m */; };
 		1F1E0FBC18585C0E00E9097E /* html in Resources */ = {isa = PBXBuildFile; fileRef = 1F1E0FBB18585C0E00E9097E /* html */; };
-		1F3AF9B11828C6DE003277B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B01828C6DE003277B5 /* Foundation.framework */; };
-		1F3AF9B31828C6DE003277B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */; };
-		1F3AF9B51828C6DE003277B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3AF9B41828C6DE003277B5 /* UIKit.framework */; };
 		1F53C8C318619B5000FFCBB9 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C218619B5000FFCBB9 /* Student.m */; };
 		1F53C8C61862C6A900FFCBB9 /* AVRelationAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53C8C51862C6A900FFCBB9 /* AVRelationAdvanced.m */; };
 		1F66B1FE185EA8870034AA65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F66B1FD185EA8870034AA65 /* AppDelegate.m */; };
@@ -30,10 +27,13 @@
 		1FAA7D7C1859B00300A2065B /* AVQueryBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D7B1859B00300A2065B /* AVQueryBasic.m */; };
 		1FAA7D7F1859BB5600A2065B /* AVFileBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */; };
 		1FAA7D821859BC7500A2065B /* AVSubclassAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */; };
-		2A48206ED88B46AE8F92ED82 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B81DBB2262E43A2A578442A /* libPods.a */; };
 		8C00F7801945653300E1F7BD /* AVSearchQueryBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C00F77F1945653300E1F7BD /* AVSearchQueryBasic.m */; };
 		8C00F78319458F5E00E1F7BD /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C00F78219458F5E00E1F7BD /* SearchResultController.m */; };
 		8C00F7881945B69000E1F7BD /* PBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C00F7871945B69000E1F7BD /* PBWebViewController.m */; };
+		8C59E83219513B8200D1A8AE /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C59E83019513B8200D1A8AE /* AVOSCloud.framework */; };
+		8C59E83319513B8200D1A8AE /* AVOSCloudSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C59E83119513B8200D1A8AE /* AVOSCloudSNS.framework */; };
+		8C731E0519517D1300FFF8E7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C59E83419513D3800D1A8AE /* CoreLocation.framework */; };
+		8C731E0619517D1300FFF8E7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C59E83519513D3800D1A8AE /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +42,6 @@
 		1F1E0FB918585B1000E9097E /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
 		1F1E0FBB18585C0E00E9097E /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = OtherSource/html; sourceTree = SOURCE_ROOT; };
 		1F3AF9AD1828C6DE003277B5 /* AVOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F3AF9B01828C6DE003277B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1F3AF9B41828C6DE003277B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F53C8C118619B5000FFCBB9 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		1F53C8C218619B5000FFCBB9 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		1F53C8C41862C6A900FFCBB9 /* AVRelationAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRelationAdvanced.h; sourceTree = "<group>"; };
@@ -76,14 +73,16 @@
 		1FAA7D7E1859BB5600A2065B /* AVFileBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFileBasic.m; sourceTree = "<group>"; };
 		1FAA7D801859BC7500A2065B /* AVSubclassAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSubclassAdvanced.h; sourceTree = "<group>"; };
 		1FAA7D811859BC7500A2065B /* AVSubclassAdvanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSubclassAdvanced.m; sourceTree = "<group>"; };
-		2B81DBB2262E43A2A578442A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C00F77E1945653300E1F7BD /* AVSearchQueryBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSearchQueryBasic.h; sourceTree = "<group>"; };
 		8C00F77F1945653300E1F7BD /* AVSearchQueryBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSearchQueryBasic.m; sourceTree = "<group>"; };
 		8C00F78119458F5E00E1F7BD /* SearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultController.h; sourceTree = "<group>"; };
 		8C00F78219458F5E00E1F7BD /* SearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultController.m; sourceTree = "<group>"; };
 		8C00F7861945B69000E1F7BD /* PBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWebViewController.h; sourceTree = "<group>"; };
 		8C00F7871945B69000E1F7BD /* PBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWebViewController.m; sourceTree = "<group>"; };
-		A12721EE2A814836B3219951 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8C59E83019513B8200D1A8AE /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = "../../release-v2.5.8.1/AVOSCloud.framework"; sourceTree = "<group>"; };
+		8C59E83119513B8200D1A8AE /* AVOSCloudSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloudSNS.framework; path = "../../release-v2.5.8.1/AVOSCloudSNS.framework"; sourceTree = "<group>"; };
+		8C59E83419513D3800D1A8AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8C59E83519513D3800D1A8AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3AF9B31828C6DE003277B5 /* CoreGraphics.framework in Frameworks */,
-				1F3AF9B51828C6DE003277B5 /* UIKit.framework in Frameworks */,
-				1F3AF9B11828C6DE003277B5 /* Foundation.framework in Frameworks */,
-				2A48206ED88B46AE8F92ED82 /* libPods.a in Frameworks */,
+				8C731E0519517D1300FFF8E7 /* CoreLocation.framework in Frameworks */,
+				8C731E0619517D1300FFF8E7 /* CoreTelephony.framework in Frameworks */,
+				8C59E83219513B8200D1A8AE /* AVOSCloud.framework in Frameworks */,
+				8C59E83319513B8200D1A8AE /* AVOSCloudSNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +130,6 @@
 				1F3AF9B71828C6DE003277B5 /* Supporting Files */,
 				1F3AF9AF1828C6DE003277B5 /* Frameworks */,
 				1F3AF9AE1828C6DE003277B5 /* Products */,
-				A12721EE2A814836B3219951 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,10 +144,10 @@
 		1F3AF9AF1828C6DE003277B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F3AF9B01828C6DE003277B5 /* Foundation.framework */,
-				1F3AF9B21828C6DE003277B5 /* CoreGraphics.framework */,
-				1F3AF9B41828C6DE003277B5 /* UIKit.framework */,
-				2B81DBB2262E43A2A578442A /* libPods.a */,
+				8C59E83419513D3800D1A8AE /* CoreLocation.framework */,
+				8C59E83519513D3800D1A8AE /* CoreTelephony.framework */,
+				8C59E83019513B8200D1A8AE /* AVOSCloud.framework */,
+				8C59E83119513B8200D1A8AE /* AVOSCloudSNS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,11 +224,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F3AF9E21828C6DE003277B5 /* Build configuration list for PBXNativeTarget "AVOSDemo" */;
 			buildPhases = (
-				D20752B65D6C4271B7B972F4 /* Check Pods Manifest.lock */,
 				1F3AF9A91828C6DE003277B5 /* Sources */,
 				1F3AF9AA1828C6DE003277B5 /* Frameworks */,
 				1F3AF9AB1828C6DE003277B5 /* Resources */,
-				314BCEBE2D034995B975CEA1 /* Copy Pods Resources */,
 				1FBD6BDA18584F7200339D17 /* Copy Source Code Files */,
 			);
 			buildRules = (
@@ -248,7 +244,7 @@
 		1F3AF9A51828C6DE003277B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = AVOS;
 			};
 			buildConfigurationList = 1F3AF9A81828C6DE003277B5 /* Build configuration list for PBXProject "AVOSDemo" */;
@@ -301,36 +297,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\nset -e\n\nto_path=\"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SourceCode\"\n\n\nrm -rf \"${to_path}\"\nmkdir \"${to_path}\"\n\nrsync -arc ./AVOSDemo/*.m \"${to_path}\"\n                      \n\n";
 		};
-		314BCEBE2D034995B975CEA1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D20752B65D6C4271B7B972F4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -365,7 +331,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -394,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -404,7 +369,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -427,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -435,17 +399,18 @@
 		};
 		1F3AF9E31828C6DE003277B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A12721EE2A814836B3219951 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../release-v2.5.8.1",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSource/AVOSDemo-Prefix.pch";
 				INFOPLIST_FILE = "OtherSource/AVOSDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -455,17 +420,18 @@
 		};
 		1F3AF9E41828C6DE003277B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A12721EE2A814836B3219951 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../release-v2.5.8.1",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSource/AVOSDemo-Prefix.pch";
 				INFOPLIST_FILE = "OtherSource/AVOSDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

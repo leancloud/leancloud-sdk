@@ -37,8 +37,8 @@
         for (int i=0; i<results.count; i++) {
             NSString *sep=nil;
             NSTextCheckingResult *result=results[i];
-            int start= result.range.location;
-            int length=0;
+            NSUInteger start= result.range.location;
+            NSUInteger length=0;
             if (i<results.count-1) {
                 NSTextCheckingResult *nextResult=results[i+1];
                 length= nextResult.range.location-start;
