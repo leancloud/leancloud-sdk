@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{5C5AAFCD-8136-1212-7495-C2552B6F312D}") = "flappy_bird", "Assembly-CSharp.csproj", "{0C2F9F57-0588-B26A-17D1-FF501FA96600}"
+EndProject
+Project("{5C5AAFCD-8136-1212-7495-C2552B6F312D}") = "flappy_bird", "Assembly-CSharp-Editor.csproj", "{8D25D2F4-3290-34CB-0C92-517F117404A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C2F9F57-0588-B26A-17D1-FF501FA96600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C2F9F57-0588-B26A-17D1-FF501FA96600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C2F9F57-0588-B26A-17D1-FF501FA96600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C2F9F57-0588-B26A-17D1-FF501FA96600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D25D2F4-3290-34CB-0C92-517F117404A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D25D2F4-3290-34CB-0C92-517F117404A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D25D2F4-3290-34CB-0C92-517F117404A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D25D2F4-3290-34CB-0C92-517F117404A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+													GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal
