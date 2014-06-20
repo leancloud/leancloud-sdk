@@ -9,3 +9,5 @@
 xcuserdata
 xcshareddata
 *workspace
+Podfile.lock
+Pods

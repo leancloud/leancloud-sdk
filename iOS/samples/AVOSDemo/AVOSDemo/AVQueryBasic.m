@@ -46,9 +46,9 @@
 -(void)demoOnlyGetQueryResultCount{
     AVQuery *query=[AVQuery queryWithClassName:@"Student"];
     
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+    [query countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
         if (error==nil) {
-            [self log:[NSString stringWithFormat:@"查询结果: \n%d个Student", number]];
+            [self log:[NSString stringWithFormat:@"查询结果: \n%ld个Student", number]];
         }else{
             [self log:[NSString stringWithFormat:@"查询出错: \n%@", [error description]]];
         }
