@@ -1,3 +1,8 @@
+# 2.5.8.2 发布时间:2014-06-20
+* 增加AVObject.getAVUser(String key, Class<T> clazz)，获取AVUser子类化对象方法
+* 统计默认打开崩溃统计
+* 应用内搜索增加order和sortAPI接口
+
 # 2.5.8.1 发布时间:2014-06-16
 * 去除IP地址解析代码
 
