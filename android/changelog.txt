@@ -1,3 +1,8 @@
+# 2.5.9 发布时间:2014-06-28
+* 发布实时通信功能
+* 更新AVFriendshipQuery中，遇到部分AVUser为空时出现的NPE异常
+* 为AVObject增加getAVObject(String,Class)方法
+
 # 2.5.8.2 发布时间:2014-06-20
 * 增加AVObject.getAVUser(String key, Class<T> clazz)，获取AVUser子类化对象方法
 * 统计默认打开崩溃统计
