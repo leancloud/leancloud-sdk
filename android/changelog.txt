@@ -1,3 +1,21 @@
+# 2.6.0 发布时间:2014-07-11
+* 修正AVQuery在AVUser子类查询，返回值依然是AVUser而非子类的问题
+* 压缩登录用户的本地缓存大小
+* 更新七牛的存储API节点
+* 增加七牛文件访问时添加本地文件缓存,减少用户的文件访问频率
+* 修正网络文件创建AVFile保存在AVObject中的异常
+* 改进PushService网络重连机制，减少后端网络链接请求次数
+
+# 2.5.9 发布时间:2014-06-28
+* 发布实时通信功能
+* 更新AVFriendshipQuery中，遇到部分AVUser为空时出现的NPE异常
+* 为AVObject增加getAVObject(String,Class)方法
+
+# 2.5.8.2 发布时间:2014-06-20
+* 增加AVObject.getAVUser(String key, Class<T> clazz)，获取AVUser子类化对象方法
+* 统计默认打开崩溃统计
+* 应用内搜索增加order和sortAPI接口
+
 # 2.5.8.1 发布时间:2014-06-16
 * 去除IP地址解析代码
 
