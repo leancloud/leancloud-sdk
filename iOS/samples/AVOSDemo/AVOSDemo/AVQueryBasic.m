@@ -48,7 +48,7 @@
     
     [query countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
         if (error==nil) {
-            [self log:[NSString stringWithFormat:@"查询结果: \n%ld个Student", number]];
+            [self log:[NSString stringWithFormat:@"查询结果: \n%ld个Student", (long)number]];
         }else{
             [self log:[NSString stringWithFormat:@"查询出错: \n%@", [error description]]];
         }

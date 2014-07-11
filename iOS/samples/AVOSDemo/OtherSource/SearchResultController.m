@@ -78,8 +78,8 @@ static const int contentLabelTag = 1000;
         cell.backgroundColor=[UIColor whiteColor];
     }
     AVObject *object = [self.objects objectAtIndex:indexPath.row];
-    NSString *appUrl = [object objectForKey:@"_app_url"];
-    NSString *deeplink = [object objectForKey:@"_deeplink"];
+//    NSString *appUrl = [object objectForKey:@"_app_url"];
+//    NSString *deeplink = [object objectForKey:@"_deeplink"];
     NSMutableString *hightlight = [[[[object objectForKey:@"_highlight"] objectForKey:@"name"] firstObject] mutableCopy];
     NSMutableArray *ranges = [NSMutableArray array];
     NSRange range = [hightlight rangeOfString:@"<em>"];
