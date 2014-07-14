@@ -113,6 +113,16 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  */
 - (void)signUpInBackgroundWithTarget:(id)target selector:(SEL)selector;
 
+/*!
+ update user's password
+ @param oldPassword old password
+ @param newPassword new password
+ @param target Target object for the selector.
+ @param selector The selector that will be called when the asynchrounous request is complete. It should have the following signature: `(void)callbackWithResult:(id)object error:(NSError *)error`. error will be nil on success and set if there was an error.
+ @warning the user must have logged in, and provide both oldPassword and newPassword, otherwise can't update password successfully.
+ */
+- (void)updatePassword:(NSString *)oldPassword newPassword:(NSString *)newPassword withTarget:(id)target selector:(SEL)selector;
+
 /** @name Logging in */
 
 /*!

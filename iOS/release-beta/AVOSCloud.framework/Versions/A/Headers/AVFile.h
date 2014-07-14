@@ -63,6 +63,11 @@ The name of the file.
  */
 @property (readonly) NSString *url;
 
+/*!
+ The Qiniu bucket of the file.
+ */
+@property (readonly) NSString *bucket;
+
 /** @name Storing Data with AVOS Cloud */
 
 /*!

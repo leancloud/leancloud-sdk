@@ -64,6 +64,11 @@ typedef NS_ENUM(int, AVReportPolicy){
  */
 #pragma mark basics
 
+/** 开启统计功能, 默认是开启状态
+ @param value 设置成NO, 就可以关闭统计功能, 防止开发时测试数据污染线上数据.
+ */
++ (void)setAnalyticsEnabled:(BOOL)value;
+
 
 /** 开启CrashReport收集, 默认是开启状态.
  
@@ -132,9 +137,17 @@ typedef NS_ENUM(int, AVReportPolicy){
 + (void)startWithReportPolicy:(AVReportPolicy)rp channelId:(NSString *)cid AVDeprecated("1.4.3以后不再需要，请前往在线配置进行配置");
 
 
+/** 跟踪 app 打开情况
+ @discussion 该方法应在 "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions" 中调用
+ @param launchOptions 对应上述方法的参数launchOptions
+ */
 + (void)trackAppOpenedWithLaunchOptions:(NSDictionary *)launchOptions;
-+ (void)trackAppOpenedWithRemoteNotificationPayload:(NSDictionary *)userInfo;
 
+/** 跟踪 app 被 Push 通知打开的情况
+ @discussion 该方法应在 "- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo" 中调用
+ @param userInfo 对应上述方法的参数userInfo
+ */
++ (void)trackAppOpenedWithRemoteNotificationPayload:(NSDictionary *)userInfo;
 
 
 ///---------------------------------------------------------------------------------------

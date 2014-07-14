@@ -11,6 +11,7 @@
 #import "AVGeoPoint.h"
 #import "AVObject.h"
 #import "AVQuery.h"
+#import "AVSearchQuery.h"
 #import "AVUser.h"
 #import "AVFile.h"
 #import "AVAnonymousUtils.h"
@@ -24,6 +25,8 @@
 #import "AVStatus.h"
 #import "AVUserFeedbackThread.h"
 #import "AVUserFeedbackAgent.h"
+#import "AVSession.h"
+#import "AVSignature.h"
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import "AVAnalytics.h"
