@@ -1,3 +1,7 @@
+# 2.6.0.1 发布时间:2014-07-15
+* 修正AVUser,AVInstallation关于Relation数据的缓存策略带来的问题
+* 修正AVObject中间添加org.json.JSON对象时无法保存数据的问题
+
 # 2.6.0 发布时间:2014-07-11
 * 修正AVQuery在AVUser子类查询，返回值依然是AVUser而非子类的问题
 * 压缩登录用户的本地缓存大小
