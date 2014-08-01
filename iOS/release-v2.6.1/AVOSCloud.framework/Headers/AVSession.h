@@ -29,11 +29,11 @@
  */
 - (void)open:(NSString *)selfId withPeerIds:(NSArray *)peerIds;
 
-/*!
- *  打开 session 用于群聊
- *  @param selfId 用户自己的peer id
- */
-- (void)openForGroupChat:(NSString *)selfId;
+///*!
+// *  打开 session 用于群聊
+// *  @param selfId 用户自己的peer id
+// */
+//- (void)openForGroupChat:(NSString *)selfId;
 
 /*!
  *  增量关注一组 peers
@@ -114,22 +114,22 @@
  */
 - (NSArray *)getAllPeers;
 
-/*!
- *  获取是否为群组聊天会话
- *  @return 如果是群组聊天会话，则返回 YES， 否则返回 NO
- */
-- (BOOL)isGroupSession;
+///*!
+// *  获取是否为群组聊天会话
+// *  @return 如果是群组聊天会话，则返回 YES， 否则返回 NO
+// */
+//- (BOOL)isGroupSession;
 /*!
  *  根据groupId构建一个AVGroup对象
  *  @return 如果已经存在groupId的group对象，则返回该对象，否则新建一个对象
  */
 - (AVGroup *)getGroup:(NSString *)groupId;
 
-/*!
- *  获取此会话的group对象
- *  @return 如果存在group对象则返回该对象，否则返回nil
- */
-- (AVGroup *)group;
+///*!
+// *  获取此会话的group对象
+// *  @return 如果存在group对象则返回该对象，否则返回nil
+// */
+//- (AVGroup *)group;
 
 @end
 

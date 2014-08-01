@@ -100,6 +100,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  *  @param block 回调结果
  */
 +(void)verifyMobilePhone:(NSString *)code withBlock:(AVBooleanResultBlock)block;
+
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken. 
  @return true if the sign up was successful.
@@ -200,11 +201,11 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  @param password The password of the user.
  @param block The block to execute. The block should have the following argument signature: (AVUser *user, NSError *error) 
  */
-//phoneNumber + password
 + (void)logInWithUsernameInBackground:(NSString *)username
                              password:(NSString *)password
                                 block:(AVUserResultBlock)block;
 
+//phoneNumber + password
 + (instancetype)logInWithMobilePhoneNumber:(NSString *)phoneNumber
                                   password:(NSString *)password;
 + (instancetype)logInWithMobilePhoneNumber:(NSString *)phoneNumber

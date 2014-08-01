@@ -35,11 +35,13 @@ typedef NS_ENUM(NSUInteger, AVGroupEvent) {
 - (void)sendMessage:(NSString *)message isTransient:(BOOL)transient;
 /*!
  *  将指定peerIds踢出group
+ *  @param peerIds 需要踢出group的peerId列表
  *  @return 无异常返回YES，否则返回NO
  */
 - (BOOL)kick:(NSArray *)peerIds;
 /*!
  *  邀请peerIds加入group
+ *  @param peerIds 需要邀请的peerId列表
  *  @return 无异常返回YES，否则返回NO
  */
 - (BOOL)invite:(NSArray *)peerIds;
@@ -53,6 +55,6 @@ typedef NS_ENUM(NSUInteger, AVGroupEvent) {
 @end
 
 @protocol AVGroupDelegate <NSObject>
-- (void)session:(AVSession *)session didReceiveGroupMessage:(NSString *)message fromPeerId:(NSString *)peerId;
-- (void)session:(AVSession *)session didReceiveGroupEvent:(AVGroupEvent)event memberIds:(NSArray *)memberIds;
+- (void)session:(AVSession *)session group:(AVGroup *)group didReceiveGroupMessage:(NSString *)message fromPeerId:(NSString *)peerId;
+- (void)session:(AVSession *)session group:(AVGroup *)group didReceiveGroupEvent:(AVGroupEvent)event memberIds:(NSArray *)memberIds;
 @end
