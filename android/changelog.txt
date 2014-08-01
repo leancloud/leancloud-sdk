@@ -1,3 +1,10 @@
+# 2.6.1 发布时间: 2014-08-1
+* 发布聊天室功能
+* 发布短信验证相关功能，包括用户手机号码验证、手机号码登录、短信验证信息等。
+* 修正AVObject中的保留key遇到的异常，如果您经常遇到类似“ Internal key name:`ACL`,please use setter/getter for it”异常，这个修正正是针对这个异常的。
+* 修正saveEventually可能存在的发送异常。
+* 修正在类似星巴克等需要网页授权的网络时，应用出现崩溃的问题。
+
 # 2.6.0.1 发布时间:2014-07-15
 * 修正AVUser,AVInstallation关于Relation数据的缓存策略带来的问题
 * 修正AVObject中间添加org.json.JSON对象时无法保存数据的问题
