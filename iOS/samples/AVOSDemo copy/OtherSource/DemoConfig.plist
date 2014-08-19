@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>初级用法</key>
+	<array>
+		<dict>
+			<key>class</key>
+			<string>AVObjectBasic</string>
+			<key>name</key>
+			<string>AVObject</string>
+			<key>detail</key>
+			<string>基本AVObject用法, 增删改查</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVUserBasic</string>
+			<key>name</key>
+			<string>用户</string>
+			<key>detail</key>
+			<string>用户的基本操作</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVQueryBasic</string>
+			<key>name</key>
+			<string>查询</string>
+			<key>detail</key>
+			<string>AVQuery基本用法</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVFileBasic</string>
+			<key>name</key>
+			<string>文件</string>
+			<key>detail</key>
+			<string>AVFile 基本文件操作</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVAnalyticsBasic</string>
+			<key>name</key>
+			<string>统计用法</string>
+			<key>detail</key>
+			<string>AVAnalytics 基本文件操作</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVSearchQueryBasic</string>
+			<key>name</key>
+			<string>搜索</string>
+			<key>detail</key>
+			<string>AVSearchQuery基本用法</string>
+		</dict>
+	</array>
+	<key>高级用法</key>
+	<array>
+		<dict>
+			<key>class</key>
+			<string>AVSubclassAdvanced</string>
+			<key>name</key>
+			<string>子类化</string>
+			<key>detail</key>
+			<string>子类化的相关例子</string>
+		</dict>
+		<dict>
+			<key>class</key>
+			<string>AVRelationAdvanced</string>
+			<key>name</key>
+			<string>关联操作(一对多, 多对多关系)</string>
+			<key>detail</key>
+			<string>AVRelation增删改查.</string>
+		</dict>
+	</array>
+	<key>SNS组件</key>
+	<array/>
+</dict>
+</plist>

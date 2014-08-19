@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  AVOSDemo
+
+  Created by Travis on 13-12-12.
+  Copyright (c) 2013年 AVOS. All rights reserved.
+*/
+
+
+"Object"    ="对象";
+"File"      ="文件";
+"Query"     ="查询";
+"Class"     ="类";
+"Subclass"  ="子类";
+"User"      ="用户";
+"Relation"  ="关联";
+
+"Create"    ="创建";
+"Add"       ="添加";
+"Update"    ="更新";
+"Delete"    ="删除";
+"Get"       ="获取";
+"Register"  ="注册";
+"Login"     ="登陆";
+"Reset"     ="重置";
+
+"By"        ="按";
+"From"      ="从";
+"With"      ="用";
+"Only"      ="仅";
+
+"Name"      ="名称";
+"Path"      ="路径";
+"Geo"       ="地理位置";
+"Thumbnail" ="缩略图";
+"Member"    ="成员";
+"Result"    ="结果";
+"Count"     ="数量";
+"Password"  ="密码";
+"Keyword"   ="关键词";
