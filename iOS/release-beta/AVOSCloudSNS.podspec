@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 
-  s.version        = "140731.2304"
+  s.version        = "140520.1448"
   s.source         = { :http => "https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudSNS.framework.zip"}
 
 
-  s.platform       = :ios, '5.1.1'
+  s.platform       = :ios, '5.0'
   s.name           = "AVOSCloudSNS"
   s.summary        = "AVOS Cloud SNS SDK for iOS"
   s.homepage       = "http://avoscloud.com"
@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "iOS/release-beta/AVOSCloudSNS.framework"
   s.public_header_files = "iOS/release-beta/**/*.h"
   
+  s.frameworks = 'CFNetwork', 'SystemConfiguration', 'MobileCoreServices', 'Security'
   s.dependency 'AVOSCloud'
 end
