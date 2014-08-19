@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.avos.avoscloud.PushDemo"
-          android:versionCode="2"
-          android:versionName="1.1">
-    <uses-sdk android:minSdkVersion="10"/>
-    <application android:icon="@drawable/notification" android:label="@string/app_name" android:name=".PushDemoApp">
-        <activity android:name=".PushDemo"
-                  android:label="@string/app_name">
+    package="com.avos.avoscloud.PushDemo"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".PushDemoApp"
+        android:icon="@drawable/notification"
+        android:allowBackup="false"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".PushDemo"
+            android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Callback1"/>
-        <activity android:name=".Callback2"/>
-        <service android:name="com.avos.avoscloud.PushService"/>
-        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
+        <activity android:name=".Callback1" />
+        <activity android:name=".Callback2" />
+
+        <service android:name="com.avos.avoscloud.PushService" />
+
+        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
-		<receiver android:name="com.avos.avoscloud.AVDefaultNotificationReceiver">
+        <receiver android:name="com.avos.avoscloud.AVDefaultNotificationReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -29,9 +44,15 @@
                 <action android:name="com.avos.UPDATE_STATUS" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".CustomReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.avos.UPDATE_STATUS" />
+                <action android:name="com.pushdemo.action" />
+            </intent-filter>
+        </receiver>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 </manifest>
