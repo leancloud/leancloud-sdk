@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/mylabel"
-            android:text="Hello World, PushDemo"
-            />
-</LinearLayout>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/mylabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World, PushDemo" />
+
+    <Button
+        android:id="@+id/customPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send Custom Push" />
+
+</LinearLayout>
