@@ -1,3 +1,10 @@
+#2.6.3 发布时间:2014-09-01
+* 修正AVUser在本地存储后再getRelation以后可能存在的NPE问题
+* 修正了聊天SDK签名相关的bug
+* 提高推送到达率
+* 为AVFile增加getOriginalName()方法来获取文件名。AVFile.getName()在保存后为兼容性考虑继续保持原样。
+* 修正AVRole中的字段错误
+
 #2.6.2 发布时间:2014-08-18
 * 修正saveEventually可能存在的崩溃异常
 * 改变聊天的接口，增加AVMessage对象来添加时间戳数据。
