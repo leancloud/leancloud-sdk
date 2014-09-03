@@ -3,14 +3,13 @@
 
 #import <Foundation/Foundation.h>
 @class AVObject;
-@class AVObject;
 @class AVUser;
 @class AVFile;
 
-//! Project version number for AVOSCloudSNS.
+//! Project version number for AVOSCloud.
 FOUNDATION_EXPORT double AVOSCloudVersionNumber;
 
-//! Project version string for AVOSCloudSNS.
+//! Project version string for AVOSCloud.
 FOUNDATION_EXPORT const unsigned char AVOSCloudVersionString[];
 
 // Version

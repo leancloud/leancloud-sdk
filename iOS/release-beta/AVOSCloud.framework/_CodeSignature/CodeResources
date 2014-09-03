@@ -54,11 +54,11 @@
 		</data>
 		<key>Headers/AVConstants.h</key>
 		<data>
-		4OnX8hJXKuOwcR7eWd+PnyRMkyI=
+		m1X8hmIxLJUuvHK4KY9WVAmySPo=
 		</data>
 		<key>Headers/AVFile.h</key>
 		<data>
-		rmPmCGvTkurIdLdUwdIOSMXeTOk=
+		2OOA6h7tqZKUZ0kliZx8Z+7n+Ss=
 		</data>
 		<key>Headers/AVFileHTTPRequestOperation.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/AVGroup.h</key>
 		<data>
-		UVW7CIMzrkzHre69SFbepk3BoUc=
+		QP5/XojC5MlosGsAKf4GMGGEfuQ=
 		</data>
 		<key>Headers/AVHTTPClient.h</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Headers/AVOSCloud.h</key>
 		<data>
-		3n/OoKaJ7RxY7Z/hIqyZIYp/hOo=
+		MjAzjyBMd8KsmZF25dnekE81w0A=
 		</data>
 		<key>Headers/AVObject+Subclass.h</key>
 		<data>
@@ -154,11 +154,11 @@
 		</data>
 		<key>Headers/AVSession.h</key>
 		<data>
-		fOZBc9sLBWMm1cjK9c7lky+S9d8=
+		PEk92h7ewMoL6nM+l9f4vpgsc9A=
 		</data>
 		<key>Headers/AVSignature.h</key>
 		<data>
-		3gFamnCDxBtFfaKKItBE80Szymg=
+		6vyyWotfl+PIUaND3tFg1ZcA8RM=
 		</data>
 		<key>Headers/AVStatus.h</key>
 		<data>
@@ -174,7 +174,11 @@
 		</data>
 		<key>Headers/AVUser.h</key>
 		<data>
-		G7CRsLLRu09UHyWyjHaHiUeg5iI=
+		wPi2GOQ1wm3ST2CFlZYt05cIxlc=
+		</data>
+		<key>Headers/AVUserFeedback.h</key>
+		<data>
+		s62VbnddwwBV7KIJ4eRqGDWoyjs=
 		</data>
 		<key>Headers/AVUserFeedbackAgent.h</key>
 		<data>
@@ -182,7 +186,7 @@
 		</data>
 		<key>Headers/AVUserFeedbackThread.h</key>
 		<data>
-		QgNLVqk/lTKD0H0mnYP4uQG0I4g=
+		7/woTpTJr1e5YqlwTo41+E9Mn08=
 		</data>
 		<key>Headers/AVXMLRequestOperation.h</key>
 		<data>
@@ -245,11 +249,11 @@
 		</data>
 		<key>Headers/AVConstants.h</key>
 		<data>
-		4OnX8hJXKuOwcR7eWd+PnyRMkyI=
+		m1X8hmIxLJUuvHK4KY9WVAmySPo=
 		</data>
 		<key>Headers/AVFile.h</key>
 		<data>
-		rmPmCGvTkurIdLdUwdIOSMXeTOk=
+		2OOA6h7tqZKUZ0kliZx8Z+7n+Ss=
 		</data>
 		<key>Headers/AVFileHTTPRequestOperation.h</key>
 		<data>
@@ -265,7 +269,7 @@
 		</data>
 		<key>Headers/AVGroup.h</key>
 		<data>
-		UVW7CIMzrkzHre69SFbepk3BoUc=
+		QP5/XojC5MlosGsAKf4GMGGEfuQ=
 		</data>
 		<key>Headers/AVHTTPClient.h</key>
 		<data>
@@ -305,7 +309,7 @@
 		</data>
 		<key>Headers/AVOSCloud.h</key>
 		<data>
-		3n/OoKaJ7RxY7Z/hIqyZIYp/hOo=
+		MjAzjyBMd8KsmZF25dnekE81w0A=
 		</data>
 		<key>Headers/AVObject+Subclass.h</key>
 		<data>
@@ -345,11 +349,11 @@
 		</data>
 		<key>Headers/AVSession.h</key>
 		<data>
-		fOZBc9sLBWMm1cjK9c7lky+S9d8=
+		PEk92h7ewMoL6nM+l9f4vpgsc9A=
 		</data>
 		<key>Headers/AVSignature.h</key>
 		<data>
-		3gFamnCDxBtFfaKKItBE80Szymg=
+		6vyyWotfl+PIUaND3tFg1ZcA8RM=
 		</data>
 		<key>Headers/AVStatus.h</key>
 		<data>
@@ -365,7 +369,11 @@
 		</data>
 		<key>Headers/AVUser.h</key>
 		<data>
-		G7CRsLLRu09UHyWyjHaHiUeg5iI=
+		wPi2GOQ1wm3ST2CFlZYt05cIxlc=
+		</data>
+		<key>Headers/AVUserFeedback.h</key>
+		<data>
+		s62VbnddwwBV7KIJ4eRqGDWoyjs=
 		</data>
 		<key>Headers/AVUserFeedbackAgent.h</key>
 		<data>
@@ -373,7 +381,7 @@
 		</data>
 		<key>Headers/AVUserFeedbackThread.h</key>
 		<data>
-		QgNLVqk/lTKD0H0mnYP4uQG0I4g=
+		7/woTpTJr1e5YqlwTo41+E9Mn08=
 		</data>
 		<key>Headers/AVXMLRequestOperation.h</key>
 		<data>

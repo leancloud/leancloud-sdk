@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
-@class AVUserFeedback;
+#import "AVUserFeedback.h"
 
 @interface AVUserFeedbackThread : NSObject
 

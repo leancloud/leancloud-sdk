@@ -100,6 +100,7 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  *  @param block 回调结果
  */
 +(void)verifyMobilePhone:(NSString *)code withBlock:(AVBooleanResultBlock)block;
+
 /*!
  Signs up the user. Make sure that password and username are set. This will also enforce that the username isn't already taken. 
  @return true if the sign up was successful.
@@ -200,11 +201,11 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  @param password The password of the user.
  @param block The block to execute. The block should have the following argument signature: (AVUser *user, NSError *error) 
  */
-//phoneNumber + password
 + (void)logInWithUsernameInBackground:(NSString *)username
                              password:(NSString *)password
                                 block:(AVUserResultBlock)block;
 
+//phoneNumber + password
 + (instancetype)logInWithMobilePhoneNumber:(NSString *)phoneNumber
                                   password:(NSString *)password;
 + (instancetype)logInWithMobilePhoneNumber:(NSString *)phoneNumber
@@ -299,6 +300,25 @@ A AVOS Cloud Framework User Object that is a local representation of a user pers
  */
 + (void)requestPasswordResetForEmailInBackground:(NSString *)email
                                            block:(AVBooleanResultBlock)block;
+
+/*!
+ *  使用手机号请求密码重置，需要用户绑定手机号码
+ *  发送短信到指定的手机上，内容有6位数字验证码。验证码10分钟内有效。
+ *  @param phoneNumber 11位电话号码
+ *  @param block 回调结果
+ */
++(void)requestPasswordResetWithPhoneNumber:(NSString *)phoneNumber
+                                     block:(AVBooleanResultBlock)block;
+
+/*!
+ *  使用验证码重置密码
+ *  @param code 6位验证码
+ *  @param password 新密码
+ *  @param block 回调结果
+ */
++(void)resetPasswordWithSmsCode:(NSString *)code
+                    newPassword:(NSString *)password
+                          block:(AVBooleanResultBlock)block;
 
 /** @name Querying for Users */
 

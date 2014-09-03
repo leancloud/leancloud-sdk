@@ -3,7 +3,6 @@
 //  AVOS Cloud
 //
 
-
 #import <Foundation/Foundation.h>
 #import "AVConstants.h"
 
@@ -78,7 +77,11 @@ The name of the file.
 /*!
  File metadata, caller is able to store additional values here.
  */
-@property (readwrite, strong) NSMutableDictionary * metadata;
+@property (readwrite, strong) NSMutableDictionary * metadata AVDeprecated("2.6.1以后请使用metaData");
+/*!
+ File metadata, caller is able to store additional values here.
+ */
+@property (readwrite, strong) NSMutableDictionary * metaData;
 
 /*!
  Saves the file.
