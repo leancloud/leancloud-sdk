@@ -1,230 +1,301 @@
 package com.avos.avoscloud.feedback;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.os.AsyncTask;
+
+import com.alibaba.fastjson.JSON;
 import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVFile;
+import com.avos.avoscloud.AVPersistenceUtils;
 import com.avos.avoscloud.AVUtils;
+import com.avos.avoscloud.GenericObjectCallback;
 import com.avos.avoscloud.LogUtil;
-import com.avos.avoscloud.feedback.Comment.CommentType;
-import com.avos.avoscloud.feedback.FeedbackThread.SyncCallback;
+import com.avos.avoscloud.PaasClient;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.format.DateUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnFocusChangeListener;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.view.View.OnClickListener;
+public class FeedbackThread {
+  List<Comment> commentList;
+  String contact;
 
-public class ThreadActivity extends Activity {
+  private static final String FEEDBACK_PATH = "feedback";
+  private static final String FEEDBACK_PUT_PATH = "feedback/%s";
+  private static final String FEEDBACK_THREAD_PATH = "feedback/%s/threads";
+  private static FeedbackThread thread;
 
-  FeedbackAgent agent;
-  ListView feedbackListView;
-  Button sendButton;
-  EditText feedbackInput;
-  EditText contact;
-  FeedbackThread thread;
-  FeedbackListAdapter adapter;
-  SyncCallback syncCallback;
-
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(Resources.layout.avoscloud_feedback_activity_conversation(this));
-
-    setupActionBar();
-
-    agent = new FeedbackAgent(this);
-    adapter = new FeedbackListAdapter(this);
-    thread = agent.getDefaultThread();
-    feedbackListView = (ListView) findViewById(Resources.id.avoscloud_feedback_thread_list(this));
-    feedbackListView.setAdapter(adapter);
-    sendButton = (Button) findViewById(Resources.id.avoscloud_feedback_send(this));
-    feedbackInput = (EditText) findViewById(Resources.id.avoscloud_feedback_input(this));
-    syncCallback = new SyncCallback() {
-
-      @Override
-      public void onCommentsSend(List<Comment> comments, AVException e) {
-        LogUtil.avlog.d("send new comments");
-        adapter.notifyDataSetChanged();
+  private FeedbackThread() {
+    String content = AVPersistenceUtils.readContentFromFile(getFeedbackCacheFile());
+    contact = AVPersistenceUtils.readContentFromFile(getContactCacheFile());
+    if (!AVUtils.isBlankString(content)) {
+      try {
+        commentList = JSON.parseArray(content, Comment.class);
+      } catch (Exception e) {
+        commentList = new LinkedList<Comment>();
       }
+    } else {
+      commentList = new LinkedList<Comment>();
+    }
+  }
 
-      @Override
-      public void onCommentsFetch(List<Comment> comments, AVException e) {
-        LogUtil.avlog.d("fetch new comments");
-        adapter.notifyDataSetChanged();
+  public static synchronized FeedbackThread getInstance() {
+    if (thread == null) {
+      thread = new FeedbackThread();
+    }
+    return thread;
+  }
+
+  public void add(Comment comment) {
+    commentList.add(comment);
+  }
+
+  public List<Comment> getCommentsList() {
+    return commentList;
+  }
+
+  public String getContact() {
+    return contact;
+  }
+
+  public void setContact(String contact) {
+    if (!AVUtils.isBlankString(contact) && !contact.equals(this.contact)) {
+      this.contact = contact;
+      if (commentList.size() > 0) {
+        commentList.get(0).setSynced(false);
+        saveContact();
       }
+    }
+  }
 
-    };
-    sendButton.setOnClickListener(new OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        String feedbackText = feedbackInput.getText().toString();
-        if (!AVUtils.isBlankString(feedbackText)) {
-          thread.add(new Comment(feedbackText));
-          adapter.notifyDataSetChanged();
-          feedbackListView.setSelection(feedbackListView.getAdapter().getCount());
-          feedbackListView.smoothScrollToPosition(feedbackListView.getAdapter().getCount());
-          thread.sync(syncCallback);
-          feedbackInput.setText("");
-        }
-      }
-    });
-
-    feedbackInput.setOnFocusChangeListener(new OnFocusChangeListener() {
-
-      @Override
-      public void onFocusChange(View v, boolean hasFocus) {
-        if (hasFocus) {
-          feedbackListView.setSelection(feedbackListView.getAdapter().getCount());
-          feedbackListView.smoothScrollToPosition(feedbackListView.getAdapter().getCount());
-        }
-      }
-    });
-    contact = (EditText) findViewById(Resources.id.avoscloud_feedback_contact(this));
-    if (agent.isContactEnabled()) {
-      contact.setVisibility(View.VISIBLE);
-      contact.setText(thread.getContact());
-      contact.addTextChangedListener(new TextWatcher() {
+  public synchronized void sync(final SyncCallback callback) {
+    if (commentList.size() > 0) {
+      // 先保存后取
+      new AsyncTask<Void, Integer, Exception>() {
+        boolean flag = true;
+        Exception sendException;
 
         @Override
-        public void afterTextChanged(Editable s) {
-          if (!AVUtils.isBlankString(s.toString())) {
-            thread.setContact(s.toString());
+        protected Exception doInBackground(Void... params) {
+          for (int i = 0; i < commentList.size() && flag; i++) {
+            if (!commentList.get(i).synced) {
+              final Comment currentComment = commentList.get(i);
+              if (currentComment.getAttachment() != null) {
+                try {
+                  currentComment.getAttachment().save();
+                } catch (AVException e) {
+                  return e;
+                }
+              }
+              if (i == 0 && !AVUtils.isBlankString(currentComment.getObjectId())) {
+                PaasClient.storageInstance().putObject(
+                    String.format(FEEDBACK_PUT_PATH, currentComment.getObjectId()),
+                    mapFromObject(currentComment, false), true, null, new GenericObjectCallback() {
+                      @Override
+                      public void onSuccess(String content, AVException e) {
+                        if (e != null) {
+                          sendException = e;
+                          flag = false;
+                          return;
+                        } else {
+                          JSONObject resp;
+                          try {
+                            resp = new JSONObject(content);
+                            if (currentComment.getObjectId().equals(resp.getString("objectId"))) {
+                              currentComment.setSynced(true);
+                            }
+                          } catch (JSONException e1) {
+                            sendException = e;
+                          }
+                        }
+                      }
+
+                      @Override
+                      public void onFailure(Throwable error, String content) {
+                        LogUtil.log.d(content);
+                        sendException = new Exception(error);
+                        flag = false;
+                      }
+                    }, currentComment.getObjectId(), null);
+              } else {
+                PaasClient.storageInstance().postObject(
+                    i == 0 ? FEEDBACK_PATH : String.format(FEEDBACK_THREAD_PATH, commentList.get(0)
+                        .getObjectId()), mapFromObject(currentComment, i != 0), true,
+                    new GenericObjectCallback() {
+                      @Override
+                      public void onSuccess(String content, AVException e) {
+                        if (e != null) {
+                          sendException = e;
+                          flag = false;
+                          return;
+                        } else {
+                          JSONObject resp;
+                          try {
+                            resp = new JSONObject(content);
+                            currentComment.setObjectId(resp.getString("objectId"));
+                            currentComment.setSynced(true);
+                            currentComment.setCreatedAt(AVUtils.dateFromString(resp
+                                .getString("createdAt")));
+                          } catch (JSONException e1) {
+                            sendException = e;
+                          }
+                        }
+                      }
+
+                      @Override
+                      public void onFailure(Throwable error, String content) {
+                        LogUtil.log.d(content);
+                        sendException = new Exception(error);
+                        flag = false;
+                      }
+                    });
+              }
+            }
+          }
+          return sendException;
+        }
+
+        @Override
+        public void onPostExecute(Exception ex) {
+          saveLocal();
+          if (callback != null) {
+            callback.onCommentsSend(commentList, ex == null ? null : new AVException(ex));
+          }
+          if (!AVUtils.isBlankString(commentList.get(0).getObjectId())) {
+            PaasClient.storageInstance().getObject(
+                String.format(FEEDBACK_THREAD_PATH, commentList.get(0).getObjectId()), null, false,
+                null, new GenericObjectCallback() {
+                  @Override
+                  public void onSuccess(String content, AVException e) {
+                    if (e != null) {
+                      if (callback != null) {
+                        callback.onCommentsFetch(commentList, e);
+                      }
+                      return;
+                    } else {
+                      try {
+                        JSONObject resp = new JSONObject(content);
+                        String results = resp.getString("results");
+                        JSONArray commentJsonArray = new JSONArray(results);
+                        List<Comment> thread = new LinkedList<Comment>();
+                        for (int i = 0; i < commentJsonArray.length(); i++) {
+                          JSONObject o = commentJsonArray.getJSONObject(i);
+                          Comment c = getComentFromJSONObject(o);
+                          if (c != null && !AVUtils.isBlankString(c.getObjectId())) {
+                            thread.add(c);
+                          }
+                        }
+                        Comment first = commentList.get(0);
+                        commentList.clear();
+                        commentList.add(first);
+                        for (Comment c : thread) {
+                          c.synced = true;
+                          commentList.add(c);
+                        }
+                        if (callback != null) {
+                          callback.onCommentsFetch(commentList, e);
+                        }
+                        saveLocal();
+                      } catch (Exception ex) {
+                        if (callback != null) {
+                          callback.onCommentsFetch(commentList, new AVException(ex));
+                        }
+                      }
+                    }
+                  }
+
+                  @Override
+                  public void onFailure(Throwable error, String content) {
+                    if (callback != null) {
+                      callback.onCommentsFetch(commentList, new AVException(content, error));
+                    }
+                  }
+                });
           }
         }
-
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-      });
-    } else {
-      contact.setVisibility(View.GONE);
-    }
-
-    thread.sync(syncCallback);
-  }
-
-  public void setupActionBar() {
-    ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setCustomView(Resources.layout.avoscloud_feedback_thread_actionbar(this));
-      actionBar.setDisplayShowCustomEnabled(true);
-      actionBar.setDisplayShowHomeEnabled(false);
-      actionBar.setDisplayShowTitleEnabled(false);
-      View backButton =
-          actionBar.getCustomView().findViewById(
-              Resources.id.avoscloud_feedback_actionbar_back(this));
-      backButton.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          onBackPressed();
-          finish();
-        }
-      });
+      }.execute((Void) null);
     }
   }
 
-  public class FeedbackListAdapter extends BaseAdapter {
+  public interface SyncCallback {
+    public void onCommentsSend(List<Comment> comments, AVException e);
 
-    Context mContext;
-    LayoutInflater inflater;
+    public void onCommentsFetch(List<Comment> comments, AVException e);
+  }
 
-    public FeedbackListAdapter(Context context) {
-      this.mContext = context;
-      inflater = LayoutInflater.from(context);
+  protected void saveLocal() {
+    String content = JSON.toJSONString(commentList);
+    AVPersistenceUtils.saveContentToFile(content, getFeedbackCacheFile());
+    saveContact();
+  }
+
+  private void saveContact() {
+    if (!AVUtils.isBlankString(contact)) {
+      AVPersistenceUtils.saveContentToFile(contact, getContactCacheFile());
     }
+  }
 
-    @Override
-    public int getCount() {
-      return thread.getCommentsList().size();
-    }
+  private static File getFeedbackCacheFile() {
+    return new File(getFeedbackCacheDir(), "feedback");
+  }
 
-    @Override
-    public Object getItem(int position) {
-      return thread.getCommentsList().get(position);
-    }
+  private static File getContactCacheFile() {
+    return new File(getFeedbackCacheDir(), "contact");
+  }
 
-    @Override
-    public long getItemId(int position) {
-      return position;
-    }
+  private static File getFeedbackCacheDir() {
+    File dir = new File(AVPersistenceUtils.getCacheDir(), "FeedbackCache");
+    dir.mkdirs();
+    return dir;
+  }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-      ViewHolder holder;
-      if (convertView == null) {
-        if (this.getItemViewType(position) == 0) {
-          convertView =
-              inflater.inflate(Resources.layout.avoscloud_feedback_user_reply(ThreadActivity.this),
-                  null);
-        } else {
-          convertView =
-              inflater.inflate(Resources.layout.avoscloud_feedback_dev_reply(ThreadActivity.this),
-                  null);
+  protected Comment getComentFromJSONObject(JSONObject o) {
+    Comment c = new Comment();
+    try {
+      c.setObjectId(o.getString("objectId"));
+      if (o.has("content")) {
+        String content = o.getString("content");
+        if (!"null".equalsIgnoreCase(content)) {
+          c.setContent(content);
         }
-        holder = new ViewHolder();
-        holder.content =
-            (TextView) convertView.findViewById(Resources.id
-                .avoscloud_feedback_content(ThreadActivity.this));
-        holder.timestamp =
-            (TextView) convertView.findViewById(Resources.id
-                .avoscloud_feedback_timestamp(ThreadActivity.this));
-        convertView.setTag(holder);
-      } else {
-        holder = (ViewHolder) convertView.getTag();
       }
-      final Comment comment = (Comment) getItem(position);
-      holder.content.setText(comment.getContent());
-      if (Math.abs(comment.getCreatedAt().getTime() - System.currentTimeMillis()) < 10000) {
-        holder.timestamp.setText(getResources().getString(
-            Resources.string.avosclou_feedback_just_now(ThreadActivity.this)));
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+      Date createdAt = sdf.parse(o.getString("createdAt"));
+      c.setCreatedAt(createdAt);
+      if (AVUtils.isBlankString(o.getString("type"))) {
+        c.setType("user");
       } else {
-        holder.timestamp.setText(DateUtils.getRelativeTimeSpanString(comment.getCreatedAt()
-            .getTime(), System.currentTimeMillis() - 1, 0l, DateUtils.FORMAT_ABBREV_ALL));
+        c.setType(o.getString("type"));
       }
-      return convertView;
-    }
-
-    @Override
-    public int getViewTypeCount() {
-      return 2;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-      Comment comment = (Comment) this.getItem(position);
-      if (comment.getCommentType().equals(CommentType.USER)) {
-        return 0;
-      } else {
-        return 1;
+      if (o.has("attachment") && !AVUtils.isBlankString(o.getString("attachment"))) {
+        c.setAttachment(new AVFile(AVUtils.md5(o.getString("attachment")), o
+            .getString("attachment"), null));
       }
+      c.setSynced(true);
+    } catch (Exception e) {
+      return null;
     }
+    return c;
   }
 
-  public class ViewHolder {
-    TextView content;
-    TextView timestamp;
-  }
+  protected String mapFromObject(Comment comment, boolean threadFlag) {
 
+    HashMap<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("content", comment.getContent());
+    if (threadFlag) {
+      parameters.put("type", comment.getCommentType().toString());
+    } else if (!AVUtils.isBlankContent(contact)) {
+      parameters.put("contact", contact);
+    }
+    if (comment.getAttachment() != null) {
+      parameters.put("attachment", comment.getAttachment().getUrl());
+    }
+    return AVUtils.restfulServerData(parameters);
+  }
 }
