@@ -1,3 +1,8 @@
+# 0.4.2 日期：2014 年 9 月 15 日
+* 添加根据短信重置密码的相关 API : requestPasswordResetBySmsCode 和 resetPasswordBySmsCode
+* 修复 AV.Status 的 send 方法异常
+* 修复 AV.User 的 requestEmailVerify 命名错误。
+
 # 0.4.1 日期：2014 年 8 月 18 日
 * 紧急修复 AV.File 无法保存 base64 数据的 Bug。
 
