@@ -1,3 +1,8 @@
+#2.6.5 发布时间:2014-09-24
+* 增加了CloudQuery支持
+* 增加了AVObject.getList()中的子类化支持
+* 修正了在AVObject中的json对象内包含objectId对象时出现的异常
+
 #2.6.4 发布时间:2014-09-15
 * 修正了AVUser.cast中遇到关联对象的类型转化异常
 * 修正AVFile在序列化过程中的多余字段

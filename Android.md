@@ -44,4 +44,9 @@ git clone git@github.com:avos/avoscloud-sdk.git
 ![update keys](images/android-keys.png)
 
 
+### 北美节点
+
+在v2.6.4以后，SDK开始支持北美节点，如果您需要切换到北美节点，请将avoscloud_us_ssl.bks 放到您的项目/res/raw/目录下，以保证SSL根证书能够被成功加载
+
+
 
