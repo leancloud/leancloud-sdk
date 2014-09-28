@@ -1,5 +1,5 @@
 # 0.4.3 日期：2014 年 9 月 28 日
-* 支持 [CQL] 查询语言，添加 `AV.Query.doCloudQuery` 方法。
+* 支持 [CQL](https://cn.avoscloud.com/docs/cql_guide.html) 查询语言，添加 `AV.Query.doCloudQuery` 方法。
 
 # 0.4.2 日期：2014 年 9 月 15 日
 * 添加根据短信重置密码的相关 API : requestPasswordResetBySmsCode 和 resetPasswordBySmsCode
