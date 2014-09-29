@@ -10,8 +10,10 @@
 #import "AVConstants.h"
 #import "AVGeoPoint.h"
 #import "AVObject.h"
+#import "AVObject+Subclass.h"
 #import "AVQuery.h"
 #import "AVSearchQuery.h"
+#import "AVSearchSortBuilder.h"
 #import "AVUser.h"
 #import "AVRole.h"
 #import "AVFile.h"
@@ -27,6 +29,7 @@
 #import "AVUserFeedbackAgent.h"
 #import "AVSession.h"
 #import "AVSignature.h"
+#import "AVLogger.h"
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import "AVAnalytics.h"
@@ -111,12 +114,12 @@ typedef enum AVLogLevel : NSUInteger {
 /**
  *  Use AVOS US data center
  */
-+ (void)useAVCloudUS AVDeprecated("2.3.3以后废除");
++ (void)useAVCloudUS;
 
 /**
  *  Use AVOS China data center. the default option is China
  */
-+ (void)useAVCloudCN AVDeprecated("2.3.3以后废除");
++ (void)useAVCloudCN;
 
 /**
  *  *  get the timeout interval for AVOS request

@@ -7,21 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AVConstants.h"
 
 @interface AVSignature : NSObject
 
-@property (nonatomic, retain) NSString *signature;
-@property (nonatomic, assign) long timestamp;
-@property (nonatomic, retain) NSString *nonce;
-@property (nonatomic, retain) NSString *action;
-@property (nonatomic, retain) NSArray *signedPeerIds;
+@property (nonatomic, strong) NSString *signature;
+@property (nonatomic) int64_t timestamp;
+@property (nonatomic, strong) NSString *nonce;
+@property (nonatomic, strong) NSString *action  AVDeprecated("2.6.4");
+@property (nonatomic, strong) NSArray *signedPeerIds;
 
 @end
 
 @protocol AVSignatureDelegate <NSObject>
 @optional
-- (AVSignature *)createSignature:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds;
-- (AVSignature *)createSessionSignature:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds action:(NSString *)action;
-- (AVSignature *)createGroupSignature:(NSString *)peerId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action;
-- (AVSignature *)createGroupSignature:(NSString *)peerId groupId:(NSString *)groupId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action;
+- (AVSignature *)signatureForPeerWithPeerId:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds action:(NSString *)action;
+- (AVSignature *)signatureForGroupWithPeerId:(NSString *)peerId groupId:(NSString *)groupId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action;
+
+
+- (AVSignature *)createSignature:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds AVDeprecated("2.6.4");
+- (AVSignature *)createSessionSignature:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds action:(NSString *)action AVDeprecated("2.6.4");
+- (AVSignature *)createGroupSignature:(NSString *)peerId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action AVDeprecated("2.6.4");
+- (AVSignature *)createGroupSignature:(NSString *)peerId groupId:(NSString *)groupId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action AVDeprecated("2.6.4");
 @end

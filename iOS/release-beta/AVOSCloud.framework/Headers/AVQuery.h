@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "AVGeoPoint.h"
 #import "AVObject.h"
-
+#import "AVCloudQueryResult.h"
 /*!
   A class that defines a query that is used to query for AVObjects.
  */
@@ -43,6 +43,28 @@
  @param predicate the predicates
  */
 + (instancetype)queryWithClassName:(NSString *)className predicate:(NSPredicate *)predicate;
+
+/*!
+ *  使用 CQL 查询
+ *  @param cql CQL 字符串
+ *  @return 查询结果
+ */
++ (AVCloudQueryResult *)doCloudQueryWithCQL:(NSString *)cql;
+
+/*!
+ *  使用 CQL 查询
+ *  @param cql CQL 字符串
+ *  @param error 用于返回错误结果
+ *  @return 查询结果
+ */
++ (AVCloudQueryResult *)doCloudQueryWithCQL:(NSString *)cql error:(NSError **)error;
+
+/*!
+ *  使用 CQL 异步查询
+ *  @param cql CQL 字符串
+ *  @param callback 查询结果回调
+ */
++ (void)doCloudQueryInBackgroundWithCQL:(NSString *)cql callback:(AVCloudQueryCallback)callback;
 
 /*!
  Initializes the query with a class name.
