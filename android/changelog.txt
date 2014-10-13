@@ -1,3 +1,9 @@
+#2.6.6 发布时间:2014-10-13
+* 修正了统计事件短时间的多次触发可能会丢失部分数据的bug
+* 改进了推送和聊天的重连机制
+* 修正了AVGeoPoint.distanceInKilometersTo方法单位错误
+* 增加了聊天记录的查询API
+
 #2.6.5 发布时间:2014-09-24
 * 增加了CloudQuery支持
 * 增加了AVObject.getList()中的子类化支持
