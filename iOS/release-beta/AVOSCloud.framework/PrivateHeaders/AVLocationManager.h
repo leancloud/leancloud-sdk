@@ -29,6 +29,20 @@
 + (AVLocationManager *)sharedInstance;
 
 /**
+ *  请求“使用应用程序期间”开启定位服务
+ *  iOS 8.0 新加，之前版本什么都不做
+ *  需要在Info.plist里面添加 NSLocationWhenInUseUsageDescription
+ */
+- (void)requestWhenInUseAuthorization;
+
+/**
+ *  请求“始终”开启定位服务，即应用退到后台也可使用定位服务
+ *  iOS 8.0 新加，之前版本什么都不做
+ *  需要在Info.plist里面添加 NSLocationAlwaysUsageDescription
+ */
+- (void)requestAlwaysAuthorization;
+
+/**
  *  刷新当前地理位置
  *
  *  @param block 回调结果
