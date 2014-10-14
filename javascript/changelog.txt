@@ -1,3 +1,7 @@
+# 0.4.4 日期：2014 年 10 月 14 日
+* 修复 node.js 下上传文件无法指定文件 mime type 的Bug
+* 添加 `AV.Object.new` 函数用来创建对象，避免代码压缩带来的问题。
+
 # 0.4.3 日期：2014 年 9 月 28 日
 * 支持 [CQL](https://cn.avoscloud.com/docs/cql_guide.html) 查询语言，添加 `AV.Query.doCloudQuery` 方法。
 
