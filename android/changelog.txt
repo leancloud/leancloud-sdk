@@ -1,5 +1,5 @@
 #2.6.7 发布时间:2014-10-29
-* 更新android-async-http到1.4.7版本
+* 更新android-async-http到1.4.6版本
 * CQL查询增加占位符
 * 增加SMS模板操作
 * AVUser在follow时可以增加属性，以便作为未来的查询条件使用
