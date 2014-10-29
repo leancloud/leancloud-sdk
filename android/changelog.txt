@@ -1,3 +1,21 @@
+#2.6.7 发布时间:2014-10-29
+* 更新android-async-http到1.4.6版本
+* CQL查询增加占位符
+* 增加SMS模板操作
+* AVUser在follow时可以增加属性，以便作为未来的查询条件使用
+* 修复AVUser在子类化转化时可能存在的属性转化错误
+* 在AVOSCloud中增加setDebugLogEnabled方法来打开内部的debug日志
+* 修复onMessageSent可能出现的消息交错问题
+
+#2.6.6.1 发布时间:2014-10-16
+* 纠正AVHistoryMessageQuery的类名拼写错误
+
+#2.6.6 发布时间:2014-10-13
+* 修正了统计事件短时间的多次触发可能会丢失部分数据的bug
+* 改进了推送和聊天的重连机制
+* 修正了AVGeoPoint.distanceInKilometersTo方法单位错误
+* 增加了聊天记录的查询API
+
 #2.6.5 发布时间:2014-09-24
 * 增加了CloudQuery支持
 * 增加了AVObject.getList()中的子类化支持

@@ -1,3 +1,12 @@
+# 0.4.5 日期：2014 年 10 月 29 日
+* CQL 查询支持占位符,AV.Query.doCloudQuery 方法增加三个参数版本
+* AV.Push 增加 cql 属性说明，可以通过 CQL 指定推送查询条件。
+* 部分内部代码重构。
+
+# 0.4.4 日期：2014 年 10 月 14 日
+* 修复 node.js 下上传文件无法指定文件 mime type 的Bug
+* 添加 `AV.Object.new` 函数用来创建对象，避免代码压缩带来的问题。
+
 # 0.4.3 日期：2014 年 9 月 28 日
 * 支持 [CQL](https://cn.avoscloud.com/docs/cql_guide.html) 查询语言，添加 `AV.Query.doCloudQuery` 方法。
 
