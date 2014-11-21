@@ -1,11 +1,11 @@
 #2.6.8 发布时间:2014-11-21
-1.增加了聊天系统种的消息回执功能
-2.增加了onPeersWatched,onPeersUnWatched的回调代码
-3.修正AVObject.saveAll在遇到同一个未保存的AVObject对象被多次引用时的异常
-4.修正了onInvited，onKicked之前的问题
-5.AVFile小文件的自动重试
-6.增加Group查询组内成员接口
-7.修正统计在第一次启动时缺少部分统计数据的问题
+* 增加了聊天系统种的消息回执功能
+* 增加了onPeersWatched,onPeersUnWatched的回调代码
+* 修正AVObject.saveAll在遇到同一个未保存的AVObject对象被多次引用时的异常
+* 修正了onInvited，onKicked之前的问题
+* AVFile小文件的自动重试
+* 增加Group查询组内成员接口
+* 修正统计在第一次启动时缺少部分统计数据的问题
 
 #2.6.7 发布时间:2014-10-29
 * 更新android-async-http到1.4.6版本
