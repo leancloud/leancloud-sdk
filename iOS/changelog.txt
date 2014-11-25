@@ -1,3 +1,9 @@
+# 2.6.8.1 发布日期：2014-11-25
+* 修复发起kick和invite操作后没回调的问题
+* 修复unwatch操作没有回调的问题
+* 修复多线程导致session open操作可能排在其它操作之后发起的问题
+* 去除Category UIImageView+AVNetworking，修复与AFNetworking冲突的问题
+
 # 2.6.8 发布日期：2014-11-24
 * 修复北美服务器s3上传文件没有保存name，mimetype等信息的问题
 * 修复SNS QQ登录部分用户获取用户信息错误的问题
