@@ -1,3 +1,6 @@
+#2.6.8.1 发布时间:2014-11-26
+* 修正了AVUser.followerQuery和AVUser.followeeQuery作为inQuery时无效的bug
+
 #2.6.8 发布时间:2014-11-21
 * 增加了实时通信的消息回执功能
 * AVMessageReceiver中增加了onPeersWatched,onPeersUnWatched的回调代码
