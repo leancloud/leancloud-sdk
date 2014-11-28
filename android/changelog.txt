@@ -1,3 +1,8 @@
+#2.6.8.2 发布时间:2014-11-28
+* 修正了反馈组件的时区错误问题
+* 修正了反馈组件在KitKat上选取照片时的异常
+* 修正了AVGroupMessageReceiver在捕捉到空Intent的时出现的NPE异常
+
 #2.6.8.1 发布时间:2014-11-26
 * 修正了AVUser.followerQuery和AVUser.followeeQuery作为inQuery时无效的bug
 
