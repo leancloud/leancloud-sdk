@@ -1,3 +1,18 @@
+#2.6.9 发布时间:2014-12-09
+* AVFile增加ACL功能
+* 修正小文件上传时的progress不准确问题
+* 修正了文件下载时异常不准确的问题
+* 增加基于WebView的SNS授权以减少授权开发工作
+* 修正了匿名用户在更新数据后，isAnonymous()方法判断错误的异常
+
+#2.6.8.2 发布时间:2014-11-28
+* 修正了反馈组件的时区错误问题
+* 修正了反馈组件在KitKat上选取照片时的异常
+* 修正了AVGroupMessageReceiver在捕捉到空Intent的时出现的NPE异常
+
+#2.6.8.1 发布时间:2014-11-26
+* 修正了AVUser.followerQuery和AVUser.followeeQuery作为inQuery时无效的bug
+
 #2.6.8 发布时间:2014-11-21
 * 增加了实时通信的消息回执功能
 * AVMessageReceiver中增加了onPeersWatched,onPeersUnWatched的回调代码
