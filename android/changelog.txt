@@ -1,5 +1,5 @@
 #2.6.9.1 发布时间:2014-12-11
-*修正了匿名用户在关闭应用后重新获取getCurrentUser()之后,isAnonymous()判断错误的问题
+* 修正了匿名用户在关闭应用后重新获取getCurrentUser()之后,isAnonymous()判断错误的问题
 
 #2.6.9 发布时间:2014-12-09
 * AVFile增加ACL功能
