@@ -1,3 +1,36 @@
+#2.6.9 发布时间:2014-12-09
+* AVFile增加ACL功能
+* 修正小文件上传时的progress不准确问题
+* 修正了文件下载时异常不准确的问题
+* 增加基于WebView的SNS授权以减少授权开发工作
+* 修正了匿名用户在更新数据后，isAnonymous()方法判断错误的异常
+
+#2.6.8.2 发布时间:2014-11-28
+* 修正了反馈组件的时区错误问题
+* 修正了反馈组件在KitKat上选取照片时的异常
+* 修正了AVGroupMessageReceiver在捕捉到空Intent的时出现的NPE异常
+
+#2.6.8.1 发布时间:2014-11-26
+* 修正了AVUser.followerQuery和AVUser.followeeQuery作为inQuery时无效的bug
+
+#2.6.8 发布时间:2014-11-21
+* 增加了实时通信的消息回执功能
+* AVMessageReceiver中增加了onPeersWatched,onPeersUnWatched的回调代码
+* 修正AVObject.saveAll在遇到同一个未保存的AVObject对象被多次引用时的异常
+* AVGroupMessageReceiver中修正了onInvited，onKicked之前的问题
+* AVFile小文件的自动重试
+* 增加Group查询组内成员接口
+* 修正统计在第一次启动时缺少部分统计数据的问题
+
+#2.6.7 发布时间:2014-10-29
+* 更新android-async-http到1.4.6版本
+* CQL查询增加占位符
+* 增加SMS模板操作
+* AVUser在follow时可以增加属性，以便作为未来的查询条件使用
+* 修复AVUser在子类化转化时可能存在的属性转化错误
+* 在AVOSCloud中增加setDebugLogEnabled方法来打开内部的debug日志
+* 修复onMessageSent可能出现的消息交错问题
+
 #2.6.6.1 发布时间:2014-10-16
 * 纠正AVHistoryMessageQuery的类名拼写错误
 
