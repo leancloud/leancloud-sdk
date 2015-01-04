@@ -1,3 +1,6 @@
+#2.6.9.5 发布时间:2015-01-04
+* 修正了 AVUser.followerQuery(Class<T> clazz)的当前用户验证问题
+
 #2.6.9.4 发布时间:2014-12-29
 * 修正了AVUser.getCurrentUser()在遇到AVUser子类化时的转化问题
 * 修正了AVFile文件下载中间文件类型限制带来的下载失败问题
