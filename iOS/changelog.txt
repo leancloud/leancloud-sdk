@@ -1,3 +1,13 @@
+# 2.6.10 发布日期：2014-01-07
+* AVPush添加setPushToWP接口，定向推送到WinPhone手机
+* AVPush添加setPushToTargetPlatforms接口
+* AVSignature添加error属性，签名错误使用此属性
+* AVUser添加使用手机号直接注册接口
+* 修复AVInstallation badge不能保存的问题
+* 修复接收到自己在其它设备发送的消息后ack产生的问题
+* 修复iPhone 6上反馈界面黑块的问题
+* 修复SNS登录后没有回调的问题
+
 # 2.6.9.1 发布日期：2014-12-17
 * 修复AVPush生产环境数据错误的问题
 
