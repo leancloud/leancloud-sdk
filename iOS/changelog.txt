@@ -1,4 +1,4 @@
-# 2.6.10 发布日期：2014-01-07
+# 2.6.10 发布日期：2015-01-07
 * AVPush添加setPushToWP接口，定向推送到WinPhone手机
 * AVPush添加setPushToTargetPlatforms接口
 * AVSignature添加error属性，签名错误使用此属性
