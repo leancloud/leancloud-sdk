@@ -1,4 +1,14 @@
-# 0.4.7 日期: 2015 年 1 月 26 日
+# 0.5.0 日期: 2015 年 3 月 02 日
+* 增强 `AV.Promise`，增加`done,catch,finally,AV.Promise.race` 等方法，兼容 Promise/A+
+* 修复更新对象可能更新没有变更的属性的 Bug，减少请求流量。
+
+# 0.4.9 日期: 2015 年 2 月 26 日
+* 拆分 sdk，按照模块划分成多个文件。
+* 使用 gulp 构建 sdk，清理代码。
+* 修复事件流无法发送带有 `AV.File`、`AV.Object` 等类型的 Status。
+* 修复 node.js 环境下上传文件没有扩展名的 Bug。
+
+# 0.4.7 日期: 2015 年 1 月 23 日
 * 修复页面跳转更新 user 导致 current user 属性丢失的 Bug。
 * 增加 `AV.User.updatePassword` 方法，根据老密码修改成新密码。
 * 为 `AV.Object` 增加 `getObjectId, getUpdatedAt, getCreatedAt` 三个方法。
@@ -20,64 +30,9 @@
 * 修复 node.js 下上传文件无法指定文件 mime type 的Bug
 * 添加 `AV.Object.new` 函数用来创建对象，避免代码压缩带来的问题。
 
-# 0.4.3 日期：2014 年 9 月 28 日
-* 支持 [CQL](https://cn.avoscloud.com/docs/cql_guide.html) 查询语言，添加 `AV.Query.doCloudQuery` 方法。
+# 0.4.3
 
-# 0.4.2 日期：2014 年 9 月 15 日
-* 添加根据短信重置密码的相关 API : requestPasswordResetBySmsCode 和 resetPasswordBySmsCode
-* 修复 AV.Status 的 send 方法异常
-* 修复 AV.User 的 requestEmailVerify 命名错误。
+* 添加 CQL 查询支持，增加 `AV.Query.doCloudQuery` 方法。
 
-# 0.4.1 日期：2014 年 8 月 18 日
-* 紧急修复 AV.File 无法保存 base64 数据的 Bug。
-
-# 0.4.0 日期：2014 年 8 月 13 日
-* 升级 REST API 到1.1 版本，彻底修复时区问题。
-* 修复 AV.File 上传文件，可能 metaData 的 size 不准确的 Bug
-
-# 0.3.7 日期： 2014 年 8 月 1 日
-* 发布短信相关 API，具体见开发指南。
-
-# 0.3.6 发布日期：2014年07月18日
-* 为 AV.Query 添加 addAscending 和 addDescending 排序方法。
-* 修复循环引用引起的无限循环保存的 Bug。
-
-# 0.3.4 发布日期：2014年6月6日
-* 在Node.js里执行文件上传，将使用七牛官方SDK上传，避免流量限制。
-
-# 0.3.3 发布日期：2014年5月16日
-* 添加新API `AV.Object`的`fetchWhenSave(boolean)`方法，用于设置fetchWhenSave选项，更新对象的时候同时返回最新值。
-
-# 0.3.2 发布日期：2014年5月8日
-* 添加新API `AV.File.withURL`，用于保存已经有URL的文件对象。
-* 添加新API `AV.Relation.reverseQuery`，用于relation的反向查询。
-
-# 0.3.1 发布日期：2014年02月18日
-* AV.File的构造函数可以接受node.js的Buffer类了。
-* AV.File新增方法thumbnailURL，获取图片缩略图。
-* 增强AV.File的metaData方法，既是getter也是setter设置属性。
-
-# 0.3.0 发布日期：2014年02月13日
-* 增加AV.Status类以及相关API，用于status发布和查询等。
-* AV.User新增follow/unfollow方法等，用于建立用户关系和查询用户关系
-* 以上更新详情请查看事件流系统开发指南。
-
-
-# 0.2.7  发布日期：2013年11月12号
-* 改进AV.Object.createWithoutData方法。
-* 修复AV.Object.destroyAll在传入空数组的时候没有执行options.success的bug。
-
-# 0.2.3 发布日期：2013年10月10号
-* 增强AV.File类，添加metaData()方法用于获取元数据，size()和ownerId()分别用于获取大小和上传者id。
-* 添加静态方法AV.Object.destroyAll(objects)用于批量删除对象，AV.Query也添加方法destroyAll用于删除查询出来的所有对象。
-* 增加方法AV.Cloud.afterUpdate用于注册after update处理器，更新对象后回调处理函数。
-* 增强云代码API文档。
-* 添加创建已有对象的新方法AV.Object.createWithoutData(name, id)
-
-# 0.2.2 发布日期：2013年9月5号
-* 修复AV.Query的include方法无法正常查询的bug。
-
-# 0.2.1 发布日期：2013年08月28号
-
-* 支持App的Master Key设置
-* 更新API文档，添加AV.Cloud下的函数和类说明
+# 老版本的 changelog
+https://download.avoscloud.com/sdk/javascript/changelog.txt

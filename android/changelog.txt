@@ -1,3 +1,10 @@
+#2.6.11.1 发布时间:2015-03-05
+* onMessageSent中获取的AVMessage对象补齐fromPeerId
+* 正确更新SessionManager中onlinePeerIds的数据
+
+#2.6.11 发布时间:2015-02-09
+* 改进文件上传策略提高小文件上传进度精度
+
 #2.6.10.4 发布事件:2015-01-30
 * 修正在PushService重启后，实时通信中可能存在的NPE问题
 
