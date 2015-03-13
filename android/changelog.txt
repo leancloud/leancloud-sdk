@@ -1,3 +1,9 @@
+#2.7 发布时间:2015-03-09
+* 增加了匿名用户转化为正式用户的处理逻辑
+* 提高了统计的使用时常的准确性
+* 修正了SNS的WebView实现在4.2以后出现的卡在WebView上的问题
+* 修正了AVObject.toJsonObject方法中，遇到Pointer时的序列化异常
+
 #2.6.11.1 发布时间:2015-03-05
 * onMessageSent中获取的AVMessage对象补齐fromPeerId
 * 正确更新SessionManager中onlinePeerIds的数据
