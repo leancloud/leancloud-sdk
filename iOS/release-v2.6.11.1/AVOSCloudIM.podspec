@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.version        = "2.1.1"
+  s.version        = "2.6.11.1"
   s.source         = { :http => "https://download.leancloud.cn/sdk/iOS/release-v#{s.version}/AVOSCloudIM.framework.zip"}
 
 
