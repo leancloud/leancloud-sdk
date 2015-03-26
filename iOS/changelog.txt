@@ -1,147 +1,147 @@
 # 3.0.1 发布日期：2015-03-26
 * 修复部分消息解析时崩溃的问题
 * 修改应用在非激活状态数据处理逻辑，处理消息去重问题
-* 修复AVQuery缓存判断逻辑
+* 修复 AVQuery 缓存判断逻辑
 
 # 3.0.0 发布日期：2015-03-19
-* 发布第二版实时消息SDK，提供更方便易用的API接口，降低使用门槛，提升开发效率
+* 发布第二版实时消息 SDK ，提供更方便易用的 API 接口，降低使用门槛，提升开发效率
 
 # 2.6.11.2 发布日期：2015-03-16
-* 修复AVObject多次保存时可能产生数据错误的问题
+* 修复 AVObject 多次保存时可能产生数据错误的问题
 
 # 2.6.11.1 发布日期：2015-03-14
-* 修复AVObject保存时同时保存关联的未修改的AVObject的问题
-* 修复AVFile的isDirty无效的问题
-* 修改AVObject中数组添加删除操作为服务器进行
+* 修复 AVObject 保存时同时保存关联的未修改的 AVObject 的问题
+* 修复 AVFile 的 isDirty 无效的问题
+* 修改 AVObject 中数组添加删除操作为服务器进行
 * 修复网络请求返回时多线程可能引起崩溃的问题
 
 # 2.6.11 发布日期：2015-03-06
-* 修复session关闭后重新打开导致group.session为nil的问题
-* 添加创建transient属性群组的接口，可用作临时聊天室
+* 修复 session 关闭后重新打开导致 group.session 为 nil 的问题
+* 添加创建 transient 属性群组的接口，可用作临时聊天室
 * 反馈添加定向推送
 * 修复匿名用户转换正式用户问题
 * 修复离线时被邀请入群后接收离线消息的问题
 * 添加缓存获取失败后请求重试次数限制
 
 # 2.6.10.2 发布日期：2015-02-03
-* 修复IM连接断开可能导致崩溃的问题
+* 修复 IM 连接断开可能导致崩溃的问题
 * 修复崩溃统计开关无效的问题，添加开关设置完成回调接口
 * 修复一处内存泄露问题
 
 # 2.6.10.1 发布日期：2015-02-03
-* 修复AVFile缓存多次的问题
-* 修复IM内部float类型解析不对的问题
-* 修复watchPeerIds可能引起阻塞的问题
-* 添加AVGroup join被拒绝的回调
+* 修复 AVFile 缓存多次的问题
+* 修复 IM 内部 float 类型解析不对的问题
+* 修复 watchPeerIds 可能引起阻塞的问题
+* 添加 AVGroup join 被拒绝的回调
 
 # 2.6.10 发布日期：2015-01-07
-* AVPush添加setPushToWP接口，定向推送到WinPhone手机
-* AVPush添加setPushToTargetPlatforms接口
-* AVSignature添加error属性，签名错误使用此属性
-* AVUser添加使用手机号直接注册接口
-* 修复AVInstallation badge不能保存的问题
-* 修复接收到自己在其它设备发送的消息后ack产生的问题
-* 修复iPhone 6上反馈界面黑块的问题
-* 修复SNS登录后没有回调的问题
+* AVPush 添加 setPushToWP 接口，定向推送到 WinPhone 手机
+* AVPush 添加 setPushToTargetPlatforms 接口
+* AVSignature 添加 error 属性，签名错误使用此属性
+* AVUser 添加使用手机号直接注册接口
+* 修复 AVInstallation badge 不能保存的问题
+* 修复接收到自己在其它设备发送的消息后 ack 产生的问题
+* 修复 iPhone 6 上反馈界面黑块的问题
+* 修复 SNS 登录后没有回调的问题
 
 # 2.6.9.1 发布日期：2014-12-17
-* 修复AVPush生产环境数据错误的问题
+* 修复 AVPush 生产环境数据错误的问题
 
 # 2.6.9 发布日期：2014-12-10
 * 修复群组踢出成员无效的问题
 * 修复反馈界面联系方式修改后不起作用的问题
 * 修改短信验证接口，添加电话号码，旧方法已停用
-* AVPush添加设置生产环境的接口
-* 更新密码添加使用block回调的接口
-* SNS添加使用后台生成的gotourl登录第三方平台用户的接口
+* AVPush 添加设置生产环境的接口
+* 更新密码添加使用 block 回调的接口
+* SNS 添加使用后台生成的 gotourl 登录第三方平台用户的接口
 
 # 2.6.8.1 发布日期：2014-11-25
-* 修复发起kick和invite操作后没回调的问题
-* 修复unwatch操作没有回调的问题
-* 修复多线程导致session open操作可能排在其它操作之后发起的问题
-* 去除Category UIImageView+AVNetworking，修复与AFNetworking冲突的问题
+* 修复发起 kick 和 invite 操作后没回调的问题
+* 修复 unwatch 操作没有回调的问题
+* 修复多线程导致 session open 操作可能排在其它操作之后发起的问题
+* 去除 Category UIImageView+AVNetworking ，修复与 AFNetworking 冲突的问题
 
 # 2.6.8 发布日期：2014-11-24
-* 修复北美服务器s3上传文件没有保存name，mimetype等信息的问题
-* 修复SNS QQ登录部分用户获取用户信息错误的问题
+* 修复北美服务器 s3 上传文件没有保存 name ， mimetype 等信息的问题
+* 修复 SNS QQ 登录部分用户获取用户信息错误的问题
 * 修改空反馈提交发送策略
-* 修复SDK内AFNetworking某些变量值与公用AFNetworking冲突的问题
+* 修复 SDK 内 AFNetworking 某些变量值与公用 AFNetworking 冲突的问题
 * 修改大文件上传进度回调策略
-* 优化部分uuid生成算法，有利于减少数据传输
-* 聊天模块添加watch，unwatch回调，所有发送消息添加序号，direct消息添加回执，去除不必要的appid来回传递
-* 修改原来的watch和unwatch为同步操作
-* 签名时间戳类型改为int64
-* 修改installation数据发送策略，节省带宽
-* 修改session操作使用后台线程
+* 优化部分 uuid 生成算法，有利于减少数据传输
+* 聊天模块添加 watch ， unwatch 回调，所有发送消息添加序号， direct 消息添加回执，去除不必要的 appid 来回传递
+* 修改原来的 watch 和 unwatch 为同步操作
+* 签名时间戳类型改为 int64
+* 修改 installation 数据发送策略，节省带宽
+* 修改 session 操作使用后台线程
 
 # 2.6.7 发布日期：2014-10-29
-* 修改SDK默认API服务器地址 
+* 修改 SDK 默认 API 服务器地址 
 * 修复下载失败可能导致递归回调 
 * 修复群组邀请无效的问题 
 * 添加历史消息查询 
-* 发送消息成功后更新timestamp 
-* 修复addObject:forKey:在key对应的value为nil时无法添加的问题 
+* 发送消息成功后更新 timestamp 
+* 修复 addObject:forKey: 在 key 对应的 value 为 nil 时无法添加的问题 
 * 添加短信模板 
-* AVUser follow操作添加自定义属性 
+* AVUser follow 操作添加自定义属性 
 * 修改查询结果缓存与回调的顺序 
-* SDK初始化时显示一些SDK和系统信息，方便查找问题时快速确认版本号和系统环境
+* SDK 初始化时显示一些SDK和系统信息，方便查找问题时快速确认版本号和系统环境
 
 # 2.6.6 发布日期：2014-10-13
-* 修复关注和被关注查询结果含null时崩溃的问题
-* 修改实时消息网络重连逻辑，无网络时不再尝试重连，所有session关闭后连接断开，修复应用退到后台关闭连接后又立即重连的问题
+* 修复关注和被关注查询结果含 null 时崩溃的问题
+* 修改实时消息网络重连逻辑，无网络时不再尝试重连，所有 session 关闭后连接断开，修复应用退到后台关闭连接后又立即重连的问题
 * 修复返回结果数组里面含有相同元素导致崩溃的问题
-* 修复objectWithClassName:dictionary:没有导入dictionary的值
-* 修改analytics event相同事件处理逻辑
+* 修复 objectWithClassName:dictionary: 没有导入 dictionary 的值
+* 修改 analytics event 相同事件处理逻辑
 
 # 2.6.5.1 发布日期：2014-09-28
-* 修复创建AVGroup没有回调的问题
-* 修复数组属性和addObject:forKey:互操作导致数据不一致的问题
+* 修复创建 AVGroup 没有回调的问题
+* 修复数组属性和 addObject:forKey: 互操作导致数据不一致的问题
 
 # 2.6.5 发布日期：2014-09-24
 * 修复同时下载同一个文件数据可能损坏的问题
-* 修复iOS 8下无法获取地理位置的问题
-* 修复新建的AVGroup未设置delegate的问题
+* 修复 iOS 8 下无法获取地理位置的问题
+* 修复新建的 AVGroup 未设置 delegate 的问题
 * 实时消息添加北美节点支持
-* 添加Cloud Query API
+* 添加 Cloud Query API
 * 修正大文件上传经常失败的问题
-* 实时消息websocket当设备网络状态改变时重连时间间隔重置
-* 修复QQ登录过程中SSL错误问题
-* 修复SNS模块在Xcode 6出现警告的问题
+* 实时消息 websocket 当设备网络状态改变时重连时间间隔重置
+* 修复 QQ 登录过程中 SSL 错误问题
+* 修复 SNS 模块在 Xcode 6 出现警告的问题
 
 # 2.6.4 发布日期：2014-09-16
-* 调整实时通讯API
-* 修复AVObject子类化时64位整数只能表示32位整数的问题
+* 调整实时通讯 API
+* 修复 AVObject 子类化时 64 位整数只能表示 32 位整数的问题
 * 添加日志开关，方便调试
-* 修复Xcode6下public头文件产生的警告问题
-* 修复AVUser短信验证通过后重启本地数据没有保存的问题
-* 添加AVOSCloud北美节点支持
+* 修复 Xcode6 下 public 头文件产生的警告问题
+* 修复 AVUser 短信验证通过后重启本地数据没有保存的问题
+* 添加 AVOSCloud 北美节点支持
 
 # 2.6.3 发布日期：2014-09-01
-* 添加使用手机号码重置密码API
-* 修复setEnableCrashReport无效的问题
-* 添加AVUserFeedback.h头文件
+* 添加使用手机号码重置密码 API
+* 修复 setEnableCrashReport 无效的问题
+* 添加 AVUserFeedback.h 头文件
 * 修复循环指针引用导致崩溃的问题
 * 优化大文件上传策略
-* AVSession添加对peerId长度检查
+* AVSession 添加对 peerId 长度检查
 
 # 2.6.2.1 发布日期：2014-08-20
 * 修复用户注册时候带文件属性发生错误的问题
 
 # 2.6.2 发布日期：2014-08-19
-* AVGroup添加消息发送成功和失败通知
-* 修复AVObject关系保存不上的问题
-* 修复AVGroup收不到历史消息的问题
-* 修复AVGroup加入成功没有回调的问题
+* AVGroup 添加消息发送成功和失败通知
+* 修复 AVObject 关系保存不上的问题
+* 修复 AVGroup 收不到历史消息的问题
+* 修复 AVGroup 加入成功没有回调的问题
 * 修复用户注册过程初始信息没有保存的问题
-* 修改文件属性metadata为metaData
+* 修改文件属性 metadata 为 metaData
 
 # 2.6.1 发布日期：2014-08-01
-* 添加群聊API
-* 添加短信认证API
-* 修复文件下载失败后返回0字节数据的Bug
+* 添加群聊 API
+* 添加短信认证 API
+* 修复文件下载失败后返回 0 字节数据的 Bug
 
 # 2.6.0 发布日期：2014-07-11
-* 修复与SocketRocket符号冲突的Bug
+* 修复与 SocketRocket 符号冲突的 Bug
 
 # 2.5.9.1 发布日期：2014-06-27
 * 修复 podspec 依赖缺少的问题
@@ -155,7 +155,7 @@
 * 反序列化 json 时忽略 null
 * 优化保存 AVObject 时 dirty 字段的检查逻辑
 * 统计默认开启错误报告
-* AVSearchQuery 支持order 和 sort，支持比较复杂的排序功能
+* AVSearchQuery 支持 order 和 sort ，支持比较复杂的排序功能
 
 # 2.5.7 发布日期：2014-06-09
 * 新增更新用户密码的 API
@@ -165,20 +165,20 @@
 
 # 2.5.6 发布日期：2014-05-30
 * 新增应用内搜索组件 AVSearchQuery
-* 修复bug：因删除用户导致的follower或followee查询crash
+* 修复 bug：因删除用户导致的 follower 或 followee 查询 crash
 
 # 2.5.5 发布日期：2014-05-23
-* 修改currentUser缓存策略，使之满足子类化需求。
-* 重构AVQuery，可对同一个key设置多种查询条件。
-* 修复Feedback组件存在的bug。
-* 修复统计组件获取deviceInfo可能会crash的bug。
+* 修改 currentUser 缓存策略，使之满足子类化需求。
+* 重构 AVQuery，可对同一个 key 设置多种查询条件。
+* 修复 Feedback 组件存在的 bug 。
+* 修复统计组件获取 deviceInfo 可能会 crash 的 bug 。
 * 提供开发者选项，控制是否启用统计。
 
 # 2.5.3 发布日期：2014-05-09
-* 修复SNS组件已知bug：所有app通过webview登录qq或微博，均显示向AVOSCloud授权。
-* 修复未缓存currentInstallation的bug。
-* 对于AVObjet，setObject:forKey将会检查key是否合法。
-* 添加211错误代码，表示用户不存在。
+* 修复 SNS 组件已知 bug ：所有 app 通过 webview 登录 qq 或微博，均显示向 AVOSCloud 授权。
+* 修复未缓存 currentInstallation 的 bug 。
+* 对于 AVObjet ，setObject:forKey 将会检查 key 是否合法。
+* 添加 211 错误代码，表示用户不存在。
 
 # 2.5.2 发布日期：2014-04-26
 * 增加用户反馈组件
@@ -189,136 +189,136 @@
 
 # 2.5.0 发布日期：2014-04-11
 * AVQuery 的 whereKey:EqualsTo: 能够自动处理 AVObject 对象
-* 修复AVObject的saveAll和同步save方法不能保存关联对象的Bug。
+* 修复 AVObject 的 saveAll 和同步 save 方法不能保存关联对象的 Bug。
 
 # 2.4.1 发布日期：2014-03-21
-* 解决离线请求极端情况下的Crash
+* 解决离线请求极端情况下的 Crash
 * 优化网络请求队列, 防止大并发被卡住
 
-# 2.4.0 发布日期: 2014*03-13
+# 2.4.0 发布日期: 2014-03-13
 * 添加重发验证邮件接口 `[AVUser requestEmailVerify:withBlock:]`
-* AVObject如果关联一个AVFile，发现AVFIle没有保存，自动上传文件
-* 修复AVInstallation保存时可能出现Crash的问题
+* AVObject 如果关联一个 AVFile，发现 AVFIle 没有保存，自动上传文件
+* 修复 AVInstallation 保存时可能出现 Crash 的问题
 * 修复匿名用户判断逻辑
-* 修复AVObject saveAll和fetchAll并发时可能出现Crash
+* 修复 AVObject saveAll 和 fetchAll 并发时可能出现 Crash
 
 # 2.3.2 发布日期：2014-02-21
-* 重构了事件流API 改为标准的AVQuery方式来查询Status，详情参考事件流系统开发指南。
-* 修复session统计时长部分情况下不准确的问题。
+* 重构了事件流 API 改为标准的 AVQuery 方式来查询 Status，详情参考事件流系统开发指南。
+* 修复 session 统计时长部分情况下不准确的问题。
 
 # 2.3.1 发布日期：2014-02-13
-* 添加AVFile文件完整性的MD5检查
-* 修复从第三方应用打开app时会100% crash的bug
+* 添加 AVFile 文件完整性的MD5检查
+* 修复从第三方应用打开 app 时会 100% crash 的 bug
 * 修复部分出错信息不返回具体错误bug
 
 # 2.3.0 发布日期：2014-01-27
-* 支持用标准的Query方式查询用户粉丝和关注，具体看事件流开发文档。
-* 修复Last-Modify某些无法正常获取数据的bug
+* 支持用标准的 Query 方式查询用户粉丝和关注，具体看事件流开发文档。
+* 修复 Last-Modify 某些无法正常获取数据的 bug
 * 统计支持添加默认自定义数据 `[AVAnalytics setCustomInfo:info]`
 
 # 2.2.2 发布日期：2014-01-23
-* 添加Last-Modify支持,节省Query流量, 可以通过`[AVOSCloud setLastModifyEnabled:YES]`来打开
+* 添加 Last-Modify 支持,节省 Query 流量, 可以通过 `[AVOSCloud setLastModifyEnabled:YES]` 来打开
 * 修复一个小的内存泄漏 谢谢 @Dummyapps
-* 修复`AVStatus`没回调主线程问题
+* 修复 `AVStatus` 没回调主线程问题
 
 # 2.2.1 发布日期: 2014-01-16
 * 发布事件流系统
-* 更新API验证方法, 不需要明文在API调用中传递AppKey
-* AVCloud `callFunction`支持AVObject,NSDate等复杂参数
-* SNS组件修复bug:新浪微博无法通过logout来注销并切换到其他微博账号
-* 修复重复发送请求bug
+* 更新 API 验证方法, 不需要明文在 API 调用中传递 AppKey
+* AVCloud `callFunction` 支持 AVObject, NSDate 等复杂参数
+* SNS 组件修复 bug: 新浪微博无法通过 logout 来注销并切换到其他微博账号
+* 修复重复发送请求 bug
 * 其他小问题修复
 
 # 2.2.0 发布日期: 2014-01-09
 
-* 支持arm64 CPU. (UI组件除外)
-* 添加AVFile的缓存清除接口，添加`clearCachedFile`,`clearAllCachedFiles`等方法。
-* AVFile文件没上传成功 不会创建`_File`记录
-* 修复子类化属性可能出现`NSNull`的问题
-* 推送消息可以直接设置具体推送时间（定时推送），AVPush添加`setPushDate`方法
-* 修复请求缓存设置`maxCacheAge`为`0`时的异常处理
-* 支持`AND`查询, 接口:`+ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries`
-* 修复绑定SNS的`AVUser`不认为是已经验证的用户的Bug。
+* 支持 arm64 CPU. (UI 组件除外)
+* 添加 AVFile 的缓存清除接口，添加 `clearCachedFile`, `clearAllCachedFiles` 等方法。
+* AVFile 文件没上传成功 不会创建 `_File` 记录
+* 修复子类化属性可能出现 `NSNull` 的问题
+* 推送消息可以直接设置具体推送时间（定时推送），AVPush 添加 `setPushDate` 方法
+* 修复请求缓存设置 `maxCacheAge` 为 `0` 时的异常处理
+* 支持 `AND` 查询, 接口: `+ (AVQuery *)andQueryWithSubqueries:(NSArray *)queries`
+* 修复绑定 SNS 的 `AVUser` 不认为是已经验证的用户的 Bug。
 
 # 2.1.2 发布日期：2013-12-20
 
 * 优化统计逻辑
-* 完善CrashReport数据, 以后可以在统计后台简单的定位错误原因
-* SNS模块 SSO没成功的情况, 尊重QQ AppKey设置
-* 发布全新demo项目，我们制作了一个Demo 帮助使用AVOSCloud的开发者, 尽快的熟悉和使用SDK而建立的, 包含了各种基础和高级用法. 以后会持续更新.
+* 完善 CrashReport 数据, 以后可以在统计后台简单的定位错误原因
+* SNS 模块 SSO 没成功的情况, 尊重 QQ AppKey 设置
+* 发布全新 demo 项目，我们制作了一个 Demo 帮助使用 AVOSCloud 的开发者, 尽快的熟悉和使用 SDK 而建立的, 包含了各种基础和高级用法. 以后会持续更新.
 详细说明在[这里](https://github.com/avos/avoscloud-sdk/tree/master/iOS/samples/AVOSDemo)
 
 # 2.1.1 发布日期: 2013-12-13
-* AVOSCloudSNS可以分享文字和图片了(目前支持新浪微博)
-* AVOSCloudSNS可以自动刷新token过期
-* AVOSCloudSNS尊重新浪微博AppKey设置, 如果没有SSO设置, 也可以用AppKey来从web方式授权.
-* 原来用SDK内嵌的`AFNetworking`的会出现找不到AFNetworking的编译错误(从2.1.0开始) 可以 `#import <AVOSCloud/AFNetwokingFix.h>` 来解决
+* AVOSCloudSNS 可以分享文字和图片了(目前支持新浪微博)
+* AVOSCloudSNS 可以自动刷新token过期
+* AVOSCloudSNS 尊重新浪微博 AppKey 设置, 如果没有 SSO 设置, 也可以用 AppKey 来从 web 方式授权.
+* 原来用 SDK 内嵌的 `AFNetworking` 的会出现找不到 AFNetworking 的编译错误(从 2.1.0 开始) 可以 `#import <AVOSCloud/AFNetwokingFix.h>` 来解决
 
-CocoaPods官方源已经更新.
-也可以通过测试版的Podspec来使用我们几乎每天都会更新的开发中的SDK:
+CocoaPods 官方源已经更新.
+也可以通过测试版的 Podspec 来使用我们几乎每天都会更新的开发中的 SDK:
 pod 'AVOSCloud', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloud.podspec'
 pod 'AVOSCloudUI', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudUI.podspec'
 pod 'AVOSCloudSNS', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-beta/AVOSCloudSNS.podspec'
 
 
 # 2.1.0 发布日期: 2013-12-06
-* 解决子类化访问AVRelation时不会调用relationforKey的问题
-* 清理错误常量，增加kAVErrorUsernamePasswordMismatch
-* 解决第三方库冲突问题。对第三方库进行改名处理，统一使用AV前缀。改名后，开发人员可以使用AVOSCloud自带的第三方库，也可以使用标准的第三方库。
-* 解决AVQuery重用时没有清理旧设置的问题
-* 解决reverseQuery的命名错误问题
-* 增加fetch和refresh的include key支持
-* 解决fetchAll出错时不会调用回调block的问题
-* 去除文件url为空时的警告
+* 解决子类化访问 AVRelation 时不会调用 relationforKey 的问题
+* 清理错误常量，增加 kAVErrorUsernamePasswordMismatch
+* 解决第三方库冲突问题。对第三方库进行改名处理，统一使用 AV 前缀。改名后，开发人员可以使用 AVOSCloud 自带的第三方库，也可以使用标准的第三方库。
+* 解决 AVQuery 重用时没有清理旧设置的问题
+* 解决 reverseQuery 的命名错误问题
+* 增加 fetch 和 refresh 的 include key 支持
+* 解决 fetchAll 出错时不会调用回调 block 的问题
+* 去除文件 url 为空时的警告
 
 # 2.0.2 发布日期: 2013-11-29
-* 为AVQuery增加whereSizeEqual
-* 纠正AVRelation的函数名拼写错误
-* 为AVQuery增加sizeEqualTo
-* 增加AVFile的扩展名支持，在key后会附加扩展名，以便下载时可以使用正确的程序打开
-* 解决subclass返回的类型警告
-* 解决defaultACL中隐式创建user的问题
+* 为 AVQuery 增加 whereSizeEqual
+* 纠正 AVRelation 的函数名拼写错误
+* 为 AVQuery 增加 sizeEqualTo
+* 增加 AVFile 的扩展名支持，在 key 后会附加扩展名，以便下载时可以使用正确的程序打开
+* 解决 subclass 返回的类型警告
+* 解决 defaultACL 中隐式创建 user 的问题
 
 # 2.0.0 发布日期: 2013-11-22
 * 增加缺失的常量定义，解决引用常量引起的链接问题
-* 在AVOSCloud.h中增加AVRole声明
+* 在 AVOSCloud.h 中增加 AVRole 声明
 * 解决将文件存在数组中保存后，再次获取，返回对象不正确的问题
-* 增加default ACL支持
-* 解决orderBySortDescriptors 传入参数为数组时存在的问题
-* 默认禁止crash report
-* parseClassName 变为optional
-* 解决objectForKey当传入参数为nil存在的问题
+* 增加 default ACL 支持
+* 解决 orderBySortDescriptors 传入参数为数组时存在的问题
+* 默认禁止 crash report
+* parseClassName 变为 optional
+* 解决 objectForKey 当传入参数为 nil 存在的问题
 * 修改统计发送策略，确保首次启动发送
 * 修复属性的内存泄露
-* 将SVProgressHUD.bundle打包进AVOSCloud UI
+* 将 SVProgressHUD.bundle 打包进 AVOSCloud UI
 
 # 1.4.4 发布日期: 2013-11-13
-* 解决子类化relation存在的问题
-* 完善增量更新的初始化保存，避免beforeSave收到空对象
-* 当setObject:forKey:传入的对象为nil时，会调用removeObejctForKey
-* 解决子类化setter中存在的无限递归问题
-* 解决子类化中refresh和fetch返回错误对象的问题
+* 解决子类化 relation 存在的问题
+* 完善增量更新的初始化保存，避免 beforeSave 收到空对象
+* 当 setObject:forKey: 传入的对象为 nil 时，会调用 removeObejctForKey
+* 解决子类化 setter 中存在的无限递归问题
+* 解决子类化中 refresh 和 fetch 返回错误对象的问题
 * 增加统计模块的首次汇报功能
-* 不再需要-ObjC编译选项
-* SNS SDK支持QQ SSO
+* 不再需要 -ObjC 编译选项
+* SNS SDK 支持 QQ SSO
 
 # 1.4.3 发布日期: 2013-10-31
 
 * 直接通过在线参数自动启动统计功能
-* 添加`AVCloudSNS`SDK
-* 添加OS X SDK
-* 修复统计功能出现的bug
+* 添加 `AVCloudSNS`SDK
+* 添加 OS X SDK
+* 修复统计功能出现的 bug
 
 
 # 1.4.2 发布日期: 2013-10-25
 
 * 读取在线配置
 * 增加其他的发送策略
-* fix installation存储过程中出现的警告和错误
-* 增加updateOnlineConfig的block版本
-* 当query的对象不存在时，返回空对象
-* fix push_at存在的bug
-* 清理API头文件
+* fix installation 存储过程中出现的警告和错误
+* 增加updateOnlineConfig 的 block 版本
+* 当 query 的对象不存在时，返回空对象
+* fix push_at 存在的 bug
+* 清理 API 头文件
 
 # 1.4.1  发布日期: 2013-10-17
 
@@ -328,50 +328,50 @@ pod 'AVOSCloudSNS', :podspec => 'https://download.avoscloud.com/sdk/iOS/release-
 # 1.4.0  发布日期: 2013-10-10
 
 * 全面优化增量更新，仅当数据有变化时才真正保存
-* 解决addArrayObject的问题
-* 解决子类化setter和getter crash的问题
-* 解决user session token 引起的对象保存问题
-* 增加json string dictionary功能，允许AVObject导出dictionary或者从dictionary构造
-* 解决query中出现 role 的问题
-* 解决query中getFirstObject和getObjectWithId的include问题
+* 解决 addArrayObject 的问题
+* 解决子类化 setter 和 getter crash 的问题
+* 解决 user session token 引起的对象保存问题
+* 增加 json string dictionary 功能，允许 AVObject 导出 dictionary 或者从 dictionary 构造
+* 解决 query 中出现 role 的问题
+* 解决 query 中 getFirstObject 和 getObjectWithId 的 include 问题
 * 增加 deleteInBackground for AVFile
-* 批量删除query结果中的对象
-* 优化编译方法，大幅减小SDK的体积
+* 批量删除 query 结果中的对象
+* 优化编译方法，大幅减小 SDK 的体积
 
 # 1.3.5  发布日期: 2013-09-07
 
-* 解决File数组的include查询问题
-* 增加AVObject isEqual方法
+* 解决 File 数组的 include 查询问题
+* 增加 AVObject isEqual 方法
 
 # 1.3.4  发布日期: 2013-09-07
 
-* file的功能增强，增加thumbnail, 由url创建，查询和删除等功能
-* 解决AVObject放入数组中保存出错问题
-* 保存current user的createdAt和relation
-* 解决op删除AVObject出错
-* 增加fetchWhenSave，将服务器的数据直接回传，同步更新本地缓存数据
-* 增加query的父对象查找功能
+* file 的功能增强，增加 thumbnail, 由 url 创建，查询和删除等功能
+* 解决 AVObject 放入数组中保存出错问题
+* 保存 current user 的 createdAt 和 relation
+* 解决 op 删除 AVObject 出错
+* 增加 fetchWhenSave，将服务器的数据直接回传，同步更新本地缓存数据
+* 增加 query 的父对象查找功能
 
 # 1.3.3  发布日期: 2013-08-30
 
-* 使用服务端的文件URL，不再从SDK端构造文件URL，保持URL的一致性
-* 发布SinaWeiboUtils
+* 使用服务端的文件 URL ，不再从 SDK 端构造文件 URL，保持 URL 的一致性
+* 发布 SinaWeiboUtils
 
 
 # 1.3.2.beta  发布日期: 2013-08-19
 
 
-* 增加fetch SDK的判断，当objectId为空时，返回missing objectId错误
-* 解决再次登录后[AVUser currentUser]为空的问题
-* 解决subclassing的问题，当返回对象为自定义的子类化对象时，返回正确的objective-c对象，而非AVObject
-* 解决AVUser的 objectForKey 当key不存在时抛出的异常问题
-* 解决include 对象没有正确展开的问题
-* 解决AVUser关联object对象的保存问题
+* 增加 fetch SDK 的判断，当 objectId 为空时，返回 missing objectId 错误
+* 解决再次登录后 [AVUser currentUser] 为空的问题
+* 解决 subclassing 的问题，当返回对象为自定义的子类化对象时，返回正确的 objective-c 对象，而非 AVObject
+* 解决 AVUser 的 objectForKey 当 key 不存在时抛出的异常问题
+* 解决 include 对象没有正确展开的问题
+* 解决 AVUser 关联 object 对象的保存问题
 * 解决文件缓存存在的问题功能
-* 解决[AVUser currentUser]的保存问题
+* 解决 [AVUser currentUser] 的保存问题
 
 # 1.3.1  发布日期: 2013-08-15
 
 主要修改
 
-* 修改CocoaPods 增加icu库的依赖
+* 修改 CocoaPods 增加 icu 库的依赖
