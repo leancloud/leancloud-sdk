@@ -2,6 +2,7 @@
 * 更新了新浪微博相关jar包，解决Android L上遇到sso调用异常问题
 * 增加了AVUser.friendshipQuery接口，让用户可以一次性同时获取粉丝和关注列表
 * 解决实时聊天v1版本在session.close时可能遇到的缓存清理失败问题
+* 增加AVIMClient.getOnlineClients接口来实现在线客户端查询功能
 
 #3.0.4 发布时间:2015-04-02
 * 修正了用户在使用实时聊天系统时遇到网络连接断开时可能遇到的NPE问题
