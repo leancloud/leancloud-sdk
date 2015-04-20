@@ -1,3 +1,6 @@
+#3.1.4 发布时间:2015-04-20
+* 修正实时聊天在多用户登录时出现conversation缓存冲突的bug
+
 #3.1.3 发布时间:2015-04-16
 * 修正AVIMConversation获取Attribute时遇到NPE的问题
 
