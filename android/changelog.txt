@@ -1,3 +1,6 @@
+#3.1.5 发布时间:2015-04-22
+* 修正SNS模块SSO授权之后SNSBase.authorizedData()返回null的异常
+
 #3.1.4 发布时间:2015-04-20
 * 修正实时聊天在多用户登录时出现conversation缓存冲突的bug
 
