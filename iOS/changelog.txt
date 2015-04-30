@@ -1,3 +1,10 @@
+# 3.1.0 发布日期：2015-04-30
+* 增加新的崩溃报告 SDK
+* 修复查询历史消息遇到非法格式的消息崩溃的问题
+* 修复同一 AVObject 保存后再次保存之前修改的信息会再次提交的问题
+* 修复 incrementKey:byAmount: 增加小数的问题
+* 修复未设置 AVInstallation 时关闭 AVIMClient 返回错误的问题
+
 # 3.0.3 发布日期：2015-04-24
 * AVInstallation 增加 deviceProfile，支持多证书推送
 * ClientId 支持最多 64 个字符
