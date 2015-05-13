@@ -1,3 +1,7 @@
+#3.2 发布时间:2015-05-13
+* 增加网络模块以避免移动网络中DNS解析异常导致的SDK不可用
+* 在authorizedData()增加QQ SSO登录时的用户信息 
+
 #3.1.5 发布时间:2015-04-22
 * 修正SNS模块SSO授权之后SNSBase.authorizedData()返回null的异常
 
