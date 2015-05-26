@@ -4,6 +4,7 @@
 * 移除SSLFactory的重载，增强请求的安全性
 * 允许创建只包含自己的conversation
 * 增加AVSearchQuery默认查询结果类型
+* 修正AVConversationQuery排序不生效的问题
 
 #3.3.1 发布时间:2015-05-25
 * fastjson支持0作为布尔值
