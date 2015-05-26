@@ -1,3 +1,10 @@
+#3.3.2 发布时间:2015-05-26
+* 修正AVUser.updatePassword异常时，抛出的异常信息不正确的问题
+* 修正AVIMClient.open有可能无法回调的问题
+* 移除SSLFactory的重载，增强请求的安全性
+* 允许创建只包含自己的conversation
+* 增加AVSearchQuery默认查询结果类型
+
 #3.3.1 发布时间:2015-05-25
 * fastjson支持0作为布尔值
 * 修正AVStatusQuery的同步查询方法查询条件可能丢失的问题 
