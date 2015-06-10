@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.libraries  = "icucore", "sqlite3"
   s.vendored_libraries = "lib#{s.name}.a"
   s.prepare_command = <<-CMD
-    cp LCDummy.m && cp "iOS/release-v#{s.version}/#{s.name}.framework/#{s.name}" "lib#{s.name}.a"
+    touch LCDummy.m && cp "iOS/release-v#{s.version}/#{s.name}.framework/#{s.name}" "lib#{s.name}.a"
   CMD
 
 end
