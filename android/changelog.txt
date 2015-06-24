@@ -1,3 +1,8 @@
+#3.4 发布时间:2015-06-24:
+* AVObject实现Parcelable接口，支持通过Intent来传递AVObject对象
+* AVObject可以通过toString()与AVObject.parseAVObject方法来实现序列化与反序列化
+* 请在 <service android:name="com.avos.avoscloud.PushService"/>中添加 android:exported="true"属性，以提高推送的到达率
+
 #3.3.5 发布时间:2015-06-17:
 * AVIMAudioMessage 与AVIMVideoMessage的getDuration方法可能遇到的BigDecimal类型强转为Double时的错误
 * 修正实时聊天v2在网络连接或者线程重启后，重连服务器出现的离线消息可能收不到的问题
