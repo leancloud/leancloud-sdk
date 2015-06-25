@@ -1,8 +1,8 @@
 # 3.1.2.5 发布日期：2015-06-23
-支持会话的缓存
-更好地支持 AVObject 批量保存
-增加获取七牛缩略图 URL 的接口
-修复 CocoaPods 集成的问题
+* 新增 AVIMKeyedConversation 类来支持会话的缓存
+* 更好地支持 AVObject 批量保存，优化 saveAll 接口
+* AVFile 类增加获取七牛缩略图 URL 的接口
+* 修复 CocoaPods 集成的问题
 
 # 3.1.2.4 发布日期：2015-06-11
 * 优化聊天消息缓存，减少数据流量
