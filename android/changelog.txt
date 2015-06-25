@@ -1,3 +1,6 @@
+#3.4.1 发布时间:2015-06-25:
+* AVIMConversation.setAttribute(Sting key,Object value)支持增量更新属性
+
 #3.4 发布时间:2015-06-24:
 * AVObject实现Parcelable接口，支持通过Intent来传递AVObject对象
 * AVObject可以通过toString()与AVObject.parseAVObject方法来实现序列化与反序列化
