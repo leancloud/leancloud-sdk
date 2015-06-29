@@ -1,3 +1,6 @@
+# 3.1.2.6 发布日期：2015-06-29
+* 修复 CocoaPods 集成 SDK 时找不到静态库的问题
+
 # 3.1.2.5 发布日期：2015-06-23
 * 新增 AVIMKeyedConversation 类来支持会话的缓存
 * 更好地支持 AVObject 批量保存，优化 saveAll 接口
