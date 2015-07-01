@@ -1,3 +1,7 @@
+#3.4.2 发布时间:2015-07-01:
+* 修正AVIMConversation.getAttribute在设置了attribute,有可能无法直接获取的问题
+* 捕捉推送Router在某些特定网络情况下的响应异常
+
 #3.4.1 发布时间:2015-06-25:
 * AVIMConversation.setAttribute(Sting key,Object value)支持增量更新属性
 
