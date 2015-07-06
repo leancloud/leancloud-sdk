@@ -2,6 +2,7 @@
 * 升级 fastjson
 * 修正 AObject 子类化在反序列化过程中间的类型错误
 * 修正 AVObject.addUnique 后在调用 getList 方法时的类型错误
+* 在实时通信消息被服务器端（包括云代码）丢弃时，客户端正确收到相应的通知
 
 #3.4.2 发布时间:2015-07-01:
 * 修正 AVIMConversation.getAttribute 在设置了 attribute ,有可能无法直接获取的问题
