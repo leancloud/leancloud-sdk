@@ -1,3 +1,8 @@
+#3.4.3 发布时间:2015-07-06
+* 升级 fastjson
+* 修正 AObject 子类化在反序列化过程中间的类型错误
+* 修正 AVObject.addUnique 后在调用 getList 方法时的类型错误
+
 #3.4.2 发布时间:2015-07-01:
 * 修正 AVIMConversation.getAttribute 在设置了 attribute ,有可能无法直接获取的问题
 * 捕捉推送 Router 在某些特定网络情况下的响应异常
