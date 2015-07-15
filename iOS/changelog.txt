@@ -1,5 +1,6 @@
 # 3.1.2.6 发布日期：2015-06-29
 * 修复 CocoaPods 集成 SDK 时找不到静态库的问题
+* 更新到版本时需要在 target 的 Build Settings 中，为 Other Linker Flags 增加 -all_load 链接选项。
 
 # 3.1.2.5 发布日期：2015-06-23
 * 新增 AVIMKeyedConversation 类来支持会话的缓存
