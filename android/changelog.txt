@@ -1,3 +1,7 @@
+#3.4.6 发布时间:2015-07-22
+* AVUser/AVInstallation/AVStatus 支持Parcelable
+* 捕捉实时通信中富媒体消息在获取原信息时可能因为并发删除而出现的文件丢失异常 
+
 #3.4.5 发布时间:2015-07-15
 * 修正 AVRelation 在序列化过程中间容易遇到的循环引用导致的 StackOverflow
 
