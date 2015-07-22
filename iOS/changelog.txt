@@ -1,3 +1,14 @@
+# 3.1.2.7 发布日期：2015-07-22
+* 支持网络性能统计
+* 支持通过 AVFile 构造消息，可以发送外部 url 的文件
+* 修复多个 AVIMClient 之间的可能冲突的现象
+* 进一步优化实时聊天缓存，减少网络流量
+* 修复断网情况下 AVIMClient 状态不一致的问题
+* 修复 AVIMMessage 的 ioType 为 0 的问题
+* 修复收到消息时，AVIMConversation 的属性为 nil 的问题
+* AVIMConversationQuery 支持缓存策略
+* 修复在 CocoaPods 0.38 安装的问题
+
 # 3.1.2.6 发布日期：2015-06-29
 * 修复 CocoaPods 集成 SDK 时找不到静态库的问题
 * 更新到版本时需要在 target 的 Build Settings 中，为 Other Linker Flags 增加 -all_load 链接选项。
