@@ -1,3 +1,6 @@
+#3.6.1 发布时间:2015-08-07 
+* 修正了实时通信聊天记录查询可能出现的NPE问题
+
 #3.6 发布时间:2015-08-03
 * 支持实时通信中间云代码Hook返回appCode功能
 * AVIMConversationQuery支持QueryPolicy
