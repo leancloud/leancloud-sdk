@@ -1,3 +1,9 @@
+# 3.1.3 发布日期：2015-08-07
+* 移除 AVOSCloudSNS 组件，开源到 https://github.com/leancloud/leancloud-social-ios
+* 移除 AVOSCrashReporting 中的 GTMLogger
+* 修复 duplicated symbols 的编译错误
+* 修复网络请求的线程安全问题
+
 # 3.1.2.9 发布日期：2015-07-31
 * 解决 GTMLogger 命名冲突
 * 解决 AVInstallation 更新失败
