@@ -1,3 +1,8 @@
+#3.7 发布时间:2015-08-10
+* AVIMClient 增加一个 clientStatus 的 API 接口
+* 增加 AVOSCloud.getServerDate 的 API 接口，获取服务器端时间
+* 增加AVIMClient.getClientStatus接口来获取当前client的状态
+
 #3.6.1 发布时间:2015-08-07 
 * 修正了实时通信聊天记录查询可能出现的NPE问题
 
