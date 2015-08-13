@@ -9,7 +9,7 @@
 * 修复自定义的文件消息发送时没有填充文件字段的问题
 
 # 3.1.3.1 发布日期: 2015-08-12
-* 提高 AVOSCloudIM 连接的稳定性
+* 修复实时聊天中长连接对主线程的阻塞
 
 # 3.1.3 发布日期：2015-08-07
 * 移除 AVOSCloudSNS 组件，开源到 https://github.com/leancloud/leancloud-social-ios
