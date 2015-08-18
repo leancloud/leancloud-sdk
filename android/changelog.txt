@@ -1,3 +1,7 @@
+#3.7.2 发布时间:2015-08-08
+* 修正AVIMClient.getInstance可能出现的StackOverflow
+* 修正AVObject.remove的行为
+
 #3.7.1 发布时间:2015-08-11
 * 提高实时通信SDK的稳定性 
 
