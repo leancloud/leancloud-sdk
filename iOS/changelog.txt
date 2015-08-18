@@ -2,7 +2,7 @@
 * 推送到 Cocoapods 时增加 --use-libraries 参数，修复特定 Cocoapods 版本与 Xcode 下运行出错的问题
 
 # 3.1.3.2 发布日期：2015-08-13
-* 修复了子类化 BOOL 属性保存为了 Number 的问题，如果你的 AVObject 子类用到了 BOOL 属性，请查看[相关说明](https://github.com/leancloud/docs/pull/466/files#diff-d29d2cc472195cf1086b085f83935ea5R1153)。
+* 修复了子类化 BOOL 属性保存为了 Number 的问题，如果 AVObject 子类用到了 BOOL 属性，请查看[相关说明](https://github.com/leancloud/docs/pull/466/files#diff-d29d2cc472195cf1086b085f83935ea5R1153)。
 * 新增接口 + (NSDate *)[AVOSCloud getServerDate:] 接口获取服务器时间
 * 开放接口 - (NSString *)[AVFile localPath] 获取文件的本地路径
 * 修复 saveAll 时遇到 Relation 出错的问题
