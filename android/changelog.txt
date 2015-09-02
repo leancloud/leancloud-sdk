@@ -1,3 +1,8 @@
+#3.7.3 发布时间:2015-09-02
+* AVIMMesasge.setFrom(String clientId) 开放为public
+* 增加 AVIMClient.setTimeoutInSecs(int timeoutInSecs) 接口
+* 更新android-async-http到1.4.8版本
+
 #3.7.2 发布时间:2015-08-08
 * 修正AVIMClient.getInstance可能出现的StackOverflow
 * 修正AVObject.remove的行为
