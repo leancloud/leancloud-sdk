@@ -10,7 +10,7 @@
 * 修复美国节点访问云代码的 URL
 * 支持使用 session token 登录的方法
 * 支持自定义 WebSocket 的超时时间
-* 缩短了请求头来节省流量。若使用了云引擎，请重新部署，参考[此工单](https://ticket.leancloud.cn/tickets/8455)
+* 缩短了请求头来节省流量，包括云引擎的请求头，若使用了*云引擎*，请重新部署，参考[此工单](https://ticket.leancloud.cn/tickets/8455)
 
 # 3.1.3.4 发布日期：2015-08-25
 * 支持 Cocoa Touch Framework，关于动态库的集成，请阅读[快速入门](https://leancloud.cn/docs/start.html)
