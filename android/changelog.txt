@@ -1,4 +1,4 @@
-#3.7.5 发布时间:2015-09-011
+#3.7.5 发布时间:2015-09-11
 * 修正AVSearchQuery.setClassName 不会限定搜索范围为指定类的问题
 * AVStatus支持Pointer类型数据的解析
 
