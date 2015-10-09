@@ -1,3 +1,6 @@
+#3.8.1 发布时间:2015-10-09
+* 改进InstallationId的生成算法，提高installationId的可靠性
+
 #3.8 发布时间:2015-09-28
 * 增加 AVQuery.and(List queris) 方法
 * AVIMClient 增加 createConversation 增加一个带有 isUnique 参数的方法。当 isUnique 为 true 时，该方法会根据 members 来检查当时是否已经有同样 members 的会话，如果已经有了，则返回已有会话，否则才创建新的。
