@@ -1,3 +1,17 @@
+# 3.1.5.1 发布日期：2015-10-14
+* CocoaPods 集成时，添加 -lz 连接选项
+
+# 3.1.5 发布日期：2015-10-14
+* 支持删除事件流中收件箱中的状态
+* 对 AVFile 增加 ACL 支持
+* 修复 AVConversationQuery 无法使用 NSDate 查询的问题
+* 修复 mutated while being enumerated 的错误
+* 删除 currentUser 时自动注销
+* 修复 AVObject 保存时，block 不能回调的问题
+* 增加 AVFileQuery，可以对 AVFile 对象进行检索
+* 解决数据存储时，运营商 DNS 劫持的问题
+* 修复接收消息时，因消息类型引发的兼容问题
+
 # 3.1.4 发布日期：2015-09-22
 * 适配 iOS 9，支持 bitcode 以及 App Transport Security (ATS)，有些第三方服务需要开发者允许 HTTP 访问，请参考[iOS 9 适配指南](https://leancloud.cn/docs/ios_os_x_guide.html#iOS_9_适配)。
 * 支持原子创建对话，在创建对话时，传入 `AVIMConversationOptionUnique` 选项，即可根据成员创建唯一的会话。
