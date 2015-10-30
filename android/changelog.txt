@@ -1,5 +1,6 @@
 #3.10 发布时间:2015-10-28
 * 实时通信发布单点登录功能
+* AVQuery.whereWithinMiles, AVQuery.whereWithinKilometers, AVQuery.whereWithinRadians 支持minDistance参数
 
 #3.9.1 发布时间:2015-10-22
 * 解决聊天服务中可能存在由非网络因素造成的Timeout隐患
