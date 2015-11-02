@@ -6,11 +6,11 @@
 * 解决聊天服务中可能存在由非网络因素造成的Timeout隐患
 
 #3.9 发布时间:2015-10-19
-* 网络库从依赖async-android-http改为okhttp
-* 修正AVQuery.count在某些特殊机型上可能出现NPE的情况
+* 网络库从依赖 async-android-http 改为 okhttp
+* 修正 AVQuery.count 在某些特殊机型上可能出现NPE的情况
 
 #3.8.1 发布时间:2015-10-09
-* 改进InstallationId的生成算法，提高installationId的可靠性
+* 改进 InstallationId 的生成算法，提高 installationId 的可靠性
 
 #3.8 发布时间:2015-09-28
 * 增加 AVQuery.and(List queris) 方法
