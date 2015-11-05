@@ -80,6 +80,10 @@
 		<data>
 		Z+NGYmnnZgNOkII1rg6WVLFh9tA=
 		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		3qDFVRfDLigl3Z3RRN45g1mncGU=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -154,6 +158,10 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		Z+NGYmnnZgNOkII1rg6WVLFh9tA=
+		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		3qDFVRfDLigl3Z3RRN45g1mncGU=
 		</data>
 	</dict>
 	<key>rules</key>
