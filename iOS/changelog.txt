@@ -83,7 +83,7 @@
 * 修复断网情况下 AVIMClient 状态不一致的问题
 * 修复 AVIMMessage 的 ioType 为 0 的问题
 * 修复收到消息时，AVIMConversation 的属性为 nil 的问题
-* AVIMConversationQuery 支持缓存策略
+* AVIMConversationQuery 支持缓存策略，默认缓存策略是 kAVCachePolicyCacheElseNetwork，缓存时间为 1 小时
 * 修复使用 CocoaPods 0.38.0.beta 集成的问题
 
 # 3.1.2.6 发布日期：2015-06-29
