@@ -11,9 +11,10 @@ Pod::Spec.new do |s|
     :text => "Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html"
   }
   s.author   = { "LeanCloud" => "support@leancloud.cn" }
-  s.source   = { :http => "https://download.leancloud.cn/sdk/iOS/release-v#{s.version}/#{s.name}.zip" }
+  
+  s.source   = { :http => "https://download.leancloud.cn/sdk/iOS/release-v#{s.version}/Static/#{s.name}.framework.zip" }
 
-  framework_path = "iOS/release-v#{s.version}/#{s.name}/Static/#{s.name}.framework"
+  framework_path = "iOS/release-v#{s.version}/Static/#{s.name}.framework"
 
   s.source_files        = "*.h"
   s.public_header_files = "*.h"

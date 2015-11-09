@@ -13,10 +13,11 @@ Pod::Spec.new do |s|
     :text => "Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html"
   }
   s.author   = { "LeanCloud" => "support@leancloud.cn" }
-  s.source   = { :http => "https://download.leancloud.cn/sdk/iOS/release-v#{s.version}/#{component}.zip" }
 
-  framework_path = "iOS/release-v#{s.version}/#{component}/Dynamic/#{component}.framework"
+  s.source   = { :http => "https://download.leancloud.cn/sdk/iOS/release-v#{s.version}/Dynamic/#{component}.framework.zip" }
 
+  framework_path = "iOS/release-v#{s.version}/Dynamic/#{component}.framework"
+  
   s.preserve_paths       = "#{framework_path}"
   s.public_header_files  = "#{framework_path}/**/*.h"
   s.vendored_frameworks  = "#{framework_path}"
