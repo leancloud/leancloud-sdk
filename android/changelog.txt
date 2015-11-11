@@ -1,3 +1,6 @@
+#3.10.2 发布时间:2015-11-11
+* 修正AVStatus在JSON序列化时的异常 
+
 #3.10.1 发布时间:2015-11-05
 * 解决推送链接检查过程中间可能出现的ANR
 * 解决Analytics.setAppChannel在Analytics.start前配置无效的问题
