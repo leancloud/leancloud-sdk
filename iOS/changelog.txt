@@ -1,5 +1,37 @@
+# 3.1.6.2 发布日期：2015-11-10
+* 如果一个字段在服务器是 null 的话，3.1.5 之前的版本，会认为这个字段不存在。3.1.5 到 3.1.6.1 会返回 [Null null]。但因为 Null 值在 Objective-C 中是真值，也即 if ([Null null]) {} 中会通过判断。通过判断后对 Null 执行一些逻辑可能引起程序崩溃。3.1.6.2 开始，默认行为将返回 nil，不再返回 Null。这样便不会通过判断，不会引起可能的崩溃。开发者可以放心地用 if ([object objectForKey:@"name"]) 来判断此字段是否有值。这默认行为可通过 -(void)[AVObject setConvertingNullToNil] 来改变。
+* 增加了许多 API 注释
+
+# 3.1.6.1 发布日期：2015-11-03
+* 通信模块支持单点登录，调用 -[AVIMClient openWithClientId:tag:callback:] 来使用，tag 为 nil 时是默认的多点登录，否则将把 tag 相同的其它设备踢下线，下线通知将回调于 -[AVIMClientDelegate client:didOfflineWithError]
+* 基础模块和通信模块支持 OSX 平台，以后将与 iOS 平台同步更新
+* 修复有时不返回 AVUser 子类的问题。另外，请调用 `[CustomUser registerSubclass]` 注册 AVUser 子类
+* 修复文件下载进度可能为负数的问题
+* AVFileQuery 增加 getFileWithId:、findFiles: 等接口，支持返回 AVFile 而非 AVObject
+* 修改密码后更新 Session Token，无须重新登录
+* 放弃对 iOS 5.1.1 的支持，只支持 iOS 6.0 及以上
+
+# 3.1.5.2 发布日期：2015-10-15
+* 修复网络请求中，POST 数据不能正确处理的问题
+* AVQuery 支持 GeoPoint 最小距离（minDistance）查询条件
+
+# 3.1.5.1 发布日期：2015-10-14
+* CocoaPods 集成时，添加 -lz 连接选项
+
+# 3.1.5 发布日期：2015-10-14
+* 支持删除事件流中收件箱中的状态
+* 对 AVFile 增加 ACL 支持
+* 修复 AVConversationQuery 无法使用 NSDate 查询的问题
+* 修复 mutated while being enumerated 的错误
+* 删除 currentUser 时自动注销
+* 修复 AVObject 保存时，block 不能回调的问题
+* 增加 AVFileQuery，可以对 AVFile 对象进行检索
+* 解决数据存储时，运营商 DNS 劫持的问题
+* 修复接收消息时，因消息类型引发的兼容问题
+
 # 3.1.4 发布日期：2015-09-22
-* 适配 iOS 9，支持 bitcode 以及 App Transport Security (ATS)，有些第三方服务需要开发者允许 HTTP 访问，请参考[iOS 9 适配指南](https://leancloud.cn/docs/ios_os_x_guide.html#iOS_9_适配)。
+* 适配 iOS 9，支持 App Transport Security (ATS)，有些第三方服务需要开发者允许 HTTP 访问，请参考[iOS 9 适配指南](https://leancloud.cn/docs/ios_os_x_guide.html#iOS_9_适配)。
+* `重要`: 此版本开始支持 bitcode，但导致了与 Xcode 6的不兼容，该版本之后， SDK 只能运行在 Xcode 7 以上。见[讨论](https://forum.leancloud.cn/t/avoscloud-duplicate-symbols-ios/3823/11)。
 * 支持原子创建对话，在创建对话时，传入 `AVIMConversationOptionUnique` 选项，即可根据成员创建唯一的会话。
 
 # 3.1.3.6 发布日期：2015-09-07
@@ -55,7 +87,7 @@
 * 修复断网情况下 AVIMClient 状态不一致的问题
 * 修复 AVIMMessage 的 ioType 为 0 的问题
 * 修复收到消息时，AVIMConversation 的属性为 nil 的问题
-* AVIMConversationQuery 支持缓存策略
+* AVIMConversationQuery 支持缓存策略，默认缓存策略是 kAVCachePolicyCacheElseNetwork，缓存时间为 1 小时
 * 修复使用 CocoaPods 0.38.0.beta 集成的问题
 
 # 3.1.2.6 发布日期：2015-06-29

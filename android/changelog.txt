@@ -1,3 +1,31 @@
+#3.10.2 发布时间:2015-11-11
+* 修正AVStatus在JSON序列化时的异常 
+
+#3.10.1 发布时间:2015-11-05
+* 解决推送链接检查过程中间可能出现的ANR
+* 解决Analytics.setAppChannel在Analytics.start前配置无效的问题
+
+#3.10 发布时间:2015-10-28
+* 实时通信发布单点登录功能
+* AVQuery.whereWithinMiles, AVQuery.whereWithinKilometers, AVQuery.whereWithinRadians 支持 minDistance 参数
+
+#3.9.1 发布时间:2015-10-22
+* 解决聊天服务中可能存在由非网络因素造成的Timeout隐患
+
+#3.9 发布时间:2015-10-19
+* 网络库从依赖 async-android-http 改为 okhttp
+* 修正 AVQuery.count 在某些特殊机型上可能出现NPE的情况
+
+#3.8.1 发布时间:2015-10-09
+* 改进 InstallationId 的生成算法，提高 installationId 的可靠性
+
+#3.8 发布时间:2015-09-28
+* 增加 AVQuery.and(List queris) 方法
+* AVIMClient 增加 createConversation 增加一个带有 isUnique 参数的方法。当 isUnique 为 true 时，该方法会根据 members 来检查当时是否已经有同样 members 的会话，如果已经有了，则返回已有会话，否则才创建新的。
+* 由于有部分开发者有需要自己定制聊天记录缓存的需要，增加 AVIMClient.setMessageQueryCacheEnable 接口
+* 增加 AVIMConversation.getLastMessage 接口
+* 修正 AVStatus.getQuery 查询出现的异常
+
 #3.7.5 发布时间:2015-09-11
 * 修正AVSearchQuery.setClassName 不会限定搜索范围为指定类的问题
 * AVStatus支持Pointer类型数据的解析

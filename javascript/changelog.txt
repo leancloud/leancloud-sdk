@@ -1,4 +1,17 @@
-# 0.6.0 日期：2015 年 09 月 01 日
+# 0.6.4 日期：2015 年 10 月 27 日
+* 修复 localStorage 没有生效的 Bug，感谢热心用户反馈。
+* AV.SearchQuery 增加 hasMore 和 reset 方法。
+
+# 0.6.3 日期：2015 年 10 月 22 日
+* 修复 AV.Role 的兼容性问题。
+
+# 0.6.2 日期：2015 年 10 月 22 日
+* 修复 Follower/Followee 查询遇到 undefined 用户抛出异常的 bug。
+* 修复在无痕模式浏览器下无法正常运行的 Bug。
+* 修复 AV.File 保存可能导致堆栈溢出的 Bug。
+* AV.Role 增加默认 ACL 设置。
+
+# 0.6.1 日期：2015 年 09 月 01 日
 * 修复 AV.File 在 LeanEngine 中上传 Base64 图片数据损坏的 bug。
 
 # 0.6.0 日期：2015 年 08 月 25 日

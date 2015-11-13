@@ -16,6 +16,10 @@
 		<data>
 		ZoHjYmf/FZsDPkfmx1Vnyl9Guss=
 		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		3qDFVRfDLigl3Z3RRN45g1mncGU=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -26,6 +30,10 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		ZoHjYmf/FZsDPkfmx1Vnyl9Guss=
+		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		3qDFVRfDLigl3Z3RRN45g1mncGU=
 		</data>
 	</dict>
 	<key>rules</key>
