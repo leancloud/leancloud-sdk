@@ -1,3 +1,9 @@
+#3.12.1 发布时间:2015-12-30
+* AVConversation 开放 mute、unmute 接口
+* 修复某些情况下 AVException error code 会为 0 的问题
+* 优化 AVIMFileMessage、AVFile 对内存的占用
+* 修复文件下载进度直接到 100% 的问题
+
 #3.12 发布时间:2015-11-23
 * 更新Java-Websocket的第三方库，并且重命名了命名空间，以解决第三方库的版本冲突问题
 * AVUser在更新密码后更新本地sessionToken本地缓存
