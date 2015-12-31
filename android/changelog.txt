@@ -1,4 +1,4 @@
-#3.12.1 发布时间:2015-12-30
+#3.12.1 发布时间:2015-12-31
 * AVConversation 开放 mute、unmute 接口
 * 修复某些情况下 AVException error code 会为 0 的问题
 * 优化 AVIMFileMessage、AVFile 对内存的占用
