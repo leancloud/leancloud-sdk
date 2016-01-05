@@ -1,3 +1,7 @@
+#3.12.2 发布时间:2016-01-05
+* 修复 AVIMTypedMessage 中 messageType 没有初始化的问题
+* 修复 AVFile 在序列化时抛出 JSONException 的问题
+
 #3.12.1 发布时间:2015-12-31
 * AVConversation 开放 mute、unmute 接口
 * 修复某些情况下 AVException error code 会为 0 的问题
