@@ -1,3 +1,6 @@
+#3.12.3 发布时间:2016-01-06
+* 修复 AVIMAudioMessage 因 messageType 解析失败的问题
+
 #3.12.2 发布时间:2016-01-05
 * 修复 AVIMTypedMessage 中 messageType 没有初始化的问题
 * 修复 AVFile 在序列化时抛出 JSONException 的问题
