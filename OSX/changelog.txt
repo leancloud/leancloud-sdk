@@ -1,4 +1,50 @@
-# OS X 与 iOS 完全同步更新，请参考 iOS 平台的更新
+# 3.1.7.1 发布日期：2015-12-23
+* 修改用户注册时出现的 206 错误
+* 修复 AVUser 保存时无法关联其他 AVObject 的问题
+
+# 3.1.7 发布日期：2015-12-17
+* 基础模块支持 tvOS 和 watchOS 平台
+* 在 IM 模块中，对未处于 AVIMClientStatusOpened 状态下就发送消息的行为进行容错处理
+
+# 3.1.6.8 发布日期：2015-12-08
+* 修复 AVQuery 无法被 cancel 的问题
+* 消除子模块对基础模块的头文件依赖
+* 优化 IM 1.x 上的聊天异常情况（比如聊天状态接入电话、下拉通知栏等）处理
+* 新增消息缓存禁用接口
+
+# 3.1.6.7 发布日期：2015-11-26
+* 修复 IM 1.x版本 session 连接不稳定的问题
+
+# 3.1.6.6 发布日期：2015-11-25
+* 允许对云代码进行 RPC 调用
+* 修复 client 对象复用时，open 时状态不正确的问题
+
+# 3.1.6.5 发布日期：2015-11-24
+* 修复 conversation 缓存阻塞主线程的问题
+* 修复 client 状态转移的问题
+
+# 3.1.6.4 发布日期：2015-11-19
+* 修复消息对象 archivement/unarchivement 后，iotype 发生变化的问题
+
+# 3.1.6.3 发布日期：2015-11-17
+* 修复统计数据不准确的问题
+* 解决 IM 可能被 DNS 污染的问题
+* 修复应用切换到后台时，client 偶尔无法下线的问题
+* 修复 AVQuery 的回调不在主线程调用的问题
+* 确保回调给用户的 conversation 对象都是从服务端拉取过的
+* 修复签名失败引发崩溃的问题
+
+# 3.1.6.2 发布日期：2015-11-10
+* 如果一个字段在服务器是 null 的话，3.1.5 之前的版本，会认为这个字段不存在。3.1.5 到 3.1.6.1 会返回 [Null null]。但因为 Null 值在 Objective-C 中是真值，也即 if ([Null null]) {} 中会通过判断。通过判断后对 Null 执行一些逻辑可能引起程序崩溃。3.1.6.2 开始，默认行为将返回 nil，不再返回 Null。这样便不会通过判断，不会引起可能的崩溃。开发者可以放心地用 if ([object objectForKey:@"name"]) 来判断此字段是否有值。这默认行为可通过 -(void)[AVObject setConvertingNullToNil] 来改变。
+* 增加了许多 API 注释
+
+# 3.1.6.1 发布日期：2015-11-03
+* 通信模块支持单点登录，调用 -[AVIMClient openWithClientId:tag:callback:] 来使用，tag 为 nil 时是默认的多点登录，否则将把 tag 相同的其它设备踢下线，下线通知将回调于 -[AVIMClientDelegate client:didOfflineWithError]
+* 基础模块和通信模块支持 OSX 平台，以后将与 iOS 平台同步更新
+* 修复有时不返回 AVUser 子类的问题。另外，请调用 `[CustomUser registerSubclass]` 注册 AVUser 子类
+* 修复文件下载进度可能为负数的问题
+* AVFileQuery 增加 getFileWithId:、findFiles: 等接口，支持返回 AVFile 而非 AVObject
+* 修改密码后更新 Session Token，无须重新登录
 
 # 3.1.6 发布日期：2015-11-02
 从 3.1.6 开始重新支持 OSX 平台，并且包括通信模块。
