@@ -1,3 +1,10 @@
+# 3.2.0 发布日期：2016-1-14
+* 将IM模块所使用的网络传输协议，由 JSON 改为 protocol buffer ，有效减少流量传输，维持原有 API 不变。（注意：本修改只针对IM2.0版本）
+* 支持 AVIMConversationQuery 的 AND 和 OR 组合查询。
+* 修复调用 `-getServerDateWithBlock:` 方法引起崩溃的 bug
+* 将 APNs 注册相关的 API 移动至 IM 模块。
+* 支持缓存 conversation 的 muted 字段。
+
 # 3.1.7.1 发布日期：2015-12-23
 * 修改用户注册时出现的 206 错误
 * 修复 AVUser 保存时无法关联其他 AVObject 的问题
