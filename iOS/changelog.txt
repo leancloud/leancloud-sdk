@@ -1,9 +1,13 @@
 # 3.2.0 发布日期：2016-1-14
-* 将IM模块所使用的网络传输协议，由 JSON 改为 protocol buffer ，有效减少流量传输，维持原有 API 不变。（注意：本修改只针对IM2.0版本）
-* 支持 AVIMConversationQuery 的 AND 和 OR 组合查询。
-* 修复调用 `-getServerDateWithBlock:` 方法引起崩溃的 bug
-* 将 APNs 注册相关的 API 移动至 IM 模块。
-* 支持缓存 conversation 的 muted 字段。
+* 将 IM 2.0 的底层数据传输协议由 JSON 改为 protobuf，让数据传输更有效率
+* 支持 AVIMConversationQuery 的 AND 和 OR 组合查询
+* 增加 `+[AVOSCloudIM handleRemoteNotificationsWithDeviceToken:]` 接口，用来处理成功注册到的 device token
+* 将推送通知的注册接口移到 IM 模块
+* 支持缓存 conversation 的 muted 字段
+* 修复 conversation 的更新跟 conversation query 缓存的数据不一致的问题
+* S3 文件上传区分应用，每个应用单独一个 bucket
+* 修复 conversation 完整性检查的 bug，解决重复查询的问题
+* 修复 `+[AVOSCloud getServerDate:]` 接口中，error 参数被提前释放的问题
 
 # 3.1.7.1 发布日期：2015-12-23
 * 修改用户注册时出现的 206 错误
