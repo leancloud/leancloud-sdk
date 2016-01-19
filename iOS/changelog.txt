@@ -1,4 +1,4 @@
-# 3.2.0 发布日期：2016-1-14
+# 3.2.1 发布日期：2016-1-18
 * 将 IM 2.0 的底层数据传输协议由 JSON 改为 protobuf，让数据传输更有效率
 * 支持 AVIMConversationQuery 的 AND 和 OR 组合查询
 * 增加 `+[AVOSCloudIM handleRemoteNotificationsWithDeviceToken:]` 接口，用来处理成功注册到的 device token
@@ -8,8 +8,10 @@
 * S3 文件上传区分应用，每个应用单独一个 bucket
 * 修复 conversation 完整性检查的 bug，解决重复查询的问题
 * 修复 `+[AVOSCloud getServerDate:]` 接口中，error 参数被提前释放的问题
+* 修复 `SESSION_TOKEN_EXPIRED` 错误，解决 Session 过期导致无法登陆的问题。
 
-# 3.1.7.1 发布日期：2015-12-23
+
+7.1 发布日期：2015-12-23
 * 修改用户注册时出现的 206 错误
 * 修复 AVUser 保存时无法关联其他 AVObject 的问题
 
