@@ -1,4 +1,4 @@
-# 3.2.1 发布日期：2016-1-18
+# 3.2.2 发布日期：2016-1-22
 * 将 IM 2.0 的底层数据传输协议由 JSON 改为 protobuf，让数据传输更有效率
 * 支持 AVIMConversationQuery 的 AND 和 OR 组合查询
 * 增加 `+[AVOSCloudIM handleRemoteNotificationsWithDeviceToken:]` 接口，用来处理成功注册到的 device token
