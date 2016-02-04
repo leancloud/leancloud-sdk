@@ -1,4 +1,10 @@
-# 3.2.2 发布日期：2016-1-22
+# 3.2.3 发布日期：2016-02-04
+* 修复创建会话时的签名错误
+* 修复创建会话时，`name` 参数传 `nil` 时导致崩溃的问题
+* 修复美国节点文件上传的错误
+* 一些内部改进和优化
+
+# 3.2.2 发布日期：2016-01-22
 * 将 IM 2.0 的底层数据传输协议由 JSON 改为 protobuf，让数据传输更有效率
 * 支持 AVIMConversationQuery 的 AND 和 OR 组合查询
 * 增加 `+[AVOSCloudIM handleRemoteNotificationsWithDeviceToken:]` 接口，用来处理成功注册到的 device token
