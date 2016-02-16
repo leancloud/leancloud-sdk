@@ -1,6 +1,7 @@
 # 3.2.4 发布日期：2016-02-16
-* 完善 IM 模块的异常处理机制，比如 ack 和 session
-* 完善单点登录的
+* 完善 IM 模块的异常处理机制：处理了当 sendMessage 后，服务端返回的 ack 和 session 包含异常信息的情况。
+* 完善单点登录的异常处理机制：允许在未上传 deviceToken 前就进行 openClient，但是当下一次携带 deviceToken 进行 openClient 操作时会触发 `[id<AVIMClientDelegate> client:didOfflineWithError]`，开发者需要在此代理方法中，调用 `[AVIMClient openWithOption:callback:]`，并将 AVIMClientOpenOption 的 force 属性设为 YES，重新登录。
+* 禁用了获取 MAC 地址的功能
 
 # 3.2.3 发布日期：2016-02-04
 * 修复创建会话时的签名错误
