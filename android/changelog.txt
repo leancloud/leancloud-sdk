@@ -1,3 +1,6 @@
+#3.13.4 发布时间:2016-02-16
+* 修正 AVUser.resetPasswordBySmsCodeInBackground 在执行正常的时候, callback 并不在 MainLooper 的问题
+
 #3.13.3 发布时间:2016-02-14
 * 修正 AVQuery 中遇到 CachePolicy 是 CachePolicy.NETWORK_ELSE_CACHE 策略时的缓存过期检查错误
 
