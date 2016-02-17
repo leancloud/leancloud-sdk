@@ -1,5 +1,5 @@
 # 3.2.4.1 发布日期：2016-02-17
-* 修复了当向一个不存在的 ConversationID 发送消息时，依然显示发送成功的 bug.
+* 修复了当向一个自己并非其中成员的 Conversation 发送消息时，依然显示发送成功的 bug.
 * 修复当使用 `[AVIMClient initWithClientId:tag:]` 进行初始化，导致的无法正常聊天的 bug。
 
 # 3.2.3 发布日期：2016-02-04
