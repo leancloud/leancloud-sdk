@@ -1,3 +1,10 @@
+# 3.2.5 发布日期：2016-02-24
+* 修复未读消息数无法接收的问题
+* 修复 AVObject 无法递归解析结果的问题
+* 修复当应用重装后，仍会收到之前用户的消息通知的问题
+* 修复应用第一次启动时，统计不到的问题
+* 新增 deviceToken 的[处理接口](https://leancloud.cn/docs/ios_push_guide.html#保存_Installation)，让 installation 的保存交给 SDK 来做
+
 # 3.2.4.1 发布日期：2016-02-17
 * 修复了当向一个自己并非其中成员的 Conversation 发送消息时，依然显示发送成功的 bug.
 * 修复当使用 `[AVIMClient initWithClientId:tag:]` 进行初始化，导致的无法正常聊天的 bug。
