@@ -1,3 +1,8 @@
+#3.13.5 发布时间:2016-03-28
+* AVIMConversationQuery 增加 or 接口
+* AVObject 在 delete 接口中增加 deleteOption 参数
+* 修复 AVFile 在 qiniu 上传时chunk offset 错误
+
 #3.13.4 发布时间:2016-02-16
 * 修正 AVUser.resetPasswordBySmsCodeInBackground 在执行正常的时候, callback 并不在 MainLooper 的问题
 
