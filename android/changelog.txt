@@ -1,3 +1,14 @@
+#3.13.5 发布时间:2016-03-28
+* AVIMConversationQuery 增加 or 接口
+* AVObject 在 delete 接口中增加 deleteOption 参数
+* 修复 AVFile 在 qiniu 上传时chunk offset 错误
+
+#3.13.4 发布时间:2016-02-16
+* 修正 AVUser.resetPasswordBySmsCodeInBackground 在执行正常的时候, callback 并不在 MainLooper 的问题
+
+#3.13.3 发布时间:2016-02-14
+* 修正 AVQuery 中遇到 CachePolicy 是 CachePolicy.NETWORK_ELSE_CACHE 策略时的缓存过期检查错误
+
 #3.13.2 发布时间:2016-02-02
 * 修复实时通讯模块会重复推送离线消息通知的问题
 

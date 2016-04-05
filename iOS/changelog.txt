@@ -1,4 +1,28 @@
-# 3.2.2 发布日期：2016-1-22
+# 3.2.7 发布日期：2016-03-08
+* 修复 relation query 查询结果类型不正确的问题
+* 修复 AVObject 无法关联 AVFile 数组的问题
+
+# 3.2.6 发布日期：2016-03-01
+* 修复 AVRelation 的查询结果类型不正确的问题
+
+# 3.2.5 发布日期：2016-02-24
+* 修复未读消息数无法接收的问题
+* 修复 AVObject 无法递归解析结果的问题
+* 修复当应用重装后，仍会收到之前用户的消息通知的问题
+* 修复应用第一次启动时，统计不到的问题
+* 新增 deviceToken 的[处理接口](https://leancloud.cn/docs/ios_push_guide.html#保存_Installation)，让 installation 的保存交给 SDK 来做
+
+# 3.2.4.1 发布日期：2016-02-17
+* 修复了当向一个自己并非其中成员的 Conversation 发送消息时，依然显示发送成功的 bug.
+* 修复当使用 `[AVIMClient initWithClientId:tag:]` 进行初始化，导致的无法正常聊天的 bug。
+
+# 3.2.3 发布日期：2016-02-04
+* 修复创建会话时的签名错误
+* 修复创建会话时，`name` 参数传 `nil` 时导致崩溃的问题
+* 修复美国节点文件上传的错误
+* 一些内部改进和优化
+
+# 3.2.2 发布日期：2016-01-22
 * 将 IM 2.0 的底层数据传输协议由 JSON 改为 protobuf，让数据传输更有效率
 * 支持 AVIMConversationQuery 的 AND 和 OR 组合查询
 * 增加 `+[AVOSCloudIM handleRemoteNotificationsWithDeviceToken:]` 接口，用来处理成功注册到的 device token
