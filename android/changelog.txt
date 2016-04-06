@@ -1,4 +1,4 @@
-#3.13.6 发布时间 2016-04-05
+#3.13.6 发布时间 2016-04-06
 * AVIMConversationQuery 支持 whereDoesNotExist 查询
 * 修复部分手机有可能因为 InstallationId 重复导致的连接被断开的问题
 * 修复部分情况下 onMemberJoined、onMemeberLeft 不能被执行的问题
