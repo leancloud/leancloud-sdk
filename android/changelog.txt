@@ -1,3 +1,7 @@
+#3.13.8 发布时间 2016-04-26
+* 修复大于 4M 的文件上传时上传的文件与原文件不一致的问题
+* AVIMConversationQuery 支持 whereExists、addAscendingOrder、addDescendingOrder 查询
+
 #3.13.7 发布时间 2016-04-18
 * 修复主动设置了 url 的文件类型的消息上传失败的问题
 * 修复 sdk 在消息回调过程中有可能造成的 NPE 的问题
