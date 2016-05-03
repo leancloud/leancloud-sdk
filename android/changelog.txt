@@ -1,3 +1,6 @@
+#3.13.9 发布时间 2016-05-03
+* 修复实时通讯部分情况下因为重连而导致的回调不能被执行的问题
+
 #3.13.8 发布时间 2016-04-26
 * 修复大于 4M 的文件上传时上传的文件与原文件不一致的问题
 * AVIMConversationQuery 支持 whereExists、addAscendingOrder、addDescendingOrder 查询
