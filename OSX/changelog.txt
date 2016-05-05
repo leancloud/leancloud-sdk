@@ -1,3 +1,14 @@
+# 3.2.8 发布日期：2016-04-21
+* 修复 client 登录时报错误代码为 1001 的问题
+* 修复 IM 1.0 中，聊天室成员的加入和离开无法回调的问题
+* 作废 `+[AVObject objectWithoutDataWithObjectId:]` 和 `+[AVObject objectWithoutDataWithClassName:objectId:]`，以适应 Swift 的语法
+* 修复应用内搜索中，sid 过期导致应用崩溃的问题
+* 在 IM 的错误回调中，暴露由云引擎返回的 detail 和 appcode 字段
+* 修复在重复保存对象时，子孙对象的更新会发送两次的问题
+* 将推送通知相关的 API 移到基础模块 AVOSCloud.framework 中
+* 支持 APNs 的 HTTP2 推送协议，如果要享受新的推送协议，请升级到该版本
+* 开启 full-bitcode，解决打包时遇到的 "Failed to verify bitcode in AVOSCloud" 问题
+
 # 3.2.7 发布日期：2016-03-08
 * 修复 relation query 查询结果类型不正确的问题
 * 修复 AVObject 无法关联 AVFile 数组的问题

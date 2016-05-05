@@ -1,3 +1,10 @@
+# 3.2.8 发布日期：2016-04-21
+* 修复 client 登录时报错误代码为 1001 的问题
+* 作废 `+[AVObject objectWithoutDataWithObjectId:]` 和 `+[AVObject objectWithoutDataWithClassName:objectId:]`，以适应 Swift 的语法
+* 修复应用内搜索中，sid 过期导致应用崩溃的问题
+* 修复在重复保存对象时，子孙对象的更新会发送两次的问题
+* 开启 full-bitcode，解决打包时遇到的 "Failed to verify bitcode in AVOSCloud" 问题
+
 # 3.2.7 发布日期：2016-03-08
 * 修复 relation query 查询结果类型不正确的问题
 * 修复 AVObject 无法关联 AVFile 数组的问题
