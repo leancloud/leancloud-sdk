@@ -1,3 +1,6 @@
+# 3.2.12 发布日期：2016-05-17
+* 对文件上传进行优化
+
 # 3.2.8 发布日期：2016-04-21
 * 修复 client 登录时报错误代码为 1001 的问题
 * 作废 `+[AVObject objectWithoutDataWithObjectId:]` 和 `+[AVObject objectWithoutDataWithClassName:objectId:]`，以适应 Swift 的语法
