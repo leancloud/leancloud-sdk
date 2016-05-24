@@ -1,3 +1,9 @@
+#3.13.12 发布时间 2016-05-24
+* AVSearchQuery 支持 skip 操作
+* 修复实时通讯重连时链接不稳定问题
+* 修复部分情况下 AVIMConversation 设置 attribute 与读取的值不一致的问题
+* 修复部分情况下 AVIMFileMessage 发送消息是丢失 metaData 的问题
+
 #3.13.11 发布时间 2016-05-13
 * 优化文件上传流程
 
