@@ -7,8 +7,9 @@
 * 修复 protobuf 与用户使用的库冲突的问题
 * 修复云引擎的请求日志无法打印的问题
 
+**注意：为了兼容 IPv6-only 网络环境，该版本重写了网络层，使得静态库最低支持 macOS 10.9，后续版本不再支持 macOS 10.8。请将 macOS 应用的 deployment target 设置为 10.9 及以上。**
+
 # 3.3 发布时间：2016-05-24
-<strong style="color: red">注意：为了兼容 IPv6-only 网络环境，该版本重写了网络层，使得静态库最低支持 macOS 10.9，后续版本不再支持 macOS 10.8。请将 macOS 应用的 deployment target 设置为 10.9 及以上。</strong>
 * 兼容 IPv6-only 网络
 * 修复 installation 丢失某些更新操作的问题
 * 应用内搜索支持 skip 查询
