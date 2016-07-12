@@ -1,3 +1,49 @@
+# 3.3.5 发布时间：2016-06-04
+* 修复 installation 更新时，子对象的 objectId 意外被修改的问题
+* 修复美国节点下，第二次应用启动时 IM 无法连接的问题
+
+# 3.3.4 发布时间：2016-06-26
+* 修复可变集合在遍历时被修改导致崩溃的问题
+
+# 3.3.3 发布时间：2016-06-16
+* 修复 protobuf 与用户使用的 protobuf 冲突的问题
+* 修复当有未读消息时，出现断开——重连死循环的问题
+* 修复文件类型消息中，文件属性偶尔丢失的问题
+* 修复上传文件时，创建脏数据的问题
+* 修复使用美国节点时，REST API 指向国内的问题
+* 修复 protobuf 与用户使用的库冲突的问题
+* 修复云引擎的请求日志无法打印的问题
+
+**注意：为了兼容 IPv6-only 网络环境，该版本重写了网络层，使得静态库最低支持 macOS 10.9，后续版本不再支持 macOS 10.8。请将 macOS 应用的 deployment target 设置为 10.9 及以上。**
+
+# 3.3 发布时间：2016-05-24
+* 兼容 IPv6-only 网络
+* 修复 installation 丢失某些更新操作的问题
+* 应用内搜索支持 skip 查询
+* 修复设置 service region 时，SDK 崩溃的问题
+* 修复应用从后台激活时，IM 无法自动重连的问题
+
+# 3.2.12 发布日期：2016-05-17
+* 修复实时通信在后台自动重连的问题
+* 修复 typed message 某些字段无法 archive 的问题
+* 修复拉取新创建的会话时，lastMessageAt 不为空的问题
+* 修复 client 收到成员加入通知时，members 数组乱序的问题
+* 对文件上传进行优化
+
+# 3.2.9 发布日期：2016-05-10
+* 修复因使用 `AVIMKeyedConversation` 而导致的错误代码为 1001 的问题
+
+# 3.2.8 发布日期：2016-04-21
+* 修复 client 登录时报错误代码为 1001 的问题
+* 修复 IM 1.0 中，聊天室成员的加入和离开无法回调的问题
+* 作废 `+[AVObject objectWithoutDataWithObjectId:]` 和 `+[AVObject objectWithoutDataWithClassName:objectId:]`，以适应 Swift 的语法
+* 修复应用内搜索中，sid 过期导致应用崩溃的问题
+* 在 IM 的错误回调中，暴露由云引擎返回的 detail 和 appcode 字段
+* 修复在重复保存对象时，子孙对象的更新会发送两次的问题
+* 将推送通知相关的 API 移到基础模块 AVOSCloud.framework 中
+* 支持 APNs 的 HTTP2 推送协议，如果要享受新的推送协议，请升级到该版本
+* 开启 full-bitcode，解决打包时遇到的 "Failed to verify bitcode in AVOSCloud" 问题
+
 # 3.2.7 发布日期：2016-03-08
 * 修复 relation query 查询结果类型不正确的问题
 * 修复 AVObject 无法关联 AVFile 数组的问题

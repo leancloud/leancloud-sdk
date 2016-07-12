@@ -1,3 +1,30 @@
+# 3.3.5 发布时间：2016-06-04
+* 修复 installation 更新时，子对象的 objectId 意外被修改的问题
+
+# 3.3.4 发布时间：2016-06-26
+* 修复可变集合在遍历时被修改导致崩溃的问题
+
+# 3.3.3 发布时间：2016-06-16
+* 修复上传文件时，创建脏数据的问题
+* 修复使用美国节点时，REST API 指向国内的问题
+* 修复 protobuf 与用户使用的库冲突的问题
+* 修复云引擎的请求日志无法打印的问题
+
+# 3.3 发布时间：2016-05-24
+* 兼容 IPv6-only 网络
+* 修复 installation 丢失某些更新操作的问题
+* 应用内搜索支持 skip 查询
+
+# 3.2.12 发布日期：2016-05-17
+* 对文件上传进行优化
+
+# 3.2.8 发布日期：2016-04-21
+* 修复 client 登录时报错误代码为 1001 的问题
+* 作废 `+[AVObject objectWithoutDataWithObjectId:]` 和 `+[AVObject objectWithoutDataWithClassName:objectId:]`，以适应 Swift 的语法
+* 修复应用内搜索中，sid 过期导致应用崩溃的问题
+* 修复在重复保存对象时，子孙对象的更新会发送两次的问题
+* 开启 full-bitcode，解决打包时遇到的 "Failed to verify bitcode in AVOSCloud" 问题
+
 # 3.2.7 发布日期：2016-03-08
 * 修复 relation query 查询结果类型不正确的问题
 * 修复 AVObject 无法关联 AVFile 数组的问题
