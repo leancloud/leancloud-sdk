@@ -1,3 +1,8 @@
+# 3.15 发布时间 2016-11-16
+* AVUser 增加 isAuthenticated 方法用以验证 session token 是否过期
+* AVUser 增加 getRoles 方法
+* AVIMConversation 增加 get/set 方法来修改对话属性
+
 # 3.14.10 发布时间 2016-11-07
 * 实时通讯补充 GCM 日志输出
 
