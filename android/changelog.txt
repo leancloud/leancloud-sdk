@@ -1,3 +1,7 @@
+# 3.15.1 发布时间 2016-11-17
+* 修复实时通讯升级 sqlite 导致的 Exception
+* AVObject 对 getList 进行 null 检查
+
 # 3.15 发布时间 2016-11-16
 * AVUser 增加 isAuthenticated 方法用以验证 session token 是否过期
 * AVUser 增加 getRoles 方法
