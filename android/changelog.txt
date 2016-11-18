@@ -1,3 +1,6 @@
+# 3.15.2 发布时间 2016-11-18
+* 修复 AVUser 序列化时阻塞的问题
+
 # 3.15.1 发布时间 2016-11-17
 * 修复实时通讯升级 sqlite 导致的 Exception
 * AVObject 对 getList 进行 null 检查
