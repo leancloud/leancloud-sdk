@@ -1,3 +1,9 @@
+# 3.15.5 发布时间 2016-12-23
+* 优化实时通讯 Router 请求逻辑，减少部分无意义请求
+* AVOSCloud.initialize() 添加异步函数，避免过多占用主线程时间
+* 修复实时通讯部分情况下属性可能丢失的问题
+* 修复混合推送部分情况下 deviceProfile 存储失败的问题
+
 # 3.15.4 发布时间 2016-12-07
 * 实时通讯模块 AVIMConversation 添加 queryMessagesFromCache 接口
 
