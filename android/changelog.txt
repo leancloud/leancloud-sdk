@@ -1,3 +1,7 @@
+# 3.15.8 发布时间 2017-01-18
+* 美国节点文件上传添加重试逻辑
+* 修复实时通信 AVIMConversation 调用 getLastMessage 有时会返回空的问题
+
 # 3.15.7 发布时间 2017-01-11
 * AVIMConversation 实时更新 lastMessage
 * 修复 AVObject remove 操作部分情况下失败的问题
