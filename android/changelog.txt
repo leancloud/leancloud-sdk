@@ -1,3 +1,9 @@
+# 4.0.2 发布时间 2017-05-11
+* 每次新安装动态生成 AVInstallation 的 installationId
+* 修复部分情况下 PushService 启动时会报 NPE 的问题
+* 修复 fastjson 不能解析本地缓存数据的问题
+* AVIMConversationQuery 支持 setCompact，该函数可以设定返回的数据中是否包含成员列表
+
 # 4.0.1 发布时间 2017-05-06
 * 修复 sqlite 升级引起的不兼容问题
 
