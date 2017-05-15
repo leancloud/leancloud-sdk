@@ -1,3 +1,8 @@
+# 4.0.3 发布时间 2017-05-15
+# 支持独立部署和本地调试时设定各个服务模块的地址
+# 新增图形验证码功能，可用于短信请求的验证
+# 修复部分情况下 PushService 启动时会抛 IllegalStateException 的问题
+
 # 4.0.2 发布时间 2017-05-11
 * 每次新安装动态生成 AVInstallation 的 installationId
 * 修复部分情况下 PushService 启动时会报 NPE 的问题
