@@ -1,3 +1,6 @@
+# 4.1.1 发布时间 2017-05-24
+* 添加 AVIMConversationsQuery 替换原有的 AVIMConversationQuery，用以支持查询 attr 外的自定义属性
+
 # 4.1.0 发布时间 2017-05-22
 * 升级 okhttp 至官方 3.8.0 版本
 
