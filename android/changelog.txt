@@ -1,3 +1,8 @@
+# 4.4.1 发布时间 2017-07-10
+* AVUser 添加 refreshSessionToken 接口，用于刷新本地的 sessionToken
+* 修复 AVInstallation fetch 请求有可能失败的问题
+* 修复 AVFile 在序列化手 url 丢失的问题
+
 # 4.4.0 发布时间 2017-07-04
 * 实时通信支持消息的修改与撤回
 
