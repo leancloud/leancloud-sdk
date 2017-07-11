@@ -1,3 +1,6 @@
+# 4.4.2 发布时间 2017-07-11
+* 修复 LiveQuery subscribe 没有回调的问题
+
 # 4.4.1 发布时间 2017-07-10
 * AVUser 添加 refreshSessionToken 接口，用于刷新本地的 sessionToken
 * 修复 AVInstallation fetch 请求有可能失败的问题
