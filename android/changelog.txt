@@ -1,3 +1,6 @@
+# 4.4.7 发布时间 2017-08-29
+* 修复 AVFile 上传文件时回调不会被执行的问题
+
 # 4.4.6 发布时间 2017-08-24
 * 升级 fastjson 到最新版本
 * AVFile 添加 clearCachedFile、clearAllCachedFiles 等接口以支持删除本地的缓存文件
